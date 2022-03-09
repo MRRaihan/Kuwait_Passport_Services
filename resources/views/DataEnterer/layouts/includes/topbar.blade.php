@@ -25,9 +25,9 @@
 
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li class="dropdown hidden-xs">
-                        <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                        {{-- <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-bell"></i> <span class="badge badge-xs badge-danger">3</span>
-                        </a>
+                        </a> --}}
                         <ul class="dropdown-menu dropdown-menu-lg">
                             <li class="text-center notifi-title">Notification <span class="badge badge-xs badge-success">3</span></li>
                             <li class="list-group">
