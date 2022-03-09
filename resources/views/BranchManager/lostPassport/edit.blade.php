@@ -226,9 +226,9 @@ Lost Passport Edit
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="uae_phone"> UAE Phone No  <span style="color: red;">*</span> </label>
+                                                <label for="uae_phone"> Kuwait Phone No  <span style="color: red;">*</span> </label>
                                                 <input name="uae_phone" value='{{ $lostPassport->uae_phone }}' type="text"
-                                                    class="form-control" placeholder="UAE Phone No"
+                                                    class="form-control" placeholder="Kuwait Phone No"
                                                     id="uae_phone">
                                                 @error('uae_phone')
                                                     <p class="text-danger">{{ $message }}</p>

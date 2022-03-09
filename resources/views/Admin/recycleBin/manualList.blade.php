@@ -52,7 +52,7 @@ Manual Passport Table
                                     <th>Name</th>
                                     <th>MRP Passport Number</th>
                                     <th>Emirates ID</th>
-                                    <th>UAE Phone</th>
+                                    <th>Kuwait Phone</th>
                                     <th>Total Fee</th>
                                     <th>EMS</th>
                                     <th>Profession</th>

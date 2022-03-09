@@ -146,8 +146,8 @@ Other passport update
                             <!---second col start-->
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="uae_phone"> UAE Phone No <span style="color: red;">*</span> </label>
-                                    <input value='{{  $otherPassport->uae_phone }}' class="form-control datepicker" name="uae_phone" type="text" placeholder="UAE Phone" id="uae_phone" value="" autocomplete="off">
+                                    <label for="uae_phone"> Kuwait Phone No <span style="color: red;">*</span> </label>
+                                    <input value='{{  $otherPassport->uae_phone }}' class="form-control datepicker" name="uae_phone" type="text" placeholder="Kuwait Phone" id="uae_phone" value="" autocomplete="off">
                                     @error('uae_phone')
                                     <p class="text-danger">{{ $message }}</p>
                                     @enderror

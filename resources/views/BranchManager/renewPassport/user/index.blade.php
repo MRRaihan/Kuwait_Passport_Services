@@ -92,7 +92,7 @@
                 </div> <!-- col -->
 
             </div> <!-- End row -->
-         
+
 
 
             {{-- <div class="row text-right">
@@ -121,7 +121,7 @@
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
-                                        <th>UAE Phone</th>
+                                        <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
                                         <th>Profession</th>
                                         <th>Status</th>
@@ -130,7 +130,7 @@
                                 </thead>
                                 <tbody>
                                     @if (isset($renewPassports[0]))
-                                    
+
                                     @foreach ($renewPassports as $key => $renewPassport)
                                         <tr @if($renewPassport->is_shifted_to_branch_manager != null) style="background-color: #787471; color:white;" @endif>
                                             <td>{{ ++$key }}</td>
@@ -186,11 +186,11 @@
             }).then((result) => {
                 if (result.isConfirmed) {
                     $.ajax({
-                        method: 'POST', 
+                        method: 'POST',
                         url: url,
                         headers: {
                                 'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                        ,}, 
+                        ,},
                         success: function(data) {
                             if (data.type == 'success') {
                                     Swal.fire(

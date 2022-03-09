@@ -33,7 +33,7 @@
         Bangladesh Mobile :  {{ $expressService->bd_phone }}
         <div class="padding"></div>
 
-        UAE Phone : {{ $expressService->uae_phone }}
+        Kuwait Phone : {{ $expressService->uae_phone }}
         <div class="padding"></div>
 
 
