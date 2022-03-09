@@ -18,7 +18,7 @@
 
         Name : {{ $servicesData->name }}<div class="padding"></div>
 
-        Mobile :  {{ $servicesData->uae_phone }}<div class="padding"></div>
+        Phone :  {{ $servicesData->uae_phone }}<div class="padding"></div>
 
         MRP Passport No : {{ $servicesData->passport_number }}<span class="psn"> </span><div class="padding"></div>
 

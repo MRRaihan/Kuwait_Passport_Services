@@ -32,7 +32,7 @@
                         <li class="active">Passport Options</li>
                     </ol>
                     <div class="clearfix">
-                       
+
                     </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Mobile Number">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Phone Number">
                 </div>
 
                 <div class="col-md-3">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="row mt-5" style="margin-top: 70px;">
             @include('Others.message')
             <div class="col-md-12">
@@ -83,7 +83,7 @@
                     <div class="panel-heading" style="background-color: #01ba9a !important;">
                         <span class="panel-title">Passport Receive From Admin </span>
                         <!-- Button trigger modal for adding new Category -->
-                        
+
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -109,7 +109,7 @@
                                         </th>
                                         <th>Name</th>
                                         <th>Emirates ID</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Bio Enrollment ID</th>
                                         <th style="width: 150px">Action</th>
@@ -144,16 +144,16 @@
                                             @if($passport->branch_status == 1)
                                                 <span class="badge badge-pill badge-danger">Pending Delivery</span>
                                                 <span class="badge badge-pill badge-success">Recieved From Admin</span>
-                                               
+
                                             @endif
                                         </td>
                                     </tr>
                                     @endforeach
-    
+
                                 </tbody>
                             </table>
                         </form>
-                        
+
 
                     </div>
                 </div>
@@ -173,7 +173,7 @@
     }
 
     function checkedAll() {
-    
+
         var elements = document.querySelectorAll('input[type="checkbox"]');
             for (var i = elements.length; i--; ) {
                 if (elements[i].type == 'checkbox') {
@@ -183,7 +183,7 @@
     }
 
     function undo(id) {
-       
+
         // alert(objButton.value)
         Swal.fire({
             title: 'Are you sure?',
@@ -191,16 +191,16 @@
              icon: 'warning',
              showCancelButton: true,
              confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33', 
+             cancelButtonColor: '#d33',
              confirmButtonText: 'Yes, Undo !'
         }).then((result) => {
             if (result.isConfirmed) {
-                
+
                 $.ajax({
-                    method: 'POST', 
+                    method: 'POST',
                     url: '{{ route('branchManager.passportOption.receiveFromAdmin.undo',$option) }}'+'&'+id,
                     headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}", 
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}",
                     },
                     success: function(data) {
                         if (data.type == 'success') {
@@ -217,7 +217,7 @@
                                 'warning'
                             )
                         }
-                    }, 
+                    },
                 })
             }
         })
@@ -226,7 +226,7 @@
     $('.bio_enrollment_id').keypress(function(e) {
 
         if (e.keyCode == 13) {
-            
+
             e.preventDefault();
 
             var id = $(this).parent().find('.p_id').val();

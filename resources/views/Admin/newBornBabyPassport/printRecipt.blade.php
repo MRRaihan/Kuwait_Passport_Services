@@ -24,7 +24,7 @@
 
         <div class="padding"></div>
 
-        Mobile :  {{ $newBornBabyPassport->uae_phone }}<div class="padding"></div>
+        Phone :  {{ $newBornBabyPassport->uae_phone }}<div class="padding"></div>
 
         Emirates ID :  {{ $newBornBabyPassport->emirates_id }}<div class="padding"></div>
 

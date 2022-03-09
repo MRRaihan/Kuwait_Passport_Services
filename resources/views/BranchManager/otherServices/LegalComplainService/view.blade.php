@@ -30,7 +30,7 @@
             Application Form : <a style="color:red;font-weight:bold" href="{{ asset($legalComplaintsService->application_form) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Bangladesh Mobile :  {{ $legalComplaintsService->bd_phone }}
+        Bangladesh Phone :  {{ $legalComplaintsService->bd_phone }}
         <div class="padding"></div>
 
         Kuwait Phone : {{ $legalComplaintsService->uae_phone }}
@@ -43,7 +43,7 @@
 
         Special Skill : {{ $legalComplaintsService->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No : {{ $legalComplaintsService->residence }}<div class="padding"></div>
+        Residence Emirates ID / Phone No : {{ $legalComplaintsService->residence }}<div class="padding"></div>
 
         Entry Person : {{ $legalComplaintsService->user->name }} <div class="padding"></div>
 

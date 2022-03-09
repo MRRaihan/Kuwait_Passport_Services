@@ -27,7 +27,7 @@
 
     Profession : {{ $passport->profession?  $passport->profession->name : ""}} <div class="padding"></div>
 
-    Mobile : {{ $passport->uae_phone }} <div class="padding"></div>
+    Phone : {{ $passport->uae_phone }} <div class="padding"></div>
 
     Emirates ID : {{ $passport->emirates_id }} <div class="padding"></div>
 

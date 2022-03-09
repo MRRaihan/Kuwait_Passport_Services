@@ -41,7 +41,7 @@ Profile Update
                   </div>
 
                   <div class="my-4">
-                    <label for="exampleFormControlInput1" class="form-label">Mobile Number <sup>UAE</sup>
+                    <label for="exampleFormControlInput1" class="form-label">Phone Number <sup>UAE</sup>
                     </label>
                     <input type="text" class="form-control select-forms" id="exampleFormControlInput1"   name="uae_phone" value="{{ $user->uae_phone }}"/>
                   </div>
@@ -62,7 +62,7 @@ Profile Update
 
 
                   <div class="my-4 mt-5">
-                    <label for="exampleFormControlInput1" class="form-label mt-3">Mobile Number <sup>BD</sup>
+                    <label for="exampleFormControlInput1" class="form-label mt-3">Phone Number <sup>BD</sup>
                     </label>
                     <input type="text" class="form-control select-forms" id="exampleFormControlInput1"   name="phone" value="{{ $user->phone }}"/>
                   </div>

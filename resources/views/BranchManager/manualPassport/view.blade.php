@@ -78,7 +78,7 @@
             Passport photocopy : <a style="color:red;font-weight:bold" href="{{ asset($passport->passport_photocopy) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Mobile :  {{ $passport->bd_phone }}
+        Phone :  {{ $passport->bd_phone }}
         <div class="padding"></div>
 
         Emirates ID :  {{ $passport->emirates_id }}<div class="padding"></div>

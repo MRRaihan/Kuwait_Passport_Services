@@ -40,7 +40,7 @@ Manual Passport Table
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-primary">
-                    
+
                     <div class="panel-body row">
 
                         <div class="col-md-4">
@@ -52,7 +52,7 @@ Manual Passport Table
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
-                        
+
 
                         <div class="col-md-4">
                             <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.searchByMrpPassportNo') }}">
@@ -85,11 +85,11 @@ Manual Passport Table
             </div> <!-- col -->
 
         </div> <!-- End row -->
-   
-        
+
+
         {{-- <div class="row text-right">
             <div class="col-sm-12">
-             
+
                 <a class="btn btn-success btn-sm" href="{{ route('branchManager.manualPassport.createSecond') }}" style="float: right; margin-bottom: 10px;" ><i class=" fa fa-plus"></i>&nbsp;Add New Manual Passport</a>
             </div>
         </div> --}}
@@ -109,7 +109,7 @@ Manual Passport Table
                                     <th>#SL</th>
                                     <th>Name</th>
                                     <th>Emirates ID</th>
-                                    <th>Mobile</th>
+                                    <th>Phone</th>
                                     <th>Time</th>
 
                                     <th>Status</th>
@@ -164,11 +164,11 @@ Manual Passport Table
         }).then((result) => {
             if (result.isConfirmed) {
                 $.ajax({
-                    method: 'POST', 
+                    method: 'POST',
                     url: url,
                     headers: {
                             'X-CSRF-TOKEN': "{{ csrf_token() }}"
-                    ,}, 
+                    ,},
                     success: function(data) {
                         if (data.type == 'success') {
                                 Swal.fire(

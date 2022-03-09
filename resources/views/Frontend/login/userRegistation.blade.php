@@ -51,7 +51,7 @@
                 </h2>
                 <div class="form-row my-3">
                   <div class="noBorderField">
-                    <b>Mobile No</b>
+                    <b>Phone No</b>
                     <input type="text" name="phone" value="{{ old('phone') }}" placeholder="Enter Your mobile" class="form-control input-field" onkeypress="return /[0-9+]/i.test(event.key)"/>
                     @error('phone')
                     <p class="text-danger">{{ $message }}</p>

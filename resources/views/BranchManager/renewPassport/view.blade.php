@@ -80,10 +80,10 @@
         @endif
 
 
-        Bangladesh Mobile :  {{ $passport->bd_phone }}
+        Bangladesh Phone :  {{ $passport->bd_phone }}
         <div class="padding"></div>
 
-        UAE Mobile :  {{ $passport->uae_phone }}
+        UAE Phone :  {{ $passport->uae_phone }}
 
         <div class="padding"></div>
 
@@ -95,7 +95,7 @@
 
         Special Skill :  {{  $passport->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No :  {{  $passport->residence}}<div class="padding"></div>
+        Residence Emirates ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
 
         Passport Expiry Date : {{ $passport->expiry_date }}<div class="padding"></div>
 

@@ -109,7 +109,7 @@ Manual Passport Table
                                     <th>#SL</th>
                                     <th>Name</th>
                                     <th>Emirates ID</th>
-                                    <th>Mobile</th>
+                                    <th>Phone</th>
                                     <th>Time</th>
 
                                     <th>Status</th>

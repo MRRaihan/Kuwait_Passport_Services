@@ -47,8 +47,8 @@ Passport Options
                 </div>
 
                 <div class="col-md-3">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Mobile Number">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Phone Number">
                 </div>
 
                 <div class="col-md-3">
@@ -101,7 +101,7 @@ Passport Options
                                         </th>
                                         <th>Name</th>
                                         <th>Emirates ID</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Remarks</th>
                                         <th style="width: 150px">Action</th>

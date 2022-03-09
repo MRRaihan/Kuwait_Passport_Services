@@ -97,7 +97,7 @@
               </div>
 
               <div class="my-4">
-                <label for="bd_phone" class="form-label">Mobile Number <sup>BD</sup>
+                <label for="bd_phone" class="form-label">Phone Number <sup>BD</sup>
                 </label>
                 <input type="text" class="form-control select-forms" name="bd_phone" value="{{ old('bd_phone') }}" id="bd_phone"
                   placeholder="+880" />
@@ -107,7 +107,7 @@
               </div>
 
               <div class="my-4">
-                <label for="uae_phone" class="form-label">Mobile Number <sup>UAE</sup>
+                <label for="uae_phone" class="form-label">Phone Number <sup>UAE</sup>
                 </label>
                 <input type="text" class="form-control select-forms" name="uae_phone" value="{{ old('uae_phone') }}" id="uae_phone"
                   placeholder="+971" />
@@ -115,7 +115,7 @@
                   <span class="text-danger">{{ $errors->first('uae_phone') }}</span>
                 @endif
               </div>
-               
+
                 @if ($type == 0 || $type == 1)
                   <div class="custom">
                     <label for="expiry_date" class="form-label">Passport Expiry Date</label>
@@ -126,14 +126,14 @@
                   </div>
                 @endif
 
-                
+
             </div>
           </div>
 
           <div class="col-md-6">
             <div class="first-card mx-auto">
 
-              
+
               <div class="custom">
                 <label for="dob" class="form-label">Date Of Birth</label>
                 <input type="date" class="form-control select-forms" name="dob" value="{{ old('dob') }}" id="dob" />
@@ -159,7 +159,7 @@
                     @endif
                 </div>
               @endif
-             
+
 
               <div class="custom">
                 <label for="mailing_address" class="form-label">Mailing Address</label>
@@ -187,8 +187,8 @@
                     @if($errors->has('profession_file'))
                       <span class="text-danger">{{ $errors->first('profession_file') }}</span>
                     @endif
-                </div> 
-                
+                </div>
+
               @endif
 
               @if ($type == 2)
@@ -199,7 +199,7 @@
                     @if($errors->has('profession_file'))
                       <span class="text-danger">{{ $errors->first('profession_file') }}</span>
                     @endif
-                </div> 
+                </div>
               @endif
 
               @if ($type == 3)
@@ -210,7 +210,7 @@
                     @if($errors->has('dob_file'))
                       <span class="text-danger">{{ $errors->first('dob_file') }}</span>
                     @endif
-                </div> 
+                </div>
               @endif
 
               <div class="my-4">
@@ -241,7 +241,7 @@
                   @endif
               </div>
              @endif
-            
+
 
              @if ($type == 0 || $type == 1)
               <div class="custom">
@@ -272,7 +272,7 @@
                     @endif
                 </div>
               @endif
-              
+
 
               <div class="my-3">
                 <label class="form-label">Delivery Method</label>
@@ -297,17 +297,17 @@
               <input type="submit" id="savePassport" class="btn btn-xs btn-success" value="Save" />
             </center>
           </div>
-          
+
         </div>
       </div>
   </form>
 
   <script>
-    $('#savePassport').click(function (e) { 
+    $('#savePassport').click(function (e) {
       e.preventDefault();
-    
+
       var formData = new FormData(form);
-      
+
       $.ajax({
           method: 'POST',
           url: "{{ route('corporateUser.service.store') }}",

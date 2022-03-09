@@ -20,7 +20,7 @@ $p_type = $servicesData->ems;
         MRP No :  {{ $servicesData->passport_number }} <br>
         Service Name: {{ $serviceType }} <br>
         Total Fee :  {{ $servicesData->total_fee }} <br>
-        Mobile: {{ $servicesData->uae_phone }}<br>
+        Phone: {{ $servicesData->uae_phone }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($servicesData->created_at)) }}
 
 @endsection

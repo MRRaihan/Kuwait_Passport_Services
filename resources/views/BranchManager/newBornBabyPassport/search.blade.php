@@ -51,7 +51,7 @@ New Born Baby Passport
                                     <th>Name</th>
                                     <th>MRP No.</th>
                                     <th>Emirates ID</th>
-                                    <th>Mobile</th>
+                                    <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
 

@@ -62,7 +62,7 @@
                                         <th>Name</th>
                                         <th>Emirates ID</th>
                                         <th>MRP Passport No.</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>
 

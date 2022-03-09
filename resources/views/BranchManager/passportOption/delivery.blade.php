@@ -32,7 +32,7 @@
                         <li class="active">Passport Options</li>
                     </ol>
                     <div class="clearfix">
-                       
+
                     </div>
                 </div>
             </div>
@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Mobile Number">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Phone Number">
                 </div>
 
                 <div class="col-md-3">
@@ -75,7 +75,7 @@
                 </div>
             </div>
         </div>
-       
+
         <div class="row mt-5" style="margin-top: 70px;">
             @include('Others.message')
             <div class="col-md-12">
@@ -108,7 +108,7 @@
                                         <th>Sl</th>
                                         <th>Name</th>
                                         <th>Emirates ID</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
@@ -123,7 +123,7 @@
                                         <td>
                                             {{ passportOptions()[$option] }}
                                         </td>
-                                       
+
                                         <td>
                                             @if($passport->branch_status == 3)
                                                 <span class="badge badge-pill badge-success">Already Delivered</span>
@@ -134,11 +134,11 @@
                                         </td>
                                     </tr>
                                     @endforeach
-    
+
                                 </tbody>
                             </table>
                         </form>
-                        
+
 
                     </div>
                 </div>
@@ -153,7 +153,7 @@
     }
 
     function checkedAll() {
-    
+
         var elements = document.querySelectorAll('input[type="checkbox"]');
             for (var i = elements.length; i--; ) {
                 if (elements[i].type == 'checkbox') {
@@ -167,7 +167,7 @@
     }
 
     function undo(id) {
-       
+
         // alert(objButton.value)
         Swal.fire({
             title: 'Are you sure?',
@@ -175,16 +175,16 @@
              icon: 'warning',
              showCancelButton: true,
              confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33', 
+             cancelButtonColor: '#d33',
              confirmButtonText: 'Yes, Undo !'
         }).then((result) => {
             if (result.isConfirmed) {
-                
+
                 $.ajax({
-                    method: 'POST', 
+                    method: 'POST',
                     url: '{{ route('branchManager.passportOption.delivery.undo',$option) }}'+'&'+id,
                     headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}", 
+                        'X-CSRF-TOKEN': "{{ csrf_token() }}",
                     },
                     success: function(data) {
                         if (data.type == 'success') {
@@ -201,7 +201,7 @@
                                 'warning'
                             )
                         }
-                    }, 
+                    },
                 })
             }
         })
@@ -210,14 +210,14 @@
     $('.remarks').keypress(function(e) {
 
             if (e.keyCode == 13) {
-                
+
                 e.preventDefault();
 
                 var id = $(this).parent().find('.p_id').val();
                 var option = $(this).parent().find('.option').val();
                 var remarks = $(this).val();
                 console.log(remarks);
-                
+
                 var url = "{{ url('branch-manager/passport-options/delivery/remarks') }}/"+id;
 
                 var formData = new FormData();

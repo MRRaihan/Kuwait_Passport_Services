@@ -434,7 +434,7 @@
                                                 <li>Mailing Address</li>
                                                 <li>UAE mobile number</li>
                                                 <li>Bangladesh Permanet Address</li>
-                                                <li>Bangladesh Mobile Number</li>
+                                                <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
                                                 <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
@@ -473,7 +473,7 @@
 
                                             <div id="more3">
                                                 <li>Bangladesh Permanet Address</li>
-                                                <li>Bangladesh Mobile Number</li>
+                                                <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
                                                 <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
@@ -511,7 +511,7 @@
 
                                             <div id="more4">
                                                 <li>Bangladesh Permanet Address</li>
-                                                <li>Bangladesh Mobile Number</li>
+                                                <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
                                                 <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
@@ -549,7 +549,7 @@
 
                                             <div id="more5">
                                                 <li>Bangladesh Permanet Address</li>
-                                                <li>Bangladesh Mobile Number</li>
+                                                <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
                                                 <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
@@ -587,7 +587,7 @@
 
                                             <div id="more5">
                                                 <li>Bangladesh Permanet Address</li>
-                                                <li>Bangladesh Mobile Number</li>
+                                                <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
                                                 <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>

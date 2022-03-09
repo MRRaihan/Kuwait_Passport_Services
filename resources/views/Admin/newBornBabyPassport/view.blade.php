@@ -31,7 +31,7 @@
             Passport Photocopy : <a style="color:red;font-weight:bold" href="{{ $newBornBabyPassport->passport_photocopy }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Bangladesh Mobile :  {{ $newBornBabyPassport->bd_phone }}
+        Bangladesh Phone :  {{ $newBornBabyPassport->bd_phone }}
         <div class="padding"></div>
 
         Kuwait Phone : {{ $newBornBabyPassport->uae_phone }}
@@ -45,7 +45,7 @@
 
         {{-- Special Skill : {{ $newBornBabyPassport->special_skill }}<div class="padding"></div> --}}
 
-        Residence Emirates ID / Mobile No : {{ $newBornBabyPassport->residence }}<div class="padding"></div>
+        Residence Emirates ID / Phone No : {{ $newBornBabyPassport->residence }}<div class="padding"></div>
 
         Entry Person : {{ $newBornBabyPassport->creator->name }}<div class="padding"></div>
 

@@ -47,8 +47,8 @@ Passport Options
                 </div>
 
                 <div class="col-md-3">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Mobile Number">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" id="mobile" value="{{ isset($mobile) ? $mobile : '' }}" class="form-control" placeholder="search by Phone Number">
                 </div>
 
                 <div class="col-md-3">
@@ -93,7 +93,7 @@ Passport Options
                                     <tr>
                                         <th>Name</th>
                                         <th>Emirates ID</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Remarks</th>
                                         <th>Remarks By</th>
@@ -116,16 +116,16 @@ Passport Options
                                                     @if ($passport->remarks != null)
                                                         <span class="badge badge-pill
                                                             {{ $passport->id.' '.$passport->remarks }}
-                                                        @if ($passport->remarks == 0) badge-success @endif 
-                                                        @if ($passport->remarks == 1) badge-danger @endif 
-                                                        @if ($passport->remarks == 2) badge-warning @endif 
+                                                        @if ($passport->remarks == 0) badge-success @endif
+                                                        @if ($passport->remarks == 1) badge-danger @endif
+                                                        @if ($passport->remarks == 2) badge-warning @endif
                                                         @if ($passport->remarks == 3) badge-warning @endif">
                                                         @if ($passport->remarks === '0' || $passport->remarks === '1' || $passport->remarks === '2' || $passport->remarks === '3')
                                                             {{ remarks()[$passport->remarks]}}
                                                             @else
                                                             {{ $passport->remarks }}
                                                         @endif
-                                                        
+
 
                                                     </span>
                                                     @endif
@@ -142,7 +142,7 @@ Passport Options
 
                                                 <select class="remarks mySelect" name="remarks" id="mySelect" onChange="defualtRemarks('{{ $option }}','{{ $passport->id }}',this)">
                                                     <option value="-1">Choose Remark</option>
-                                                    
+
                                                     @foreach (remarks() as $key => $remark)
                                                          <option value="{{ $key }}" @if ($passport->remarks === '0' || $passport->remarks === '1' || $passport->remarks === '2' || $passport->remarks === '3')
                                                                {{ $passport->remarks != null && $passport->remarks == $key ? 'selected' : ''}}
@@ -243,7 +243,7 @@ Passport Options
     }
 
     $('.remarks_other').keypress(function(e) {
-        
+
             if (e.keyCode == 13) {
 
                 e.preventDefault();

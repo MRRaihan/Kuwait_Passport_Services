@@ -66,7 +66,7 @@
                     <th scope="col">#Sl</th>
                     <th scope="col">Service Type</th>
                     <th scope="col">Name</th>
-                    <th scope="col">Mobile</th>
+                    <th scope="col">Phone</th>
                     <th scope="col">Taken Services</th>
                     <th scope="col">Total Cost</th>
                     <th scope="col">Date</th>

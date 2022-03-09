@@ -47,8 +47,8 @@
                 </div>
 
                 <div class="col-md-3">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="text" name="mobile" id="mobile" value="{{ $mobile }}" class="form-control" placeholder="search by Mobile Number">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" id="mobile" value="{{ $mobile }}" class="form-control" placeholder="search by Phone Number">
                 </div>
 
                 <div class="col-md-3">
@@ -85,9 +85,9 @@
                     <div class="panel-heading" style="background-color: #01ba9a !important;">
                         <span class="panel-title">Passport Options </span>
                         <!-- Button trigger modal for adding new Category -->
-                      
+
                     </div>
-                    
+
                     <div class="panel-body">
 
                         <div class="row">
@@ -114,7 +114,7 @@
                                         </th>
                                         <th>Name</th>
                                         <th>Emirates ID</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>

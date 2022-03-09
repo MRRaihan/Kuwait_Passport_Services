@@ -34,7 +34,7 @@
             Application Form : <a style="color:red;font-weight:bold" href="{{ asset($lostPassport->application_form) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Bangladesh Mobile :  {{ $lostPassport->bd_phone }}
+        Bangladesh Phone :  {{ $lostPassport->bd_phone }}
         <div class="padding"></div>
 
         Kuwait Phone : {{ $lostPassport->uae_phone }}
@@ -48,7 +48,7 @@
 
         Special Skill : {{ $lostPassport->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No : {{ $lostPassport->residence }}<div class="padding"></div>
+        Residence Emirates ID / Phone No : {{ $lostPassport->residence }}<div class="padding"></div>
 
         Entry Person : {{ $lostPassport->creator->name }}<div class="padding"></div>
 

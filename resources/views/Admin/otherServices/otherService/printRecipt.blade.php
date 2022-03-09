@@ -26,7 +26,7 @@ Passport Number : {{ $serviceData->passport_number }}</span><div class="padding"
 
 Profession : {{ $serviceData->profession->name }} <div class="padding"></div>
 
-Mobile : {{ $serviceData->uae_phone }} <div class="padding"></div>
+Phone : {{ $serviceData->uae_phone }} <div class="padding"></div>
 
 Emirates ID : {{ $serviceData->emirates_id }} <div class="padding"></div>
 Delivery Branch : {{ $serviceData->deliveryBranch->name }} <div class="padding"></div>

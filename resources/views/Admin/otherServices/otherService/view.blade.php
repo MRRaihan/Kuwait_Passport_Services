@@ -71,10 +71,10 @@
 
         Profession : {{ $serviceData->profession->name }} <div class="padding"></div>
 
-        Bangladesh Mobile :  {{ $serviceData->bd_phone }}
+        Bangladesh Phone :  {{ $serviceData->bd_phone }}
         <div class="padding"></div>
 
-        UAE Mobile :  {{ $serviceData->uae_phone }}
+        UAE Phone :  {{ $serviceData->uae_phone }}
 
         <div class="padding"></div>
 
@@ -87,7 +87,7 @@
 
         Special Skill :  {{  $serviceData->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No :  {{  $serviceData->residence}}<div class="padding"></div>
+        Residence Emirates ID / Phone No :  {{  $serviceData->residence}}<div class="padding"></div>
 
         Delivery Date : {{ date('d-m-Y',strtotime($serviceData->delivery_date)) }}<div class="padding"></div>
 

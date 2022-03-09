@@ -3,7 +3,7 @@
         <th><b>#Sl</b></th>
         <th><b>Service Type</b></th>
         <th><b>Name</b></th>
-        <th><b>Mobile</b></th>
+        <th><b>Phone</b></th>
         <th><b>Taken Services</b></th>
         <th><b>Total Cost</b></th>
         <th><b>Date</b></th>
@@ -24,7 +24,7 @@
                 @if (isset(json_decode($service->service_taken)[0]))
                     @foreach (json_decode($service->service_taken) as $item)
                         <span>{{ get_other_service_fee_name_by_id($item).',' }}</span>
-                    @endforeach 
+                    @endforeach
                 @endif
             </td>
             @if ($service->model_name == 'Other Service')
@@ -38,7 +38,7 @@
             @php
                 $total_fee  += $service->total_fee+$service->fee;
             @endphp
-        @else 
+        @else
             @php
                 $total_fee  += $service->total_fee;
             @endphp
@@ -53,5 +53,5 @@
     </td>
     <td style="width: 150px;"></td>
   </tr>
-    
+
   </table>

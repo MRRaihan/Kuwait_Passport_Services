@@ -69,7 +69,7 @@
                                     <tr>
                                         <th>SL.</th>
                                         <th>Name</th>
-                                        <th>Mobile</th>
+                                        <th>Phone</th>
                                         <th>Taken Services</th>
                                         <th>Total Cost</th>
                                         <th>Time</th>

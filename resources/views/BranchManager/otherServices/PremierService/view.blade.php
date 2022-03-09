@@ -30,7 +30,7 @@
             Application Form : <a style="color:red;font-weight:bold" href="{{ asset($premierService->application_form) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Bangladesh Mobile :  {{ $premierService->bd_phone }}
+        Bangladesh Phone :  {{ $premierService->bd_phone }}
         <div class="padding"></div>
 
         Kuwait Phone : {{ $premierService->uae_phone }}
@@ -43,7 +43,7 @@
 
         Special Skill : {{ $premierService->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No : {{ $premierService->residence }}<div class="padding"></div>
+        Residence Emirates ID / Phone No : {{ $premierService->residence }}<div class="padding"></div>
 
         Entry Person : {{ $premierService->user->name }} <div class="padding"></div>
 

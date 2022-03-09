@@ -112,7 +112,7 @@
                 <div class="col-md-6">
                   <div class="first-card mx-auto">
                     <h5 class="info-title">Enter your information</h5>
-                  
+
                     <div class="my-3">
                       <label class="form-label">Passport type</label>
                       <select class="form-select select-forms text-muted" name="passport_type" id="passport_type" aria-label="Default select example">
@@ -155,14 +155,14 @@
                     </div>
 
                     <div class="my-4">
-                      <label for="bd_phone" class="form-label">Mobile Number <sup>BD</sup>
+                      <label for="bd_phone" class="form-label">Phone Number <sup>BD</sup>
                       </label>
                       <input type="text" class="form-control select-forms" name="bd_phone" id="bd_phone"
                         placeholder="+880" />
                     </div>
 
                     <div class="my-4">
-                      <label for="uae_phone" class="form-label">Mobile Number <sup>UAE</sup>
+                      <label for="uae_phone" class="form-label">Phone Number <sup>UAE</sup>
                       </label>
                       <input type="text" class="form-control select-forms" name="uae_phone" id="uae_phone"
                         placeholder="+971" />
@@ -216,7 +216,7 @@
                       </div>
                     </div>
                   </div>
-                
+
                 </div>
               </div>
             </div>
@@ -228,7 +228,7 @@
 
           <!--===================== step-2 work start==================== -->
           <fieldset>
-            
+
 
           </fieldset>
           <!--===================== step-2 work end==================== -->
@@ -374,7 +374,7 @@
     </div>
 
     <!-- progressbar -->
- 
+
 
   <!------------------------------- javascript and jquery files ------------------------------------------>
 

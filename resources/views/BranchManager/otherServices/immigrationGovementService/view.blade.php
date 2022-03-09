@@ -30,7 +30,7 @@
             Application Form : <a style="color:red;font-weight:bold" href="{{ asset($immigrationGovementService->application_form) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
 
-        Bangladesh Mobile :  {{ $immigrationGovementService->bd_phone }}
+        Bangladesh Phone :  {{ $immigrationGovementService->bd_phone }}
         <div class="padding"></div>
 
         Kuwait Phone : {{ $immigrationGovementService->uae_phone }}
@@ -43,7 +43,7 @@
 
         Special Skill : {{ $immigrationGovementService->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No : {{ $immigrationGovementService->residence }}<div class="padding"></div>
+        Residence Emirates ID / Phone No : {{ $immigrationGovementService->residence }}<div class="padding"></div>
 
         Entry Person : {{ $immigrationGovementService->user->name }} <div class="padding"></div>
 

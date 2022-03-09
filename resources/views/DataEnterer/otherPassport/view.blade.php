@@ -68,10 +68,10 @@
 
         Profession : {{ $passport->profession_id }} <div class="padding"></div>
 
-        Bangladesh Mobile :  {{ $passport->bd_mobile }}
+        Bangladesh Phone :  {{ $passport->bd_mobile }}
         <div class="padding"></div>
 
-        UAE Mobile :  {{ $passport->uae_mobile }}
+        UAE Phone :  {{ $passport->uae_mobile }}
 
         <div class="padding"></div>
 
@@ -86,7 +86,7 @@
 
         Special Skill :  {{  $passport->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Mobile No :  {{  $passport->residence}}<div class="padding"></div>
+        Residence Emirates ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
 
         Delivery Date : {{ date('d-m-Y',strtotime($passport->delivery_date)) }}<div class="padding"></div>
 

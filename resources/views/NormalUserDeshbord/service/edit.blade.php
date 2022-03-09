@@ -179,7 +179,7 @@
                   </div>
 
                   <div class="my-4">
-                    <label for="bd_phone" class="form-label">Mobile Number <sup>BD</sup>
+                    <label for="bd_phone" class="form-label">Phone Number <sup>BD</sup>
                     </label>
                     <input type="text" class="form-control select-forms" name="bd_phone" value="{{ old('bd_phone',$passport->bd_phone) }}" id="bd_phone"
                       placeholder="+880" />
@@ -189,7 +189,7 @@
                   </div>
 
                   <div class="my-4">
-                    <label for="uae_phone" class="form-label">Mobile Number <sup>UAE</sup>
+                    <label for="uae_phone" class="form-label">Phone Number <sup>UAE</sup>
                     </label>
                     <input type="text" class="form-control select-forms" name="uae_phone" value="{{ old('uae_phone',$passport->uae_phone) }}" id="uae_phone"
                       placeholder="+971" />
@@ -354,8 +354,8 @@
                   </div>
                 @endif
 
-                  
-  
+
+
                 @if ($type == 0 || $type == 1)
                     <div class="custom">
                       <label for="extended_to" class="form-label">Passport Extending To</label>
@@ -401,7 +401,7 @@
                       @endif
                   </div>
 
-                  
+
 
                 </div>
 
