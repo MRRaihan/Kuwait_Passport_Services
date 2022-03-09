@@ -29,7 +29,7 @@ class OtherPassportSeeder extends Seeder
             $lostPassport->ems = 'EP' . time() . 'Kuwait';
             // $lostPassport->profession_file = $faker->text(10);
             // $lostPassport->passport_photocopy = $faker->text(10);
-            $lostPassport->uae_phone = '01777382007';
+            $lostPassport->kuwait_phone = '01777382007';
             $lostPassport->bd_phone = '01777382007';
             $lostPassport->special_skill = null;
             $lostPassport->residence = $faker->country();

@@ -46,7 +46,7 @@ class ManualPassportController extends Controller
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -57,7 +57,7 @@ class ManualPassportController extends Controller
             // 'delivery_date' => 'required',
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
@@ -85,7 +85,7 @@ class ManualPassportController extends Controller
         $manualPassport->emirates_id = $request->emirates_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
-        $manualPassport->uae_phone = $request->uae_phone;
+        $manualPassport->kuwait_phone = $request->kuwait_phone;
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
@@ -187,7 +187,7 @@ class ManualPassportController extends Controller
             // 'delivery_date' => 'required',
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
@@ -214,7 +214,7 @@ class ManualPassportController extends Controller
         $manualPassport->emirates_id = $request->emirates_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
-        $manualPassport->uae_phone = $request->uae_phone;
+        $manualPassport->kuwait_phone = $request->kuwait_phone;
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
@@ -341,7 +341,7 @@ class ManualPassportController extends Controller
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -352,7 +352,7 @@ class ManualPassportController extends Controller
             // 'delivery_date' => 'required',
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
@@ -381,7 +381,7 @@ class ManualPassportController extends Controller
         $manualPassport->emirates_id = $request->emirates_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
-        $manualPassport->uae_phone = $request->uae_phone;
+        $manualPassport->kuwait_phone = $request->kuwait_phone;
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;

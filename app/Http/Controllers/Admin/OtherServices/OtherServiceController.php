@@ -35,7 +35,7 @@ class OtherServiceController extends Controller
         $request->validate([
             'name' => 'required',
             // 'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',
             // 'fee' => 'required',
@@ -55,7 +55,7 @@ class OtherServiceController extends Controller
 
 
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -68,7 +68,7 @@ class OtherServiceController extends Controller
         $otherService->emirates_id = $request->emirates_id;
         $otherService->profession_id = $request->profession_id;
         $otherService->passport_number = $request->passport_number;
-        $otherService->uae_phone = $request->uae_phone;
+        $otherService->kuwait_phone = $request->kuwait_phone;
         $otherService->fee = $request->fee;
         $otherService->bd_phone = $request->bd_phone;
         $otherService->salary = $request->salary;
@@ -149,7 +149,7 @@ class OtherServiceController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'emirates_id' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',
@@ -166,7 +166,7 @@ class OtherServiceController extends Controller
 
 
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
             'passport_type_id' => 'required',

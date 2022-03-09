@@ -189,12 +189,12 @@
                   </div>
 
                   <div class="my-4">
-                    <label for="uae_phone" class="form-label">Phone Number <sup>Kuwait</sup>
+                    <label for="kuwait_phone" class="form-label">Phone Number <sup>Kuwait</sup>
                     </label>
-                    <input type="text" class="form-control select-forms" name="uae_phone" value="{{ old('uae_phone',$passport->uae_phone) }}" id="uae_phone"
+                    <input type="text" class="form-control select-forms" name="kuwait_phone" value="{{ old('kuwait_phone',$passport->kuwait_phone) }}" id="kuwait_phone"
                       placeholder="+971" />
-                      @if($errors->has('uae_phone'))
-                      <span class="text-danger">{{ $errors->first('uae_phone') }}</span>
+                      @if($errors->has('kuwait_phone'))
+                      <span class="text-danger">{{ $errors->first('kuwait_phone') }}</span>
                     @endif
                   </div>
 

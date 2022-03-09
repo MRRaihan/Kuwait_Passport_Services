@@ -104,7 +104,7 @@ class ExtraServiceAddController extends Controller
         }
         $Services->name = $request->name;
         $Services->passport_number = $request->passport_number;
-        $Services->uae_phone = $request->uae_phone;
+        $Services->kuwait_phone = $request->kuwait_phone;
         $Services->special_skill = $request->special_skill;
         $Services->residence = $request->residence;
         $Services->mailing_address = $request->mailing_address;

@@ -74,7 +74,7 @@
         Bangladesh Phone :  {{ $serviceData->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone :  {{ $serviceData->uae_phone }}
+        Kuwait Phone :  {{ $serviceData->kuwait_phone }}
 
         <div class="padding"></div>
 

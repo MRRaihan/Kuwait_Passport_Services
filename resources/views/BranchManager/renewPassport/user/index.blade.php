@@ -136,7 +136,7 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $renewPassport->name }}</td>
                                             <td>{{ $renewPassport->passport_number }}</td>
-                                            <td>{{ $renewPassport->uae_phone }}</td>
+                                            <td>{{ $renewPassport->kuwait_phone }}</td>
                                             <td>{{ $renewPassport->passport_type_fees_total }}</td>
                                             <td>{{ $renewPassport->profession ? $renewPassport->profession->name : '' }}</td>
                                             <td>

@@ -42,7 +42,7 @@ class LostPassportExport implements
             'ems',
             'profession_file',
             'passport_photocopy',
-            'uae_phone',
+            'kuwait_phone',
             'bd_phone',
             'special_skill',
             'residence',

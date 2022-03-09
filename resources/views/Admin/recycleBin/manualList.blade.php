@@ -67,7 +67,7 @@ Manual Passport Table
                                     <td>{{ $manualPassport->name }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
                                     <td>{{ $manualPassport->emirates_id }}</td>
-                                    <td>{{ $manualPassport->uae_phone }}</td>
+                                    <td>{{ $manualPassport->kuwait_phone }}</td>
                                     <td>{{ $manualPassport->passport_type_fees_total }}</td>
                                     <td>{{ $manualPassport->ems }}</td>
                                     <td>{{ $manualPassport->profession->name }}</td>

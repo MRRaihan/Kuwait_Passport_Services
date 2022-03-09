@@ -30,7 +30,7 @@ class CreateRenewPassportsTable extends Migration
             $table->string('application_form')->nullable();
             $table->string('profession_file')->nullable();
             $table->string('mailing_address')->nullable();
-            $table->string('uae_phone')->nullable();
+            $table->string('kuwait_phone')->nullable();
             $table->string('permanent_address')->nullable();
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();
@@ -45,17 +45,17 @@ class CreateRenewPassportsTable extends Migration
             $table->boolean('shift_to_admin')->default(0);
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
-           
+
             $table->boolean('is_delivered')->default(0);
             $table->boolean('is_shifted')->default(0);
             $table->boolean('is_received')->default(0);
 
             $table->string('is_manual')->nullable();
             $table->string('is_shifted_to_branch_manager')->nullable();
-            
+
             $table->string('r_id')->nullable();
             $table->string('entry_person')->nullable();
-          
+
             $table->string('passport_type_title')->nullable();
             $table->string('passport_type_government_fee')->nullable();
             $table->string('passport_type_versatilo_fee')->nullable();
@@ -69,7 +69,7 @@ class CreateRenewPassportsTable extends Migration
             $table->string('model_name')->default('Renew Passport');
 
             $table->boolean('delivery_method')->nullable();
-            
+
             $table->timestamps();
             $table->softDeletes();
         });

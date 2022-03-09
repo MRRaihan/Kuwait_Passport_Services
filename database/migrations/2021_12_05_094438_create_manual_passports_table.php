@@ -27,7 +27,7 @@ class CreateManualPassportsTable extends Migration
             $table->string('mailing_address')->nullable();
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();
-            $table->string('uae_phone')->nullable();
+            $table->string('kuwait_phone')->nullable();
             $table->string('permanent_address')->nullable();
             $table->string('bd_phone')->nullable();
             $table->timestamp('delivery_date')->nullable();
@@ -45,7 +45,7 @@ class CreateManualPassportsTable extends Migration
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
 
-            
+
 
             $table->boolean('is_delivered')->default(0);
             $table->boolean('is_shifted')->default(0);
@@ -70,7 +70,7 @@ class CreateManualPassportsTable extends Migration
             $table->string('model_name')->default('Manual Passport');
 
             $table->boolean('delivery_method')->nullable();
-            
+
             $table->timestamps();
             $table->softDeletes();
         });

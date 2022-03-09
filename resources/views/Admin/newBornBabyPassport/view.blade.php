@@ -34,7 +34,7 @@
         Bangladesh Phone :  {{ $newBornBabyPassport->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone : {{ $newBornBabyPassport->uae_phone }}
+        Kuwait Phone : {{ $newBornBabyPassport->kuwait_phone }}
         <div class="padding"></div>
 
         Emirates ID :  {{ $newBornBabyPassport->emirates_id }}<div class="padding"></div>

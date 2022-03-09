@@ -21,7 +21,7 @@ class Other extends Model
     //     'passport_photocopy',
     //     'profession_file',
     //     'mailing_address',
-    //     'uae_phone',
+    //     'kuwait_phone',
     //     'permanent_address',
     //     'bd_phone',
     //     'special_skill',

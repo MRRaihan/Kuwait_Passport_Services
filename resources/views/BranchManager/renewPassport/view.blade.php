@@ -83,7 +83,7 @@
         Bangladesh Phone :  {{ $passport->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone :  {{ $passport->uae_phone }}
+        Kuwait Phone :  {{ $passport->kuwait_phone }}
 
         <div class="padding"></div>
 

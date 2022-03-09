@@ -39,7 +39,7 @@ class OtherImport implements
             'passport_photocopy' => $row['passport_photocopy'],
             'profession_file' => $row['profession_file'],
             'mailing_address' => $row['mailing_address'],
-            'uae_phone' => $row['uae_phone'],
+            'kuwait_phone' => $row['kuwait_phone'],
             'permanent_address' => $row['permanent_address'],
             'bd_phone' => $row['bd_phone'],
             'special_skill' => $row['special_skill'],

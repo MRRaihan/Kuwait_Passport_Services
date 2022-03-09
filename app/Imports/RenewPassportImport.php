@@ -42,7 +42,7 @@ class RenewPassportImport implements
             'application_form' => $row['application_form'],
             'profession_file' => $row['profession_file'],
             'mailing_address' => $row['mailing_address'],
-            'uae_phone' => $row['uae_phone'],
+            'kuwait_phone' => $row['kuwait_phone'],
             'permanent_address' => $row['permanent_address'],
             'expiry_date' => $row['expiry_date'],
             'extended_to' => $row['extended_to'],

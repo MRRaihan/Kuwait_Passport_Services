@@ -58,7 +58,7 @@ class NewBornBabyPassportController extends Controller
             'name' => 'required',
             'emirates_id' => 'required',
             'passport_number' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
             // 'delivery_date' => 'required',
             //'delivery_branch' => 'required',
@@ -81,7 +81,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->name = $request->name;
         $newBornBabyPassport->emirates_id = $request->emirates_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
-        $newBornBabyPassport->uae_phone = $request->uae_phone;
+        $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
         $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
         $newBornBabyPassport->dob = $request->dob;
@@ -197,13 +197,13 @@ class NewBornBabyPassportController extends Controller
 
         $request->validate([
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
             'passport_type_id' => 'required',
             // 'profession_id' => 'required',
             'passport_number' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
             // 'salary' => 'required',
             // 'delivery_date' => 'required',
@@ -225,7 +225,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->name = $request->name;
         $newBornBabyPassport->emirates_id = $request->emirates_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
-        $newBornBabyPassport->uae_phone = $request->uae_phone;
+        $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
         $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
         $newBornBabyPassport->dob = $request->dob;
@@ -310,7 +310,7 @@ class NewBornBabyPassportController extends Controller
             'name' => 'required',
             'emirates_id' => 'required',
             'passport_number' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
             // 'delivery_date' => 'required',
             //'delivery_branch' => 'required',
@@ -333,7 +333,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->name = $request->name;
         $newBornBabyPassport->emirates_id = $request->emirates_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
-        $newBornBabyPassport->uae_phone = $request->uae_phone;
+        $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
         $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
         $newBornBabyPassport->dob = $request->dob;

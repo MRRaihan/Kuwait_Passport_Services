@@ -81,7 +81,7 @@
                             <tr>
                                 <td>{{ ++$key }}</td>
                                 <td>{{ $immigrationService->name }} {{ $immigrationService->last_name }}</td>
-                                <td>{{ $immigrationService->uae_phone }}</td>
+                                <td>{{ $immigrationService->kuwait_phone }}</td>
                                 <td>
                                     @foreach (json_decode($immigrationService->service_taken) as $item)
                                     <span class="badge badge-primary">{{ get_other_service_fee_name_by_id($item) }}</span>

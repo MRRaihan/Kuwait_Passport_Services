@@ -19,7 +19,7 @@
               {{ $service->model_name}}
             </td>
             <td style="width: 150px;">{{ $service->name }}</td>
-            <td style="width: 150px;">{{ $service->uae_phone }}</td>
+            <td style="width: 150px;">{{ $service->kuwait_phone }}</td>
             <td style="width: 150px;">
                 @if (isset(json_decode($service->service_taken)[0]))
                     @foreach (json_decode($service->service_taken) as $item)

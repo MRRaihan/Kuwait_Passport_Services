@@ -20,7 +20,7 @@ class ManualPassport extends Model
     //     'mailing_address',
     //     'expiry_date',
     //     'extended_to',
-    //     'uae_phone',
+    //     'kuwait_phone',
     //     'bd_phone',
     //     'delivery_date',
     //     'profession_id',

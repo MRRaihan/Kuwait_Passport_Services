@@ -11,6 +11,6 @@
         Name :  {{ $serviceData->name }} <br>
         Passport No:  {{ $serviceData->passport_number }} <br>
         Emirates ID:  {{ $serviceData->emirates_id }} <br>
-        Phone: {{ $serviceData->uae_phone }}
+        Phone: {{ $serviceData->kuwait_phone }}
 
 @endsection

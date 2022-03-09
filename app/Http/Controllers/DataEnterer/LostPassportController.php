@@ -45,7 +45,7 @@ class LostPassportController extends Controller
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -72,7 +72,7 @@ class LostPassportController extends Controller
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
-        $lostPassport->uae_phone = $request->uae_phone;
+        $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         $lostPassport->delivery_date = get_threeMonth_tenDays();
         $lostPassport->delivery_branch = Auth::user()->branch_id;
@@ -183,13 +183,13 @@ class LostPassportController extends Controller
             'name' => 'required',
             // 'emirates_id' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
             'passport_type_id' => 'required',
             // 'profession_id' => 'required',
             'passport_number' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
             // 'salary' => 'required',
             // 'delivery_date' => 'required',
@@ -213,7 +213,7 @@ class LostPassportController extends Controller
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
-        $lostPassport->uae_phone = $request->uae_phone;
+        $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         $lostPassport->delivery_date = get_threeMonth_tenDays();
         $lostPassport->delivery_branch = Auth::user()->branch_id;
@@ -308,7 +308,7 @@ class LostPassportController extends Controller
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -335,7 +335,7 @@ class LostPassportController extends Controller
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
-        $lostPassport->uae_phone = $request->uae_phone;
+        $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         // $lostPassport->salary = $request->salary;
         $lostPassport->delivery_date = get_threeMonth_tenDays();

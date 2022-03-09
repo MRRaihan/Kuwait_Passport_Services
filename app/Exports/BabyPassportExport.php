@@ -41,7 +41,7 @@ class BabyPassportExport implements
             'ems',
             'passport_photocopy',
             'application_form',
-            'uae_phone',
+            'kuwait_phone',
             'bd_phone',
             'special_skill',
             'residence',

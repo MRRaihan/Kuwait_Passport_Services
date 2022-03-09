@@ -29,15 +29,15 @@ class NewBornBabyPassportSeeder extends Seeder
             $lostPassport->ems = $faker->text(10);
             // $lostPassport->profession_file = $faker->text(10);
             // $lostPassport->passport_photocopy = $faker->text(10);
-            $lostPassport->uae_phone = '01777382007';
+            $lostPassport->kuwait_phone = '01777382007';
             $lostPassport->bd_phone = '01777382007';
-            $lostPassport->uae_phone = '01777382007';
+            $lostPassport->kuwait_phone = '01777382007';
             $lostPassport->special_skill = null;
             $lostPassport->residence = $faker->country();
             $lostPassport->delivery_date = Carbon::now()->addDay(-5);
             $lostPassport->profession_id = 1;
             $lostPassport->salary = $faker->numberBetween(1, 4);
-         
+
             $lostPassport->delivery_branch = $faker->numberBetween(1, 4);
             $lostPassport->is_delivered = $faker->numberBetween(0, 1);
             $lostPassport->is_shifted = $faker->numberBetween(0, 1);

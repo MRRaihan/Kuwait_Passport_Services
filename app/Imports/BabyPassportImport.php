@@ -40,7 +40,7 @@ class BabyPassportImport implements
             'ems' => $row['ems'],
             'passport_photocopy' => $row['passport_photocopy'],
             'application_form' => $row['application_form'],
-            'uae_phone' => $row['uae_phone'],
+            'kuwait_phone' => $row['kuwait_phone'],
             'bd_phone' => $row['bd_phone'],
             'special_skill' => $row['special_skill'],
             'residence' => $row['residence'],

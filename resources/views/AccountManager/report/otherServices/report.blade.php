@@ -85,7 +85,7 @@
                             {{ $service->model_name}}
                           </td>
                           <td>{{ $service->name }}</td>
-                          <td>{{ $service->uae_phone }}</td>
+                          <td>{{ $service->kuwait_phone }}</td>
                           <td>
                               @if (isset(json_decode($service->service_taken)[0]))
                                 @foreach (json_decode($service->service_taken) as $item)

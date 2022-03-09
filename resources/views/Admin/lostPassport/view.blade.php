@@ -33,7 +33,7 @@
         Bangladesh Phone :  {{ $lostPassport->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone : {{ $lostPassport->uae_phone }}
+        Kuwait Phone : {{ $lostPassport->kuwait_phone }}
         <div class="padding"></div>
 
         Emirates ID :  {{ $lostPassport->emirates_id }}<div class="padding"></div>

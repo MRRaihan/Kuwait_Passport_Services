@@ -59,14 +59,14 @@ class RenewPassportController extends Controller
             // 'delivery_date' => 'required',
             // 'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
 
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             // 'passport_number' => 'required',
             // 'passport_type_id' => 'required',
@@ -92,7 +92,7 @@ class RenewPassportController extends Controller
         $renewPassport->emirates_id = $request->emirates_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
-        $renewPassport->uae_phone = $request->uae_phone;
+        $renewPassport->kuwait_phone = $request->kuwait_phone;
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
@@ -216,7 +216,7 @@ class RenewPassportController extends Controller
             'name' => 'required',
             // 'emirates_id' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
             'passport_type_id' => 'required',
@@ -227,7 +227,7 @@ class RenewPassportController extends Controller
             // 'delivery_date' => 'required',
             // 'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
@@ -252,7 +252,7 @@ class RenewPassportController extends Controller
         $renewPassport->emirates_id = $request->emirates_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
-        $renewPassport->uae_phone = $request->uae_phone;
+        $renewPassport->kuwait_phone = $request->kuwait_phone;
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
@@ -352,14 +352,14 @@ class RenewPassportController extends Controller
             // 'delivery_date' => 'required',
             // 'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'govt_passport_id' => 'required',
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
 
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
 
             // 'passport_number' => 'required',
             // 'passport_type_id' => 'required',
@@ -385,7 +385,7 @@ class RenewPassportController extends Controller
         $renewPassport->emirates_id = $request->emirates_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
-        $renewPassport->uae_phone = $request->uae_phone;
+        $renewPassport->kuwait_phone = $request->kuwait_phone;
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;

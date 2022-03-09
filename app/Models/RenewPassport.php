@@ -22,7 +22,7 @@ class RenewPassport extends Model
     //     'ems',
     //     'profession_file',
     //     'passport_photocopy',
-    //     'uae_phone',
+    //     'kuwait_phone',
     //     'bd_phone',
     //     'special_skill',
     //     'residence',
@@ -59,7 +59,7 @@ class RenewPassport extends Model
     {
         return $this->belongsTo(User::class, 'user_creator_id');
     }
-    
+
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id');

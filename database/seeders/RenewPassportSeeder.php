@@ -26,7 +26,7 @@ class RenewPassportSeeder extends Seeder
             $lostPassport->mailing_address = $faker->email();
             $lostPassport->ems = $faker->text(10);
             // $lostPassport->profession_file = $faker->text(10);
-            $lostPassport->uae_phone = '01777382007';
+            $lostPassport->kuwait_phone = '01777382007';
             $lostPassport->bd_phone = '01777382117';
             $lostPassport->delivery_date = Carbon::now()->addDay(-5);
             $lostPassport->profession_id = 1;

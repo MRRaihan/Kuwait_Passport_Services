@@ -39,7 +39,7 @@ class ManualPassportImport implements
             'mailing_address' => $row['mailing_address'],
             'expiry_date' => $row['expiry_date'],
             'extended_to' => $row['extended_to'],
-            'uae_phone' => $row['uae_phone'],
+            'kuwait_phone' => $row['kuwait_phone'],
             'permanent_address' => $row['permanent_address'],
             'bd_phone' => $row['bd_phone'],
             'delivery_date' => $row['delivery_date'],

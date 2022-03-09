@@ -98,7 +98,7 @@ class FrontendController extends Controller
             'profession_id' => 'required',
             'emirates_id' => 'required',
             'bd_phone' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'mailing_address' => 'required',
             'permanent_address' => 'required',
 
@@ -272,7 +272,7 @@ class FrontendController extends Controller
             'profession_id' => 'required',
             'emirates_id' => 'required',
             'bd_phone' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'mailing_address' => 'required',
             'permanent_address' => 'required',
         ]);

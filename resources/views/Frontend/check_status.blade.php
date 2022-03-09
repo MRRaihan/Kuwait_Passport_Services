@@ -4,7 +4,7 @@
     .line-color{
         background: #15b3ee;
     }
-   
+
 </style>
 <div class="container1">
     <section class="step-indicator   my-5  " >
@@ -91,7 +91,7 @@
     </div>
 </div>
 <h1 class="text-danger">{{ $message }}</h1>
-{{-- <h1>{{ $uae_phone }}</h1>
+{{-- <h1>{{ $kuwait_phone }}</h1>
 <h1>{{ $emirates_id }}</h1>
 <h1>{{ $passport_type }}</h1> --}}
 @endif

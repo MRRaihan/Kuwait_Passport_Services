@@ -21,7 +21,7 @@ class CreatePremierServicesTable extends Migration
             $table->string('passport_number')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('mailing_address')->nullable();
-            $table->string('uae_phone')->nullable();
+            $table->string('kuwait_phone')->nullable();
             $table->string('bd_phone')->nullable();
             $table->longText('permanent_address')->nullable();
             $table->date('expiry_date')->nullable();

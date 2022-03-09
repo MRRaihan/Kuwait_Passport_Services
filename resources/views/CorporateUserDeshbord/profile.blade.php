@@ -43,7 +43,7 @@ Profile Update
                   <div class="my-4">
                     <label for="exampleFormControlInput1" class="form-label">Phone Number <sup>Kuwait</sup>
                     </label>
-                    <input type="text" class="form-control select-forms" id="exampleFormControlInput1"   name="uae_phone" value="{{ $user->uae_phone }}"/>
+                    <input type="text" class="form-control select-forms" id="exampleFormControlInput1"   name="kuwait_phone" value="{{ $user->kuwait_phone }}"/>
                   </div>
 
                   <div class="my-4">

@@ -33,7 +33,7 @@
         Bangladesh Phone :  {{ $premierService->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone : {{ $premierService->uae_phone }}
+        Kuwait Phone : {{ $premierService->kuwait_phone }}
         <div class="padding"></div>
 
 

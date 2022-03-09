@@ -43,7 +43,7 @@ class RenewPassportExport implements
             'application_form',
             'profession_file',
             'mailing_address',
-            'uae_phone',
+            'kuwait_phone',
             'permanent_address',
             'expiry_date',
             'extended_to',

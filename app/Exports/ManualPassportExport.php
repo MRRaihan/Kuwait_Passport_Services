@@ -41,7 +41,7 @@ class ManualPassportExport implements
             'mailing_address',
             'expiry_date',
             'extended_to',
-            'uae_phone',
+            'kuwait_phone',
             'permanent_address',
             'bd_phone',
             'delivery_date',

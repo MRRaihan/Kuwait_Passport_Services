@@ -122,7 +122,7 @@
             </tr>
             <tr class="review-infomation-item">
               <td class="custom-label">Phone number<span class="county-phone">Kuwait</span></td>
-              <td>{{ $passport->uae_phone }}</td>
+              <td>{{ $passport->kuwait_phone }}</td>
             </tr>
             <tr class="review-infomation-item">
               <td class="custom-label">Malling address</td>

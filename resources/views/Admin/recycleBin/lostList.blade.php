@@ -75,7 +75,7 @@ Lost Passports Table
                                             <td>{{ $lostPassport->name }}</td>
                                             <td>{{ $lostPassport->passport_number }}</td>
                                             <td>{{ $lostPassport->emirates_id }}</td>
-                                            <td>{{ $lostPassport->uae_phone }}</td>
+                                            <td>{{ $lostPassport->kuwait_phone }}</td>
                                             <td>{{ $lostPassport->passport_type_fees_total }}</td>
                                             <td>{{ $lostPassport->ems }}</td>
                                             <td>{{ $lostPassport->profession->name }}</td>

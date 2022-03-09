@@ -41,7 +41,7 @@ class LostPassportImport implements
             'ems' => $row['ems'],
             'profession_file' => $row['profession_file'],
             'passport_photocopy' => $row['passport_photocopy'],
-            'uae_phone' => $row['uae_phone'],
+            'kuwait_phone' => $row['kuwait_phone'],
             'bd_phone' => $row['bd_phone'],
             'special_skill' => $row['special_skill'],
             'residence' => $row['residence'],

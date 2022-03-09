@@ -86,7 +86,7 @@
                           @endif
                           <td>{{ $passport->emirates_id }}</td>
                           <td>{{ $passport->passport_number }}</td>
-                          <td>{{ $passport->uae_phone }}</td>
+                          <td>{{ $passport->kuwait_phone }}</td>
                           <td>{{ $passport->ems }}</td>
                           <td>{{ $passport->ems }}</td>
                           <td class="text-right">{{ $passport->passport_type_versatilo_fee }}</td>

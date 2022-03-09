@@ -32,7 +32,7 @@
             @endif
             <td style="width: 150px;">{{ $passport->emirates_id }}</td>
             <td style="width: 150px;">{{ $passport->passport_number }}</td>
-            <td style="width: 150px;">{{ $passport->uae_phone }}</td>
+            <td style="width: 150px;">{{ $passport->kuwait_phone }}</td>
             <td style="width: 150px;">{{ $passport->ems }}</td>
             <td style="width: 150px;">{{ $passport->ems }}</td>
             <td style="width: 150px;">{{  $passport->remarksBy ? $passport->remarksBy->name : ''  }}</td>

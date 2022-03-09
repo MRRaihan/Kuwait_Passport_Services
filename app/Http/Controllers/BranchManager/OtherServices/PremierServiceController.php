@@ -50,7 +50,7 @@ class PremierServiceController extends Controller
 
             'passport_number' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'services' => 'required',
 
 
@@ -88,7 +88,7 @@ class PremierServiceController extends Controller
 
         $Services->name = $request->name;
         $Services->passport_number = $request->passport_number;
-        $Services->uae_phone = $request->uae_phone;
+        $Services->kuwait_phone = $request->kuwait_phone;
         $Services->bd_phone = $request->bd_phone;
         $Services->special_skill = $request->special_skill;
         $Services->residence = $request->residence;

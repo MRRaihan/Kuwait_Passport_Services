@@ -23,7 +23,7 @@ class LostPassport extends Model
     //     'ems',
     //     'profession_file',
     //     'passport_photocopy',
-    //     'uae_phone',
+    //     'kuwait_phone',
     //     'bd_phone',
     //     'special_skill',
     //     'residence',
@@ -55,7 +55,7 @@ class LostPassport extends Model
     {
         return $this->belongsTo(User::class, 'user_creator_id');
     }
-    
+
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id');
@@ -69,11 +69,11 @@ class LostPassport extends Model
     public function profession()
     {
         return $this->belongsTo(Profession::class, 'profession_id');
-    }    
+    }
 
     public function passportDelivery()
     {
         return $this->hasOne(PassportDelivery::class, 'passport_id');
     }
-    
+
 }

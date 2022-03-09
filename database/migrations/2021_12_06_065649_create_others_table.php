@@ -28,7 +28,7 @@ class CreateOthersTable extends Migration
             $table->string('passport_photocopy')->nullable();
             $table->string('profession_file')->nullable();
             $table->string('mailing_address')->nullable();
-            $table->string('uae_phone')->nullable();
+            $table->string('kuwait_phone')->nullable();
             $table->string('permanent_address')->nullable();
             $table->string('bd_phone')->nullable();
             $table->string('special_skill')->nullable();

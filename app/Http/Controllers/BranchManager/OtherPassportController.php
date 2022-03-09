@@ -39,7 +39,7 @@ class OtherPassportController extends Controller
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',
             // 'fee' => 'required',
@@ -63,7 +63,7 @@ class OtherPassportController extends Controller
         $otherPassport->emirates_id = $request->emirates_id;
         $otherPassport->profession_id = $request->profession_id;
         $otherPassport->passport_number = $request->passport_number;
-        $otherPassport->uae_phone = $request->uae_phone;
+        $otherPassport->kuwait_phone = $request->kuwait_phone;
         $otherPassport->fee = $request->fee;
         $otherPassport->bd_phone = $request->bd_phone;
         $otherPassport->salary = $request->salary;
@@ -144,7 +144,7 @@ class OtherPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'uae_phone' => 'required',
+            'kuwait_phone' => 'required',
             'emirates_id' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',

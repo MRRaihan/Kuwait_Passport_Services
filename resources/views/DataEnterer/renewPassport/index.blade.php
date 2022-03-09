@@ -138,7 +138,7 @@
                                             <td>{{ $renewPassport->name }}</td>
                                             <td>{{ $renewPassport->passport_number }}</td>
                                             <td>{{ $renewPassport->emirates_id }}</td>
-                                            <td>{{ $renewPassport->uae_phone }}</td>
+                                            <td>{{ $renewPassport->kuwait_phone }}</td>
                                             <td>{{ $renewPassport->passport_type_fees_total }}</td>
                                             <td>{{ $renewPassport->ems }}</td>
                                                <td>{{ $renewPassport->profession? $renewPassport->profession->name : ""}}</td>

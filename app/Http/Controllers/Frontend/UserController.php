@@ -320,25 +320,25 @@ class UserController extends Controller
     {
 
         $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
-        $uae_phone = explode('&', $data)[1] ? explode('&', $data)[1] : '';
+        $kuwait_phone = explode('&', $data)[1] ? explode('&', $data)[1] : '';
         $passport_type = explode('&', $data)[2];
 
-        if ($emirates_id != '' && $uae_phone != '' && isset($passport_type)) {
+        if ($emirates_id != '' && $kuwait_phone != '' && isset($passport_type)) {
 
             if ($passport_type == 0) {
-                $passport = RenewPassport::where('emirates_id', $emirates_id)->where('uae_phone', $uae_phone)->first();
+                $passport = RenewPassport::where('emirates_id', $emirates_id)->where('kuwait_phone', $kuwait_phone)->first();
             }
 
             if ($passport_type == 1) {
-                $passport = ManualPassport::where('emirates_id', $emirates_id)->where('uae_phone', $uae_phone)->first();
+                $passport = ManualPassport::where('emirates_id', $emirates_id)->where('kuwait_phone', $kuwait_phone)->first();
             }
 
             if ($passport_type == 2) {
-                $passport = LostPassport::where('emirates_id', $emirates_id)->where('uae_phone', $uae_phone)->first();
+                $passport = LostPassport::where('emirates_id', $emirates_id)->where('kuwait_phone', $kuwait_phone)->first();
             }
 
             if ($passport_type == 3) {
-                $passport = NewBornBabyPassport::where('emirates_id', $emirates_id)->where('uae_phone', $uae_phone)->first();
+                $passport = NewBornBabyPassport::where('emirates_id', $emirates_id)->where('kuwait_phone', $kuwait_phone)->first();
             }
 
 

@@ -18,7 +18,7 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->unsignedBigInteger('user_creator_id')->nullable();
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
-            
+
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
             $table->string('emirates_id')->nullable();
@@ -28,7 +28,7 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('ems')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('application_form')->nullable();
-            $table->string('uae_phone')->nullable();
+            $table->string('kuwait_phone')->nullable();
             $table->string('bd_phone')->nullable();
             $table->string('special_skill')->nullable();
             $table->string('residence')->nullable();
@@ -42,7 +42,7 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
 
-            
+
 
             $table->boolean('is_delivered')->default(0);
             $table->boolean('is_shifted')->default(0);
@@ -67,9 +67,9 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('remarks')->nullable();
             $table->boolean('remarks_by')->nullable();
             $table->string('model_name')->default('New Born Baby Passport');
-            
+
             $table->boolean('delivery_method')->nullable();
-            
+
             $table->timestamps();
             $table->softDeletes();
         });

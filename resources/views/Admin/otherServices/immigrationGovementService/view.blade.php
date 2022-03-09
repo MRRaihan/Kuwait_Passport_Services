@@ -33,7 +33,7 @@
         Bangladesh Phone :  {{ $immigrationGovementService->bd_phone }}
         <div class="padding"></div>
 
-        Kuwait Phone : {{ $immigrationGovementService->uae_phone }}
+        Kuwait Phone : {{ $immigrationGovementService->kuwait_phone }}
         <div class="padding"></div>
 
 

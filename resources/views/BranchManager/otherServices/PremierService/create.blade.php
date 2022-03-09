@@ -210,12 +210,12 @@
                                             <!---second col start-->
                                             <div class="col-md-6">
                                                 <div class="form-group">
-                                                    <label for="uae_phone"> Kuwait Phone No <span style="color: red;">*</span>
+                                                    <label for="kuwait_phone"> Kuwait Phone No <span style="color: red;">*</span>
                                                     </label>
-                                                    <input value='{{ old('uae_phone') }}' class="form-control datepicker"
-                                                        name="uae_phone" type="text" placeholder="Kuwait Phone" id="uae_phone"
+                                                    <input value='{{ old('kuwait_phone') }}' class="form-control datepicker"
+                                                        name="kuwait_phone" type="text" placeholder="Kuwait Phone" id="kuwait_phone"
                                                         value="" autocomplete="off">
-                                                    @error('uae_phone')
+                                                    @error('kuwait_phone')
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
