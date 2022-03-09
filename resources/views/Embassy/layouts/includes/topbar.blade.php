@@ -17,18 +17,18 @@
                     </button>
                     <span class="clearfix"></span>
                 </div>
-                {{-- <form class="navbar-form pull-left" role="search">
+                <form class="navbar-form pull-left" role="search">
                     <div class="form-group">
                         <input type="text" class="form-control search-bar" placeholder="Search...">
                     </div>
                     <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
-                </form> --}}
+                </form>
 
                 <ul class="nav navbar-nav navbar-right pull-right">
                     <li class="dropdown hidden-xs">
-                        {{-- <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
+                        <a href="#" data-target="#" class="dropdown-toggle waves-effect waves-light" data-toggle="dropdown" aria-expanded="true">
                             <i class="fa fa-bell"></i> <span class="badge badge-xs badge-danger">3</span>
-                        </a> --}}
+                        </a>
                         <ul class="dropdown-menu dropdown-menu-lg">
                             <li class="text-center notifi-title">Notification <span class="badge badge-xs badge-success">3</span></li>
                             <li class="list-group">
