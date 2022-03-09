@@ -423,7 +423,7 @@
                                             <li>Emirates ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
-                                            <li>UAE mobile number</li>
+                                            <li>Kuwait Phone</li>
 
                                             <div id="dots2"></div>
 
@@ -432,7 +432,7 @@
                                                 <li>Emirates ID</li>
                                                 <li>Passport Copy</li>
                                                 <li>Mailing Address</li>
-                                                <li>UAE mobile number</li>
+                                                <li>Kuwait Phone</li>
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
@@ -467,7 +467,7 @@
                                             <li>Emirates ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
-                                            <li>UAE mobile number</li>
+                                            <li>Kuwait Phone</li>
 
                                             <div id="dots3"></div>
 
@@ -506,7 +506,7 @@
                                             <li>Emirates ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
-                                            <li>UAE mobile number</li>
+                                            <li>Kuwait Phone</li>
                                             <div id="dots4"></div>
 
                                             <div id="more4">
@@ -544,7 +544,7 @@
                                             <li>Emirates ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
-                                            <li>UAE mobile number</li>
+                                            <li>Kuwait Phone</li>
                                             <div id="dots5"></div>
 
                                             <div id="more5">
@@ -582,7 +582,7 @@
                                             <li>Emirates ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
-                                            <li>UAE mobile number</li>
+                                            <li>Kuwait Phone</li>
                                             <div id="dots5"></div>
 
                                             <div id="more5">
