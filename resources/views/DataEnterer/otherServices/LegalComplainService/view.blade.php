@@ -20,8 +20,8 @@
 
         {{-- Profession : {{ $legalComplaintsService->profession->name }} <div class="padding"></div> --}}
 
-        @if (!empty($legalComplaintsService->gd_report_uae))
-            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($legalComplaintsService->gd_report_uae) }}" target="_blank"> View </a> <div class="padding"></div>
+        @if (!empty($legalComplaintsService->gd_report_kuwait))
+            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($legalComplaintsService->gd_report_kuwait) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
         @if (!empty($legalComplaintsService->passport_photocopy))
             Passport Photocopy : <a style="color:red;font-weight:bold" href="{{ asset($legalComplaintsService->passport_photocopy) }}" target="_blank"> View </a> <div class="padding"></div>

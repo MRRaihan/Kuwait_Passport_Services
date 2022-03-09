@@ -92,18 +92,18 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                @if($lostPassport->gd_report_uae)
-                                                    <a href="{{ asset($lostPassport->gd_report_uae) }}" target="_blank">View File</a>
+                                                @if($lostPassport->gd_report_kuwait)
+                                                    <a href="{{ asset($lostPassport->gd_report_kuwait) }}" target="_blank">View File</a>
                                                 @else
                                                     <a href="#">No File Found</a>
                                                 @endif
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="gd_report_uae"> GD Report (Kuwait - Only PDF) </label>
-                                                <input name="gd_report_uae" class="form-control"
+                                                <label for="gd_report_kuwait"> GD Report (Kuwait - Only PDF) </label>
+                                                <input name="gd_report_kuwait" class="form-control"
                                                     type="file" accept="application/pdf">
-                                                @error('gd_report_uae')
+                                                @error('gd_report_kuwait')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>

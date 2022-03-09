@@ -20,8 +20,8 @@
 
         {{-- Profession : {{ $immigrationGovementService->profession->name }} <div class="padding"></div> --}}
 
-        @if (!empty($immigrationGovementService->gd_report_uae))
-            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($immigrationGovementService->gd_report_uae) }}" target="_blank"> View </a> <div class="padding"></div>
+        @if (!empty($immigrationGovementService->gd_report_kuwait))
+            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($immigrationGovementService->gd_report_kuwait) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
         @if (!empty($immigrationGovementService->passport_photocopy))
             Passport Photocopy : <a style="color:red;font-weight:bold" href="{{ asset($immigrationGovementService->passport_photocopy) }}" target="_blank"> View </a> <div class="padding"></div>

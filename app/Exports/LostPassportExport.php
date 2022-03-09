@@ -52,7 +52,7 @@ class LostPassportExport implements
             'date',
             'dob',
             'delivery_branch',
-            'gd_report_uae',
+            'gd_report_kuwait',
             'application_form',
             'shift_to_admin',
             'embassy_status',

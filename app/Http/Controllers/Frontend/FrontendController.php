@@ -123,7 +123,7 @@ class FrontendController extends Controller
 
         if ($request->passport_type == 2) {
             $passport = new LostPassport();
-            $passport->fill($request->except(['gd_report_uae', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
+            $passport->fill($request->except(['gd_report_kuwait', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
             $passport->ems = 'LP' . time() . 'Kuwait';
         }
@@ -165,14 +165,14 @@ class FrontendController extends Controller
             $passport->dob_file = $folder_path . $pdf_new_name;
         }
 
-        if ($request->hasFile('gd_report_uae')) {
+        if ($request->hasFile('gd_report_kuwait')) {
 
-            $pdf             = $request->gd_report_uae;
+            $pdf             = $request->gd_report_kuwait;
             $folder_path       = 'uploads/passport/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
-            $request->gd_report_uae->move(public_path($folder_path), $pdf_new_name);
-            $passport->gd_report_uae = $folder_path . $pdf_new_name;
+            $request->gd_report_kuwait->move(public_path($folder_path), $pdf_new_name);
+            $passport->gd_report_kuwait = $folder_path . $pdf_new_name;
         }
 
         if ($request->hasFile('profession_file')) {
@@ -298,7 +298,7 @@ class FrontendController extends Controller
 
         if ($passport_type == 2) {
             $passport = LostPassport::findOrFail($passport_id);
-            $passport->fill($request->except(['gd_report_uae', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id', 'passport_type_id']));
+            $passport->fill($request->except(['gd_report_kuwait', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id', 'passport_type_id']));
         }
         if ($passport_type == 3) {
             $passport = NewBornBabyPassport::findOrFail($passport_id);
@@ -334,16 +334,16 @@ class FrontendController extends Controller
             $passport->dob_file = $folder_path . $pdf_new_name;
         }
 
-        if ($request->hasFile('gd_report_uae')) {
-            if ($passport->gd_report_uae != null)
-                File::delete(public_path($passport->gd_report_uae)); //Old pdf delete
+        if ($request->hasFile('gd_report_kuwait')) {
+            if ($passport->gd_report_kuwait != null)
+                File::delete(public_path($passport->gd_report_kuwait)); //Old pdf delete
 
-            $pdf             = $request->gd_report_uae;
+            $pdf             = $request->gd_report_kuwait;
             $folder_path       = 'uploads/passport/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
-            $request->gd_report_uae->move(public_path($folder_path), $pdf_new_name);
-            $passport->gd_report_uae = $folder_path . $pdf_new_name;
+            $request->gd_report_kuwait->move(public_path($folder_path), $pdf_new_name);
+            $passport->gd_report_kuwait = $folder_path . $pdf_new_name;
         }
 
         if ($request->hasFile('passport_photocopy')) {

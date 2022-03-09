@@ -278,19 +278,19 @@
 
                   @if ($type == 2)
                     <div class="form-group">
-                      @if($passport->gd_report_uae)
-                          <a href="{{ asset($passport->gd_report_uae) }}" target="_blank">View File</a>
+                      @if($passport->gd_report_kuwait)
+                          <a href="{{ asset($passport->gd_report_kuwait) }}" target="_blank">View File</a>
                       @else
                           <a href="#">No File Found</a>
                       @endif
                     </div>
 
                     <div class="my-4">
-                      <label for="gd_report_uae" class="form-label">GD Report (Kuwait Only PDF)</sup></label>
-                      <input type="file" class="form-control select-forms" accept = "application/pdf" name="gd_report_uae"  id="gd_report_uae"
+                      <label for="gd_report_kuwait" class="form-label">GD Report (Kuwait Only PDF)</sup></label>
+                      <input type="file" class="form-control select-forms" accept = "application/pdf" name="gd_report_kuwait"  id="gd_report_kuwait"
                         placeholder="+971" />
-                        @if($errors->has('gd_report_uae'))
-                          <span class="text-danger">{{ $errors->first('gd_report_uae') }}</span>
+                        @if($errors->has('gd_report_kuwait'))
+                          <span class="text-danger">{{ $errors->first('gd_report_kuwait') }}</span>
                         @endif
                     </div>
                   @endif

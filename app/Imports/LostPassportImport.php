@@ -51,7 +51,7 @@ class LostPassportImport implements
             'date' => $row['date'],
             'dob' => $row['dob'],
             'delivery_branch' => $row['delivery_branch'],
-            'gd_report_uae' => $row['gd_report_uae'],
+            'gd_report_kuwait' => $row['gd_report_kuwait'],
             'application_form' => $row['application_form'],
             'shift_to_admin' => $row['shift_to_admin'],
             'embassy_status' => $row['embassy_status'],

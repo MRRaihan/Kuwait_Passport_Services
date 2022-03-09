@@ -184,8 +184,8 @@
                         placeholder="+971" />
                     </div>
                     <div class="my-4">
-                      <label for="gd_report_uae" class="form-label">GD report <sup>Kuwait</sup></label>
-                      <input type="file" class="form-control select-forms" name="gd_report_uae" id="gd_report_uae"
+                      <label for="gd_report_kuwait" class="form-label">GD report <sup>Kuwait</sup></label>
+                      <input type="file" class="form-control select-forms" name="gd_report_kuwait" id="gd_report_kuwait"
                         placeholder="+971" />
                     </div>
 

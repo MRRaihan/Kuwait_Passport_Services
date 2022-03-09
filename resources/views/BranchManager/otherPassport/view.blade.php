@@ -71,7 +71,7 @@
         Bangladesh Phone :  {{ $passport->bd_mobile }}
         <div class="padding"></div>
 
-        Kuwait Phone :  {{ $passport->uae_mobile }}
+        Kuwait Phone :  {{ $passport->kuwait_phone }}
 
         <div class="padding"></div>
 

@@ -38,7 +38,7 @@ class CreateLostPassportsTable extends Migration
             $table->timestamp('date')->nullable();
             $table->date('dob')->nullable();
             $table->string('delivery_branch')->nullable();
-            $table->string('gd_report_uae')->nullable();
+            $table->string('gd_report_kuwait')->nullable();
             $table->string('application_form')->nullable();
 
             $table->boolean('shift_to_admin')->default(0);

@@ -20,8 +20,8 @@
 
         {{-- Profession : {{ $premierService->profession->name }} <div class="padding"></div> --}}
 
-        @if (!empty($premierService->gd_report_uae))
-            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($premierService->gd_report_uae) }}" target="_blank"> View </a> <div class="padding"></div>
+        @if (!empty($premierService->gd_report_kuwait))
+            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($premierService->gd_report_kuwait) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
         @if (!empty($premierService->passport_photocopy))
             Passport Photocopy : <a style="color:red;font-weight:bold" href="{{ asset($premierService->passport_photocopy) }}" target="_blank"> View </a> <div class="padding"></div>

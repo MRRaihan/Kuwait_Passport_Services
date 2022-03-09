@@ -91,13 +91,13 @@ class LostPassportController extends Controller
         $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
-        if ($request->hasFile('gd_report_uae')) {
-            $pdf             = $request->gd_report_uae;
+        if ($request->hasFile('gd_report_kuwait')) {
+            $pdf             = $request->gd_report_kuwait;
             $folder_path       = 'uploads/passport/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
-            $request->gd_report_uae->move(public_path($folder_path), $pdf_new_name);
-            $lostPassport->gd_report_uae = $folder_path . $pdf_new_name;
+            $request->gd_report_kuwait->move(public_path($folder_path), $pdf_new_name);
+            $lostPassport->gd_report_kuwait = $folder_path . $pdf_new_name;
         }
         if ($request->hasFile('application_form')) {
             $pdf             = $request->application_form;
@@ -230,15 +230,15 @@ class LostPassportController extends Controller
         $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
-        if ($request->hasFile('gd_report_uae')) {
-            if ($lostPassport->gd_report_uae != null)
-                File::delete(public_path($lostPassport->gd_report_uae)); //Old image delete
-            $pdf             = $request->gd_report_uae;
+        if ($request->hasFile('gd_report_kuwait')) {
+            if ($lostPassport->gd_report_kuwait != null)
+                File::delete(public_path($lostPassport->gd_report_kuwait)); //Old image delete
+            $pdf             = $request->gd_report_kuwait;
             $folder_path       = 'uploads/passport/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
-            $request->gd_report_uae->move(public_path($folder_path), $pdf_new_name);
-            $lostPassport->gd_report_uae = $folder_path . $pdf_new_name;
+            $request->gd_report_kuwait->move(public_path($folder_path), $pdf_new_name);
+            $lostPassport->gd_report_kuwait = $folder_path . $pdf_new_name;
         }
         if ($request->hasFile('application_form')) {
             if ($lostPassport->application_form != null)
@@ -355,13 +355,13 @@ class LostPassportController extends Controller
         $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
-        if ($request->hasFile('gd_report_uae')) {
-            $pdf             = $request->gd_report_uae;
+        if ($request->hasFile('gd_report_kuwait')) {
+            $pdf             = $request->gd_report_kuwait;
             $folder_path       = 'uploads/passport/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
-            $request->gd_report_uae->move(public_path($folder_path), $pdf_new_name);
-            $lostPassport->gd_report_uae = $folder_path . $pdf_new_name;
+            $request->gd_report_kuwait->move(public_path($folder_path), $pdf_new_name);
+            $lostPassport->gd_report_kuwait = $folder_path . $pdf_new_name;
         }
         if ($request->hasFile('application_form')) {
             $pdf             = $request->application_form;

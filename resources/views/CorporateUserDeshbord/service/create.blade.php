@@ -264,11 +264,11 @@
 
               @if ($type == 1)
                 <div class="my-4">
-                  <label for="gd_report_uae" class="form-label">Post Office ID</label>
-                  <input type="text" class="form-control select-forms" name="gd_report_uae" id="gd_report_uae" value="{{ old('gd_report_uae') }}"
+                  <label for="gd_report_kuwait" class="form-label">Post Office ID</label>
+                  <input type="text" class="form-control select-forms" name="gd_report_kuwait" id="gd_report_kuwait" value="{{ old('gd_report_kuwait') }}"
                     placeholder="Enter Your Special Skill" />
-                    @if($errors->has('gd_report_uae'))
-                      <span class="text-danger">{{ $errors->first('gd_report_uae') }}</span>
+                    @if($errors->has('gd_report_kuwait'))
+                      <span class="text-danger">{{ $errors->first('gd_report_kuwait') }}</span>
                     @endif
                 </div>
               @endif

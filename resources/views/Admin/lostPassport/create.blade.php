@@ -89,10 +89,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="gd_report_uae"> GD Report (Kuwait - Only PDF) </label>
-                                                <input name="gd_report_uae" class="form-control"
+                                                <label for="gd_report_kuwait"> GD Report (Kuwait - Only PDF) </label>
+                                                <input name="gd_report_kuwait" class="form-control"
                                                     type="file" accept="application/pdf">
-                                                @error('gd_report_uae')
+                                                @error('gd_report_kuwait')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
