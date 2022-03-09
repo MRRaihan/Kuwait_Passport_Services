@@ -436,7 +436,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
+                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -475,7 +475,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
+                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -513,7 +513,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
+                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -551,7 +551,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
+                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -589,7 +589,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Mobile no.</li>
+                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
