@@ -21,7 +21,7 @@
         Profession : {{ $lostPassport->profession->name }} <div class="padding"></div>
 
         @if (!empty($lostPassport->gd_report_uae))
-            GD Report UAE : <a style="color:red;font-weight:bold" href="{{ asset($lostPassport->gd_report_uae) }}" target="_blank"> View </a> <div class="padding"></div>
+            GD Report Kuwait : <a style="color:red;font-weight:bold" href="{{ asset($lostPassport->gd_report_uae) }}" target="_blank"> View </a> <div class="padding"></div>
         @endif
         @if (!empty($lostPassport->passport_photocopy))
             Passport Photocopy : <a style="color:red;font-weight:bold" href="{{ asset($lostPassport->passport_photocopy) }}" target="_blank"> View </a> <div class="padding"></div>

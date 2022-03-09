@@ -95,7 +95,7 @@
                 <div>
                     <a href="{{ route('corporateUser.profile.update') }}">
                         <button class="btn-lightWhite my-1 p-2 {{\Illuminate\Support\Facades\Request::is('corporate/profile-update') ? 'user-sidebar-active': ''}}">
-                        <i class="far fa-address-card mx-2"></i>Profile 
+                        <i class="far fa-address-card mx-2"></i>Profile
                         </button>
                     </a>
                 </div>
@@ -116,7 +116,7 @@
       </section>
       <footer class="footerClass d-flex justify-content-center">
         <p class="text-center">
-          © Versatilo London Corporation 2022 - UAE
+          © Versatilo London Corporation {{ date('Y') }} - Kuwait
         </p>
       </footer>
     </div>

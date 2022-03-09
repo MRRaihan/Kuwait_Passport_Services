@@ -118,7 +118,7 @@
       </section>
       <footer class="footerClass d-flex justify-content-center">
         <p class="text-center">
-          © Versatilo London Corporation 2022 - UAE
+          © Versatilo London Corporation{{ date('Y') }} - Kuwait
         </p>
       </footer>
     </div>
