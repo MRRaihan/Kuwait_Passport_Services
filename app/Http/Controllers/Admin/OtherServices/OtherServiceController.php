@@ -80,7 +80,7 @@ class OtherServiceController extends Controller
         $otherService->residence = $request->residence;
         $otherService->mailing_address = $request->mailing_address;
         $otherService->permanent_address = $request->permanent_address;
-        $otherService->ems = 'OS' . time() . 'UAE';
+        $otherService->ems = 'OS' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 

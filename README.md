@@ -1,6 +1,6 @@
 ## Follow belows steps to install this project
 
--   Download the project or clone it `git clone git@github.com:MRRaihan/UAEProject`
+-   Download the project or clone it `git clone git@github.com:MRRaihan/UAEConvertedToKuwaitProject`
 -   **Run:** `cp .env.example .env` then configure your database
 -   **Run:** `composer install`
 -   **Run:** `npm install && npm run dev`

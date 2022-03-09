@@ -98,7 +98,7 @@ class RenewPassportController extends Controller
         $renewPassport->passport_type_government_fee = $type_govt_fee;
         $renewPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $renewPassport->passport_type_fees_total = $total_fee;
-        $renewPassport->ems = 'RP' . time() . 'UAE';
+        $renewPassport->ems = 'RP' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 
@@ -371,7 +371,7 @@ class RenewPassportController extends Controller
         $renewPassport->passport_type_government_fee = $type_govt_fee;
         $renewPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $renewPassport->passport_type_fees_total = $total_fee;
-        $renewPassport->ems = 'RP' . time() . 'UAE';
+        $renewPassport->ems = 'RP' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 

@@ -90,7 +90,7 @@ class LostPassportController extends Controller
         $lostPassport->passport_type_government_fee = $type_govt_fee;
         $lostPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $lostPassport->passport_type_fees_total = $total_fee;
-        $lostPassport->ems = 'LP' . time() . 'UAE';
+        $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
         if ($request->hasFile('gd_report_uae')) {
@@ -215,7 +215,7 @@ class LostPassportController extends Controller
         $lostPassport->passport_type_government_fee = $type_govt_fee;
         $lostPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $lostPassport->passport_type_fees_total = $total_fee;
-        $lostPassport->ems = 'LP' . time() . 'UAE';
+        $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
         if ($request->hasFile('gd_report_uae')) {
@@ -378,7 +378,7 @@ class LostPassportController extends Controller
         $lostPassport->passport_type_government_fee = $type_govt_fee;
         $lostPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $lostPassport->passport_type_fees_total = $total_fee;
-        $lostPassport->ems = 'LP' . time() . 'UAE';
+        $lostPassport->ems = 'LP' . time() . 'Kuwait';
 
 
         if ($request->hasFile('gd_report_uae')) {

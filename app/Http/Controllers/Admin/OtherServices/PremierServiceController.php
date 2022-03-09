@@ -98,7 +98,7 @@ class PremierServiceController extends Controller
         $Services->total_fee =  $agency + $govt + $consultants + $ohters +  $versatilo;
         $Services->creator_id = Auth::user()->id;
         $Services->branch_id = Auth::user()->branch_id;
-        $Services->ems = 'PS' . time() . 'UAE';
+        $Services->ems = 'PS' . time() . 'Kuwait';
 
         $Services->versetilo_fee = $versatilo;
         $Services->agency_fee = $agency;

@@ -108,7 +108,7 @@ class FrontendController extends Controller
             $passport = new RenewPassport();
             $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
-            $passport->ems = 'RP' . time() . 'UAE';
+            $passport->ems = 'RP' . time() . 'Kuwait';
         }
 
 
@@ -117,7 +117,7 @@ class FrontendController extends Controller
             $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id', 'post_office']));
             $passport->delivery_date = get_threeMonth_tenDays();
             $passport->post_office = $request->post_office;
-            $passport->ems = 'MP' . time() . 'UAE';
+            $passport->ems = 'MP' . time() . 'Kuwait';
         }
 
 
@@ -125,14 +125,14 @@ class FrontendController extends Controller
             $passport = new LostPassport();
             $passport->fill($request->except(['gd_report_uae', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
-            $passport->ems = 'LP' . time() . 'UAE';
+            $passport->ems = 'LP' . time() . 'Kuwait';
         }
 
 
         if ($request->passport_type == 3) {
             $passport = new NewBornBabyPassport();
             $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
-            $passport->ems = 'EP' . time() . 'UAE';
+            $passport->ems = 'EP' . time() . 'Kuwait';
         }
 
 

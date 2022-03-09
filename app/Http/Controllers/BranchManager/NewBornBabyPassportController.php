@@ -100,7 +100,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_type_government_fee = $type_govt_fee;
         $newBornBabyPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $newBornBabyPassport->passport_type_fees_total = $total_fee;
-        $newBornBabyPassport->ems = 'EP' . time() . 'UAE';
+        $newBornBabyPassport->ems = 'EP' . time() . 'Kuwait';
 
 
         if ($request->hasFile('dob_file')) {
@@ -242,7 +242,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_type_government_fee = $type_govt_fee;
         $newBornBabyPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $newBornBabyPassport->passport_type_fees_total = $total_fee;
-        $newBornBabyPassport->ems = 'EP' . time() . 'UAE';
+        $newBornBabyPassport->ems = 'EP' . time() . 'Kuwait';
 
         if (isset($request->status)) {
             $newBornBabyPassport->status = $request->status;
@@ -352,7 +352,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_type_government_fee = $type_govt_fee;
         $newBornBabyPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $newBornBabyPassport->passport_type_fees_total = $total_fee;
-        $newBornBabyPassport->ems = 'EP' . time() . 'UAE';
+        $newBornBabyPassport->ems = 'EP' . time() . 'Kuwait';
 
         if ($request->hasFile('dob_file')) {
             $pdf             = $request->dob_file;

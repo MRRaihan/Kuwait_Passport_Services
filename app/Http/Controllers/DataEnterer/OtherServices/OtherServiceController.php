@@ -80,7 +80,7 @@ class OtherServiceController extends Controller
         $otherPassport->residence = $request->residence;
         $otherPassport->mailing_address = $request->mailing_address;
         $otherPassport->permanent_address = $request->permanent_address;
-        $otherPassport->ems = 'OS' . time() . 'UAE';
+        $otherPassport->ems = 'OS' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 

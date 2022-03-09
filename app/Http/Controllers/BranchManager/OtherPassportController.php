@@ -75,7 +75,7 @@ class OtherPassportController extends Controller
         $otherPassport->residence = $request->residence;
         $otherPassport->mailing_address = $request->mailing_address;
         $otherPassport->permanent_address = $request->permanent_address;
-        $otherPassport->ems = 'EP' . time() . 'UAE';
+        $otherPassport->ems = 'EP' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 

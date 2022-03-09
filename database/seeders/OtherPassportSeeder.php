@@ -26,7 +26,7 @@ class OtherPassportSeeder extends Seeder
             // $lostPassport->govt_passport_id = $faker->phoneNumber();
             $lostPassport->mailing_address = $faker->email();
             $lostPassport->permanent_address = $faker->country();
-            $lostPassport->ems = 'EP' . time() . 'UAE';
+            $lostPassport->ems = 'EP' . time() . 'Kuwait';
             // $lostPassport->profession_file = $faker->text(10);
             // $lostPassport->passport_photocopy = $faker->text(10);
             $lostPassport->uae_phone = '01777382007';

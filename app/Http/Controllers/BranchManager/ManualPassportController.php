@@ -108,7 +108,7 @@ class ManualPassportController extends Controller
         $manualPassport->passport_type_government_fee = $type_govt_fee;
         $manualPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $manualPassport->passport_type_fees_total = $total_fee;
-        $manualPassport->ems = 'MP' . time() . 'UAE';
+        $manualPassport->ems = 'MP' . time() . 'Kuwait';
 
 
         if ($request->hasFile('profession_file')) {
@@ -259,7 +259,7 @@ class ManualPassportController extends Controller
         $manualPassport->passport_type_government_fee = $type_govt_fee;
         $manualPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $manualPassport->passport_type_fees_total = $total_fee;
-        $manualPassport->ems = 'MP' . time() . 'UAE';
+        $manualPassport->ems = 'MP' . time() . 'Kuwait';
 
         if (isset($request->status)) {
             $manualPassport->status = $request->status;
@@ -401,7 +401,7 @@ class ManualPassportController extends Controller
         $manualPassport->passport_type_government_fee = $type_govt_fee;
         $manualPassport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $manualPassport->passport_type_fees_total = $total_fee;
-        $manualPassport->ems = 'MP' . time() . 'UAE';
+        $manualPassport->ems = 'MP' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 

@@ -96,36 +96,36 @@ class CorporateServiceController extends Controller
 
         if ($request->passport_type == 0) {
             $passport = new RenewPassport();
-            $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id'])); 
+            $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
-            $passport->ems = 'RP' . time() . 'UAE';
-            
+            $passport->ems = 'RP' . time() . 'Kuwait';
+
         }
 
 
         if ($request->passport_type == 1) {
             $passport = new ManualPassport();
-            $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id'])); 
+            $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
-            $passport->ems = 'MP' . time() . 'UAE';
+            $passport->ems = 'MP' . time() . 'Kuwait';
         }
 
 
         if ($request->passport_type == 2) {
             $passport = new LostPassport();
-            $passport->fill($request->except(['gd_report_uae', 'application_form', 'passport_photocopy', 'passport_type','delivery_id'])); 
+            $passport->fill($request->except(['gd_report_uae', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
             $passport->delivery_date = get_threeMonth_tenDays();
-            $passport->ems = 'LP' . time() . 'UAE';
+            $passport->ems = 'LP' . time() . 'Kuwait';
         }
 
 
         if ($request->passport_type == 3) {
             $passport = new NewBornBabyPassport();
-            $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id'])); 
-            $passport->ems = 'EP' . time() . 'UAE';
+            $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
+            $passport->ems = 'EP' . time() . 'Kuwait';
         }
 
-   
+
 
         $fee = PassportFee::findOrfail($request->passport_type_id);
         $type_title = $fee->title;
@@ -137,8 +137,8 @@ class CorporateServiceController extends Controller
         $passport->passport_type_government_fee = $type_govt_fee;
         $passport->passport_type_versatilo_fee =  $type_versatilo_fee;
         $passport->passport_type_fees_total = $total_fee;
-       
-         
+
+
         $passport->user_creator_id = Auth::user()->id;
         $passport->entry_person = Auth::user()->id;
         $passport->delivery_branch = $request->branch_id;
@@ -273,7 +273,7 @@ class CorporateServiceController extends Controller
             'permanent_address' => 'required',
         ]);
 
-      
+
         $passport_type = explode('&', $data)[0];
         $passport_id = explode('&', $data)[1] ? explode('&', $data)[1] : '';
 
@@ -307,12 +307,12 @@ class CorporateServiceController extends Controller
             $passport->passport_type_government_fee = $type_govt_fee;
             $passport->passport_type_versatilo_fee =  $type_versatilo_fee;
             $passport->passport_type_fees_total = $total_fee;
-   
-        
+
+
             $passport->delivery_branch = $request->branch_id;
             $passport->delivery_method = $request->delivery_id;
 
-       
+
         if ($request->hasFile('dob_file')) {
             if ($passport->dob_file != null)
                 File::delete(public_path($passport->dob_file)); //Old pdf delete
@@ -340,8 +340,8 @@ class CorporateServiceController extends Controller
         if ($request->hasFile('passport_photocopy')) {
             if ($passport->passport_photocopy != null)
                 File::delete(public_path($passport->passport_photocopy)); //Old image delete
-           
-            
+
+
             $image             = $request->file('passport_photocopy');
             $folder_path       = 'uploads/passport/documents/';
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
@@ -361,7 +361,7 @@ class CorporateServiceController extends Controller
             $request->profession_file->move(public_path($folder_path), $pdf_new_name);
             $passport->profession_file = $folder_path . $pdf_new_name;
         }
-        
+
         if ($request->hasFile('application_form')) {
             if ($passport->application_form != null)
                 File::delete(public_path($passport->application_form)); //Old pdf delete
@@ -373,7 +373,7 @@ class CorporateServiceController extends Controller
             $request->application_form->move(public_path($folder_path), $pdf_new_name);
             $passport->application_form = $folder_path . $pdf_new_name;
         }
-        
+
 
         $passport->save();
 
@@ -461,5 +461,5 @@ class CorporateServiceController extends Controller
 
         return view('CorporateUserDeshbord.service.payment_list', $data);
     }
-    
+
 }

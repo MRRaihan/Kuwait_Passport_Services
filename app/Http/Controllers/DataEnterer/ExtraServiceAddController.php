@@ -91,16 +91,16 @@ class ExtraServiceAddController extends Controller
         //menual and fix fee count end
         if ($request->service_type == "premiem_service") {
             $Services = new PremierService();
-            $ems = 'PS' . time() . 'UAE';
+            $ems = 'PS' . time() . 'Kuwait';
         } elseif ($request->service_type == "express_service") {
             $Services = new ExpressService();
-            $ems = 'ES' . time() . 'UAE';
+            $ems = 'ES' . time() . 'Kuwait';
         } elseif ($request->service_type == "legel_service") {
             $Services = new LegalComplaintsService();
-            $ems = 'LS' . time() . 'UAE';
+            $ems = 'LS' . time() . 'Kuwait';
         } elseif ($request->service_type == "immegraion_service") {
             $Services = new ImmigrationGovementService();
-            $ems = 'IS' . time() . 'UAE';
+            $ems = 'IS' . time() . 'Kuwait';
         }
         $Services->name = $request->name;
         $Services->passport_number = $request->passport_number;
