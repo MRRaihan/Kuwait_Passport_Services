@@ -23,6 +23,6 @@ class StaticOptionSeeder extends Seeder
         set_static_option('banner_btn_url', '#passport');
         set_static_option('footer_email', ' tfpsolutionsbd@gmail.com');
         set_static_option('footer_phone', ' +971 50 852 5155');
-        set_static_option('footer_address', 'Office 19, Dubai National Insurance Building, Port Saeed, Deira,Dubai,UAE');
+        set_static_option('footer_address', '(Complex 9A, Nasser sports), Block-3(41), Street-Habeeb Manuawar, Office- Second Floor, Farwania, Kuwait');
     }
 }
