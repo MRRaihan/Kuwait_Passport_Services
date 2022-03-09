@@ -75,7 +75,7 @@
                     @endif
                     <th scope="col">Emirates ID</th>
                     <th scope="col">Passport NO.</th>
-                    <th scope="col">UAE NO.</th>
+                    <th scope="col">Kuwait Phone</th>
                     <th scope="col">BARCODE.</th>
                     <th scope="col">EMS</th>
                     <th scope="col">Versatilo Fee</th>

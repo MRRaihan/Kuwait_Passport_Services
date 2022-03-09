@@ -8,7 +8,7 @@
         @endif
         <th><b>Emirates ID</b></th>
         <th><b>Passport NO.</b></th>
-        <th><b>UAE NO.</b></th>
+        <th><b>Kuwait Phone</b></th>
         <th><b>BARCODE.</b></th>
         <th><b>EMS</b></th>
         <th><b>Versatilo Fee</b></th>
@@ -39,7 +39,7 @@
             <td style="width: 150px;">{{ $passport->passport_type_versatilo_fee }}</td>
             <td style="width: 150px;">{{ $passport->passport_type_government_fee }}</td>
             <td style="width: 150px;">{{ $passport->passport_type_fees_total }}</td>
-           
+
         </tr>
           @php
               $total_versatilo_fee += $passport->passport_type_versatilo_fee;
@@ -47,7 +47,7 @@
               $total_fee  += $passport->passport_type_fees_total;
           @endphp
       @endforeach
-    
+
   @endif
   <tr>
     <td colspan="{{ $option == 1 ? '9' : '8' }}"></td>
@@ -63,5 +63,5 @@
     </td>
     <td style="width: 150px;"></td>
   </tr>
-    
+
   </table>

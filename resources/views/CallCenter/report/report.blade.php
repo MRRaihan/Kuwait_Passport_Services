@@ -48,7 +48,7 @@
                     @endif
                     <th scope="col">Emirates ID</th>
                     <th scope="col">Passport NO.</th>
-                    <th scope="col">UAE NO.</th>
+                    <th scope="col">Kuwait Phone</th>
                     <th scope="col">BARCODE.</th>
                     <th scope="col">EMS</th>
                     <th scope="col">Remarks By</th>
@@ -79,7 +79,7 @@
                           <td>{{ $passport->ems }}</td>
                           <td class="text-right">{{ $passport->remarksBy ? $passport->remarksBy->name : '' }}</td>
                           <td class="text-right">
-                            @if ($passport->remarks === '0' || $passport->remarks === '1' || $passport->remarks === '2' || $passport->remarks === '3') 
+                            @if ($passport->remarks === '0' || $passport->remarks === '1' || $passport->remarks === '2' || $passport->remarks === '3')
                                 {{ remarks()[$passport->remarks] }}
                                 @else
                                 {{ $passport->remarks }}
