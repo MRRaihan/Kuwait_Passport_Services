@@ -1,0 +1,64 @@
+.add-on-container {
+    border: 1px rgba(40, 176, 255, 0.205) solid;
+    border-radius: 5px 20px 5px 5px;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+        rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+    padding-left: 30px;
+    padding: 30px;
+}
+
+.add-on-item-parent {
+    /* display: flex; */
+    /* gap: 10px;
+    margin-top: 2px; */
+}
+
+.add-option {
+    height: 40px;
+    margin-top: 6px;
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    padding-left: 30px;
+    /* padding-top: 6px; */
+}
+
+.add-option-container {
+    display: none;
+}
+
+.add-option .check-box {
+    margin-top: 3px;
+}
+
+.add-on-input input {
+    height: 28px;
+}
+
+.nav-tabs {
+    background-color: #f8cb4e86;
+}
+.manual-fee-input-container {
+    display: none;
+}
+.manual-fee-input-container-block {
+    display: block;
+}
+.manual-fee-input {
+    display: flex;
+    gap: 10px;
+}
+
+.manual-fee-input input {
+    height: 100%;
+    border: #03a9f4 1px solid;
+    margin-top: -4px;
+}
+.manual-fee-input input:focus {
+    border: #000000 1px solid;
+}
+/* .custome_radio{
+    padding:2%;
+
+} */

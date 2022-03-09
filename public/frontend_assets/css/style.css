@@ -1,0 +1,350 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+.wrapper {
+    padding-top: 8.25rem;
+    padding-bottom: 5.25rem;
+}
+
+/*============ Header style============= */
+.header-bar {
+    background: #f4f9fd;
+}
+
+.nav-link {
+    color: #323b6ea8 !important;
+    font-weight: 600;
+}
+
+.active,
+.btn1:hover {
+    color: #2b92d5 !important;
+    font-weight: bold;
+}
+
+.active,
+.btn1:focus {
+    box-shadow: none;
+}
+
+/* .nav-link:hover {
+    color: #2460C5 !important;
+}
+.nav-link a:focus{
+    color: #2460C5 !important;
+} */
+.header-btn {
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #2b92d5 100%) 0%
+        0% no-repeat padding-box;
+    border: none;
+    position: relative;
+    border-radius: 5px;
+}
+
+.header-content h2 {
+    color: #2b92d5;
+    font-weight: bold;
+}
+
+.header-content p {
+    color: #2b92d5;
+}
+/* .top-banner{
+
+    background-image: url(../img/Group_94-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:contain;
+
+} */
+
+/*============ Project status============= */
+.main-card {
+    border: none !important;
+    border-radius: 15px;
+}
+
+.status-number {
+    font-size: 18px;
+    color: #2b92d5;
+}
+
+.status-info {
+    color: #2b92d5;
+}
+
+.vl {
+    border-left: 5px solid #37c9ee;
+    border-radius: 5px;
+}
+
+/*============ Our Services============= */
+.line {
+    width: 200px;
+    height: 0;
+    border: 3px solid #37c9ee;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line2 {
+    width: 220px;
+    height: 0;
+    border: 3px solid #37c9ee;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line3 {
+    width: 270px;
+    height: 0;
+    border: 3px solid #37c9ee;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line4 {
+    width: 350px;
+    height: 0;
+    border: 3px solid #37c9ee;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.service-card {
+    border: none !important;
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #4da6e0 100%) 0%
+        0% no-repeat padding-box;
+}
+
+.service-img {
+    height: 80px;
+    width: 80px;
+}
+
+ul.b {
+    list-style-type: square;
+    font-size: 20px;
+}
+
+.pricing {
+    background: #fafafa;
+}
+.pricing-card {
+    border: none !important;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.pricing-card:hover {
+    transform: scale(1.1);
+    transition: 1s;
+}
+.card-bottom li {
+    margin-bottom: 3px;
+    font-size: 14px;
+}
+
+.passport-card {
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #2f9ae0 100%) 0%
+        0% no-repeat padding-box;
+    border: none;
+    border-radius: 10px;
+}
+
+.passport-btn {
+    background: transparent linear-gradient(180deg, #ffffff 0%, #f1f1f1 100%) 0%
+        0% no-repeat padding-box;
+}
+
+.owl-card {
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #349ee3 100%) 0%
+        0% no-repeat padding-box;
+    border-radius: 10px;
+    border: none !important;
+}
+
+.person-img {
+    height: 90px;
+    width: 90px;
+}
+.person-img img {
+    border-radius: 15px;
+}
+
+footer {
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #2f9ce2 100%) 0%
+        0% no-repeat padding-box;
+}
+.footer-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    color: white !important;
+}
+.footer-list li {
+    margin-bottom: 10px;
+}
+.footer-list li a {
+    text-decoration: none;
+    color: white !important;
+    font-size: 15px;
+}
+.footer-list li a:hover {
+    font-weight: bold;
+    color: #075485 !important;
+}
+.footer-card {
+    background: transparent linear-gradient(180deg, #37c9ee 0%, #41d2d6 100%) 0%
+        0% no-repeat padding-box;
+    border: none !important;
+    border-radius: 0 40px 0 40px;
+}
+.buttons a {
+    text-decoration: none;
+    color: white !important;
+}
+.buttons a:hover {
+    font-weight: bold;
+    color: #075485 !important;
+}
+
+/* card see more style */
+#more1 {
+    display: none;
+}
+#more2 {
+    display: none;
+}
+#more3 {
+    display: none;
+}
+#more4 {
+    display: none;
+}
+
+#more5 {
+    display: none;
+}
+
+/*=========== animation start=============== */
+
+.step-indicator {
+    /* margin-top: 50px; */
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+}
+
+.step-indicator .step-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #c2c2c2;        
+    font-size: 10px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.step-indicator .active-step-icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background: #15b3ee;        
+    font-size: 10px;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+    line-height: 50px;
+    font-size: 20px;
+}
+
+.step.active .step-icon {
+    /* // background: crimson; */
+}
+
+.step p {
+    text-align: center;
+    position: absolute;
+    bottom: -60px;
+
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.step.active p {
+}
+
+.step.step2 p,
+.step.step3 p {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.indicator-line {
+    width: 100%;
+    height: 2px;
+    background: #c2c2c2;
+    flex: 1;
+}
+
+.indicator-line.active {
+}
+.accordion-button::after {
+    margin: 0 auto !important;
+
+    text-align: center;
+    background-color: #37c9ee !important;
+    border-radius: 50%;
+}
+/* .accordion-body{
+    text-align: left;
+} */
+
+.accordion-button.collapsed {
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+/* .accordion-button.collapsed{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  } */
+.accordion-button.collapsed::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+.accordion-button:not(.collapsed) {
+    background-color: white !important;
+    box-shadow: none !important;
+}
+.accordion-item {
+    border: none !important;
+}
+@media screen and (max-width: 500px) {
+    .step p {
+        font-size: 11px;
+        bottom: -50px;
+    }
+}
+
+.pricing_container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
