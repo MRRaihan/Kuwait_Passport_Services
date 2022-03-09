@@ -1,0 +1,241 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.wrapper {
+    padding-top: 8.25rem;
+    padding-bottom: 5.25rem;
+}
+
+/*============ Header style============= */
+.header-bar {
+    background: #F4F9FD;
+}
+
+.nav-link {
+    color: #323b6ea8 !important;
+    font-weight: 600;
+}
+
+
+
+.active, .btn1:hover {
+    color: #2B92D5 !important;
+    font-weight: bold;
+    
+    
+    }
+    
+    .active, .btn1:focus{
+    box-shadow: none;
+    }
+
+
+
+
+    
+/* .nav-link:hover {
+    color: #2460C5 !important;
+}
+.nav-link a:focus{
+    color: #2460C5 !important;
+} */
+.header-btn {
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #2B92D5 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    position: relative;
+    border-radius: 5px;
+}
+
+.header-content h2 {
+    color: #2B92D5;
+    font-weight: bold;
+}
+
+.header-content p {
+    color: #2B92D5;
+}
+/* .top-banner{
+   
+    background-image: url(../img/Group_94-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-position:center;
+    background-size:contain;
+
+} */
+
+/*============ Project status============= */
+.main-card {
+    border: none !important;
+    border-radius: 15px;
+}
+
+.status-number {
+    font-size: 18px;
+    color: #2B92D5;
+}
+
+.status-info {
+    color: #2B92D5;
+}
+
+.vl {
+    border-left: 5px solid #37C9EE;
+    border-radius: 5px;
+}
+
+/*============ Our Services============= */
+.line {
+    width: 200px;
+    height: 0;
+    border: 3px solid #37C9EE;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line2 {
+    width: 220px;
+    height: 0;
+    border: 3px solid #37C9EE;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line3 {
+    width: 270px;
+    height: 0;
+    border: 3px solid #37C9EE;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.line4 {
+    width: 350px;
+    height: 0;
+    border: 3px solid #37C9EE;
+    border-radius: 5px;
+    /* display:inline-block; */
+}
+.service-card {
+    border: none !important;
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #4DA6E0 100%) 0% 0% no-repeat padding-box;
+}
+
+.service-img {
+    height: 80px;
+    width: 80px;
+}
+
+
+ul.b {
+    list-style-type: square;
+    font-size:20px;
+  }
+
+
+
+.pricing{
+    background:#FAFAFA;
+}
+.pricing-card{
+    border: none !important;
+    cursor: pointer;
+    border-radius:10px;
+}
+.pricing-card:hover{
+    transform: scale(1.1);
+    transition: 1s;
+}
+.card-bottom li{
+    margin-bottom:3px;
+    font-size: 14px;
+}
+
+
+.passport-card{
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #2F9AE0 100%) 0% 0% no-repeat padding-box;
+    border: none;
+    border-radius:10px;
+}
+
+
+.passport-btn{
+    background: transparent linear-gradient(180deg, #FFFFFF 0%, #F1F1F1 100%) 0% 0% no-repeat padding-box;
+}
+
+
+
+.owl-card{
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #349EE3 100%) 0% 0% no-repeat padding-box;
+    border-radius: 10px;
+    border: none !important;
+}
+
+.person-img{
+    height:90px;
+    width:90px;
+
+}
+.person-img img{
+    border-radius: 15px;
+}
+
+footer{
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #2F9CE2 100%) 0% 0% no-repeat padding-box;
+}
+.footer-list{
+    list-style-type: none;
+    margin: 0;
+  padding: 0;
+  color: white !important;
+}
+.footer-list li{
+   margin-bottom:10px;
+}
+.footer-list li a{
+    text-decoration: none;
+    color: white !important;
+    font-size: 15px;
+}
+.footer-list li a:hover{
+    font-weight: bold;
+    color:#075485 !important;
+}
+.footer-card{
+    background: transparent linear-gradient(180deg, #37C9EE 0%, #41D2D6 100%) 0% 0% no-repeat padding-box;
+    border: none !important;
+    border-radius: 0 40px 0 40px;
+}
+.buttons a{
+    text-decoration: none;
+    color: white !important;
+}
+.buttons a:hover{
+    font-weight: bold;
+    color:#075485 !important;
+}
+
+
+/* card see more style */
+#more1 {
+    display: none;
+  }
+  #more2 {
+    display: none;
+  }
+  #more3 {
+    display: none;
+  }
+  #more4 {
+    display: none;
+  }
+
+  #more5 {
+    display: none;
+  }
+
+/*=========== animation start=============== */

@@ -1,0 +1,78 @@
+.card-evnets {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.card-info {
+    padding-left: 25px;
+    padding-right: 10px;
+}
+
+.card-image {
+    padding: 10px;
+    margin: auto 0px;
+}
+.card-border {
+    border-right: rgb(226, 226, 226) 1px solid;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+}
+
+.badge-pill {
+    margin-right: 5px;
+}
+
+.online-status {
+    margin-top: -29px;
+    margin-right: -5px;
+    float: right;
+}
+
+.card_round {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.card_shadow:hover {
+    cursor: pointer;
+    color: white;
+    box-shadow: 1px 1px 1px rgba(218, 218, 218, 0.699),
+        0 0 25px rgb(167, 167, 167), 0 0 5px rgb(214, 214, 214);
+}
+
+.card-name {
+    margin-top: 5px;
+}
+
+.btn_round {
+    color: #01ba9a;
+    border-radius: 5px;
+    border: rgb(201, 201, 201) 1px solid;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+}
+
+.btn_round:hover {
+    background-color: #01ba9a;
+    color: seashell;
+}
+
+.category_round_batch {
+    color: #ffffff;
+    border-radius: 20px;
+    border: rgb(201, 201, 201) 1px solid;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    position: absolute;
+    z-index: 999;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.247);
+}

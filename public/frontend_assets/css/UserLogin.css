@@ -1,0 +1,289 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.input-field:focus {
+    box-shadow: none !important;
+}
+.userLoginBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/loginUserMainBg-ConvertImage.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.managerLoginBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/managerBg.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.adminLoginBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/janina.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.embassyLoginBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/EmbassyBg-ConvertImage.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.callCenterBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/callCenterBg-ConvertImage.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.dataEntryBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/hudai-ConvertImage.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.accountsBackground {
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/accountsBg-ConvertImage.jpg");
+    min-height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.userLoginBgImg {
+    margin: 0;
+    padding: 0;
+    background-image: url("/frontend_assets/img/Landing-page/images/Raw/User.png");
+    /* min-height: 100vh; */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.userLoginPageContainer {
+    width: 90%;
+    margin: 2rem;
+}
+
+.userLoginBgBorderRadius {
+    overflow: hidden;
+    border: none;
+    border-radius: 3rem;
+}
+
+.verstaile-form-logo {
+    width: 7vw;
+}
+
+.backContainer {
+    background-image: url("../assest/img/Mask-Group-4.png");
+    height: 10vh;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.userFormHeading {
+    color: #37c9ee;
+}
+
+.noBorderField .form-control {
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #000000;
+}
+
+.formDivMain {
+    width: 30rem;
+}
+
+.createAcc {
+    display: none;
+}
+
+.btn-1 {
+    background-image: radial-gradient(
+        circle 248px at center,
+        #16d9e3 0%,
+        #30c7ec 47%,
+        #46aef7 100%
+    );
+    box-shadow: 10px 10px 40px #ade8f7;
+    border: none;
+}
+
+.buttonText {
+    color: #37c9ee;
+}
+
+@media only screen and (max-width: 375px) {
+    .backRightFont {
+        font-size: 20px;
+    }
+    .backContainer {
+        display: none;
+    }
+    .verstaile-form-logo {
+        width: 5rem;
+        margin-top: 1.5rem !important;
+    }
+    .formContainerResponsive {
+        padding-top: 0 !important;
+    }
+    .userLoginBgBorderRadius {
+        padding: 0 1rem;
+        border-radius: 2rem !important;
+    }
+    .btn-1 {
+        padding: 8px !important;
+        box-shadow: 10px 10px 40px #ade8f7;
+        margin-bottom: 2rem !important;
+    }
+    .buttonPaddingTop {
+        padding-top: 0 !important;
+    }
+    .userLoginBackground {
+        min-height: 70vh;
+    }
+}
+
+@media screen and (max-width: 768px) and (min-width: 410px) {
+    .backRightFont {
+        font-size: 20px;
+    }
+
+    .verstaile-form-logo {
+        width: 5rem;
+        margin-top: 0 !important;
+    }
+    .formContainerResponsive {
+        padding-top: 0 !important;
+    }
+    .userLoginBgBorderRadius {
+        padding: 0 1rem;
+        border-radius: 2rem !important;
+    }
+    .btn-1 {
+        padding: 8px !important;
+        box-shadow: 10px 10px 40px #ade8f7;
+        margin-bottom: 2rem !important;
+    }
+    .buttonPaddingTop {
+        padding-top: 0 !important;
+    }
+
+    .userLoginBgImgChild {
+        height: 56vh !important;
+    }
+}
+
+@media only screen and (width: 768px) {
+    .verstaile-form-logo {
+        width: 6rem;
+        margin-top: -1rem !important;
+    }
+}
+
+@media only screen and (width: 414px) {
+    .backContainer {
+        display: none;
+    }
+    .verstaile-form-logo {
+        width: 5rem;
+        margin-top: 1rem !important;
+    }
+}
+
+@media only screen and (width: 411px) {
+    .backContainer {
+        display: none;
+    }
+    .verstaile-form-logo {
+        width: 5rem;
+        margin-top: 0.8rem !important;
+    }
+}
+
+@media only screen and (width: 320px) {
+    .formContainerResponsive {
+        padding: 1rem !important;
+    }
+}
+
+@media only screen and (width: 1280px) {
+    .userLoginBgImgChild {
+        height: 89vh;
+    }
+    .verstaile-form-logo {
+        width: 9vw;
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .userLoginBgImgChild {
+        height: 55vh !important;
+    }
+    .verstaile-form-logo {
+        width: 9vw;
+    }
+    .formContainerResponsive {
+        padding-top: 1rem !important;
+    }
+}
+
+@media only screen and (width: 540px) {
+    .userLoginBgImgChild {
+        height: auto !important;
+    }
+    .backContainer {
+        display: none;
+    }
+    .verstaile-form-logo {
+        width: 5rem;
+        margin-top: 1rem !important;
+    }
+}
+
+.click-action {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+/* user otp start */
+.otp-text-container {
+    width: 70%;
+}
+.otp-input-container {
+    display: flex;
+    gap: 24px;
+}
+
+.otp-input-container .otp-input-item {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border: 2px solid #37c9ee;
+    border-radius: 10px;
+    padding: 5px;
+    padding-left: 18px;
+}
+#otp-btn {
+    background: transparent linear-gradient(131deg, #3fd9d7 0%, #37c9ee 100%) 0%
+        0% no-repeat padding-box;
+}
+.sent-agin-otp {
+    visibility: hidden;
+}
