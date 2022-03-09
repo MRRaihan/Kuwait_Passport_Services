@@ -162,7 +162,7 @@
                     </div>
 
                     <div class="my-4">
-                      <label for="uae_phone" class="form-label">Phone Number <sup>UAE</sup>
+                      <label for="uae_phone" class="form-label">Phone Number <sup>Kuwait</sup>
                       </label>
                       <input type="text" class="form-control select-forms" name="uae_phone" id="uae_phone"
                         placeholder="+971" />
@@ -184,7 +184,7 @@
                         placeholder="+971" />
                     </div>
                     <div class="my-4">
-                      <label for="gd_report_uae" class="form-label">GD report <sup>UAE</sup></label>
+                      <label for="gd_report_uae" class="form-label">GD report <sup>Kuwait</sup></label>
                       <input type="file" class="form-control select-forms" name="gd_report_uae" id="gd_report_uae"
                         placeholder="+971" />
                     </div>

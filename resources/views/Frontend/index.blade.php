@@ -137,11 +137,11 @@
                             {{-- <h2>BE A HAPPY USER OF</h2>
                             <h2>HAPPY CENTRE</h2>
                             <p class="mt-3 text-justify">
-                                Happy Centre is working on behalf of the Bangladesh Embassy in UAE to provide passport
-                                and legalization services for the Bangladeshi workers in UAE. It Provides you with the
+                                Happy Centre is working on behalf of the Bangladesh Embassy in Kuwait to provide passport
+                                and legalization services for the Bangladeshi workers in Kuwait. It Provides you with the
                                 latest information and guidelines on the passport application procedures involved in
-                                making the application for a Bangladeshi passport from UAE. Happy Centre is one of the
-                                most established name in UAE. We provide easy to understand passport and visa overviews,
+                                making the application for a Bangladeshi passport from Kuwait. Happy Centre is one of the
+                                most established name in Kuwait. We provide easy to understand passport and visa overviews,
                                 instructions and forms, as well as technology including real time order tracking,
                                 on-line chat services, automated email updating, fully dynamic website feeding off the
                                 most up-to-date requirement changes, and the highest levels of digital security
@@ -231,7 +231,7 @@
                                     <h2 class="my-3 text-light">Renew Passport</h2>
                                     <p class="my-2 text-light text-justify">
                                         Individuals whose passports are expired or closed to the expiry date can get
-                                        their passport renewal services through all our branches throughout UAE.
+                                        their passport renewal services through all our branches throughout Kuwait.
                                     </p>
                                 </div>
                             </div>
@@ -644,7 +644,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <input type="text" name="uae_phone" id="uae_phone" class="form-control"
-                                        placeholder="UAE phone Number" />
+                                        placeholder="Kuwait Phone" />
                                 </div>
 
                                 <div class="mb-4">
@@ -728,7 +728,7 @@
                                                                         </div>
                                                                         <div class="d-flex">
                                                                             <p class="fw-bold">Branch:</p>
-                                                                            <p class="mx-2">UAE</p>
+                                                                            <p class="mx-2">Kuwait</p>
                                                                         </div>
                                                                         <div class="d-flex">
                                                                             <p class="fw-bold">Passport no:</p>

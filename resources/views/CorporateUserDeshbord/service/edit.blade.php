@@ -189,7 +189,7 @@
               </div>
 
               <div class="my-4">
-                <label for="uae_phone" class="form-label">Phone Number <sup>UAE</sup>
+                <label for="uae_phone" class="form-label">Phone Number <sup>Kuwait</sup>
                 </label>
                 <input type="text" class="form-control select-forms" name="uae_phone" value="{{ old('uae_phone',$passport->uae_phone) }}" id="uae_phone"
                   placeholder="+971" />
@@ -286,7 +286,7 @@
                 </div>
 
                 <div class="my-4">
-                  <label for="gd_report_uae" class="form-label">GD Report (UAE Only PDF)</sup></label>
+                  <label for="gd_report_uae" class="form-label">GD Report (Kuwait Only PDF)</sup></label>
                   <input type="file" class="form-control select-forms" accept = "application/pdf" name="gd_report_uae"  id="gd_report_uae"
                     placeholder="+971" />
                     @if($errors->has('gd_report_uae'))
