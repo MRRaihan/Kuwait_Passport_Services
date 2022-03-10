@@ -233,11 +233,11 @@ class DashboardController extends Controller
         $flag = 0;
         if ($data == 'monthly') {
             $takenExpressService = ExpressService::where('created_at', '>', Carbon::now()->startOfMonth())->where('created_at', '<', Carbon::now()->endOfMonth())->get();
-            return view('Admin.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
+            return view('Admin.otherServices.expressService.index', compact('takenExpressService', 'flag'));
         } else {
             $takenExpressService = ExpressService::whereDate('created_at', Carbon::today())->get();
 
-            return view('Admin.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
+            return view('Admin.otherServices.expressService.index', compact('takenExpressService', 'flag'));
         }
     }
     public function reportLegalComplaintsService($data)
