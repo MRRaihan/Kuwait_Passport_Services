@@ -78,7 +78,7 @@ class PassportOptionsController extends Controller
         ];
         return view('Embassy.passportOption.receive_to_embassy',$data);
      }
-     
+
      if ($option == 2) {
         $data=[
             'emirates_id' => $emirates_id,
@@ -135,7 +135,7 @@ class PassportOptionsController extends Controller
             'all_option' => 'required',
         ],
         [
-            'all_option.required' => 'Please Sellect Some Data!!',
+            'all_option.required' => 'Please Select Some Data!!',
         ]
         );
 
@@ -169,16 +169,16 @@ class PassportOptionsController extends Controller
                 return redirect()->back();
         }
 
-       
+
         Session::flash('error', 'Something Went Wrong');
         return redirect()->back();
    }
 
    public function receiveToEmbassyUndo($data){
-  
+
     $option = explode('&', $data)[0];
     $id = explode('&', $data)[1];
-    
+
 
     if (isset($option) && isset($id)) {
 
@@ -210,7 +210,7 @@ class PassportOptionsController extends Controller
                 'message' => 'Successfully Undo'
             ]);
        }
-      
+
 
        if ($option == 3) {
             NewBornBabyPassport::where('id',$id)->update([
@@ -231,17 +231,17 @@ class PassportOptionsController extends Controller
             'type' => 'error',
             'message' => 'Something Went Wrong'
         ]);
-    } 
+    }
 }
 
 
     public function bioEnrollmentIdSave(Request $request,$id){
- 
+
         $request->validate([
             'bio_enrollment_id' => 'required'
         ]);
 
-     
+
 
         if (isset($request->option) && $request->option == 0) {
             $renewPassport = RenewPassport::findOrFail($id);
@@ -297,7 +297,7 @@ class PassportOptionsController extends Controller
    }
 
    public function searchDelivery($data){
-    
+
     $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
     $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
     $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
@@ -349,7 +349,7 @@ class PassportOptionsController extends Controller
         ];
         return view('Embassy.passportOption.delivery_to_admin',$data);
      }
-     
+
      if ($option == 2) {
         $data=[
             'emirates_id' => $emirates_id,
@@ -373,7 +373,7 @@ class PassportOptionsController extends Controller
         return view('Embassy.passportOption.delivery_to_admin',$data);
      }
 
-  
+
 
      if ($option == 3) {
         $data=[
@@ -406,7 +406,7 @@ class PassportOptionsController extends Controller
             'all_option' => 'required',
         ],
         [
-            'all_option.required' => 'Please Sellect Some Data!!',
+            'all_option.required' => 'Please Select Some Data!!',
         ]
         );
 
@@ -432,7 +432,7 @@ class PassportOptionsController extends Controller
                 Session::flash('success','Lost Passport Delivery to Admin Successfully!!');
                 return redirect()->back();
         }
-      
+
 
         if ($request->passport_option == 3) {
                 NewBornBabyPassport::whereIn('id',$request->all_option)->update([
@@ -447,10 +447,10 @@ class PassportOptionsController extends Controller
    }
 
    public function deliveryUndo($data){
-  
+
     $option = explode('&', $data)[0];
     $id = explode('&', $data)[1];
-    
+
 
     if (isset($option) && isset($id)) {
 
@@ -482,7 +482,7 @@ class PassportOptionsController extends Controller
                 'message' => 'Successfully Undo'
             ]);
        }
-    
+
 
        if ($option == 3) {
             NewBornBabyPassport::where('id',$id)->update([
@@ -503,7 +503,7 @@ class PassportOptionsController extends Controller
             'type' => 'error',
             'message' => 'Something Went Wrong'
         ]);
-    } 
+    }
 }
 
 
@@ -566,7 +566,7 @@ public function searchAllDelivery($data){
      ];
      return view('Embassy.passportOption.all_delivery',$data);
   }
-  
+
   if ($option == 2) {
      $data=[
          'emirates_id' => $emirates_id,
@@ -620,7 +620,7 @@ public function searchAllDelivery($data){
 
 
 // public function remarksSave(Request $request,$id){
- 
+
 //     $request->validate([
 //         'remarks' => 'required'
 //     ]);
