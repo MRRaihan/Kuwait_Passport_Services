@@ -23,7 +23,6 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->unsignedBigInteger('parent_id')->nullable();
             $table->unsignedBigInteger('branch_id')->nullable();
-            // $table->unsignedBigInteger('deleted_at')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();
             $table->string('created_dtm')->nullable();

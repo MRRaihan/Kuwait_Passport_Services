@@ -91,7 +91,6 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->delivery_branch = Auth::user()->branch_id;
         $newBornBabyPassport->user_creator_id = Auth::user()->id;
         $newBornBabyPassport->entry_person = Auth::user()->id;
-        // $newBornBabyPassport->special_skill = $request->special_skill;
         $newBornBabyPassport->residence = $request->residence;
         $newBornBabyPassport->mailing_address = $request->mailing_address;
         $newBornBabyPassport->permanent_address = $request->permanent_address;
@@ -138,10 +137,7 @@ class NewBornBabyPassportController extends Controller
     {
         $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
         $onload = true;
-
-
         return view('BranchManager.newBornBabyPassport.printRecipt', compact('newBornBabyPassport', 'onload'));
-        // $pdf = PDF::loadView('BranchManager.newBornBabyPassport.printRecipt',compact('newBornBabyPassport'));
     }
     public function printSticker($id)
     {
@@ -149,8 +145,6 @@ class NewBornBabyPassportController extends Controller
 
         $onload = true;
         return view('BranchManager.newBornBabyPassport.printSticker', compact('newBornBabyPassport', 'onload'));
-
-        // $pdf = PDF::loadView('BranchManager.newBornBabyPassport.printSticker',compact('newBornBabyPassport'));
     }
 
 
@@ -165,8 +159,6 @@ class NewBornBabyPassportController extends Controller
 
     public function edit($id)
     {
-        // $salaries = Salary::where('status', 1)->get();
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         $newBornBabyPassport = NewBornBabyPassport::findOrfail($id);
 
@@ -297,8 +289,6 @@ class NewBornBabyPassportController extends Controller
 
     public function createSecond()
     {
-        // $salaries = Salary::where('status', 1)->get();
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         return view('BranchManager.newBornBabyPassport.create-second', compact('newBornBabyPassportFees'));
@@ -343,7 +333,6 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->delivery_branch = Auth::user()->branch_id;
         $newBornBabyPassport->user_creator_id = Auth::user()->id;
         $newBornBabyPassport->entry_person = Auth::user()->id;
-        // $newBornBabyPassport->special_skill = $request->special_skill;
         $newBornBabyPassport->residence = $request->residence;
         $newBornBabyPassport->mailing_address = $request->mailing_address;
         $newBornBabyPassport->permanent_address = $request->permanent_address;

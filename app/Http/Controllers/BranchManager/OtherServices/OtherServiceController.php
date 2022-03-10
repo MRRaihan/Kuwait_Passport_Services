@@ -71,7 +71,6 @@ class OtherServiceController extends Controller
         $otherPassport->fee = $request->fee;
         $otherPassport->bd_phone = $request->bd_phone;
         $otherPassport->salary = $request->salary;
-        // $otherPassport->shift_to_admin = 1;
         $otherPassport->delivery_date = $request->delivery_date;
         $otherPassport->delivery_branch = $request->delivery_branch;
         $otherPassport->entry_person = $request->entry_person;

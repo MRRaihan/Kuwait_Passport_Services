@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href=" {{ asset('assets/account-manager/images/favicon.ico') }}">
 
-    @include('frontend.layouts.head')
+    @include('Frontend.layouts.head')
     <title>PERSONAL INFORMATION</title>
   </head>
   <body>
@@ -43,7 +43,7 @@
               class="px-5 pt-5 d-flex justify-content-center formContainerResponsive"
             >
               <div>
-    
+
 
                 <!-- Login -->
                 <form id="loginForm" class="formDivMain" action="{{ route('informationStore') }}" method="POST">
@@ -82,7 +82,7 @@
                       />
                     </div>
                   </div>
-  
+
 
                   <div class="form-row my-3 buttonPaddingTop py-4">
                     <button
@@ -91,7 +91,7 @@
                     >
                       <h5>Finish</h5>
                     </button>
-                   
+
                   </div>
                 </form>
               </div>
@@ -102,6 +102,6 @@
     </section>
     @include('Others.toaster_message')
 
-    @include('frontend.layouts.foot')
+    @include('Frontend.layouts.foot')
   </body>
 </html>

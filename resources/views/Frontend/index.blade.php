@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href=" {{ asset('assets/data-enterer/images/favicon.ico') }}">
     <!-- .....................bootstarap 5................................... -->
     <link rel="stylesheet" href="{{ asset('frontend_assets/css/bootstrap.min.css') }}" />
     <!-- .....................font awesome................................... -->
@@ -21,6 +22,7 @@
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
     <title>Versatilo london</title>
+
 </head>
 
 <body>

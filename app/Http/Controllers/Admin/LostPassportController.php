@@ -33,7 +33,6 @@ class LostPassportController extends Controller
 
     public function create()
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
@@ -127,8 +126,6 @@ class LostPassportController extends Controller
     {
         $lostPassport = LostPassport::findOrFail($id);
         $onload = true;
-
-
         return view('Admin.lostPassport.printRecipt', compact('lostPassport', 'onload'));
     }
     public function printSticker($id)
@@ -151,7 +148,6 @@ class LostPassportController extends Controller
 
     public function edit($id)
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
         $lostPassport = LostPassport::findOrfail($id);
@@ -198,7 +194,6 @@ class LostPassportController extends Controller
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
-        // $lostPassport->salary = $request->salary;
         $lostPassport->shift_to_admin = 1;
         $lostPassport->delivery_date = get_threeMonth_tenDays();
         $lostPassport->delivery_branch = $request->delivery_branch;
@@ -319,7 +314,6 @@ class LostPassportController extends Controller
 
     public function createSecond()
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
@@ -361,7 +355,6 @@ class LostPassportController extends Controller
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
-        // $lostPassport->salary = $request->salary;
         $lostPassport->shift_to_admin = 1;
         $lostPassport->delivery_date = get_threeMonth_tenDays();
         $lostPassport->delivery_branch = $request->delivery_branch;

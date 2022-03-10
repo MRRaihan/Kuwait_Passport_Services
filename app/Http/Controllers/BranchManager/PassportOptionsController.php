@@ -178,7 +178,7 @@ class PassportOptionsController extends Controller
             'all_option' => 'required',
            ],
            [
-               'all_option.required' => 'Please Sellect Some Data!!',
+               'all_option.required' => 'Please Select Some Data!!',
            ]
         );
 
@@ -417,7 +417,7 @@ class PassportOptionsController extends Controller
             'all_option' => 'required',
         ],
         [
-            'all_option.required' => 'Please Sellect Some Data!!',
+            'all_option.required' => 'Please Select Some Data!!',
         ]
         );
 
@@ -633,7 +633,7 @@ class PassportOptionsController extends Controller
 //             'all_option' => 'required',
 //         ],
 //         [
-//             'all_option.required' => 'Please Sellect Some Data!!',
+//             'all_option.required' => 'Please Select Some Data!!',
 //         ]
 //         );
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href=" {{ asset('assets/account-manager/images/favicon.ico') }}">
 
-    @include('frontend.layouts.head')
+    @include('Frontend.layouts.head')
     <title>Accounts Login</title>
   </head>
   <body>
@@ -91,6 +91,6 @@
     </section>
     @include('Others.toaster_message')
 
-    @include('frontend.layouts.foot')
+    @include('Frontend.layouts.foot')
   </body>
 </html>

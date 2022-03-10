@@ -49,7 +49,7 @@ class CallcenterController extends Controller
             ];
             return view('CallCenter.passportOption.delivery',$data);
         }
-        
+
 
         if ($option == 1) {
             $data=[
@@ -151,7 +151,7 @@ class CallcenterController extends Controller
             'all_option' => 'required',
         ],
             [
-                'all_option.required' => 'Please Sellect Some Data!!',
+                'all_option.required' => 'Please Select Some Data!!',
             ]
         );
 
@@ -330,15 +330,15 @@ class CallcenterController extends Controller
         }
     }
 
-    public function remarksSave(Request $request,$id){          
+    public function remarksSave(Request $request,$id){
 
-       
+
 
         $request->validate([
             'remarks' => 'required'
         ]);
 
-        
+
 
         if (isset($request->option) && $request->option == 0) {
             $lostPassport = RenewPassport::findOrFail($id);

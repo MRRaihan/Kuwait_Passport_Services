@@ -26,7 +26,6 @@ class AccountManagerController extends Controller
 
     public function create()
     {
-        // $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('Admin.accountManager.create');
     }
 
@@ -44,7 +43,7 @@ class AccountManagerController extends Controller
         $user->name = $request->name;
         $user->phone = $request->phone;
         $user->email = $request->email;
-        // $user->branch_id = $request->branch_id;
+
         $user->parent_id = Auth::user()->id;
         $user->created_by = Auth::user()->id;
         $user->password = Hash::make('12345');
@@ -123,7 +122,6 @@ class AccountManagerController extends Controller
     public function edit($id)
     {
         $user =  User::findOrFail($id);
-        // $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('Admin.accountManager.edit', compact('user'));
     }
 
