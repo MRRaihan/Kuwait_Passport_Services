@@ -29,7 +29,6 @@ class NewBornBabyPassportController extends Controller
 
     public function create()
     {
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         return view('DataEnterer.newBornBabyPassport.create', compact('newBornBabyPassportFees'));
@@ -123,10 +122,8 @@ class NewBornBabyPassportController extends Controller
     {
         $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
         $onload = true;
-
-
         return view('DataEnterer.newBornBabyPassport.printRecipt', compact('newBornBabyPassport', 'onload'));
-        // $pdf = PDF::loadView('DataEnterer.newBornBabyPassport.printRecipt',compact('newBornBabyPassport'));
+
     }
     public function printSticker($id)
     {
@@ -134,8 +131,6 @@ class NewBornBabyPassportController extends Controller
 
         $onload = true;
         return view('DataEnterer.newBornBabyPassport.printSticker', compact('newBornBabyPassport', 'onload'));
-
-        // $pdf = PDF::loadView('DataEnterer.newBornBabyPassport.printSticker',compact('newBornBabyPassport'));
     }
 
     public function shiftToBranchManagerNow($id)
@@ -168,7 +163,6 @@ class NewBornBabyPassportController extends Controller
 
     public function edit($id)
     {
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         $newBornBabyPassport = NewBornBabyPassport::findOrfail($id);
 
@@ -270,7 +264,6 @@ class NewBornBabyPassportController extends Controller
 
     public function createSecond()
     {
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         return view('DataEnterer.newBornBabyPassport.create-second', compact('newBornBabyPassportFees'));

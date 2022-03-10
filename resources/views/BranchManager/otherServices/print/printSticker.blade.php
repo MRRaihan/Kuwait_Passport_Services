@@ -2,9 +2,7 @@
 
 @section('print')
 @php
-// $v=02.250;
-// $e=30.250;
-// $total = $v + $e;
+
 $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
 
 $p_type = $servicesData->ems;

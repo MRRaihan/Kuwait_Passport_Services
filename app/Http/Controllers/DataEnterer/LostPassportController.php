@@ -124,8 +124,6 @@ class LostPassportController extends Controller
     {
         $lostPassport = LostPassport::findOrFail($id);
         $onload = true;
-
-
         return view('DataEnterer.lostPassport.printRecipt', compact('lostPassport', 'onload'));
     }
     public function printSticker($id)
@@ -333,7 +331,6 @@ class LostPassportController extends Controller
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
-        // $lostPassport->salary = $request->salary;
         $lostPassport->delivery_date = get_threeMonth_tenDays();
         $lostPassport->delivery_branch = Auth::user()->branch_id;
         $lostPassport->user_creator_id = Auth::user()->id;

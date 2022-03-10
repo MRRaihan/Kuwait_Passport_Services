@@ -24,7 +24,6 @@ class EmbassyController extends Controller
 
     public function create()
     {
-        // $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('Admin.embassy.create');
     }
 
@@ -43,7 +42,7 @@ class EmbassyController extends Controller
         $user->phone = $request->phone;
         $user->email = $request->email;
         $user->status = 1;
-        // $user->branch_id = $request->branch_id;
+
         $user->parent_id = Auth::user()->id;
         $user->created_by = Auth::user()->id;
         $user->password = Hash::make('12345');
@@ -121,7 +120,6 @@ class EmbassyController extends Controller
     public function edit($id)
     {
         $user =  User::findOrFail($id);
-        // $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('Admin.embassy.edit', compact('user'));
     }
 

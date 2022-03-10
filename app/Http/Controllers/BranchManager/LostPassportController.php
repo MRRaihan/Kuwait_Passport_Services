@@ -143,8 +143,6 @@ class LostPassportController extends Controller
     {
         $lostPassport = LostPassport::findOrFail($id);
         $onload = true;
-
-
         return view('BranchManager.lostPassport.printRecipt', compact('lostPassport', 'onload'));
     }
     public function printSticker($id)

@@ -48,9 +48,7 @@ class CreateOthersTable extends Migration
 
 
 
-            // $table->boolean('is_delivered')->default(0);
-            // $table->boolean('is_shifted')->default(0);
-            // $table->boolean('is_received')->default(0);
+
 
             // $table->string('r_id')->nullable();
             $table->string('entry_person')->nullable();

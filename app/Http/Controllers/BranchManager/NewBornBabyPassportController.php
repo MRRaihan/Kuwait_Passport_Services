@@ -138,10 +138,7 @@ class NewBornBabyPassportController extends Controller
     {
         $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
         $onload = true;
-
-
         return view('BranchManager.newBornBabyPassport.printRecipt', compact('newBornBabyPassport', 'onload'));
-        // $pdf = PDF::loadView('BranchManager.newBornBabyPassport.printRecipt',compact('newBornBabyPassport'));
     }
     public function printSticker($id)
     {
@@ -149,8 +146,6 @@ class NewBornBabyPassportController extends Controller
 
         $onload = true;
         return view('BranchManager.newBornBabyPassport.printSticker', compact('newBornBabyPassport', 'onload'));
-
-        // $pdf = PDF::loadView('BranchManager.newBornBabyPassport.printSticker',compact('newBornBabyPassport'));
     }
 
 
@@ -165,7 +160,6 @@ class NewBornBabyPassportController extends Controller
 
     public function edit($id)
     {
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         $newBornBabyPassport = NewBornBabyPassport::findOrfail($id);
 
@@ -296,7 +290,6 @@ class NewBornBabyPassportController extends Controller
 
     public function createSecond()
     {
-        // $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $newBornBabyPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'new-born-baby-passport')->get();
         return view('BranchManager.newBornBabyPassport.create-second', compact('newBornBabyPassportFees'));
