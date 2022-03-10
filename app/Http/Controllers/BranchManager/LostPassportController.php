@@ -50,7 +50,6 @@ class LostPassportController extends Controller
 
     public function create()
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
@@ -168,7 +167,6 @@ class LostPassportController extends Controller
 
     public function edit($id)
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
         $lostPassport = LostPassport::findOrfail($id);
@@ -322,7 +320,6 @@ class LostPassportController extends Controller
 
     public function createSecond()
     {
-        // $salaries = Salary::where('status', 1)->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
 
         $lostPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'lost-passport')->get();
