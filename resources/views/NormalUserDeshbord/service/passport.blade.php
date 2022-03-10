@@ -30,7 +30,7 @@
             <div class="card-body">
               <div class="d-flex my-2">
 
-                <img src="{{ isset(auth()->user()->image) ? public_path(auth()->user()->image) : asset('frontend_assets/img/Portals/person.jpeg') }}" class="img-fluid person-img" alt="" />
+                <img src="{{ isset(auth()->user()->image) ? public_path(auth()->user()->image) : asset(get_static_option('user')) }}" class="img-fluid person-img" alt="" />
 
                 <div class="other mx-2">
                   <h6 class="m-0 p-0">{{ auth()->user()->name }}</h6>

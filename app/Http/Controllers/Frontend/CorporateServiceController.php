@@ -78,7 +78,6 @@ class CorporateServiceController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'passport_type_id' => 'required',
             'branch_id' => 'required',
@@ -259,7 +258,6 @@ class CorporateServiceController extends Controller
 
     public function update(Request $request, $data)
     {
-
         $request->validate([
             'branch_id' => 'required',
             'passport_type' => 'required',

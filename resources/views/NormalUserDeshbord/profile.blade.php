@@ -16,7 +16,13 @@ Profile Update
           <div class="col-md-6 profile-edit-imge">
             <div class="image-container">
                 <label  for="user_pro_pic">
-                    <img id="pro_pic_view" width="150px" src="{{ asset('frontend_assets/img/person.jpg') }}" alt="">
+                    <img id="pro_pic_view"
+                    @if (isset(Auth::user()->image))
+                    src="{{ asset(Auth::user()->image) }}"
+                    @else
+                        src="{{ asset('frontend_assets/img/person.jpg') }}"
+                    @endif
+                    alt="">
                     <i  class="fa fa-pencil" aria-hidden="true"></i>
                 </label>
               <input name="image" id="user_pro_pic" class="upload_image hidden" code="up_44"  type="file" accept=".png, .jpg">

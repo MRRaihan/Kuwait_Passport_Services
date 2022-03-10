@@ -31,7 +31,6 @@ class EmbassyController extends Controller
 
     public function store(Request $request)
     {
-
         $request->validate([
             'phone' => 'required|unique:users',
             'email' => 'required|email|unique:users',

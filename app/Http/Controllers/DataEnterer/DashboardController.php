@@ -79,7 +79,7 @@ class DashboardController extends Controller
                                             ->sum('passport_type_fees_total');
         $data['dailyLostPassportFees'] = LostPassport::where('user_creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())
                                             ->sum('passport_type_fees_total');
-        
+
 
 
         // Manual Pasport Fee
@@ -211,7 +211,7 @@ class DashboardController extends Controller
             return view('DataEnterer.otherServices.PremierService.index', compact('takenPremierServices', 'flag'));
         }else{
             $takenPremierServices = PremierService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-            
+
             return view('DataEnterer.otherServices.PremierService.index', compact('takenPremierServices', 'flag'));
         }
     }
@@ -223,7 +223,7 @@ class DashboardController extends Controller
             return view('DataEnterer.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
         }else{
             $takenExpressService = ExpressService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-            
+
             return view('DataEnterer.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
         }
     }
@@ -234,7 +234,7 @@ class DashboardController extends Controller
             return view('DataEnterer.otherServices.LegalComplainService.index', compact('takenLegalComplaintsServices', 'flag'));
         }else{
             $takenLegalComplaintsServices = LegalComplaintsService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-            
+
             return view('DataEnterer.otherServices.LegalComplainService.index', compact('takenLegalComplaintsServices', 'flag'));
         }
     }
@@ -245,7 +245,7 @@ class DashboardController extends Controller
             return view('DataEnterer.otherServices.immigrationGovementService.index', compact('takenImmigrationService', 'flag'));
         }else{
             $takenImmigrationService = ImmigrationGovementService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-            
+
             return view('DataEnterer.otherServices.immigrationGovementService.index', compact('takenImmigrationService', 'flag'));
         }
     }
@@ -256,7 +256,7 @@ class DashboardController extends Controller
             return view('DataEnterer.otherServices.otherService.index', compact('otherServices', 'flag'));
         }else{
             $otherServices = Other::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->get();
-            
+
             return view('DataEnterer.otherServices.otherService.index', compact('otherServices', 'flag'));
         }
     }

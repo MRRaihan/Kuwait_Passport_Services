@@ -9,11 +9,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
-use App\Models\Branch;
 use App\Models\ManualPassport;
-use App\Models\PassportFee;
-use App\Models\Profession;
-use App\Models\Salary;
 use App\Models\User;
 use App\Models\LostPassport;
 use App\Models\PremierService;
@@ -159,9 +155,6 @@ class DashboardController extends Controller
         $data['dailyOtherFee'] = Other::whereDate('created_at', Carbon::today())->sum('fee');
 
 
-
-
-
         // All Passport Fee
         $data['totalPassportFees'] = $data['totalRenewPassportFees'] + $data['totalNewBornFees'] + $data['totalManualPassportFees'] + $data['totalLostPassportFees'];
         // All Passport Fee
@@ -237,11 +230,11 @@ class DashboardController extends Controller
         $flag = 0;
         if ($data == 'monthly') {
             $takenExpressService = ExpressService::where('created_at', '>', Carbon::now()->startOfMonth())->where('created_at', '<', Carbon::now()->endOfMonth())->get();
-            return view('Admin.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
+            return view('Admin.otherServices.expressService.index', compact('takenExpressService', 'flag'));
         } else {
             $takenExpressService = ExpressService::whereDate('created_at', Carbon::today())->get();
 
-            return view('Admin.otherServices.ExpressService.index', compact('takenExpressService', 'flag'));
+            return view('Admin.otherServices.expressService.index', compact('takenExpressService', 'flag'));
         }
     }
     public function reportLegalComplaintsService($data)

@@ -24,7 +24,6 @@ class DeliveryController extends Controller
 
     public function store(Request $request)
     {
-        // return $request->all();
         $request->validate([
             'first_name' => 'required',
             'cost' => 'required',

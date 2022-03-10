@@ -88,7 +88,6 @@ class FrontendController extends Controller
 
     public function serviceStore(Request $request)
     {
-
         $request->validate([
             'passport_type_id' => 'required',
             'branch_id' => 'required',
@@ -263,7 +262,6 @@ class FrontendController extends Controller
 
     public function serviceUpdate(Request $request, $data)
     {
-
         $request->validate([
             'branch_id' => 'required',
             'passport_type' => 'required',

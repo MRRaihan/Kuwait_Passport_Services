@@ -46,7 +46,7 @@ Admin
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <span class="panel-title">Data Enterer Listt
+                        <span class="panel-title">Data Enterer List
                         <!-- Button trigger modal for adding new Category -->
 
                     </div>

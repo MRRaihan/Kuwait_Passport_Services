@@ -25,7 +25,6 @@ class BranchContoller extends Controller
 
     public function store(Request $request)
     {
-        // return $request->all();
         $request->validate([
             'first_name' => 'required',
         ]);
@@ -38,7 +37,7 @@ class BranchContoller extends Controller
             $branch->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Successsfully Profession created !',
+                'message' => 'Successsfully Branch created !',
             ]);
         } catch (\Exception $exception) {
             return response()->json([

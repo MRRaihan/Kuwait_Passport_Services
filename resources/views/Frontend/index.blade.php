@@ -1003,7 +1003,7 @@
                     </div>
                 </div>
                 <div class="text-light text-center my-1">
-                    &copy;
+                    Copyright &copy;
                     <span id="copyright">
                         <script>
                             document
@@ -1013,7 +1013,7 @@
                                 );
                         </script>
                     </span>
-                    TFP Solutions Bangladesh Ltd.
+                    <a target="_blank" href="{{ route('forntend.index') }}">{{ env('APP_NAME', 'Kuwait Passport Service') }}</a> | All Rights Reserved.Developed by <a target="_blank" href="https://www.tfpbd.com/">TFP Solutions Bangladesh Ltd.</a>
                 </div>
             </div>
         </div>

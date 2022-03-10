@@ -57,7 +57,7 @@
 
     @php
         $generatorPNG = new Picqer\Barcode\BarcodeGeneratorPNG();
-        $p_type ='EP'.date('mY').'Kuwait'.sprintf('%05d', $passport->id).', ATM : '.number_format((float)$passport->passport_type_fees_total, 3, '.', '');
+        $p_type ='EP'.date('mY').'Kuwait'.sprintf('%05d', $passport->id).', KWD : '.number_format((float)$passport->passport_type_fees_total, 3, '.', '');
     @endphp
 
     <img height="30" width="300" style="margin-top: 5px;" src="data:image/png;base64,{{ base64_encode($generatorPNG->getBarcode($p_type, $generatorPNG::TYPE_CODE_128)) }}">

@@ -47,7 +47,6 @@ class RenewManualPassportController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'name' => 'required',
             'emirates_id' => 'required',

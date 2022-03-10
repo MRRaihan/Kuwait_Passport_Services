@@ -411,7 +411,7 @@
                 '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemManual($(this))"><i class="fa fa-times"></i></a>' +
                 '</td>' +
                 '</tr>'
             );
@@ -456,36 +456,13 @@
                 '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemRenew($(this))"><i class="fa fa-times"></i></a>' +
                 '</td>' +
                 '</tr>'
             );
             maintainSerialRenew()
         }
 
-        //new born-baby Passport
-        function newItemNewBorn() {
-            $('#newBorn_passports').append(
-                '<tr>' +
-                '<td></td>' +
-                '<td>' +
-                '<input type="text" name="title[]" class="form-control">' +
-                '<input type="hidden" name="id[]" value="" class="form-control">' +
-                '<input type="hidden" name="p_type[]" value="new-born-baby-passport" class="form-control">' +
-                '</td>' +
-                '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
-                '</td>' +
-                '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
-                '</td>' +
-                '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
-                '</td>' +
-                '</tr>'
-            );
-            maintainSerialRenew()
-        }
 
         function maintainSerialRenew() {
             var count = 0;
@@ -507,6 +484,54 @@
                 maintainSerialRenew();
             }
         }
+
+        //new born-baby Passport
+        function newItemNewBorn() {
+            $('#newBorn_passports').append(
+                '<tr>' +
+                '<td></td>' +
+                '<td>' +
+                '<input type="text" name="title[]" class="form-control">' +
+                '<input type="hidden" name="id[]" value="" class="form-control">' +
+                '<input type="hidden" name="p_type[]" value="new-born-baby-passport" class="form-control">' +
+                '</td>' +
+                '<td>' +
+                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '</td>' +
+                '<td>' +
+                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '</td>' +
+                '<td>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemNewBorn($(this))"><i class="fa fa-times"></i></a>' +
+                '</td>' +
+                '</tr>'
+            );
+            maintainSerialNewBorn()
+        }
+
+
+        function maintainSerialNewBorn() {
+            var count = 0;
+            $.each($('#newBorn_passports tr'), function(index, val) {
+                count++;
+                $(this).find("td:first").html(count);
+            });
+            $('#newBorn_passports').find('tr:first').find('td:last').html('');
+        }
+
+        function removeItemNewBorn(element) {
+            var count = 0;
+            $.each($('#newBorn_passports tr'), function(index, val) {
+                count++;
+            });
+
+            if (count > 1) {
+                element.parent().parent().remove();
+                maintainSerialNewBorn();
+            }
+        }
+
+
     </script>
 
     @if (session()->has('success'))
