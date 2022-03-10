@@ -17,30 +17,30 @@ class RenewPassportSeeder extends Seeder
     public function run(Faker $faker)
     {
         for ($i = 0; $i < 16; $i++) {
-            $lostPassport = new RenewPassport();
-            $lostPassport->user_creator_id = $faker->numberBetween(1, 4);
-            $lostPassport->name = $faker->name();
-            $lostPassport->passport_number = $faker->phoneNumber();
-            $lostPassport->emirates_id = $faker->phoneNumber();
-            $lostPassport->govt_passport_id = $faker->phoneNumber();
-            $lostPassport->mailing_address = $faker->email();
-            $lostPassport->ems = $faker->text(10);
-            // $lostPassport->profession_file = $faker->text(10);
-            $lostPassport->kuwait_phone = '01777382007';
-            $lostPassport->bd_phone = '01777382117';
-            $lostPassport->delivery_date = Carbon::now()->addDay(-5);
-            $lostPassport->profession_id = 1;
-            $lostPassport->salary = $faker->numberBetween(1, 4);
+            $renewPassport = new RenewPassport();
+            $renewPassport->user_creator_id = $faker->numberBetween(1, 4);
+            $renewPassport->name = $faker->name();
+            $renewPassport->passport_number = $faker->phoneNumber();
+            $renewPassport->emirates_id = $faker->phoneNumber();
+            $renewPassport->govt_passport_id = $faker->phoneNumber();
+            $renewPassport->mailing_address = $faker->email();
+            $renewPassport->ems = $faker->text(10);
+            // $renewPassport->profession_file = $faker->text(10);
+            $renewPassport->kuwait_phone = '01777382007';
+            $renewPassport->bd_phone = '01777382117';
+            $renewPassport->delivery_date = Carbon::now()->addDay(-5);
+            $renewPassport->profession_id = 1;
+            $renewPassport->salary = $faker->numberBetween(1, 4);
 
-            $lostPassport->delivery_branch = $faker->numberBetween(1, 5);
-            // $lostPassport->is_delivered = $faker->numberBetween(0, 1);
-            // $lostPassport->is_shifted = $faker->numberBetween(0, 1);
-            // $lostPassport->is_received = $faker->numberBetween(0, 1);
-            $lostPassport->r_id = 5;
-            $lostPassport->ems = 'EP' . time() . 'Kuwait';
-            $lostPassport->entry_person = $faker->numberBetween(17, 21);
-            $lostPassport->remarks = $faker->numberBetween(100, 900);
-            $lostPassport->save();
+            $renewPassport->delivery_branch = $faker->numberBetween(1, 5);
+            // $renewPassport->is_delivered = $faker->numberBetween(0, 1);
+            // $renewPassport->is_shifted = $faker->numberBetween(0, 1);
+            // $renewPassport->is_received = $faker->numberBetween(0, 1);
+            $renewPassport->r_id = 5;
+            $renewPassport->ems = 'EP' . time() . 'Kuwait';
+            $renewPassport->entry_person = $faker->numberBetween(17, 21);
+            $renewPassport->remarks = $faker->numberBetween(100, 900);
+            $renewPassport->save();
         }
     }
 }
