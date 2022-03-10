@@ -155,9 +155,6 @@ class DashboardController extends Controller
         $data['dailyOtherFee'] = Other::whereDate('created_at', Carbon::today())->sum('fee');
 
 
-
-
-
         // All Passport Fee
         $data['totalPassportFees'] = $data['totalRenewPassportFees'] + $data['totalNewBornFees'] + $data['totalManualPassportFees'] + $data['totalLostPassportFees'];
         // All Passport Fee
