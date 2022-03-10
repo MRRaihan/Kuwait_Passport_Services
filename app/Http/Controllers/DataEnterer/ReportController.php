@@ -14,7 +14,6 @@ use App\Models\ExpressService;
 use App\Models\LegalComplaintsService;
 use App\Models\ImmigrationGovementService;
 use Carbon\Carbon;
-use Illuminate\Http\Request;
 
 class ReportController extends Controller
 {
@@ -56,7 +55,7 @@ class ReportController extends Controller
         $daily_manual_passport = ManualPassport::where('user_creator_id',auth()->user()->id)
                                                 ->whereDate('created_at', Carbon::today())
                                                 ->count();
-                                                
+
         $daily_lost_passport= LostPassport::where('user_creator_id',auth()->user()->id)
                                             ->whereDate('created_at', Carbon::today())
                                             ->count();
@@ -104,7 +103,7 @@ class ReportController extends Controller
         $monthlyExpressService= ExpressService::where('creator_id', Auth()->user()->id)->where('created_at', '>', Carbon::now()->startOfMonth()) ->where('created_at', '<', Carbon::now()->endOfMonth()) ->count();
         $monthlyLegalComplaintsService = LegalComplaintsService::where('creator_id', Auth()->user()->id)->where('created_at', '>', Carbon::now()->startOfMonth()) ->where('created_at', '<', Carbon::now()->endOfMonth()) ->count();
         $monthlyImmigrationGovementService = ImmigrationGovementService::where('creator_id', Auth()->user()->id)->where('created_at', '>', Carbon::now()->startOfMonth()) ->where('created_at', '<', Carbon::now()->endOfMonth()) ->count();
-    
+
 
         // All type of total passport fee with branch
         $total_renew_passport_fee = RenewPassport::where('user_creator_id',auth()->user()->id)->sum('passport_type_fees_total');
@@ -142,14 +141,14 @@ class ReportController extends Controller
                                         ->where('created_at', '<', Carbon::now()->endOfMonth())
                                         ->sum('total_fee');
         $dailyLegalComplaintsServiceFee = LegalComplaintsService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->sum('total_fee');
-         
+
         // Total Immigration Government Service fee
          $totalImmigrationGovementServiceFee = ImmigrationGovementService::where('creator_id', Auth()->user()->id)->sum('total_fee');
          $monthlyImmigrationGovementServiceFee = ImmigrationGovementService::where('creator_id', Auth()->user()->id)->where('created_at', '>', Carbon::now()->startOfMonth())
                                      ->where('created_at', '<', Carbon::now()->endOfMonth())
                                      ->sum('total_fee');
          $dailyImmigrationGovementServiceFee = ImmigrationGovementService::where('creator_id', Auth()->user()->id)->whereDate('created_at', Carbon::today())->sum('total_fee');
- 
+
         // Total Other services fee
         $totalOtherServiceFees = $totalPremierServiceFee+$totalOtherFee + $totalImmigrationGovementServiceFee + $totalLegalComplaintsServiceFee+ $totalExpressServiceFee;
 
@@ -188,7 +187,7 @@ class ReportController extends Controller
                                                         ->where('created_at', '>', Carbon::now()->startOfMonth())
                                                         ->where('created_at', '<', Carbon::now()->endOfMonth())
                                                         ->sum('passport_type_fees_total');
-                                                        
+
         $monthly_lost_passport_fee = LostPassport::where('user_creator_id',auth()->user()->id)
                                                     ->where('created_at', '>', Carbon::now()->startOfMonth())
                                                     ->where('created_at', '<', Carbon::now()->endOfMonth())
@@ -237,7 +236,7 @@ class ReportController extends Controller
             'dailyExpressService'=>$dailyExpressService,
             'dailyLegalComplaintsService'=>$dailyLegalComplaintsService,
             'dailyImmigrationGovementService'=>$dailyImmigrationGovementService,
-   
+
             'monthly_renew_passport' => $monthly_renew_passport,
             'monthly_manual_passport' => $monthly_manual_passport,
             'monthly_lost_passport' => $monthly_lost_passport,
@@ -266,8 +265,8 @@ class ReportController extends Controller
 
             'total_passport_fee' => $total_passport_fee,
             'totalOtherServiceFees'=>$totalOtherServiceFees,
-            
-            
+
+
 
             'monthly_renew_passport_fee' => $monthly_renew_passport_fee,
             'monthly_manual_passport_fee' => $monthly_manual_passport_fee,
@@ -276,7 +275,7 @@ class ReportController extends Controller
             'monthly_new_baby_passport_fee' => $monthly_new_baby_passport_fee,
 
             //monthly other services fee
-    
+
             'monthlyPremierServiceFee' => $totalPremierServiceFee,
             'monthlyExpressServiceFee' => $totalExpressServiceFee,
             'monthlyLegalComplaintsServiceFee' => $totalLegalComplaintsServiceFee,
@@ -289,7 +288,7 @@ class ReportController extends Controller
             'daily_new_baby_passport_fee' => $daily_new_baby_passport_fee,
 
             //daily other services fee
-    
+
             'dailyPremierServiceFee' => $totalPremierServiceFee,
             'dailyExpressServiceFee' => $totalExpressServiceFee,
             'dailyLegalComplaintsServiceFee' => $totalLegalComplaintsServiceFee,

@@ -9,18 +9,13 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Session;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Str;
-use App\Models\Branch;
 use App\Models\ManualPassport;
-use App\Models\PassportFee;
-use App\Models\Profession;
-use App\Models\Salary;
 use App\Models\PremierService;
 use App\Models\ExpressService;
 use App\Models\LegalComplaintsService;
 use App\Models\ImmigrationGovementService;
 use App\Models\Other;
 use App\Models\NewBornBabyPassport;
-use App\Models\User;
 use App\Models\LostPassport;
 use App\Models\RenewPassport;
 use Carbon\Carbon;
@@ -52,7 +47,7 @@ class DashboardController extends Controller
 
         // Daily Passport(Lost/Manual/Other/Renue) count
         $data['dailyLostPassport'] = LostPassport::whereDate('created_at', Carbon::today())->count();
-     
+
         $data['dailyManualPassport'] = ManualPassport::whereDate('created_at', Carbon::today())->count();
 
         $data['dailyNewBornPassword'] = NewBornBabyPassport::whereDate('created_at', Carbon::today())->count();
@@ -90,7 +85,7 @@ class DashboardController extends Controller
                                             ->sum('passport_type_fees_total');
         $data['dailyLostPassportFees'] = LostPassport::whereDate('created_at', Carbon::today())
                                             ->sum('passport_type_fees_total');
-        
+
 
 
         // Manual Pasport Fee
