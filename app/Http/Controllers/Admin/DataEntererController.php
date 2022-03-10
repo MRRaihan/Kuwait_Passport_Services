@@ -168,7 +168,6 @@ class DataEntererController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $request->validate([
             'phone' => 'required',
             'email' => 'required|email',

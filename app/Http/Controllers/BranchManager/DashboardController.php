@@ -321,7 +321,6 @@ class DashboardController extends Controller
     }
 
     public function updateProfile(Request $request){
-
         $request->validate([
             'name' => 'required',
             'image' => 'nullable|image',

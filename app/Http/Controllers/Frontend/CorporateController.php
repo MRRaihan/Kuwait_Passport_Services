@@ -196,7 +196,7 @@ class CorporateController extends Controller
      */
     public function passwordCheck(Request $request)
     {
-        // return $request->all();
+
 
         $request->validate([
             'password' => 'required',

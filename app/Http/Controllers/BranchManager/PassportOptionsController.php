@@ -22,13 +22,13 @@ class PassportOptionsController extends Controller
 
    public function shiftToAdmin(){
      return $this->search('&&&&0');
-       
-   }  
+
+   }
 
 
    public function search($data){
 
-    
+
 
     $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
     $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
@@ -50,7 +50,7 @@ class PassportOptionsController extends Controller
                             ->where('is_shifted_to_branch_manager',null)
                             ->orderBy('id','desc')
                             ->get();
-    
+
     $manual = ManualPassport::when($emirates_id != '',function($query) use($emirates_id){
                                     return $query->where('emirates_id',$emirates_id);
                                 })
@@ -114,7 +114,7 @@ class PassportOptionsController extends Controller
     //         'to_date' => $to_date,
     //         'option' => $option,
     //         'passports' => $renew->concat($manual)->concat($lost)->concat($other),
-            
+
     //     ];
     //     return view('BranchManager.passportOption.shift_to_admin',$data);
     // }
@@ -127,7 +127,7 @@ class PassportOptionsController extends Controller
             'to_date' => $to_date,
             'option' => $option,
             'passports' => $renew,
-            
+
         ];
         return view('BranchManager.passportOption.shift_to_admin',$data);
     }
@@ -150,7 +150,7 @@ class PassportOptionsController extends Controller
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'passports' => $lost, 
+            'passports' => $lost,
         ];
         return view('BranchManager.passportOption.shift_to_admin',$data);
     }
@@ -170,7 +170,7 @@ class PassportOptionsController extends Controller
 
     return redirect()->back();
 
-   
+
    }
 
    public function shiftToAdminStore(Request $request){
@@ -181,7 +181,7 @@ class PassportOptionsController extends Controller
                'all_option.required' => 'Please Sellect Some Data!!',
            ]
         );
-        // return $request->all();
+
     //    if ($request->passport_option == -1) {
 
     //         RenewPassport::whereIn('id',$request->all_option)->update([
@@ -195,8 +195,8 @@ class PassportOptionsController extends Controller
     //         LostPassport::whereIn('id',$request->all_option)->update([
     //             'shift_to_admin' => 1,
     //         ]);
-            
-            
+
+
     //         Other::whereIn('id',$request->all_option)->update([
     //             'shift_to_admin' => 1,
     //         ]);
@@ -240,10 +240,10 @@ class PassportOptionsController extends Controller
 
 
    public function shiftToAdminUndo($data){
-  
+
         $option = explode('&', $data)[0];
         $id = explode('&', $data)[1];
-        
+
 
         if (isset($option) && isset($id)) {
 
@@ -256,7 +256,7 @@ class PassportOptionsController extends Controller
                     'message' => 'Successfully Undo'
                 ]);
            }
-    
+
            if ($option == 1) {
                 ManualPassport::where('id',$id)->update([
                     'shift_to_admin' => 0,
@@ -273,7 +273,7 @@ class PassportOptionsController extends Controller
                 return response()->json([
                     'type' => 'success',
                     'message' => 'Successfully Undo'
-                ]);    
+                ]);
            }
 
            if ($option == 3) {
@@ -285,7 +285,7 @@ class PassportOptionsController extends Controller
                     'message' => 'Successfully Undo'
                 ]);
            }
-    
+
            return response()->json([
             'type' => 'error',
             'message' => 'Something Went Wrong'
@@ -295,7 +295,7 @@ class PassportOptionsController extends Controller
                 'type' => 'error',
                 'message' => 'Something Went Wrong'
             ]);
-        } 
+        }
    }
 
  // Received From Admin Passport Option By Monir
@@ -360,7 +360,7 @@ class PassportOptionsController extends Controller
         ];
         return view('BranchManager.passportOption.receive_from_admin',$data);
      }
-     
+
      if ($option == 2) {
         $data=[
             'emirates_id' => $emirates_id,
@@ -443,7 +443,7 @@ class PassportOptionsController extends Controller
                Session::flash('success','Lost Passport Received to Admin Successfully!!');
                 return redirect()->back();
         }
-       
+
         if ($request->passport_option == 3) {
                 NewBornBabyPassport::whereIn('id',$request->all_option)->update([
                     'branch_status' => 3,
@@ -457,10 +457,10 @@ class PassportOptionsController extends Controller
    }
 
    public function receiveFromAdminUndo($data){
-  
+
     $option = explode('&', $data)[0];
     $id = explode('&', $data)[1];
-    
+
 
     if (isset($option) && isset($id)) {
 
@@ -511,7 +511,7 @@ class PassportOptionsController extends Controller
                 'type' => 'error',
                 'message' => 'Something Went Wrong'
             ]);
-        } 
+        }
     }
 
     // Delivery Passport Option By Monir
@@ -575,7 +575,7 @@ class PassportOptionsController extends Controller
         ];
         return view('BranchManager.passportOption.delivery',$data);
      }
-     
+
      if ($option == 2) {
         $data=[
             'emirates_id' => $emirates_id,
@@ -600,7 +600,7 @@ class PassportOptionsController extends Controller
         return view('BranchManager.passportOption.delivery',$data);
      }
 
-    
+
      if ($option == 3) {
         $data=[
             'emirates_id' => $emirates_id,
@@ -672,10 +672,10 @@ class PassportOptionsController extends Controller
 //     }
 
     public function deliveryUndo($data){
-    
+
         $option = explode('&', $data)[0];
         $id = explode('&', $data)[1];
-        
+
 
         if (isset($option) && isset($id)) {
 
@@ -736,16 +736,16 @@ class PassportOptionsController extends Controller
                 'type' => 'error',
                 'message' => 'Something Went Wrong'
             ]);
-        } 
+        }
     }
 
     // public function remarksSave(Request $request,$id){
- 
+
     //     $request->validate([
     //         'remarks' => 'required'
     //     ]);
-    
-    
+
+
     //     if (isset($request->option) && $request->option == 0) {
     //         $lostPassport = LostPassport::findOrFail($id);
     //         $lostPassport->remarks = $request->remarks;
@@ -755,7 +755,7 @@ class PassportOptionsController extends Controller
     //             'message' => 'Remarks Added Successfully!'
     //         ]);
     //     }
-    
+
     //     if (isset($request->option) && $request->option == 1) {
     //         $manualPassport = ManualPassport::findOrFail($id);
     //         $manualPassport->remarks = $request->remarks;
@@ -765,7 +765,7 @@ class PassportOptionsController extends Controller
     //             'message' => 'Remarks Added Successfully!'
     //         ]);
     //     }
-    
+
     //     if (isset($request->option) && $request->option == 2) {
     //         $renewPassport = RenewPassport::findOrFail($id);
     //         $renewPassport->remarks = $request->remarks;
@@ -775,7 +775,7 @@ class PassportOptionsController extends Controller
     //             'message' => 'Remarks Added Successfully!'
     //         ]);
     //     }
-    
+
     //     if (isset($request->option) && $request->option == 3) {
     //         $otherPassport = Other::findOrFail($id);
     //         $otherPassport->remarks = $request->remarks;
@@ -790,7 +790,7 @@ class PassportOptionsController extends Controller
     //         'message' => 'Something Went Wrong!!'
     //     ]);
     //     return redirect()->back();
-    
+
     // }
 
 

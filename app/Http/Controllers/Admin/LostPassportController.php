@@ -162,7 +162,6 @@ class LostPassportController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $request->validate([
             'name' => 'required',
             // 'emirates_id' => 'required',

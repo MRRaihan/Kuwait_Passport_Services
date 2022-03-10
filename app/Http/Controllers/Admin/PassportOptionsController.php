@@ -213,7 +213,7 @@ class PassportOptionsController extends Controller
                     'message' => 'Successfully Undo'
                 ]);
             }
-           
+
 
             if ($option == 3) {
                 NewBornBabyPassport::where('id', $id)->update([
@@ -390,7 +390,7 @@ class PassportOptionsController extends Controller
             Session::flash('success', 'Lost Passport Shift to Branch Successfully!!');
             return redirect()->back();
         }
-      
+
         if ($request->passport_option == 3) {
             NewBornBabyPassport::whereIn('id', $request->all_option)->whereIn('branch_id', $request->branch_id)->update([
                 'branch_status' => 1,
@@ -495,7 +495,7 @@ class PassportOptionsController extends Controller
             Session::flash('success', 'Lost Passport Received to Embasssay Successfully!!');
             return redirect()->back();
         }
-      
+
 
         if ($request->passport_option == 3) {
             NewBornBabyPassport::whereIn('id', $request->all_option)->update([
@@ -512,7 +512,6 @@ class PassportOptionsController extends Controller
 
     public function bioEnrollmentIdSave(Request $request, $id)
     {
-
         $request->validate([
             'bio_enrollment_id' => 'required'
         ]);
@@ -784,7 +783,7 @@ class PassportOptionsController extends Controller
         }
     }
 
-   
+
 
     public function callCenterStatus()
     {
