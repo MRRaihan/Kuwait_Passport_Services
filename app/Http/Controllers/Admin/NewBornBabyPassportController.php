@@ -76,7 +76,6 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->user_creator_id = Auth::user()->id;
         $newBornBabyPassport->shift_to_admin = 1;
         $newBornBabyPassport->entry_person = Auth::user()->id;
-        // $newBornBabyPassport->special_skill = $request->special_skill;
         $newBornBabyPassport->residence = $request->residence;
         $newBornBabyPassport->mailing_address = $request->mailing_address;
         $newBornBabyPassport->permanent_address = $request->permanent_address;
@@ -190,7 +189,6 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->delivery_branch = $request->delivery_branch;
         $newBornBabyPassport->user_creator_id = Auth::user()->id;
         $newBornBabyPassport->entry_person = Auth::user()->id;
-        // $newBornBabyPassport->special_skill = $request->special_skill;
         $newBornBabyPassport->residence = $request->residence;
         $newBornBabyPassport->mailing_address = $request->mailing_address;
         $newBornBabyPassport->permanent_address = $request->permanent_address;
@@ -291,7 +289,6 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->delivery_branch = $request->delivery_branch;
         $newBornBabyPassport->user_creator_id = Auth::user()->id;
         $newBornBabyPassport->entry_person = Auth::user()->id;
-        // $newBornBabyPassport->special_skill = $request->special_skill;
         $newBornBabyPassport->residence = $request->residence;
         $newBornBabyPassport->mailing_address = $request->mailing_address;
         $newBornBabyPassport->permanent_address = $request->permanent_address;
