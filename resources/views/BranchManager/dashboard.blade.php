@@ -741,7 +741,7 @@ Branch Manager
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-default text-center">
                             <div class="panel-heading">
-                                <h4 class="panel-title title-dark">Daily New Born Baby Passport's</h4>
+                                <h4 class="panel-title title-dark">New Born Baby Passport's</h4>
                             </div>
                             <div class="panel-body">
                                 <h3 class=""><b>{{ $dailyOther }}</b></h3>

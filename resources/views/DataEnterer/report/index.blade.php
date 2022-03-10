@@ -760,7 +760,7 @@
                             <div class="col-sm-6 col-lg-6">
                                 <div class="panel panel-default text-center">
                                     <div class="panel-heading panel-bg-default" style="">
-                                        <h4 class="panel-title text-dark">Daily New Born Baby Passport's</h4>
+                                        <h4 class="panel-title text-dark">New Born Baby Passport's</h4>
                                     </div>
                                     <div class="panel-body">
                                         <h3 class=""><b>{{ $daily_new_baby_passport }}</b></h3>

@@ -48,7 +48,7 @@ Bangladesh Embassy
                         </div>
                     </div>
 
-                 
+
                     <div class="col-md-12">
                         <div class="panel panel-primary">
                             <div class="panel-heading text-center" style="background: #01BA9A;">
@@ -322,7 +322,7 @@ Bangladesh Embassy
                     <div class="col-sm-6 col-lg-3">
                         <div class="panel panel-default text-center">
                             <div class="panel-heading panel-bg-default">
-                                <h4 class="panel-title" style="color: #2a323c;">Daily New Born Baby Passport's</h4>
+                                <h4 class="panel-title" style="color: #2a323c;">New Born Baby Passport's</h4>
                             </div>
                             <div class="panel-body">
                                 <h3 class=""><b>{{ $daily_new_baby_passport }}</b></h3>
