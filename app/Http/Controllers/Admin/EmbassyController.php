@@ -137,7 +137,7 @@ class EmbassyController extends Controller
 
         // if($request->image){
         //     if ($user->image){
-        //         @unlink($request->old_img); //Old image delete
+        //         unlink($request->old_img); //Old image delete
         //     }
         // }
 
@@ -173,7 +173,7 @@ class EmbassyController extends Controller
     {
         $user = User::findOrFail($id);
         if ($user->image) {
-            @unlink($user->image);
+            unlink($user->image);
         }
         try {
             $user->deleted_at = Carbon::now();

@@ -41,16 +41,16 @@ class CallCenterController extends Controller
 
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->status = 1;
+        $callCenter = new User();
+        $callCenter->name = $request->name;
+        $callCenter->phone = $request->phone;
+        $callCenter->email = $request->email;
+        $callCenter->status = 1;
 
-        $user->parent_id = Auth::user()->id;
-        $user->created_by = Auth::user()->id;
-        $user->password = Hash::make('12345');
-        $user->user_type = 'call-center';
+        $callCenter->parent_id = Auth::user()->id;
+        $callCenter->created_by = Auth::user()->id;
+        $callCenter->password = Hash::make('12345');
+        $callCenter->user_type = 'call-center';
 
 
 
@@ -60,12 +60,12 @@ class CallCenterController extends Controller
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
-            $user->image   = $folder_path . $image_new_name;
+            $callCenter->image   = $folder_path . $image_new_name;
         }
 
         try {
-            $user->save();
-            $user->assignRole('call-center');
+            $callCenter->save();
+            $callCenter->assignRole('call-center');
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successsfully call center created !',
@@ -86,10 +86,10 @@ class CallCenterController extends Controller
 
     public function activeNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 1;
+        $callCenter = User::findOrFail($id);
+        $callCenter->status = 1;
         try {
-            $user->save();
+            $callCenter->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -104,10 +104,10 @@ class CallCenterController extends Controller
 
     public function inactiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 0;
+        $callCenter = User::findOrFail($id);
+        $callCenter->status = 0;
         try {
-            $user->save();
+            $callCenter->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -123,7 +123,7 @@ class CallCenterController extends Controller
 
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $callCenter = User::findOrFail($id);
         return view('Admin.callCenter.edit', compact('user'));
     }
 
@@ -136,12 +136,12 @@ class CallCenterController extends Controller
             'name' => 'required',
         ]);
 
-        $user = User::findOrFail($id);
-        $user->fill($request->except('image'));
+        $callCenter = User::findOrFail($id);
+        $callCenter->fill($request->except('image'));
 
         if ($request->hasFile('image')) {
-            if ($user->image != null)
-                File::delete(public_path($user->image)); //Old image delete
+            if ($callCenter->image != null)
+                File::delete(public_path($callCenter->image)); //Old image delete
 
             $image             = $request->file('image');
             $folder_path       = 'uploads/images/users/';
@@ -149,10 +149,10 @@ class CallCenterController extends Controller
             //resize and save to server
             // Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
             $image->move($folder_path, $image_new_name);
-            $user->image   = $folder_path . $image_new_name;
+            $callCenter->image   = $folder_path . $image_new_name;
         }
 
-        $user->save();
+        $callCenter->save();
 
         try {
             return response()->json([
@@ -171,14 +171,14 @@ class CallCenterController extends Controller
     public function destroy($id)
     {
 
-        $user = User::findOrFail($id);
-        if ($user->image) {
-            unlink($user->image);
+        $callCenter = User::findOrFail($id);
+        if ($callCenter->image) {
+            unlink($callCenter->image);
         }
 
         try {
-            $user->deleted_at = Carbon::now();
-            $user->save();
+            $callCenter->deleted_at = Carbon::now();
+            $callCenter->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Deleted'
