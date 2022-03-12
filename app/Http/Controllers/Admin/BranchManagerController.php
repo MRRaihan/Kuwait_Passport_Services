@@ -42,19 +42,16 @@ class BranchManagerController extends Controller
             'branch_id' => 'required',
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->branch_id = $request->branch_id;
-        $user->parent_id = Auth::user()->id;
-        $user->created_by = Auth::user()->id;
-        $user->password = Hash::make('12345');
-        $user->user_type = 'branch-manager';
-        $user->status = '1';
-
-
-
+        $branchManager = new User();
+        $branchManager->name = $request->name;
+        $branchManager->phone = $request->phone;
+        $branchManager->email = $request->email;
+        $branchManager->branch_id = $request->branch_id;
+        $branchManager->parent_id = Auth::user()->id;
+        $branchManager->created_by = Auth::user()->id;
+        $branchManager->password = Hash::make('12345');
+        $branchManager->user_type = 'branch-manager';
+        $branchManager->status = '1';
 
         if ($request->hasFile('image')) {
             $image             = $request->file('image');
@@ -63,13 +60,13 @@ class BranchManagerController extends Controller
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
             // $image->move($folder_path, $image_new_name);
-            $user->image   = $folder_path . $image_new_name;
+            $branchManager->image   = $folder_path . $image_new_name;
         }
 
         try {
 
-            $user->save();
-            $user->assignRole('branch-manager');
+            $branchManager->save();
+            $branchManager->assignRole('branch-manager');
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successsfully Branch Manager Created !',
@@ -90,10 +87,10 @@ class BranchManagerController extends Controller
 
     public function activeNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 1;
+        $branchManager = User::findOrFail($id);
+        $branchManager->status = 1;
         try {
-            $user->save();
+            $branchManager->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -108,10 +105,10 @@ class BranchManagerController extends Controller
 
     public function inactiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 0;
+        $branchManager = User::findOrFail($id);
+        $branchManager->status = 0;
         try {
-            $user->save();
+            $branchManager->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -127,7 +124,7 @@ class BranchManagerController extends Controller
 
     public function edit($id)
     {
-        $user =  User::findOrFail($id);
+        $branchManager =  User::findOrFail($id);
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         return view('Admin.branchManager.edit', compact('user', 'branchs'));
     }
@@ -141,12 +138,12 @@ class BranchManagerController extends Controller
             'name' => 'required',
         ]);
 
-        $user = User::findOrFail($id);
-        $user->fill($request->except('image'));
+        $branchManager = User::findOrFail($id);
+        $branchManager->fill($request->except('image'));
 
         if ($request->hasFile('image')) {
-            if ($user->image != null)
-                File::delete(public_path($user->image)); //Old image delete
+            if ($branchManager->image != null)
+                File::delete(public_path($branchManager->image)); //Old image delete
 
             $image             = $request->file('image');
             $folder_path       = 'uploads/images/users/';
@@ -154,10 +151,10 @@ class BranchManagerController extends Controller
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
             // $image->move($folder_path, $image_new_name);
-            $user->image   = $folder_path . $image_new_name;
+            $branchManager->image   = $folder_path . $image_new_name;
         }
 
-        $user->save();
+        $branchManager->save();
 
         try {
             return response()->json([
@@ -182,13 +179,13 @@ class BranchManagerController extends Controller
                 'message' => 'This branch manager have some data enterer !'
             ]);
         }else{
-            $user = User::findOrFail($id);
-            if ($user->image) {
-                unlink($user->image);
+            $branchManager = User::findOrFail($id);
+            if ($branchManager->image) {
+                unlink($branchManager->image);
             }
             try {
-                $user->deleted_at = Carbon::now();
-                $user->save();
+                $branchManager->deleted_at = Carbon::now();
+                $branchManager->save();
                 return response()->json([
                     'type' => 'success',
                     'message' => 'Successfully Deleted'
