@@ -73,9 +73,7 @@
                                                     <option disabled selected>-- Select Type --</option>
                                                     @foreach ($menualPassportFees as $passportFee)
                                                         <option {{ $passportFee->id == $manualPassport->passport_type_id ? 'selected' : '' }} value="{{ $passportFee->id }}" @if ($manualPassport->passport_type_id == $passportFee->id) selected @endif>
-                                                            {{ $passportFee->title }} (
-                                                            govt: {{ $passportFee->government_fee }}| Ver fee:
-                                                            {{ $passportFee->versatilo_fee }})</option>
+                                                            {{ $passportFee->title }}</option>
                                                     @endforeach
 
                                                 </select>
