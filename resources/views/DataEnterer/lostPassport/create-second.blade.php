@@ -70,9 +70,7 @@ Lost Passport Create
                                                     <option disabled selected>-- Select Type --</option>
                                                     @foreach ($lostPassportFees as $passportFee)
                                                         <option value="{{ $passportFee->id }}" @if (old('passport_type_id') == $passportFee->id) selected @endif>
-                                                            {{ $passportFee->title }} (
-                                                            govt: {{ $passportFee->government_fee }}| Ver fee:
-                                                            {{ $passportFee->versatilo_fee }})</option>
+                                                            {{ $passportFee->title }}</option>
                                                     @endforeach
 
                                                 </select>

@@ -39,16 +39,16 @@ class AccountManagerController extends Controller
             'image' => 'image|max:2000'
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
+        $accountManager = new User();
+        $accountManager->name = $request->name;
+        $accountManager->phone = $request->phone;
+        $accountManager->email = $request->email;
 
-        $user->parent_id = Auth::user()->id;
-        $user->created_by = Auth::user()->id;
-        $user->password = Hash::make('12345');
-        $user->user_type = 'account-manager';
-        $user->status = '1';
+        $accountManager->parent_id = Auth::user()->id;
+        $accountManager->created_by = Auth::user()->id;
+        $accountManager->password = Hash::make('12345');
+        $accountManager->user_type = 'account-manager';
+        $accountManager->status = '1';
 
 
         if ($request->hasFile('image')) {
@@ -57,13 +57,13 @@ class AccountManagerController extends Controller
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
-            $user->image   = $folder_path . $image_new_name;
+            $accountManager->image   = $folder_path . $image_new_name;
         }
 
 
         try {
-            $user->save();
-            $user->assignRole('account-manager');
+            $accountManager->save();
+            $accountManager->assignRole('account-manager');
 
             return response()->json([
                 'type' => 'success',
@@ -85,10 +85,10 @@ class AccountManagerController extends Controller
 
     public function activeNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 1;
+        $accountManager = User::findOrFail($id);
+        $accountManager->status = 1;
         try {
-            $user->save();
+            $accountManager->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -103,10 +103,10 @@ class AccountManagerController extends Controller
 
     public function inactiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 0;
+        $accountManager = User::findOrFail($id);
+        $accountManager->status = 0;
         try {
-            $user->save();
+            $accountManager->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -121,7 +121,7 @@ class AccountManagerController extends Controller
 
     public function edit($id)
     {
-        $user =  User::findOrFail($id);
+        $accountManager =  User::findOrFail($id);
         return view('Admin.accountManager.edit', compact('user'));
     }
 
@@ -134,23 +134,23 @@ class AccountManagerController extends Controller
             'image' => 'image|max:2000',
         ]);
 
-        $user = User::findOrFail($id);
-        $user->fill($request->except('image'));
+        $accountManager = User::findOrFail($id);
+        $accountManager->fill($request->except('image'));
 
         if ($request->hasFile('image')) {
 
             if ($request->image != null) {
-                File::delete(public_path($user->image)); //Old image delete
+                File::delete(public_path($accountManager->image)); //Old image delete
             }
             $image             = $request->file('image');
             $folder_path       = 'uploads/images/users/';
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
-            $user->image   = $folder_path . $image_new_name;
+            $accountManager->image   = $folder_path . $image_new_name;
         }
 
-        $user->update();
+        $accountManager->update();
 
         try {
             return response()->json([
@@ -168,13 +168,13 @@ class AccountManagerController extends Controller
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        if ($user->image) {
-            unlink($user->image);
+        $accountManager = User::findOrFail($id);
+        if ($accountManager->image) {
+            unlink($accountManager->image);
         }
         try {
-            $user->deleted_at = Carbon::now();
-            $user->save();
+            $accountManager->deleted_at = Carbon::now();
+            $accountManager->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Deleted'

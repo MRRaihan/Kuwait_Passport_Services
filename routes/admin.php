@@ -254,7 +254,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     // delivery to user
     Route::get('delivery-report', [ReportController::class, 'deliveryReport'])->name('deliveryreport.index');
     Route::get('delivery-report/{data}', [ReportController::class, 'deliveryView'])->name('deliveryreport.view');
-    
+
     Route::get('get-delivery-report/{data}', [ReportController::class, 'getDeliveryReport']);
 
 
@@ -295,23 +295,23 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
 
     Route::get('import-export', [ImportExportController::class, 'index'])->name('importExport');
     //lost passport
-    Route::get('lost-passport-downlode', [ImportExportController::class, 'lostPassportExport'])->name('lostPassportExportDownlode');
+    Route::get('lost-passport-download', [ImportExportController::class, 'lostPassportExport'])->name('lostPassportExportDownlode');
     Route::post('lost-passport-import', [ImportExportController::class, 'lostPassportImport'])->name('lostPassportImport');
 
     //manual passport
-    Route::get('manaul-passport-downlode', [ImportExportController::class, 'ManualPassportExport'])->name('ManualPassportExportDownlode');
+    Route::get('manaul-passport-download', [ImportExportController::class, 'ManualPassportExport'])->name('ManualPassportExportDownlode');
     Route::post('manual-passport-import', [ImportExportController::class, 'ManualPassportImport'])->name('ManualPassportImport');
 
     //renew passport
-    Route::get('renew-passport-downlode', [ImportExportController::class, 'RenewPassportExport'])->name('RenewPassportExportDownlode');
+    Route::get('renew-passport-download', [ImportExportController::class, 'RenewPassportExport'])->name('RenewPassportExportDownlode');
     Route::post('renew-passport-import', [ImportExportController::class, 'RenewPassportImport'])->name('RenewPassportImport');
 
     //baby passport
-    Route::get('baby-passport-downlode', [ImportExportController::class, 'BabyPassportExport'])->name('babyPassportExportDownlode');
+    Route::get('baby-passport-download', [ImportExportController::class, 'BabyPassportExport'])->name('babyPassportExportDownlode');
     Route::post('baby-passport-import', [ImportExportController::class, 'BabyPassportImport'])->name('babyPassportImport');
 
     //other service export
-    Route::get('other-service-downlode', [ImportExportController::class, 'OtherServiceExport'])->name('OtherServiceExportDownlode');
+    Route::get('other-service-download', [ImportExportController::class, 'OtherServiceExport'])->name('OtherServiceExportDownlode');
     Route::post('other-service-import', [ImportExportController::class, 'OtherServiceImport'])->name('OtherServiceImport');
 
     /**

@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -57,29 +56,24 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-    public function manualPassport()
+    public function renewPassports()
     {
-        return $this->hasOne(ManualPassport::class, 'user_creator_id');
+        return $this->hasMany(RenewPassport::class, 'user_creator_id');
+    }
+    public function manualPassports()
+    {
+        return $this->hasMany(ManualPassport::class, 'user_creator_id');
+    }
+    public function lostPassports()
+    {
+        return $this->hasMany(LostPassport::class, 'user_creator_id');
+    }
+    public function newBornBabyPassports()
+    {
+        return $this->hasMany(NewBornBabyPassport::class, 'user_creator_id');
     }
 
-    public function lostPassport()
-    {
-        return $this->hasOne(LostPassport::class, 'user_creator_id');
-    }
-
-    public function extendingPassport()
-    {
-        return $this->hasOne(ExtendingPassport::class, 'user_id');
-    }
-
-    public function other()
-    {
-        return $this->hasOne(Other::class, 'user_creator_id');
-    }
-
-    public function lastLoginInfo()
-    {
-        return $this->hasOne(LastLoginInfo::class, 'user_id');
+    public function dataEnterersUnderMe(){
+        return $this->hasMany(User::class, 'parent_id');
     }
 }

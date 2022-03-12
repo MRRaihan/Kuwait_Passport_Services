@@ -40,16 +40,16 @@ class DataEntererController extends Controller
             'branch_id' => 'required'
         ]);
 
-        $user = new User();
-        $user->name = $request->name;
-        $user->phone = $request->phone;
-        $user->email = $request->email;
-        $user->status = 1;
-        $user->branch_id = $request->branch_id;
-        $user->parent_id = Auth::user()->id;
-        $user->created_by = Auth::user()->id;
-        $user->password = Hash::make('12345');
-        $user->user_type = 'data-enterer';
+        $dataEnterer = new User();
+        $dataEnterer->name = $request->name;
+        $dataEnterer->phone = $request->phone;
+        $dataEnterer->email = $request->email;
+        $dataEnterer->status = 1;
+        $dataEnterer->branch_id = $request->branch_id;
+        $dataEnterer->parent_id = Auth::user()->id;
+        $dataEnterer->created_by = Auth::user()->id;
+        $dataEnterer->password = Hash::make('12345');
+        $dataEnterer->user_type = 'data-enterer';
 
 
         if ($request->hasFile('image')) {
@@ -58,11 +58,11 @@ class DataEntererController extends Controller
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
-            $user->image   = $folder_path . $image_new_name;
+            $dataEnterer->image   = $folder_path . $image_new_name;
         }
 
-        $user->save();
-        $user->assignRole('data-enterer');
+        $dataEnterer->save();
+        $dataEnterer->assignRole('data-enterer');
 
         try {
             return response()->json([
@@ -85,10 +85,10 @@ class DataEntererController extends Controller
 
     public function activeNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 1;
+        $dataEnterer = User::findOrFail($id);
+        $dataEnterer->status = 1;
         try {
-            $user->save();
+            $dataEnterer->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -103,10 +103,10 @@ class DataEntererController extends Controller
 
     public function inactiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->status = 0;
+        $dataEnterer = User::findOrFail($id);
+        $dataEnterer->status = 0;
         try {
-            $user->save();
+            $dataEnterer->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -122,10 +122,10 @@ class DataEntererController extends Controller
 
     public function entryActiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->entry_status = 1;
+        $dataEnterer = User::findOrFail($id);
+        $dataEnterer->entry_status = 1;
         try {
-            $user->save();
+            $dataEnterer->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -140,10 +140,10 @@ class DataEntererController extends Controller
 
     public function entryInactiveNow($id)
     {
-        $user = User::findOrFail($id);
-        $user->entry_status = 0;
+        $dataEnterer = User::findOrFail($id);
+        $dataEnterer->entry_status = 0;
         try {
-            $user->save();
+            $dataEnterer->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Updated'
@@ -175,22 +175,22 @@ class DataEntererController extends Controller
             'branch_id' => 'required'
         ]);
 
-        $user = User::findOrFail($id);
-        $user->fill($request->except('image'));
+        $dataEnterer = User::findOrFail($id);
+        $dataEnterer->fill($request->except('image'));
 
         if ($request->hasFile('image')) {
-            if ($user->image != null)
-                File::delete(public_path($user->image)); //Old image delete
+            if ($dataEnterer->image != null)
+                File::delete(public_path($dataEnterer->image)); //Old image delete
 
             $image             = $request->file('image');
             $folder_path       = 'uploads/images/users/';
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->resize(600, 600)->save($folder_path . $image_new_name, 100);
-            $user->image   = $folder_path . $image_new_name;
+            $dataEnterer->image   = $folder_path . $image_new_name;
         }
 
-        $user->save();
+        $dataEnterer->save();
 
         try {
             return response()->json([
@@ -208,22 +208,30 @@ class DataEntererController extends Controller
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        if ($user->image) {
-            @unlink($user->image);
-        }
-        try {
-            $user->deleted_at = Carbon::now();
-            $user->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Successfully Deleted'
-            ]);
-        } catch (\Exception $exception) {
+        $dataEnterer = User::findOrFail($id);
+
+        if (if_have_passport_created_by_me($dataEnterer)) {
             return response()->json([
                 'type' => 'error',
-                'message' => $exception->getMessage()
+                'message' => 'This data enterer have some passport !'
             ]);
+        }else{
+            if ($dataEnterer->image) {
+                unlink($dataEnterer->image);
+            }
+            try {
+                $dataEnterer->deleted_at = Carbon::now();
+                $dataEnterer->save();
+                return response()->json([
+                    'type' => 'success',
+                    'message' => 'Successfully Deleted'
+                ]);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'error',
+                    'message' => $exception->getMessage()
+                ]);
+            }
         }
     }
 }

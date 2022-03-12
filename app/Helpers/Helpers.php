@@ -264,4 +264,12 @@ if (!function_exists('random_code')) {
     {
         return Carbon::now()->addMonths(3)->addDays(10);
     }
+    function if_have_passport_created_by_me($dataEnterer)
+    {
+        if($dataEnterer->renewPassports->count() > 0 || $dataEnterer->manualPassports->count() > 0 || $dataEnterer->lostPassports->count() > 0 || $dataEnterer->newBornBabyPassports->count() > 0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 }
