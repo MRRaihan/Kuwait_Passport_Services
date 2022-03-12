@@ -213,7 +213,7 @@ class DataEntererController extends Controller
         if (if_have_passport_created_by_me($dataEnterer)) {
             return response()->json([
                 'type' => 'error',
-                'message' => 'This data enterer have some passport or services !'
+                'message' => 'This data enterer have some passport !'
             ]);
         }else{
             if ($dataEnterer->image) {
