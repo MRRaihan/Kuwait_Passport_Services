@@ -82,4 +82,8 @@ class User extends Authenticatable
     {
         return $this->hasOne(LastLoginInfo::class, 'user_id');
     }
+
+    public function dataEnterersUnderMe(){
+        return $this->hasMany(User::class, 'parent_id');
+    }
 }

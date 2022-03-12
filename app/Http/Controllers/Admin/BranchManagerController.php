@@ -175,22 +175,30 @@ class BranchManagerController extends Controller
 
     public function destroy($id)
     {
-        $user = User::findOrFail($id);
-        if ($user->image) {
-            unlink($user->image);
-        }
-        try {
-            $user->deleted_at = Carbon::now();
-            $user->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Successfully Deleted'
-            ]);
-        } catch (\Exception $exception) {
+        $branchManager = User::find($id);
+        if ($branchManager->dataEnterersUnderMe->count() > 0) {
             return response()->json([
                 'type' => 'error',
-                'message' => $exception->getMessage()
+                'message' => 'This branch manager have some data enterer !'
             ]);
+        }else{
+            $user = User::findOrFail($id);
+            if ($user->image) {
+                unlink($user->image);
+            }
+            try {
+                $user->deleted_at = Carbon::now();
+                $user->save();
+                return response()->json([
+                    'type' => 'success',
+                    'message' => 'Successfully Deleted'
+                ]);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'type' => 'error',
+                    'message' => $exception->getMessage()
+                ]);
+            }
         }
     }
 }
