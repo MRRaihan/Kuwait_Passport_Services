@@ -57,7 +57,7 @@
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
                                         <th>EMS</th>

@@ -79,7 +79,7 @@
         <div class="padding"></div>
 
 
-        Emirates ID :  {{ $serviceData->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $serviceData->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $serviceData->mailing_address}}<div class="padding"></div>
 
@@ -87,7 +87,7 @@
 
         Special Skill :  {{  $serviceData->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No :  {{  $serviceData->residence}}<div class="padding"></div>
+        Residence Civil ID / Phone No :  {{  $serviceData->residence}}<div class="padding"></div>
 
         Delivery Date : {{ date('d-m-Y',strtotime($serviceData->delivery_date)) }}<div class="padding"></div>
 

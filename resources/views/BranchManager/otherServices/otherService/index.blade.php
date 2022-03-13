@@ -58,7 +58,7 @@ Others Services
                                 <tr>
                                     <th>SL.</th>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Total Cost</th>

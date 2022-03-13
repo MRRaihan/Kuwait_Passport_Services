@@ -183,18 +183,18 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="residence"> Residence Emirates ID / Phone No  </label>
+                                                <label for="residence"> Residence Civil ID / Phone No  </label>
                                                 <input name="residence" value='{{ $renewPassport->residence }}' class="form-control"
-                                                    placeholder="Residence Emirates ID / Phone No" id="residence" autocomplete="off" required=""
+                                                    placeholder="Residence Civil ID / Phone No" id="residence" autocomplete="off" required=""
                                                     aria-required="true">
                                                 @error('residence')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span> </label>
+                                                <label for="civil_id"> Civil ID <span style="color: red;">*</span> </label>
                                                 <input name="civil_id" value='{{ $renewPassport->civil_id }}' class="form-control"
-                                                    placeholder="Enter Emirates ID" id="civil_id" autocomplete="off" required=""
+                                                    placeholder="Enter Civil ID" id="civil_id" autocomplete="off" required=""
                                                     aria-required="true">
                                                 @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>

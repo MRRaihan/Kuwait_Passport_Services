@@ -232,10 +232,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Civil ID <span style="color: red;">*</span>
                                                 </label>
                                                 <input name="civil_id" value='{{ $passportData->civil_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
+                                                    class="form-control" placeholder="Enter Civil ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
                                                 @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
@@ -315,10 +315,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="residence"> Residence Emirates ID / phone No </label>
+                                                <label for="residence"> Residence Civil ID / phone No </label>
                                                 <input value='{{ $passportData->residence }}' name="residence" type="text"
                                                     class="form-control"
-                                                    placeholder="Enter Residence Emirates ID / phone No " id="residence">
+                                                    placeholder="Enter Residence Civil ID / phone No " id="residence">
                                                 @error('residence')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -435,10 +435,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Civil ID <span style="color: red;">*</span>
                                                 </label>
                                                 <input name="civil_id" value='{{ $passportData->civil_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
+                                                    class="form-control" placeholder="Enter Civil ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
                                                 @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
@@ -519,10 +519,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="residence"> Residence Emirates ID / phone No </label>
+                                                <label for="residence"> Residence Civil ID / phone No </label>
                                                 <input value='{{ $passportData->residence }}' name="residence" type="text"
                                                     class="form-control"
-                                                    placeholder="Enter Residence Emirates ID / phone No " id="residence">
+                                                    placeholder="Enter Residence Civil ID / phone No " id="residence">
                                                 @error('residence')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -639,10 +639,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Civil ID <span style="color: red;">*</span>
                                                 </label>
                                                 <input name="civil_id" value='{{ $passportData->civil_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
+                                                    class="form-control" placeholder="Enter Civil ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
                                                 @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
@@ -724,10 +724,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="residence"> Residence Emirates ID / phone No </label>
+                                                <label for="residence"> Residence Civil ID / phone No </label>
                                                 <input value='{{ $passportData->residence }}' name="residence" type="text"
                                                     class="form-control"
-                                                    placeholder="Enter Residence Emirates ID / phone No " id="residence">
+                                                    placeholder="Enter Residence Civil ID / phone No " id="residence">
                                                 @error('residence')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -844,10 +844,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Civil ID <span style="color: red;">*</span>
                                                 </label>
                                                 <input name="civil_id" value='{{ $passportData->civil_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
+                                                    class="form-control" placeholder="Enter Civil ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
                                                 @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
@@ -928,10 +928,10 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="residence"> Residence Emirates ID / phone No </label>
+                                                <label for="residence"> Residence Civil ID / phone No </label>
                                                 <input value='{{ $passportData->residence }}' name="residence" type="text"
                                                     class="form-control"
-                                                    placeholder="Enter Residence Emirates ID / phone No " id="residence">
+                                                    placeholder="Enter Residence Civil ID / phone No " id="residence">
                                                 @error('residence')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror

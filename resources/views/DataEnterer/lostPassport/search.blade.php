@@ -61,7 +61,7 @@ Lost Passport
                                         <th>SL</th>
                                         <th>Name</th>
                                         <th>MRP Passport No.</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>

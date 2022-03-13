@@ -170,7 +170,7 @@
                   </div>
 
                   <div class="my-4">
-                    <label for="civil_id" class="form-label">Emirates ID</label>
+                    <label for="civil_id" class="form-label">Civil ID</label>
                     <input type="text" class="form-control select-forms" name="civil_id" value="{{ old('civil_id',$passport->civil_id) }}" id="civil_id"
                       placeholder="Enter Civil ID" />
                       @if($errors->has('civil_id'))
@@ -226,7 +226,7 @@
                       </div>
 
                       <div class="custom">
-                        <label for="residence" class="form-label">Residence Emirates ID / Phone No</label>
+                        <label for="residence" class="form-label">Residence Civil ID / Phone No</label>
                         <input type="text" class="form-control select-forms" name="residence" value="{{ old('residence',$passport->residence) }}" id="residence" />
                           @if($errors->has('residence'))
                             <span class="text-danger">{{ $errors->first('residence') }}</span>

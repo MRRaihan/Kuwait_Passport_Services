@@ -43,7 +43,7 @@
 
         Special Skill : {{ $expressService->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No : {{ $expressService->residence }}<div class="padding"></div>
+        Residence Civil ID / Phone No : {{ $expressService->residence }}<div class="padding"></div>
 
         Entry Person : {{ $expressService->user->name }} <div class="padding"></div>
 

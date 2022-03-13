@@ -112,7 +112,7 @@ Manual Passport Table
                                     <th>Sl.</th>
                                     <th>Name</th>
                                     <th>MRP No.</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>

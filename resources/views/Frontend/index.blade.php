@@ -422,7 +422,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -431,14 +431,14 @@
 
                                             <div id="more2">
                                                 <li>Name</li>
-                                                <li>Emirates ID</li>
+                                                <li>Civil ID</li>
                                                 <li>Passport Copy</li>
                                                 <li>Mailing Address</li>
                                                 <li>Kuwait Phone</li>
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -466,7 +466,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -477,7 +477,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -505,7 +505,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -515,7 +515,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -543,7 +543,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -553,7 +553,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -581,7 +581,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -591,7 +591,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -642,7 +642,7 @@
 
                                 <div class="my-4">
                                     <input type="text" name="civil_id" id="civil_id" class="form-control"
-                                        placeholder="Emirates ID" />
+                                        placeholder="Civil ID" />
                                 </div>
                                 <div class="mb-4">
                                     <input type="text" name="kuwait_phone" id="kuwait_phone" class="form-control"

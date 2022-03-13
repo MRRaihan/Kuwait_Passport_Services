@@ -42,8 +42,8 @@
             <div class="col-sm-12">
 
                 <div class="col-md-3">
-                    <label for="date">Emirates ID</label>
-                    <input type="text" name="civil_id" id="civil_id" value="{{ $civil_id }}" class="form-control" placeholder="search by Emirates ID">
+                    <label for="date">Civil ID</label>
+                    <input type="text" name="civil_id" id="civil_id" value="{{ $civil_id }}" class="form-control" placeholder="search by Civil ID">
                 </div>
 
                 <div class="col-md-3">
@@ -113,7 +113,7 @@
                                             <label><input type="checkbox" name="select_option" id="select_option" onclick="checkedAll.call(this);">&nbsp;&nbsp;Select/Unsellect All</label>
                                         </th>
                                         <th>Name</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th style="width: 150px">Action</th>

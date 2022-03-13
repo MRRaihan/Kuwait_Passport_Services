@@ -57,7 +57,7 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>

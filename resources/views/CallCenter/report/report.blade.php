@@ -46,7 +46,7 @@
                     @if (isset($option) && $option == 1)
                        <th>Category Of Passport Holder </th>
                     @endif
-                    <th scope="col">Emirates ID</th>
+                    <th scope="col">Civil ID</th>
                     <th scope="col">Passport NO.</th>
                     <th scope="col">Kuwait Phone</th>
                     <th scope="col">BARCODE.</th>

@@ -37,7 +37,7 @@
         Kuwait Phone : {{ $newBornBabyPassport->kuwait_phone }}
         <div class="padding"></div>
 
-        Emirates ID :  {{ $newBornBabyPassport->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $newBornBabyPassport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $newBornBabyPassport->mailing_address }}<div class="padding"></div>
 
@@ -45,7 +45,7 @@
 
         {{-- Special Skill : {{ $newBornBabyPassport->special_skill }}<div class="padding"></div> --}}
 
-        Residence Emirates ID / Phone No : {{ $newBornBabyPassport->residence }}<div class="padding"></div>
+        Residence Civil ID / Phone No : {{ $newBornBabyPassport->residence }}<div class="padding"></div>
 
         Entry Person : {{ $newBornBabyPassport->creator->name }}<div class="padding"></div>
 

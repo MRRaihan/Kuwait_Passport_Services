@@ -76,7 +76,7 @@
         <div class="padding"></div>
 
 
-        Emirates ID :  {{ $passport->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $passport->civil_id }}<div class="padding"></div>
 
         Remarks :  {{ $passport->remarks }}<div class="padding"></div>
 
@@ -86,7 +86,7 @@
 
         Special Skill :  {{  $passport->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
+        Residence Civil ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
 
         Delivery Date : {{ date('d-m-Y',strtotime($passport->delivery_date)) }}<div class="padding"></div>
 

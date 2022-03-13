@@ -28,7 +28,7 @@
 
         Phone :  {{ $lostPassport->kuwait_phone }}<div class="padding"></div>
 
-        Emirates ID :  {{ $lostPassport->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $lostPassport->civil_id }}<div class="padding"></div>
 
         Entry Person : {{ $lostPassport->creator->name }} <div class="padding"></div>
 

@@ -149,7 +149,7 @@
                     </div>
 
                     <div class="my-4">
-                      <label for="civil_id" class="form-label">Emirates ID</label>
+                      <label for="civil_id" class="form-label">Civil ID</label>
                       <input type="text" class="form-control select-forms" name="civil_id" id="civil_id"
                         placeholder="Enter Civil ID" />
                     </div>

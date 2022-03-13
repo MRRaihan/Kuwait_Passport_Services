@@ -26,7 +26,7 @@
 
         Phone :  {{ $newBornBabyPassport->kuwait_phone }}<div class="padding"></div>
 
-        Emirates ID :  {{ $newBornBabyPassport->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $newBornBabyPassport->civil_id }}<div class="padding"></div>
 
         Entry Person : {{ $newBornBabyPassport->creator->name }} <div class="padding"></div>
 

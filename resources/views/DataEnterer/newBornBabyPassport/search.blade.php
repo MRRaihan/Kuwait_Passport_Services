@@ -49,7 +49,7 @@ New Born Baby Passport
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>MRP Passport No.</th>
                                     <th>Phone</th>
                                     <th>EMS</th>

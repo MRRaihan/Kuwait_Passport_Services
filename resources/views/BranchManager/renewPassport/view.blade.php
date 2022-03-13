@@ -87,7 +87,7 @@
 
         <div class="padding"></div>
 
-        Emirates ID :  {{ $passport->civil_id }}<div class="padding"></div>
+        Civil ID :  {{ $passport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $passport->mailing_address}}<div class="padding"></div>
 
@@ -95,7 +95,7 @@
 
         Special Skill :  {{  $passport->special_skill}}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
+        Residence Civil ID / Phone No :  {{  $passport->residence}}<div class="padding"></div>
 
         Passport Expiry Date : {{ $passport->expiry_date }}<div class="padding"></div>
 

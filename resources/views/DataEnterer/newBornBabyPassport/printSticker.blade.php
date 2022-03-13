@@ -16,7 +16,7 @@ $p_type = $newBornBabyPassport->ems;
         B: {{ $newBornBabyPassport->branch ? substr(strtoupper($newBornBabyPassport->branch->name),0,3) : ''}} <br>
         Name :  {{ $newBornBabyPassport->name }} <br>
         Service Name: Baby Passport , Phone: {{ $newBornBabyPassport->kuwait_phone }}<br>
-        Emirates ID :  {{ $newBornBabyPassport->civil_id }} , MRP No : {{ $newBornBabyPassport->passport_number }}<br>
+        Civil ID :  {{ $newBornBabyPassport->civil_id }} , MRP No : {{ $newBornBabyPassport->passport_number }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($newBornBabyPassport->created_at)) }} , Delivary date: {{ date('d-m-Y', strtotime($newBornBabyPassport->delivery_date)) }}
     </b>
 @endsection
