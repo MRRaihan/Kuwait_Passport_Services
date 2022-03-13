@@ -112,7 +112,7 @@
             </tr>
             <tr class="review-infomation-item">
               <td class="custom-label">Emirate ID</td>
-              <td>{{ $passport->emirates_id }}</td>
+              <td>{{ $passport->civil_id }}</td>
             </tr>
             <tr class="review-infomation-item">
               <td class="custom-label">Phone number<span class="county-phone">BD</span></td>

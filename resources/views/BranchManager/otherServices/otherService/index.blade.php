@@ -72,7 +72,7 @@ Others Services
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $otherPassport->name }} {{ $otherPassport->last_name }}</td>
-                                    <td>{{ $otherPassport->emirates_id }}</td>
+                                    <td>{{ $otherPassport->civil_id }}</td>
                                     <td>{{ $otherPassport->bd_phone }}</td>
                                     <td>{{ $otherPassport->ems }}</td>
                                     <td>{{ $otherPassport->fee }}</td>

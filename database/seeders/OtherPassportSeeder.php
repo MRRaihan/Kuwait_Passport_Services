@@ -22,7 +22,7 @@ class OtherPassportSeeder extends Seeder
             $lostPassport->creator_id = 1;
             $lostPassport->name = $faker->name();
             $lostPassport->passport_number = $faker->phoneNumber();
-            $lostPassport->emirates_id = $faker->phoneNumber();
+            $lostPassport->civil_id = $faker->phoneNumber();
             // $lostPassport->govt_passport_id = $faker->phoneNumber();
             $lostPassport->mailing_address = $faker->email();
             $lostPassport->permanent_address = $faker->country();

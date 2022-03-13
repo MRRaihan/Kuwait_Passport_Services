@@ -123,7 +123,7 @@ New Born Baby Passport
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $newBornBabyPassport->name }}</td>
                                     <td>{{ $newBornBabyPassport->passport_number }}</td>
-                                    <td>{{ $newBornBabyPassport->emirates_id }}</td>
+                                    <td>{{ $newBornBabyPassport->civil_id }}</td>
                                     <td>{{ $newBornBabyPassport->kuwait_phone }}</td>
                                     <td>{{ $newBornBabyPassport->passport_type_fees_total }}</td>
                                     <td>{{ $newBornBabyPassport->ems }}</td>

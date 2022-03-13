@@ -127,7 +127,7 @@ Manual Passport Table
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $manualPassport->name }} {{ $manualPassport->last_name }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
-                                    <td>{{ $manualPassport->emirates_id }}</td>
+                                    <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->bd_phone }}</td>
                                     <td>{{ $manualPassport->ems }}</td>
                                     <td>{{ $manualPassport->created_at->diffForHumans() }}</td>

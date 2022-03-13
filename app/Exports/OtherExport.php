@@ -36,7 +36,7 @@ class OtherExport implements
             'name',
             'passport_number',
             'passport_type_id',
-            'emirates_id',
+            'civil_id',
             'passport_photocopy',
             'profession_file',
             'mailing_address',

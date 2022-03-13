@@ -37,7 +37,7 @@
         Kuwait Phone : {{ $newBornBabyPassport->kuwait_phone }}
         <div class="padding"></div>
 
-        Emirates ID :  {{ $newBornBabyPassport->emirates_id }}<div class="padding"></div>
+        Emirates ID :  {{ $newBornBabyPassport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $newBornBabyPassport->mailing_address }}<div class="padding"></div>
 

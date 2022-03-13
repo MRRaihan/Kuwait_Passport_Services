@@ -21,7 +21,7 @@ class ManualPassportSeeder extends Seeder
             $manualPassport->user_creator_id = $faker->numberBetween(1, 4);
             $manualPassport->name = $faker->name();
             $manualPassport->passport_number = $faker->phoneNumber();
-            $manualPassport->emirates_id = $faker->phoneNumber();
+            $manualPassport->civil_id = $faker->phoneNumber();
             $manualPassport->govt_passport_id = $faker->phoneNumber();
             $manualPassport->mailing_address = $faker->email();
             $manualPassport->ems = $faker->text(10);

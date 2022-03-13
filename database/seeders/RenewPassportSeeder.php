@@ -21,7 +21,7 @@ class RenewPassportSeeder extends Seeder
             $renewPassport->user_creator_id = $faker->numberBetween(1, 4);
             $renewPassport->name = $faker->name();
             $renewPassport->passport_number = $faker->phoneNumber();
-            $renewPassport->emirates_id = $faker->phoneNumber();
+            $renewPassport->civil_id = $faker->phoneNumber();
             $renewPassport->govt_passport_id = $faker->phoneNumber();
             $renewPassport->mailing_address = $faker->email();
             $renewPassport->ems = $faker->text(10);

@@ -36,7 +36,7 @@
         Kuwait Phone : {{ $lostPassport->kuwait_phone }}
         <div class="padding"></div>
 
-        Emirates ID :  {{ $lostPassport->emirates_id }}<div class="padding"></div>
+        Emirates ID :  {{ $lostPassport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $lostPassport->mailing_address}}<div class="padding"></div>
 

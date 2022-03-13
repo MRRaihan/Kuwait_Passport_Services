@@ -232,12 +232,12 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="emirates_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
                                                 </label>
-                                                <input name="emirates_id" value='{{ $passportData->emirates_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="emirates_id"
+                                                <input name="civil_id" value='{{ $passportData->civil_id }}'
+                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
-                                                @error('emirates_id')
+                                                @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
@@ -435,12 +435,12 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="emirates_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
                                                 </label>
-                                                <input name="emirates_id" value='{{ $passportData->emirates_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="emirates_id"
+                                                <input name="civil_id" value='{{ $passportData->civil_id }}'
+                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
-                                                @error('emirates_id')
+                                                @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
@@ -639,12 +639,12 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="emirates_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
                                                 </label>
-                                                <input name="emirates_id" value='{{ $passportData->emirates_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="emirates_id"
+                                                <input name="civil_id" value='{{ $passportData->civil_id }}'
+                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
-                                                @error('emirates_id')
+                                                @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
@@ -844,12 +844,12 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="emirates_id"> Emirates ID <span style="color: red;">*</span>
+                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span>
                                                 </label>
-                                                <input name="emirates_id" value='{{ $passportData->emirates_id }}'
-                                                    class="form-control" placeholder="Enter Emirates ID" id="emirates_id"
+                                                <input name="civil_id" value='{{ $passportData->civil_id }}'
+                                                    class="form-control" placeholder="Enter Emirates ID" id="civil_id"
                                                     autocomplete="off" required="" aria-required="true">
-                                                @error('emirates_id')
+                                                @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>

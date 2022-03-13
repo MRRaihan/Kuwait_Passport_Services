@@ -79,7 +79,7 @@
         <div class="padding"></div>
 
 
-        Emirates ID :  {{ $serviceData->emirates_id }}<div class="padding"></div>
+        Emirates ID :  {{ $serviceData->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $serviceData->mailing_address}}<div class="padding"></div>
 

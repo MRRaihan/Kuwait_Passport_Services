@@ -641,7 +641,7 @@
                             <form action="" method="get">
 
                                 <div class="my-4">
-                                    <input type="text" name="emirates_id" id="emirates_id" class="form-control"
+                                    <input type="text" name="civil_id" id="civil_id" class="form-control"
                                         placeholder="Emirates ID" />
                                 </div>
                                 <div class="mb-4">
@@ -1060,7 +1060,7 @@
 
     <script>
         // function Show(title, link, style = '') {
-        //     var emirates_id = $('#emirates_id').val();
+        //     var civil_id = $('#civil_id').val();
         //     var kuwait_phone = $('#kuwait_phone').val();
         //     var passport_type = $('#passport_type').val();
         //     // alert();
@@ -1069,7 +1069,7 @@
         //     $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
         //     $('#modal-dialog').attr('style', style);
         //     $.ajax({
-        //             url: link+'/'+emirates_id+'&'+kuwait_phone+'&'+passport_type,
+        //             url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
         //             type: 'GET',
         //             data: {},
         //         })
@@ -1080,19 +1080,19 @@
 
         $('#checkPassportStatus').click(function (e) {
           e.preventDefault();
-            var emirates_id = $('#emirates_id').val();
+            var civil_id = $('#civil_id').val();
             var kuwait_phone = $('#kuwait_phone').val();
             var passport_type = $('#passport_type').val();
             // alert();
 
             var link = '{{ url('check-passport-status') }}';
-            console.log(emirates_id,kuwait_phone);
+            console.log(civil_id,kuwait_phone);
             $('#modal').modal('show');
             $('#modal-title').html('Passport Status');
             $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
             // $('#modal-dialog').attr('style', style);
             $.ajax({
-                    url: link+'/'+emirates_id+'&'+kuwait_phone+'&'+passport_type,
+                    url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
                     type: 'GET',
                     data: {},
                 })

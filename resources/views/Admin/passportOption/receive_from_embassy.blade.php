@@ -43,7 +43,7 @@ Passport Options
 
                 <div class="col-md-3">
                     <label for="date">Emirates ID</label>
-                    <input type="text" name="emirates_id" id="emirates_id" value="{{ isset($emirates_id) ? $emirates_id : '' }}" class="form-control" placeholder="search by Emirates ID">
+                    <input type="text" name="civil_id" id="civil_id" value="{{ isset($civil_id) ? $civil_id : '' }}" class="form-control" placeholder="search by Emirates ID">
                 </div>
 
                 <div class="col-md-3">
@@ -127,7 +127,7 @@ Passport Options
                                             <input type="hidden" name="branch_id[]" value="{{ $passport->branch_id }}">
                                         </td>
                                         <td>{{ $passport->name }}</td>
-                                        <td>{{ $passport->emirates_id }}</td>
+                                        <td>{{ $passport->civil_id }}</td>
                                         <td>{{ $passport->bd_phone }}</td>
                                         <td>
                                             {{ passportOptions()[$option] }}
@@ -168,7 +168,7 @@ Passport Options
 @include('Others.toaster_message')
 <script>
     function searchOptions() {
-         window.open("{{ url('admin/passport-options/receive-from-embassy') }}/"+$('#emirates_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+         window.open("{{ url('admin/passport-options/receive-from-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
     }
 
     function openLink(link,type='_parent'){

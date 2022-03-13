@@ -35,7 +35,7 @@ class OtherImport implements
             'name' => $row['name'],
             'passport_number' => $row['passport_number'],
             'passport_type_id' => $row['passport_type_id'],
-            'emirates_id' => $row['emirates_id'],
+            'civil_id' => $row['civil_id'],
             'passport_photocopy' => $row['passport_photocopy'],
             'profession_file' => $row['profession_file'],
             'mailing_address' => $row['mailing_address'],

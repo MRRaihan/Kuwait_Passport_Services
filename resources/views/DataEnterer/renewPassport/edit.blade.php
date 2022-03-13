@@ -192,11 +192,11 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="emirates_id"> Emirates ID <span style="color: red;">*</span> </label>
-                                                <input name="emirates_id" value='{{ $renewPassport->emirates_id }}' class="form-control"
-                                                    placeholder="Enter Emirates ID" id="emirates_id" autocomplete="off" required=""
+                                                <label for="civil_id"> Emirates ID <span style="color: red;">*</span> </label>
+                                                <input name="civil_id" value='{{ $renewPassport->civil_id }}' class="form-control"
+                                                    placeholder="Enter Emirates ID" id="civil_id" autocomplete="off" required=""
                                                     aria-required="true">
-                                                @error('emirates_id')
+                                                @error('civil_id')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>

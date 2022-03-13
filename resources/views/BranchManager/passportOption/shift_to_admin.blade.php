@@ -43,7 +43,7 @@
 
                 <div class="col-md-3">
                     <label for="date">Emirates ID</label>
-                    <input type="text" name="emirates_id" id="emirates_id" value="{{ $emirates_id }}" class="form-control" placeholder="search by Emirates ID">
+                    <input type="text" name="civil_id" id="civil_id" value="{{ $civil_id }}" class="form-control" placeholder="search by Emirates ID">
                 </div>
 
                 <div class="col-md-3">
@@ -131,7 +131,7 @@
                                         </td>
                                         @endif
                                         <td>{{ $passport->name }}</td>
-                                        <td>{{ $passport->emirates_id }}</td>
+                                        <td>{{ $passport->civil_id }}</td>
                                         <td>{{ $passport->bd_phone }}</td>
                                         <td>
                                             {{ $passport->model_name }}
@@ -179,7 +179,7 @@
 
 <script>
     function searchOptions() {
-         window.open("{{ url('branch-manager/passport-options/shift-to-admin') }}/"+$('#emirates_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+         window.open("{{ url('branch-manager/passport-options/shift-to-admin') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
     }
 
     function openLink(link,type='_parent'){

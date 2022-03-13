@@ -43,7 +43,7 @@ class ManualPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
@@ -80,7 +80,7 @@ class ManualPassportController extends Controller
         $manualPassport->delivery_branch = $request->delivery_branch;
         $manualPassport->branch_id = Auth::user()->branch_id;
 
-        $manualPassport->emirates_id = $request->emirates_id;
+        $manualPassport->civil_id = $request->civil_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
         $manualPassport->kuwait_phone = $request->kuwait_phone;
@@ -175,7 +175,7 @@ class ManualPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'profession_id' => 'required',
             'passport_number' => 'required',
             // 'bd_phone' => 'required',
@@ -207,7 +207,7 @@ class ManualPassportController extends Controller
         $manualPassport->delivery_branch = $request->delivery_branch;
         $manualPassport->branch_id = Auth::user()->branch_id;
 
-        $manualPassport->emirates_id = $request->emirates_id;
+        $manualPassport->civil_id = $request->civil_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
         $manualPassport->kuwait_phone = $request->kuwait_phone;
@@ -335,7 +335,7 @@ class ManualPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
@@ -373,7 +373,7 @@ class ManualPassportController extends Controller
         $manualPassport->delivery_branch = $request->delivery_branch;
         $manualPassport->branch_id = Auth::user()->branch_id;
 
-        $manualPassport->emirates_id = $request->emirates_id;
+        $manualPassport->civil_id = $request->civil_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
         $manualPassport->kuwait_phone = $request->kuwait_phone;
@@ -442,7 +442,7 @@ class ManualPassportController extends Controller
 
     public function search_by_emirats(Request $req)
     {
-        $manualPassport = ManualPassport::where('emirates_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $manualPassport = ManualPassport::where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
         return view('Admin.manualPassport.search', compact('manualPassport'));
     }
 

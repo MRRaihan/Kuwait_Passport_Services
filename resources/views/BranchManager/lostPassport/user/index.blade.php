@@ -121,7 +121,7 @@ Manual Passport Table
                                 <tr @if($lostPassport->is_shifted_to_branch_manager != null) style="background-color: #787471; color:white;" @endif>
                                     <td>{{ $key+1 }}</td>
                                     <td>{{ $lostPassport->name }} {{ $lostPassport->last_name }}</td>
-                                    <td>{{ $lostPassport->emirates_id }}</td>
+                                    <td>{{ $lostPassport->civil_id }}</td>
                                     <td>{{ $lostPassport->bd_phone }}</td>
                                     <td>{{ $lostPassport->created_at->diffForHumans() }}</td>
                                     <td>

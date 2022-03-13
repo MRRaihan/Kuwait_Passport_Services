@@ -66,7 +66,7 @@ Manual Passport Table
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $manualPassport->name }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
-                                    <td>{{ $manualPassport->emirates_id }}</td>
+                                    <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->kuwait_phone }}</td>
                                     <td>{{ $manualPassport->passport_type_fees_total }}</td>
                                     <td>{{ $manualPassport->ems }}</td>

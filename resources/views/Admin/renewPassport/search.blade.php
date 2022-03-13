@@ -76,7 +76,7 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $renewPassport->name }} {{ $renewPassport->last_name }}</td>
                                             <td>{{ $renewPassport->passport_number }}</td>
-                                            <td>{{ $renewPassport->emirates_id }}</td>
+                                            <td>{{ $renewPassport->civil_id }}</td>
                                             <td>{{ $renewPassport->bd_phone }}</td>
                                             <td>{{ $renewPassport->ems }}</td>
                                             <td>{{ $renewPassport->created_at->diffForHumans() }}</td>

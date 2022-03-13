@@ -170,11 +170,11 @@
                   </div>
 
                   <div class="my-4">
-                    <label for="emirates_id" class="form-label">Emirates ID</label>
-                    <input type="text" class="form-control select-forms" name="emirates_id" value="{{ old('emirates_id',$passport->emirates_id) }}" id="emirates_id"
+                    <label for="civil_id" class="form-label">Emirates ID</label>
+                    <input type="text" class="form-control select-forms" name="civil_id" value="{{ old('civil_id',$passport->civil_id) }}" id="civil_id"
                       placeholder="Enter Civil ID" />
-                      @if($errors->has('emirates_id'))
-                        <span class="text-danger">{{ $errors->first('emirates_id') }}</span>
+                      @if($errors->has('civil_id'))
+                        <span class="text-danger">{{ $errors->first('civil_id') }}</span>
                       @endif
                   </div>
 

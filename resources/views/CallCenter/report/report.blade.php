@@ -72,7 +72,7 @@
                           @if (isset($option) && $option == 1)
                             <td>{{ $passport->passport_type_title ?  $passport->passport_type_title.' ( govt. fee: '.$passport->passport_type_versatilo_fee.' | ver. fee: '.$passport->passport_type_government_fee.')' : '' }}</td>
                           @endif
-                          <td>{{ $passport->emirates_id }}</td>
+                          <td>{{ $passport->civil_id }}</td>
                           <td>{{ $passport->passport_number }}</td>
                           <td>{{ $passport->kuwait_phone }}</td>
                           <td>{{ $passport->ems }}</td>

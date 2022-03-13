@@ -76,7 +76,7 @@
         <div class="padding"></div>
 
 
-        Emirates ID :  {{ $passport->emirates_id }}<div class="padding"></div>
+        Emirates ID :  {{ $passport->civil_id }}<div class="padding"></div>
 
         Remarks :  {{ $passport->remarks }}<div class="padding"></div>
 

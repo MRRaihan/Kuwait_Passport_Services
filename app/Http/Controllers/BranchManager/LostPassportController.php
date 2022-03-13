@@ -61,7 +61,7 @@ class LostPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -85,7 +85,7 @@ class LostPassportController extends Controller
 
         $lostPassport = new LostPassport();
         $lostPassport->name = $request->name;
-        $lostPassport->emirates_id = $request->emirates_id;
+        $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
@@ -196,8 +196,8 @@ class LostPassportController extends Controller
 
         $request->validate([
             'name' => 'required',
-            // 'emirates_id' => 'required',
-            'emirates_id' => 'required',
+            // 'civil_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -224,7 +224,7 @@ class LostPassportController extends Controller
 
         $lostPassport = LostPassport::findOrfail($id);
         $lostPassport->name = $request->name;
-        $lostPassport->emirates_id = $request->emirates_id;
+        $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
@@ -329,7 +329,7 @@ class LostPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -353,7 +353,7 @@ class LostPassportController extends Controller
 
         $lostPassport = new LostPassport();
         $lostPassport->name = $request->name;
-        $lostPassport->emirates_id = $request->emirates_id;
+        $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
         $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
@@ -409,7 +409,7 @@ class LostPassportController extends Controller
 
     public function search_by_emirats(Request $req)
     {
-        $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('emirates_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.lostPassport.search', compact('lostPassports'));
     }
 

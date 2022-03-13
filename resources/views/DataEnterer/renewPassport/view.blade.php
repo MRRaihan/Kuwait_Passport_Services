@@ -87,7 +87,7 @@
 
         <div class="padding"></div>
 
-        Emirates ID :  {{ $passport->emirates_id }}<div class="padding"></div>
+        Emirates ID :  {{ $passport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $passport->mailing_address}}<div class="padding"></div>
 

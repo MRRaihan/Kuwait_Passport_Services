@@ -30,15 +30,15 @@ class PassportOptionsController extends Controller
 
 
 
-    $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
+    $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
     $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
     $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
     $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
     $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
 
-    $renew = RenewPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+    $renew = RenewPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -51,8 +51,8 @@ class PassportOptionsController extends Controller
                             ->orderBy('id','desc')
                             ->get();
 
-    $manual = ManualPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                    return $query->where('emirates_id',$emirates_id);
+    $manual = ManualPassport::when($civil_id != '',function($query) use($civil_id){
+                                    return $query->where('civil_id',$civil_id);
                                 })
                                 ->when($mobile != '',function($query) use($mobile){
                                     return $query->where('bd_phone',$mobile);
@@ -65,8 +65,8 @@ class PassportOptionsController extends Controller
                                 ->orderBy('id','desc')
                                 ->get();
 
-     $lost = LostPassport::when($emirates_id != '',function($query) use($emirates_id){
-                return $query->where('emirates_id',$emirates_id);
+     $lost = LostPassport::when($civil_id != '',function($query) use($civil_id){
+                return $query->where('civil_id',$civil_id);
                 })
                 ->when($mobile != '',function($query) use($mobile){
                     return $query->where('bd_phone',$mobile);
@@ -79,8 +79,8 @@ class PassportOptionsController extends Controller
                 ->orderBy('id','desc')
                 ->get();
 
-      $other = Other::when($emirates_id != '',function($query) use($emirates_id){
-                        return $query->where('emirates_id','LIKE','%'.$emirates_id.'%');
+      $other = Other::when($civil_id != '',function($query) use($civil_id){
+                        return $query->where('civil_id','LIKE','%'.$civil_id.'%');
                     })
                     ->when($mobile != '',function($query) use($mobile){
                         return $query->where('bd_phone','LIKE','%'.$mobile.'%');
@@ -92,8 +92,8 @@ class PassportOptionsController extends Controller
                     ->orderBy('id','desc')
                     ->get();
 
-      $new_born = NewBornBabyPassport::when($emirates_id != '',function($query) use($emirates_id){
-                        return $query->where('emirates_id','LIKE','%'.$emirates_id.'%');
+      $new_born = NewBornBabyPassport::when($civil_id != '',function($query) use($civil_id){
+                        return $query->where('civil_id','LIKE','%'.$civil_id.'%');
                     })
                     ->when($mobile != '',function($query) use($mobile){
                         return $query->where('bd_phone','LIKE','%'.$mobile.'%');
@@ -108,7 +108,7 @@ class PassportOptionsController extends Controller
 
     // if ($option == -1) {
     //     $data=[
-    //         'emirates_id' => $emirates_id,
+    //         'civil_id' => $civil_id,
     //         'mobile' => $mobile,
     //         'from_date' => $from_date,
     //         'to_date' => $to_date,
@@ -121,7 +121,7 @@ class PassportOptionsController extends Controller
 
     if ($option == 0) {
            $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
@@ -133,7 +133,7 @@ class PassportOptionsController extends Controller
     }
     if ($option == 1) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
@@ -145,7 +145,7 @@ class PassportOptionsController extends Controller
 
     if ($option == 2) {
           $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
@@ -158,7 +158,7 @@ class PassportOptionsController extends Controller
 
     if ($option == 3) {
           $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
@@ -307,7 +307,7 @@ class PassportOptionsController extends Controller
 
    public function searchReceive($data){
 
-    $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
+    $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
     $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
     $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
     $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
@@ -315,13 +315,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 0) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => RenewPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => RenewPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -339,13 +339,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 1) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => ManualPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => ManualPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -363,13 +363,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 2) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => LostPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => LostPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -387,13 +387,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 3) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => NewBornBabyPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => NewBornBabyPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -522,7 +522,7 @@ class PassportOptionsController extends Controller
 
    public function searchDelivery($data){
 
-    $emirates_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
+    $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
     $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
     $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
     $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
@@ -530,13 +530,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 0) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => RenewPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => RenewPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -554,13 +554,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 1) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => ManualPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => ManualPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -578,13 +578,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 2) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => LostPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => LostPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);
@@ -603,13 +603,13 @@ class PassportOptionsController extends Controller
 
      if ($option == 3) {
         $data=[
-            'emirates_id' => $emirates_id,
+            'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'options' => NewBornBabyPassport::when($emirates_id != '',function($query) use($emirates_id){
-                                return $query->where('emirates_id',$emirates_id);
+            'options' => NewBornBabyPassport::when($civil_id != '',function($query) use($civil_id){
+                                return $query->where('civil_id',$civil_id);
                             })
                             ->when($mobile != '',function($query) use($mobile){
                                 return $query->where('bd_phone',$mobile);

@@ -10,7 +10,7 @@
     <b class="bar_text"> {{ $p_type }}</b><br>
         Name :  {{ $passport->name }} <br>
         Passport No:  {{ $passport->passport_number }} <br>
-        Emirates ID:  {{ $passport->emirates_id }} <br>
+        Emirates ID:  {{ $passport->civil_id }} <br>
         Phone: {{ $passport->kuwait_phone }}
 
 @endsection
