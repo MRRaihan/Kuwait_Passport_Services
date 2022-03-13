@@ -147,14 +147,22 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
 
     //Recycle Bin
     Route::group(['prefix' => 'recycle-bin/', 'as' => 'recycleBin.'], function () {
-        Route::get('renew-list', [RecycleBinController::class, 'renewList'])->name('renewList');
-        Route::get('manual-list', [RecycleBinController::class, 'manualList'])->name('manualList');
-        Route::get('lost-list', [RecycleBinController::class, 'lostList'])->name('lostList');
-        Route::get('new-born-baby-list', [RecycleBinController::class, 'newBornBabyList'])->name('newBornBabyList');
+        Route::group(['prefix' => 'passport/', 'as' => 'passport.'], function () {
+            Route::get('renew', [RecycleBinController::class, 'renew'])->name('renew');
+            Route::get('manual', [RecycleBinController::class, 'manual'])->name('manual');
+            Route::get('lost', [RecycleBinController::class, 'lost'])->name('lost');
+            Route::get('new-born-baby', [RecycleBinController::class, 'newBornBaby'])->name('newBornBaby');
+        });
+        Route::group(['prefix' => 'other/', 'as' => 'other.'], function () {
+            Route::get('express', [RecycleBinController::class, 'express'])->name('express');
+            Route::get('immigration-govt', [RecycleBinController::class, 'immigrationGovt'])->name('immigrationGovt');
+            Route::get('legal-complaints', [RecycleBinController::class, 'legalComplaints'])->name('legalComplaints');
+            Route::get('premier', [RecycleBinController::class, 'premier'])->name('premier');
+            Route::get('other', [RecycleBinController::class, 'other'])->name('other');
+            Route::post('restore/{id}/{service_type}', [RecycleBinController::class, 'restore'])->name('restore');
+            Route::post('permanentDelete/{id}/{service_type}', [RecycleBinController::class, 'permanentDelete'])->name('permanentDelete');
+        });
     });
-
-
-
 
     //passport option shift to embassy
 

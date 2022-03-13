@@ -272,4 +272,8 @@ if (!function_exists('random_code')) {
             return false;
         }
     }
+
+    function this_url(){
+        return request()->route()->uri;
+    }
 }
