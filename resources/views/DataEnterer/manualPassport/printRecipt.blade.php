@@ -29,7 +29,7 @@
 
     Phone : {{ $passport->kuwait_phone }} <div class="padding"></div>
 
-    Emirates ID : {{ $passport->emirates_id }} <div class="padding"></div>
+    Civil ID : {{ $passport->civil_id }} <div class="padding"></div>
 
     Entry Person : {{ $passport->creator->name }} <div class="padding"></div>
 

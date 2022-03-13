@@ -43,7 +43,7 @@
 
         Special Skill : {{ $immigrationGovementService->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No : {{ $immigrationGovementService->residence }}<div class="padding"></div>
+        Residence Civil ID / Phone No : {{ $immigrationGovementService->residence }}<div class="padding"></div>
 
         Entry Person : {{ $immigrationGovementService->user->name }} <div class="padding"></div>
 

@@ -44,7 +44,7 @@ class RenewPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            // 'emirates_id' => 'required',
+            // 'civil_id' => 'required',
             'passport_number' => 'required',
             // 'bd_phone' => 'required',
             // 'salary' => 'required',
@@ -57,7 +57,7 @@ class RenewPassportController extends Controller
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
 
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -81,7 +81,7 @@ class RenewPassportController extends Controller
         $renewPassport->dob = $request->dob;
         $renewPassport->delivery_branch = Auth::user()->branch_id;
         $renewPassport->residence = $request->residence;
-        $renewPassport->emirates_id = $request->emirates_id;
+        $renewPassport->civil_id = $request->civil_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
         $renewPassport->kuwait_phone = $request->kuwait_phone;
@@ -195,8 +195,8 @@ class RenewPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            // 'emirates_id' => 'required',
-            'emirates_id' => 'required',
+            // 'civil_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -230,7 +230,7 @@ class RenewPassportController extends Controller
         $renewPassport->dob = $request->dob;
         $renewPassport->delivery_branch = Auth::user()->branch_id;
         $renewPassport->residence = $request->residence;
-        $renewPassport->emirates_id = $request->emirates_id;
+        $renewPassport->civil_id = $request->civil_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
         $renewPassport->kuwait_phone = $request->kuwait_phone;
@@ -317,7 +317,7 @@ class RenewPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            // 'emirates_id' => 'required',
+            // 'civil_id' => 'required',
             'passport_number' => 'required',
             // 'bd_phone' => 'required',
             // 'salary' => 'required',
@@ -330,7 +330,7 @@ class RenewPassportController extends Controller
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
 
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -354,7 +354,7 @@ class RenewPassportController extends Controller
         $renewPassport->dob = $request->dob;
         $renewPassport->delivery_branch = Auth::user()->branch_id;
         $renewPassport->residence = $request->residence;
-        $renewPassport->emirates_id = $request->emirates_id;
+        $renewPassport->civil_id = $request->civil_id;
         $renewPassport->profession_id = $request->profession_id;
         $renewPassport->passport_number = $request->passport_number;
         $renewPassport->kuwait_phone = $request->kuwait_phone;
@@ -407,9 +407,9 @@ class RenewPassportController extends Controller
     }
 
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $renewPassports = RenewPassport::where('user_creator_id', Auth::user()->id)->where('emirates_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $renewPassports = RenewPassport::where('user_creator_id', Auth::user()->id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('DataEnterer.renewPassport.search', compact('renewPassports'));
     }
 

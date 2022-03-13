@@ -52,10 +52,10 @@ Lost Passport
                         <div class="panel-body row">
 
                             <div class="col-md-4">
-                                <form class="form-group" method="POST" action="{{ route('admin.lostPassport.search_by_emirats') }}">
+                                <form class="form-group" method="POST" action="{{ route('admin.lostPassport.search_by_civil') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Emirats ID" name="emirats_id">
+                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
@@ -124,7 +124,7 @@ Lost Passport
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
                                         <th>EMS</th>
@@ -139,7 +139,7 @@ Lost Passport
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $lostPassport->name }}</td>
                                             <td>{{ $lostPassport->passport_number }}</td>
-                                            <td>{{ $lostPassport->emirates_id }}</td>
+                                            <td>{{ $lostPassport->civil_id }}</td>
                                             <td>{{ $lostPassport->kuwait_phone }}</td>
                                             <td>{{ $lostPassport->passport_type_fees_total }}</td>
                                             <td>{{ $lostPassport->ems }}</td>

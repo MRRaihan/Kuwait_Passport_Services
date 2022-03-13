@@ -45,7 +45,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::get('lostPassport/agreement/{id}', [LostPassportController::class, 'agreement'])->name('lostPassport.agreement');
 
 
-    Route::post('lostPassport/search_by_emirats', [LostPassportController::class, 'search_by_emirats'])->name('lostPassport.search_by_emirats');
+    Route::post('lostPassport/search_by_civil', [LostPassportController::class, 'search_by_civil'])->name('lostPassport.search_by_civil');
     Route::post('lostPassport/search_by_passport_number', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
     Route::post('lostPassport/search_by_profession', [LostPassportController::class, 'search_by_profession'])->name('lostPassport.search_by_profession');
 
@@ -59,7 +59,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::post('newBornBabyPassport/shiftToBranchManagerNow/{id}', [NewBornBabyPassportController::class, 'shiftToBranchManagerNow'])->name('newBornBabyPassport.shiftToBranchManagerNow');
     Route::get('newBornBabyPassport/agreement/{id}', [NewBornBabyPassportController::class, 'agreement'])->name('newBornBabyPassport.agreement');
 
-    Route::post('newBornBabyPassport/search_by_emirats', [NewBornBabyPassportController::class, 'search_by_emirats'])->name('newBornBabyPassport.search_by_emirats');
+    Route::post('newBornBabyPassport/search_by_civil', [NewBornBabyPassportController::class, 'search_by_civil'])->name('newBornBabyPassport.search_by_civil');
     Route::post('newBornBabyPassport/search_by_passport_number', [NewBornBabyPassportController::class, 'search_by_passport_number'])->name('newBornBabyPassport.search_by_passport_number');
     Route::post('newBornBabyPassport/search_by_profession', [NewBornBabyPassportController::class, 'search_by_profession'])->name('newBornBabyPassport.search_by_profession');
 
@@ -72,7 +72,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::get('manualPassport/sticker/{id}', [ManualPassportController::class, 'printSticker'])->name('manualPassport.sticker');
     Route::post('manualPassport/shiftToBranchManagerNow/{id}', [ManualPassportController::class, 'shiftToBranchManagerNow'])->name('manualPassport.shiftToBranchManagerNow');
 
-    Route::post('manualPassport/search_by_emirats', [ManualPassportController::class, 'search_by_emirats'])->name('manualPassport.search_by_emirats');
+    Route::post('manualPassport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
     Route::post('manualPassport/search_by_passport_number', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
     Route::post('manualPassport/search_by_profession', [ManualPassportController::class, 'search_by_profession'])->name('manualPassport.search_by_profession');
 
@@ -88,7 +88,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::get('renewPassport/sticker/{id}', [RenewPassportController::class, 'printSticker'])->name('renewPassport.sticker');
     Route::post('renewPassport/shiftToBranchManagerNow/{id}', [RenewPassportController::class, 'shiftToBranchManagerNow'])->name('renewPassport.shiftToBranchManagerNow');
 
-    Route::post('renewPassport/search_by_emirats', [RenewPassportController::class, 'search_by_emirats'])->name('renewPassport.search_by_emirats');
+    Route::post('renewPassport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renewPassport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
 

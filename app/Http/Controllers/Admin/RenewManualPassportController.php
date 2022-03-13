@@ -49,7 +49,7 @@ class RenewManualPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
@@ -86,7 +86,7 @@ class RenewManualPassportController extends Controller
         $manualPassport->expiry_date = $request->expiry_date;
         $manualPassport->dob = $request->dob;
         $manualPassport->delivery_branch = $request->delivery_branch;
-        $manualPassport->emirates_id = $request->emirates_id;
+        $manualPassport->civil_id = $request->civil_id;
         $manualPassport->profession_id = $request->profession_id;
         $manualPassport->passport_number = $request->passport_number;
         $manualPassport->kuwait_phone = $request->kuwait_phone;

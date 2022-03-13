@@ -16,7 +16,7 @@ class LostPassport extends Model
     //     'user_id',
     //     'name',
     //     'passport_number',
-    //     'emirates_id',
+    //     'civil_id',
     //     'govt_passport_id',
     //     'mailing_address',
     //     'permanent_address',

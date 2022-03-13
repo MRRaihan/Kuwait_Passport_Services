@@ -52,10 +52,10 @@
                         <div class="panel-body row">
 
                             <div class="col-md-4">
-                                <form class="form-group" method="POST" action="{{ route('admin.renewPassport.search_by_emirats') }}">
+                                <form class="form-group" method="POST" action="{{ route('admin.renewPassport.search_by_civil') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Emirats ID" name="emirats_id">
+                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
@@ -122,7 +122,7 @@
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
                                         <th>EMS</th>
@@ -137,7 +137,7 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $renewPassport->name }}</td>
                                             <td>{{ $renewPassport->passport_number }}</td>
-                                            <td>{{ $renewPassport->emirates_id }}</td>
+                                            <td>{{ $renewPassport->civil_id }}</td>
                                             <td>{{ $renewPassport->kuwait_phone }}</td>
                                             <td>{{ $renewPassport->passport_type_fees_total }}</td>
                                             <td>{{ $renewPassport->ems }}</td>

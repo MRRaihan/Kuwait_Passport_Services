@@ -52,7 +52,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('lostPassport/agreement/{id}', [LostPassportController::class, 'agreement'])->name('lostPassport.agreement');
     Route::post('lostPassport/dismissComplain/{id}', [LostPassportController::class, 'dismissComplain'])->name('lostPassport.dismissComplain');
 
-    Route::post('lostPassport/search_by_emirats', [LostPassportController::class, 'search_by_emirats'])->name('lostPassport.search_by_emirats');
+    Route::post('lostPassport/search_by_civil', [LostPassportController::class, 'search_by_civil'])->name('lostPassport.search_by_civil');
     Route::post('lostPassport/search-mrp-passport-no', [LostPassportController::class, 'searchByMrpPassportNo'])->name('lostPassport.searchByMrpPassportNo');
     Route::post('lostPassport/search_by_profession', [LostPassportController::class, 'search_by_profession'])->name('lostPassport.search_by_profession');
 
@@ -75,7 +75,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('newBornBabyPassport/sticker/{id}', [NewBornBabyPassportController::class, 'printSticker'])->name('newBornBabyPassport.sticker');
     Route::post('newBornBabyPassport/dismissComplain/{id}', [NewBornBabyPassportController::class, 'dismissComplain'])->name('newBornBabyPassport.dismissComplain');
     Route::get('newBornBabyPassport/agreement/{id}', [NewBornBabyPassportController::class, 'agreement'])->name('newBornBabyPassport.agreement');
-    Route::post('newBornBabyPassport/search_by_emirats', [NewBornBabyPassportController::class, 'search_by_emirats'])->name('newBornBabyPassport.search_by_emirats');
+    Route::post('newBornBabyPassport/search_by_civil', [NewBornBabyPassportController::class, 'search_by_civil'])->name('newBornBabyPassport.search_by_civil');
     Route::post('newBornBabyPassport/search_by_mrp', [NewBornBabyPassportController::class, 'search_by_mrp'])->name('newBornBabyPassport.searchByMrpPassportNo');
     Route::post('newBornBabyPassport/search_by_profession', [NewBornBabyPassportController::class, 'search_by_profession'])->name('newBornBabyPassport.search_by_profession');
 
@@ -92,7 +92,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('manualPassport/sticker/{id}', [ManualPassportController::class, 'printSticker'])->name('manualPassport.sticker');
     Route::post('manualPassport/dismissComplain/{id}', [ManualPassportController::class, 'dismissComplain'])->name('manualPassport.dismissComplain');
 
-    Route::post('manualPassport/search_by_emirats', [ManualPassportController::class, 'search_by_emirats'])->name('manualPassport.search_by_emirats');
+    Route::post('manualPassport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
 
     Route::post('manualPassport/search_by_mrp', [ManualPassportController::class, 'search_by_mrp'])->name('manualPassport.searchByMrpPassportNo');
 
@@ -110,7 +110,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('renewPassport/sticker/{id}', [RenewPassportController::class, 'printSticker'])->name('renewPassport.sticker');
     Route::post('renewPassport/dismissComplain/{id}', [RenewPassportController::class, 'dismissComplain'])->name('renewPassport.dismissComplain');
 
-    Route::post('renewPassport/search_by_emirats', [RenewPassportController::class, 'search_by_emirats'])->name('renewPassport.search_by_emirats');
+    Route::post('renewPassport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
     Route::post('renewPassport/search-by-mrp', [RenewPassportController::class, 'search_by_mrp'])->name('renewPassport.searchByMrpPassportNo');
     Route::post('renewPassport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
 
@@ -156,7 +156,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
 
     // All Report
 
-    Route::get('report', [ReportController::class, 'index'])->name('report.index');   
+    Route::get('report', [ReportController::class, 'index'])->name('report.index');
     Route::get('report/{data}', [ReportController::class, 'show']);
     Route::get('get-report/{data}', [ReportController::class, 'getReport'])->name('report.excelExport');
 

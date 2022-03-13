@@ -34,7 +34,7 @@ class ManualPassportImport implements
             'deleted_by' => $row['deleted_by'],
             'name' => $row['name'],
             'passport_number' => $row['passport_number'],
-            'emirates_id' => $row['emirates_id'],
+            'civil_id' => $row['civil_id'],
             'govt_passport_id' => $row['govt_passport_id'],
             'mailing_address' => $row['mailing_address'],
             'expiry_date' => $row['expiry_date'],

@@ -36,7 +36,7 @@ class ManualPassportExport implements
             'deleted_by',
             'name',
             'passport_number',
-            'emirates_id',
+            'civil_id',
             'govt_passport_id',
             'mailing_address',
             'expiry_date',

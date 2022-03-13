@@ -28,7 +28,7 @@ Profession : {{ $serviceData->profession->name }} <div class="padding"></div>
 
 Phone : {{ $serviceData->kuwait_phone }} <div class="padding"></div>
 
-Emirates ID : {{ $serviceData->emirates_id }} <div class="padding"></div>
+Civil ID : {{ $serviceData->civil_id }} <div class="padding"></div>
 Delivery Branch : {{ $serviceData->deliveryBranch->name }} <div class="padding"></div>
 
 {{-- Remarks : {{ $serviceData->remarks }} <div class="padding"></div> --}}

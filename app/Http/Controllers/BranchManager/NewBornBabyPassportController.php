@@ -56,7 +56,7 @@ class NewBornBabyPassportController extends Controller
 
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'passport_number' => 'required',
             'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
@@ -79,7 +79,7 @@ class NewBornBabyPassportController extends Controller
 
         $newBornBabyPassport = new NewBornBabyPassport();
         $newBornBabyPassport->name = $request->name;
-        $newBornBabyPassport->emirates_id = $request->emirates_id;
+        $newBornBabyPassport->civil_id = $request->civil_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
@@ -188,7 +188,7 @@ class NewBornBabyPassportController extends Controller
 
 
         $request->validate([
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
 
             'passport_number' => 'required',
@@ -215,7 +215,7 @@ class NewBornBabyPassportController extends Controller
 
         $newBornBabyPassport = NewBornBabyPassport::findOrfail($id);
         $newBornBabyPassport->name = $request->name;
-        $newBornBabyPassport->emirates_id = $request->emirates_id;
+        $newBornBabyPassport->civil_id = $request->civil_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
@@ -298,7 +298,7 @@ class NewBornBabyPassportController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'passport_number' => 'required',
             'kuwait_phone' => 'required',
             // 'bd_phone' => 'required',
@@ -321,7 +321,7 @@ class NewBornBabyPassportController extends Controller
 
         $newBornBabyPassport = new NewBornBabyPassport();
         $newBornBabyPassport->name = $request->name;
-        $newBornBabyPassport->emirates_id = $request->emirates_id;
+        $newBornBabyPassport->civil_id = $request->civil_id;
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
@@ -393,9 +393,9 @@ class NewBornBabyPassportController extends Controller
         }
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $newBornBabyPassports = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->where('emirates_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $newBornBabyPassports = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.newBornBabyPassport.search', compact('newBornBabyPassports'));
     }
 

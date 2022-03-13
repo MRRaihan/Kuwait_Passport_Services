@@ -58,7 +58,7 @@ Others Services
                                 <tr>
                                     <th>SL.</th>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
@@ -71,7 +71,7 @@ Others Services
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $otherPassport->name }} {{ $otherPassport->last_name }}</td>
-                                    <td>{{ $otherPassport->emirates_id }}</td>
+                                    <td>{{ $otherPassport->civil_id }}</td>
                                     <td>{{ $otherPassport->bd_phone }}</td>
                                     <td>{{ $otherPassport->ems }}</td>
                                     <td>{{ $otherPassport->created_at->diffForHumans() }}</td>

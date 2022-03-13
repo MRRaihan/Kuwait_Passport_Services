@@ -50,7 +50,7 @@ class LegalComplaintsServiceController extends Controller
         $request->validate([
 
             'passport_number' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'services' => 'required',
 

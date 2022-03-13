@@ -23,7 +23,7 @@ class CreateRenewPassportsTable extends Migration
             $table->unsignedBigInteger('profession_id')->nullable();
 
             $table->string('name')->nullable();
-            $table->string('emirates_id')->nullable();
+            $table->string('civil_id')->nullable();
             $table->string('govt_passport_id')->nullable();
             $table->string('passport_number')->nullable();
             $table->string('passport_photocopy')->nullable();

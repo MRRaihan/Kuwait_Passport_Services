@@ -40,7 +40,7 @@
         Kuwait Phone : {{ $lostPassport->kuwait_phone }}
         <div class="padding"></div>
 
-        Emirates ID :  {{ $lostPassport->emirates_id }}<div class="padding"></div>
+        Civil ID :  {{ $lostPassport->civil_id }}<div class="padding"></div>
 
         Mailing Address :  {{  $lostPassport->mailing_address}}<div class="padding"></div>
 
@@ -48,7 +48,7 @@
 
         Special Skill : {{ $lostPassport->special_skill }}<div class="padding"></div>
 
-        Residence Emirates ID / Phone No : {{ $lostPassport->residence }}<div class="padding"></div>
+        Residence Civil ID / Phone No : {{ $lostPassport->residence }}<div class="padding"></div>
 
         Entry Person : {{ $lostPassport->creator->name }}<div class="padding"></div>
 

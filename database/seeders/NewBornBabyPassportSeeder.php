@@ -22,7 +22,7 @@ class NewBornBabyPassportSeeder extends Seeder
             $newBornBabyPassport->branch_id = $faker->numberBetween(1, 5);
             $newBornBabyPassport->name = $faker->name();
             $newBornBabyPassport->passport_number = $faker->phoneNumber();
-            $newBornBabyPassport->emirates_id = $faker->phoneNumber();
+            $newBornBabyPassport->civil_id = $faker->phoneNumber();
             $newBornBabyPassport->govt_passport_id = $faker->phoneNumber();
             $newBornBabyPassport->mailing_address = $faker->email();
             $newBornBabyPassport->permanent_address = $faker->country();

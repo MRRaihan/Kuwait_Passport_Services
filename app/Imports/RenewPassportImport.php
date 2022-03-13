@@ -35,7 +35,7 @@ class RenewPassportImport implements
             'passport_type_id' => $row['passport_type_id'],
             'profession_id' => $row['profession_id'],
             'name' => $row['name'],
-            'emirates_id' => $row['emirates_id'],
+            'civil_id' => $row['civil_id'],
             'govt_passport_id' => $row['govt_passport_id'],
             'passport_number' => $row['passport_number'],
             'passport_photocopy' => $row['passport_photocopy'],

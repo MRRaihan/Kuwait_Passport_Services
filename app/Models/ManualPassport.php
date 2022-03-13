@@ -15,7 +15,7 @@ class ManualPassport extends Model
     //     'user_id',
     //     'name',
     //     'passport_number',
-    //     'emirates_id',
+    //     'civil_id',
     //     'govt_passport_id',
     //     'mailing_address',
     //     'expiry_date',

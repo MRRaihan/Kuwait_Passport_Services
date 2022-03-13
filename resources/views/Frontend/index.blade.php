@@ -294,7 +294,7 @@
                                         payment, or any abuse of their rights, our legal service and welfare department
                                         is available and ready to see into restoring the joy of the complaining
                                         employee. Also, individuals with cases including police or court that threatens
-                                        their peaceful stay in the United Arab Emirates, can get solutions from our
+                                        their peaceful stay in the Kuwait, can get solutions from our
                                         legal team.
                                     </p>
                                 </div>
@@ -422,7 +422,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -431,14 +431,14 @@
 
                                             <div id="more2">
                                                 <li>Name</li>
-                                                <li>Emirates ID</li>
+                                                <li>Civil ID</li>
                                                 <li>Passport Copy</li>
                                                 <li>Mailing Address</li>
                                                 <li>Kuwait Phone</li>
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -466,7 +466,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -477,7 +477,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -505,7 +505,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -515,7 +515,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -543,7 +543,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -553,7 +553,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -581,7 +581,7 @@
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
                                             <li>Name</li>
-                                            <li>Emirates ID</li>
+                                            <li>Civil ID</li>
                                             <li>Passport Copy</li>
                                             <li>Mailing Address</li>
                                             <li>Kuwait Phone</li>
@@ -591,7 +591,7 @@
                                                 <li>Bangladesh Permanet Address</li>
                                                 <li>Bangladesh Phone Number</li>
                                                 <li>Special Skill</li>
-                                                <li>Residence with Family/ Spouse Emirates ID/ Phone no.</li>
+                                                <li>Residence with Family/ Spouse Civil ID/ Phone no.</li>
                                                 <li>Business and passport no. ted to Versatilo</li>
                                                 <li>Versatilo renewal receive number</li>
                                                 <li>Salary less than د.إ 250- Fee 2.5 د.إ</li>
@@ -641,8 +641,8 @@
                             <form action="" method="get">
 
                                 <div class="my-4">
-                                    <input type="text" name="emirates_id" id="emirates_id" class="form-control"
-                                        placeholder="Emirates ID" />
+                                    <input type="text" name="civil_id" id="civil_id" class="form-control"
+                                        placeholder="Civil ID" />
                                 </div>
                                 <div class="mb-4">
                                     <input type="text" name="kuwait_phone" id="kuwait_phone" class="form-control"
@@ -1060,7 +1060,7 @@
 
     <script>
         // function Show(title, link, style = '') {
-        //     var emirates_id = $('#emirates_id').val();
+        //     var civil_id = $('#civil_id').val();
         //     var kuwait_phone = $('#kuwait_phone').val();
         //     var passport_type = $('#passport_type').val();
         //     // alert();
@@ -1069,7 +1069,7 @@
         //     $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
         //     $('#modal-dialog').attr('style', style);
         //     $.ajax({
-        //             url: link+'/'+emirates_id+'&'+kuwait_phone+'&'+passport_type,
+        //             url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
         //             type: 'GET',
         //             data: {},
         //         })
@@ -1080,19 +1080,19 @@
 
         $('#checkPassportStatus').click(function (e) {
           e.preventDefault();
-            var emirates_id = $('#emirates_id').val();
+            var civil_id = $('#civil_id').val();
             var kuwait_phone = $('#kuwait_phone').val();
             var passport_type = $('#passport_type').val();
             // alert();
 
             var link = '{{ url('check-passport-status') }}';
-            console.log(emirates_id,kuwait_phone);
+            console.log(civil_id,kuwait_phone);
             $('#modal').modal('show');
             $('#modal-title').html('Passport Status');
             $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
             // $('#modal-dialog').attr('style', style);
             $.ajax({
-                    url: link+'/'+emirates_id+'&'+kuwait_phone+'&'+passport_type,
+                    url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
                     type: 'GET',
                     data: {},
                 })

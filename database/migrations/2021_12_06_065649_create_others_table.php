@@ -22,7 +22,7 @@ class CreateOthersTable extends Migration
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
             $table->string('passport_type_id')->nullable();
-            $table->string('emirates_id')->nullable();
+            $table->string('civil_id')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('profession_file')->nullable();
             $table->string('mailing_address')->nullable();

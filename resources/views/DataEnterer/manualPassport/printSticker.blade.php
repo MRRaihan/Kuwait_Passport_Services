@@ -15,7 +15,7 @@ $p_type = $passport->ems;
         B: {{ $passport->branch ? substr(strtoupper($passport->branch->name),0,3) : ''}} <br>
         Name :  {{ $passport->name }} <br>
         Service Name: Lost Passport , Phone: {{ $passport->kuwait_phone }}<br>
-        Emirates ID :  {{ $passport->emirates_id }} , MRP No : {{ $passport->passport_number }}<br>
+        Civil ID :  {{ $passport->civil_id }} , MRP No : {{ $passport->passport_number }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($passport->created_at)) }} , Delivary date: {{ date('d-m-Y', strtotime($passport->delivery_date)) }}
     </b>
 @endsection

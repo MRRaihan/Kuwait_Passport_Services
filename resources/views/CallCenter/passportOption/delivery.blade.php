@@ -42,8 +42,8 @@ Passport Options
             <div class="col-sm-12">
 
                 <div class="col-md-3">
-                    <label for="date">Emirates ID</label>
-                    <input type="text" name="emirates_id" id="emirates_id" value="{{ isset($emirates_id) ? $emirates_id : '' }}" class="form-control" placeholder="search by Emirates ID">
+                    <label for="date">Civil ID</label>
+                    <input type="text" name="civil_id" id="civil_id" value="{{ isset($civil_id) ? $civil_id : '' }}" class="form-control" placeholder="search by Civil ID">
                 </div>
 
                 <div class="col-md-3">
@@ -92,7 +92,7 @@ Passport Options
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Remarks</th>
@@ -104,7 +104,7 @@ Passport Options
                                     @foreach ($options as $key => $passport)
                                     <tr>
                                         <td>{{ $passport->name }}</td>
-                                        <td>{{ $passport->emirates_id }}</td>
+                                        <td>{{ $passport->civil_id }}</td>
                                         <td>{{ $passport->bd_phone }}</td>
                                         <td>
                                             {{ $passport->model_name }}
@@ -183,7 +183,7 @@ Passport Options
 
 <script>
     function searchOptions() {
-         window.open("{{ url('call-center/passport-options/delivery') }}/"+$('#emirates_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+         window.open("{{ url('call-center/passport-options/delivery') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
     }
 
     function checkedAll() {

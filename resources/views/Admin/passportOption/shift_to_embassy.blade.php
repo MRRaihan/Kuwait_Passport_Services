@@ -42,8 +42,8 @@ Passport Options
             <div class="col-sm-12">
 
                 <div class="col-md-3">
-                    <label for="date">Emirates ID</label>
-                    <input type="text" name="emirates_id" id="emirates_id" value="{{ $emirates_id }}" class="form-control" placeholder="search by Emirates ID">
+                    <label for="date">Civil ID</label>
+                    <input type="text" name="civil_id" id="civil_id" value="{{ $civil_id }}" class="form-control" placeholder="search by Civil ID">
                 </div>
 
                 <div class="col-md-3">
@@ -111,7 +111,7 @@ Passport Options
                                             <label><input type="checkbox" name="select_option" id="select_option" onclick="checkedAll.call(this);">&nbsp;Select/Unsellect All</label>
                                         </th>
                                         <th>Name</th>
-                                        <th>Emirates ID</th>
+                                        <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Brnach Name</th>
@@ -132,7 +132,7 @@ Passport Options
                                             </td>
                                         @endif
                                         <td>{{ $passport->name }}</td>
-                                        <td>{{ $passport->emirates_id }}</td>
+                                        <td>{{ $passport->civil_id }}</td>
                                         <td>{{ $passport->bd_phone }}</td>
                                         <td>
                                             {{ passportOptions()[$option] }}
@@ -186,7 +186,7 @@ Passport Options
 
 <script>
     function searchOptions() {
-         window.open("{{ url('admin/passport-options/shift-to-embassy') }}/"+$('#emirates_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+         window.open("{{ url('admin/passport-options/shift-to-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
     }
 
     function openLink(link,type='_parent'){

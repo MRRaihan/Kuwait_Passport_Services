@@ -6,7 +6,7 @@
         @if (isset($option) && $option == 1)
            <th><b>Category Of Passport Holder </b></th>
         @endif
-        <th><b>Emirates ID</b></th>
+        <th><b>Civil ID</b></th>
         <th><b>Passport NO.</b></th>
         <th><b>Kuwait Phone</b></th>
         <th><b>BARCODE.</b></th>
@@ -31,7 +31,7 @@
             @if (isset($option) && $option == 1)
               <td style="width: 150px;">{{ $passport->passport_type_title ?  $passport->passport_type_title.' ( govt. fee: '.$passport->passport_type_versatilo_fee.' | ver. fee: '.$passport->passport_type_government_fee.')' : '' }}</td>
             @endif
-            <td style="width: 150px;">{{ $passport->emirates_id }}</td>
+            <td style="width: 150px;">{{ $passport->civil_id }}</td>
             <td style="width: 150px;">{{ $passport->passport_number }}</td>
             <td style="width: 150px;">{{ $passport->kuwait_phone }}</td>
             <td style="width: 150px;">{{ $passport->ems }}</td>

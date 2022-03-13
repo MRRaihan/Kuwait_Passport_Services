@@ -16,7 +16,7 @@ class Other extends Model
     //     'name',
     //     'passport_number',
     //     'profession_id',
-    //     'emirates_id',
+    //     'civil_id',
     //     'govt_passport_id',
     //     'passport_photocopy',
     //     'profession_file',

@@ -50,7 +50,7 @@ class ExpressServiceController extends Controller
 
 
             'passport_number' => 'required',
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'services' => 'required',
 

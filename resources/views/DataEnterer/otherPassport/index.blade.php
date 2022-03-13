@@ -57,7 +57,7 @@
                             <thead>
                                 <tr>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
@@ -70,7 +70,7 @@
                                 @foreach ($otherPassports as $otherPassport)
                                 <tr>
                                     <td>{{ $otherPassport->name }} {{ $otherPassport->last_name }}</td>
-                                    <td>{{ $otherPassport->emirates_id }}</td>
+                                    <td>{{ $otherPassport->civil_id }}</td>
                                     <td>{{ $otherPassport->bd_phone }}</td>
                                     <td>{{ $otherPassport->ems }}</td>
                                     <td>{{ $otherPassport->created_at->diffForHumans() }}</td>

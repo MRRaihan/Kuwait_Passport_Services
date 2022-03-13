@@ -10,7 +10,7 @@
     <b class="bar_text"> {{ $p_type }}</b><br>
         Name :  {{ $serviceData->name }} <br>
         Passport No:  {{ $serviceData->passport_number }} <br>
-        Emirates ID:  {{ $serviceData->emirates_id }} <br>
+        Civil ID:  {{ $serviceData->civil_id }} <br>
         Phone: {{ $serviceData->kuwait_phone }}
 
 @endsection

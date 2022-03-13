@@ -92,6 +92,6 @@
 </div>
 <h1 class="text-danger">{{ $message }}</h1>
 {{-- <h1>{{ $kuwait_phone }}</h1>
-<h1>{{ $emirates_id }}</h1>
+<h1>{{ $civil_id }}</h1>
 <h1>{{ $passport_type }}</h1> --}}
 @endif

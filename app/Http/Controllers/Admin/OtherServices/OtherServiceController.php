@@ -34,7 +34,7 @@ class OtherServiceController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            // 'emirates_id' => 'required',
+            // 'civil_id' => 'required',
             'kuwait_phone' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',
@@ -54,7 +54,7 @@ class OtherServiceController extends Controller
             // 'passport_file' => 'required',
 
 
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
@@ -65,7 +65,7 @@ class OtherServiceController extends Controller
         $otherService->name = $request->name;
         $otherService->branch_id = Auth::user()->branch_id;
         $otherService->creator_id = Auth::user()->id;
-        $otherService->emirates_id = $request->emirates_id;
+        $otherService->civil_id = $request->civil_id;
         $otherService->profession_id = $request->profession_id;
         $otherService->passport_number = $request->passport_number;
         $otherService->kuwait_phone = $request->kuwait_phone;
@@ -150,7 +150,7 @@ class OtherServiceController extends Controller
         $request->validate([
             'name' => 'required',
             'kuwait_phone' => 'required',
-            // 'emirates_id' => 'required',
+            // 'civil_id' => 'required',
             // 'profession' => 'required',
             'passport_number' => 'required',
             // 'fee' => 'required',
@@ -165,7 +165,7 @@ class OtherServiceController extends Controller
             // 'permanent_address' => 'required',
 
 
-            'emirates_id' => 'required',
+            'civil_id' => 'required',
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',

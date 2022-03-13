@@ -49,7 +49,7 @@ New Born Baby Passport
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>MRP Passport No.</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
@@ -64,7 +64,7 @@ New Born Baby Passport
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $newBornBabyPassport->name }} {{ $newBornBabyPassport->last_name }}</td>
-                                    <td>{{ $newBornBabyPassport->emirates_id }}</td>
+                                    <td>{{ $newBornBabyPassport->civil_id }}</td>
                                     <td>{{ $newBornBabyPassport->passport_number }}</td>
                                     <td>{{ $newBornBabyPassport->bd_phone }}</td>
                                     <td>{{ $newBornBabyPassport->ems }}</td>

@@ -53,7 +53,7 @@ Manual Passport Table
                                 <tr>
                                     <th>SL.</th>
                                     <th>Name</th>
-                                    <th>Emirates ID</th>
+                                    <th>Civil ID</th>
                                     <th>MRP Passport Number</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
@@ -68,7 +68,7 @@ Manual Passport Table
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $manualPassport->name }} {{ $manualPassport->last_name }}</td>
-                                    <td>{{ $manualPassport->emirates_id }}</td>
+                                    <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
                                     <td>{{ $manualPassport->bd_phone }}</td>
                                     <td>{{ $manualPassport->ems }}</td>

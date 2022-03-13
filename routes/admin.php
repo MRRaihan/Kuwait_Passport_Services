@@ -95,7 +95,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('lostPassport/permanentDelete/{id}', [LostPassportController::class, 'permanentDelete'])->name('lostPassport.permanentDelete');
     Route::get('lostPassport/agreement/{id}', [LostPassportController::class, 'agreement'])->name('lostPassport.agreement');
 
-    Route::post('lostPassport/search_by_emirats', [LostPassportController::class, 'search_by_emirats'])->name('lostPassport.search_by_emirats');
+    Route::post('lostPassport/search_by_civil', [LostPassportController::class, 'search_by_civil'])->name('lostPassport.search_by_civil');
     Route::post('lostPassport/search_by_mrp', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
     Route::post('lostPassport/search_by_profession', [LostPassportController::class, 'search_by_profession'])->name('lostPassport.search_by_profession');
 
@@ -109,7 +109,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('newBornBabyPassport/permanentDelete/{id}', [NewBornBabyPassportController::class, 'permanentDelete'])->name('newBornBabyPassport.permanentDelete');
     Route::get('newBornBabyPassport/agreement/{id}', [NewBornBabyPassportController::class, 'agreement'])->name('newBornBabyPassport.agreement');
 
-    Route::post('newBornBabyPassport/search_by_emirats', [NewBornBabyPassportController::class, 'search_by_emirats'])->name('newBornBabyPassport.search_by_emirats');
+    Route::post('newBornBabyPassport/search_by_civil', [NewBornBabyPassportController::class, 'search_by_civil'])->name('newBornBabyPassport.search_by_civil');
     Route::post('newBornBabyPassport/search_by_mrp', [NewBornBabyPassportController::class, 'search_by_passport_number'])->name('newBornBabyPassport.search_by_passport_number');
     Route::post('newBornBabyPassport/search_by_profession', [NewBornBabyPassportController::class, 'search_by_profession'])->name('newBornBabyPassport.search_by_profession');
 
@@ -122,7 +122,7 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('manualPassport/restore/{id}', [ManualPassportController::class, 'restore'])->name('manualPassport.restore');
     Route::post('manualPassport/permanentDelete/{id}', [ManualPassportController::class, 'permanentDelete'])->name('manualPassport.permanentDelete');
 
-    Route::post('manual-passport/search_by_emirats', [ManualPassportController::class, 'search_by_emirats'])->name('manualPassport.search_by_emirats');
+    Route::post('manual-passport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
     Route::post('manual-passport/search_by_mrp', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
     Route::post('manual-passport/search_by_profession', [ManualPassportController::class, 'search_by_profession'])->name('manualPassport.search_by_profession');
 
@@ -141,20 +141,28 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('renewPassport/restore/{id}', [RenewPassportController::class, 'restore'])->name('renewPassport.restore');
     Route::post('renewPassport/permanentDelete/{id}', [RenewPassportController::class, 'permanentDelete'])->name('renewPassport.permanentDelete');
 
-    Route::post('renew-passport/search_by_emirats', [RenewPassportController::class, 'search_by_emirats'])->name('renewPassport.search_by_emirats');
+    Route::post('renew-passport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
     Route::post('renew-passport/search_by_mrp', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renew-passport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
 
     //Recycle Bin
     Route::group(['prefix' => 'recycle-bin/', 'as' => 'recycleBin.'], function () {
-        Route::get('renew-list', [RecycleBinController::class, 'renewList'])->name('renewList');
-        Route::get('manual-list', [RecycleBinController::class, 'manualList'])->name('manualList');
-        Route::get('lost-list', [RecycleBinController::class, 'lostList'])->name('lostList');
-        Route::get('new-born-baby-list', [RecycleBinController::class, 'newBornBabyList'])->name('newBornBabyList');
+        Route::group(['prefix' => 'passport/', 'as' => 'passport.'], function () {
+            Route::get('renew', [RecycleBinController::class, 'renew'])->name('renew');
+            Route::get('manual', [RecycleBinController::class, 'manual'])->name('manual');
+            Route::get('lost', [RecycleBinController::class, 'lost'])->name('lost');
+            Route::get('new-born-baby', [RecycleBinController::class, 'newBornBaby'])->name('newBornBaby');
+        });
+        Route::group(['prefix' => 'other/', 'as' => 'other.'], function () {
+            Route::get('express', [RecycleBinController::class, 'express'])->name('express');
+            Route::get('immigration-govt', [RecycleBinController::class, 'immigrationGovt'])->name('immigrationGovt');
+            Route::get('legal-complaints', [RecycleBinController::class, 'legalComplaints'])->name('legalComplaints');
+            Route::get('premier', [RecycleBinController::class, 'premier'])->name('premier');
+            Route::get('other', [RecycleBinController::class, 'other'])->name('other');
+            Route::post('restore/{id}/{service_type}', [RecycleBinController::class, 'restore'])->name('restore');
+            Route::post('permanentDelete/{id}/{service_type}', [RecycleBinController::class, 'permanentDelete'])->name('permanentDelete');
+        });
     });
-
-
-
 
     //passport option shift to embassy
 
