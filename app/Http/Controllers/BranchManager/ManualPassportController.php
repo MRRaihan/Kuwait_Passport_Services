@@ -442,9 +442,9 @@ class ManualPassportController extends Controller
         return view('BranchManager.renewManual.edit');
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $manualPassport = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $manualPassport = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.manualPassport.search', compact('manualPassport'));
     }
 

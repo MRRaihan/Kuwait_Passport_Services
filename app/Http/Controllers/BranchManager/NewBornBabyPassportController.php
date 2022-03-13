@@ -393,9 +393,9 @@ class NewBornBabyPassportController extends Controller
         }
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $newBornBabyPassports = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $newBornBabyPassports = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.newBornBabyPassport.search', compact('newBornBabyPassports'));
     }
 

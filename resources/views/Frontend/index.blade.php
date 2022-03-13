@@ -294,7 +294,7 @@
                                         payment, or any abuse of their rights, our legal service and welfare department
                                         is available and ready to see into restoring the joy of the complaining
                                         employee. Also, individuals with cases including police or court that threatens
-                                        their peaceful stay in the United Arab Emirates, can get solutions from our
+                                        their peaceful stay in the Kuwait, can get solutions from our
                                         legal team.
                                     </p>
                                 </div>

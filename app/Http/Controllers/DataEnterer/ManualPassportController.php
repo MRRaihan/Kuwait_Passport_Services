@@ -414,9 +414,9 @@ class ManualPassportController extends Controller
         return view('DataEnterer.renewManual.edit');
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $manualPassport = ManualPassport::where('user_creator_id', Auth::user()->id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $manualPassport = ManualPassport::where('user_creator_id', Auth::user()->id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('DataEnterer.manualPassport.search', compact('manualPassport'));
     }
 

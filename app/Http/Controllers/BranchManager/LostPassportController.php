@@ -407,9 +407,9 @@ class LostPassportController extends Controller
         return redirect()->route('branchManager.lostPassport.index');
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.lostPassport.search', compact('lostPassports'));
     }
 

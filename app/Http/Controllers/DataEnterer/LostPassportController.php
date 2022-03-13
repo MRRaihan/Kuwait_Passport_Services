@@ -378,9 +378,9 @@ class LostPassportController extends Controller
         return redirect()->route('dataEnterer.lostPassport.index');
     }
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $lostPassports = LostPassport::where('user_creator_id', Auth::user()->id)->where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $lostPassports = LostPassport::where('user_creator_id', Auth::user()->id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('DataEnterer.lostPassport.search', compact('lostPassports'));
     }
 

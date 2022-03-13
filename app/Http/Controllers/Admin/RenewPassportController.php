@@ -437,9 +437,9 @@ class RenewPassportController extends Controller
     }
 
 
-    public function search_by_emirats(Request $req)
+    public function search_by_civil(Request $req)
     {
-        $renewPassports = RenewPassport::where('civil_id', 'like', '%' . $req->input('emirats_id') . '%')->orderBy('id', 'DESC')->get();
+        $renewPassports = RenewPassport::where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
         return view('Admin.renewPassport.search', compact('renewPassports'));
     }
 
