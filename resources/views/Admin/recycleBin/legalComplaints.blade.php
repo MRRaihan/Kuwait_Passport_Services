@@ -1,7 +1,7 @@
 @extends('Admin.layouts.master')
 
 @push('title')
-Premier Service Table
+Legal & Complaints Service Table
 @endpush
 @push('datatableCSS')
     <!-- DataTables -->
@@ -33,7 +33,7 @@ Premier Service Table
             <div class="row">
                 <div class="col-sm-12">
                     <div class="page-header-title">
-                        <h4 class="pull-left page-title">Premier Service</h4>
+                        <h4 class="pull-left page-title">Legal & Complaints Service</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
                             <li class="active">Services</li>
@@ -47,7 +47,7 @@ Premier Service Table
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <span class="panel-title">Premier Service Table</span>
+                            <span class="panel-title">Legal & Complaints Service Table</span>
                                 <!-- Button trigger modal for adding new Category -->
 
                         </div>
