@@ -8,19 +8,16 @@ use App\Models\Branch;
 use App\Models\ManualPassport;
 use App\Models\PassportFee;
 use App\Models\Profession;
-// use App\Models\Salary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\File;
-use PDF;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 
 class ManualPassportController extends Controller
 {
-
     public function index()
     {
         $flag = 1;
@@ -309,6 +306,12 @@ class ManualPassportController extends Controller
     {
         $manualPassport = ManualPassport::withTrashed()->find($id);
         try {
+            if ($manualPassport->profession_file != null)
+                File::delete(public_path($manualPassport->profession_file)); //Old pdf delete
+            if ($manualPassport->application_form != null)
+                File::delete(public_path($manualPassport->application_form)); //Old pdf delete
+            if ($manualPassport->passport_photocopy != null)
+                File::delete(public_path($manualPassport->passport_photocopy)); //Old image delete
             $manualPassport->forceDelete();
             return response()->json([
                 'type' => 'success',

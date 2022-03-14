@@ -78,32 +78,32 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($takenPremierServices as $key => $premierService)
-                                <tr>
-                                    <td>{{ ++$key }}</td>
-                                    <td>{{ $premierService->name }} {{ $premierService->last_name }}</td>
-                                    <td>{{ $premierService->kuwait_phone }}</td>
-                                    <td>
-                                        @foreach (json_decode($premierService->service_taken) as $item)
-                                        <span class="badge badge-primary">{{ get_other_service_fee_name_by_id($item) }}</span>
-                                         @endforeach
-                                    </td>
-                                    <td>{{ $premierService->total_fee }}</td>
-                                    <td>{{ \Carbon\Carbon::parse($premierService->created_at)->format('Y-m-d') }}</td>
-                                    <td style="width: 150px">
+                                        <tr>
+                                            <td>{{ ++$key }}</td>
+                                            <td>{{ $premierService->name }} {{ $premierService->last_name }}</td>
+                                            <td>{{ $premierService->kuwait_phone }}</td>
+                                            <td>
+                                                @foreach (json_decode($premierService->service_taken) as $item)
+                                                <span class="badge badge-primary">{{ get_other_service_fee_name_by_id($item) }}</span>
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $premierService->total_fee }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($premierService->created_at)->format('Y-m-d') }}</td>
+                                            <td style="width: 150px">
 
-                                        <a href="{{ route('admin.PremierService.show',$premierService->id) }}"
-                                            target="_blank" class="btn btn-primary"><i
-                                                class="fa fa-eye"></i></a>
+                                                <a href="{{ route('admin.PremierService.show',$premierService->id) }}"
+                                                    target="_blank" class="btn btn-primary"><i
+                                                        class="fa fa-eye"></i></a>
 
 
-                                        <a href="{{ route('printReceipt',[$premierService->id,"premiem_service"]) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
+                                                <a href="{{ route('printReceipt',[$premierService->id,"premiem_service"]) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
 
-                                        <a href="{{ route('printSticker',[$premierService->id,"premiem_service"]) }}" target="_blank" class="btn btn-info"><i class="fa fa-print"></i>Sticker</a>
+                                                <a href="{{ route('printSticker',[$premierService->id,"premiem_service"]) }}" target="_blank" class="btn btn-info"><i class="fa fa-print"></i>Sticker</a>
 
-                                        <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('admin.PremierService.destroy',$premierService) }}"><i class="fa fa-trash"></i> </button>
-                                    </td>
-                                </tr>
-                                @endforeach
+                                                <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('admin.PremierService.destroy',$premierService) }}"><i class="fa fa-trash"></i> </button>
+                                            </td>
+                                        </tr>
+                                    @endforeach
 
                                 </tbody>
                             </table>

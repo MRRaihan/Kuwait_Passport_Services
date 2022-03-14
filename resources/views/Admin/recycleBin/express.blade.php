@@ -36,7 +36,7 @@ Express Service Table
                         <h4 class="pull-left page-title">Express Service</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
-                            <li class="active">Passport</li>
+                            <li class="active">Services</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
@@ -58,13 +58,11 @@ Express Service Table
                                     <tr>
                                         <th>SL.</th>
                                         <th>Name</th>
-                                        <th>MRP Passport Number</th>
-                                        <th>Civil ID</th>
-                                        <th>Kuwait Phone</th>
-                                        <th>Total Fee</th>
-                                        <th>EMS</th>
-                                        <th>Profession</th>
-                                        <th>Deleted By</th>
+                                        <th>Phone</th>
+                                        <th>Taken Services</th>
+                                        <th>Total Cost</th>
+                                        <th>Time</th>
+
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                 </thead>
@@ -72,24 +70,21 @@ Express Service Table
                                     @foreach ($expressServices as $expressService)
                                         <tr>
                                             <td>{{ $loop->iteration }}</td>
-                                            <td>{{ $expressService->name }}</td>
-                                            <td>{{ $expressService->passport_number }}</td>
-                                            <td>{{ $expressService->civil_id }}</td>
+                                            <td>{{ $expressService->name }} {{ $expressService->last_name }}</td>
                                             <td>{{ $expressService->kuwait_phone }}</td>
-                                            <td>{{ $expressService->passport_type_fees_total }}</td>
-                                            <td>{{ $expressService->ems }}</td>
-                                            <td>{{ $expressService->profession->name }}</td>
-                                            @if($expressService->deleted_by != 1)
-                                                <td>Branch Manager({{ $expressService->deletor->name }})</td>
-                                            @else
-                                                <td>{{ $expressService->deletor->name }}</td>
-                                            @endif
+                                            <td>
+                                                @foreach (json_decode($expressService->service_taken) as $item)
+                                                    <span class="badge badge-primary">{{ get_other_service_fee_name_by_id($item) }}</span>
+                                                @endforeach
+                                            </td>
+                                            <td>{{ $expressService->total_fee }}</td>
+                                            <td>{{ \Carbon\Carbon::parse($expressService->created_at)->format('Y-m-d') }}</td>
                                             <td style="width: 150px">
                                                 <button class="btn btn-info" onclick="restore(this)"
-                                                    value="{{ route('admin.expressService.restore', $expressService->id) }}"><i class="mdi mdi-backup-restore"></i> Restore
+                                                    value="{{ route('admin.recycleBin.other.otherServiceRestore',$expressService->id.'&'.'1') }}"><i class="mdi mdi-backup-restore"></i> Restore
                                                 </button>
                                                 <button class="btn btn-danger" onclick="permanent_delete(this)"
-                                                    value="{{ route('admin.expressService.permanentDelete', $expressService->id) }}"><i class="fa fa-trash"></i> Delete Permanently
+                                                    value="{{ route('admin.recycleBin.other.otherServicePermanentDelete',$expressService->id.'&'.'1') }}"><i class="fa fa-trash"></i> Delete Permanently
                                                 </button>
                                             </td>
                                         </tr>

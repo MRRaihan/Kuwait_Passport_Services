@@ -372,6 +372,13 @@ class NewBornBabyPassportController extends Controller
     {
         $newBornBabyPassport = NewBornBabyPassport::withTrashed()->find($id);
         try {
+
+            if ($newBornBabyPassport->dob_file != null)
+                File::delete(public_path($newBornBabyPassport->dob_file)); //Old pdf delete
+            if ($newBornBabyPassport->application_form != null)
+                File::delete(public_path($newBornBabyPassport->application_form)); //Old pdf delete
+            if ($newBornBabyPassport->passport_photocopy != null)
+                File::delete(public_path($newBornBabyPassport->passport_photocopy)); //Old image delete
             $newBornBabyPassport->forceDelete();
             return response()->json([
                 'type' => 'success',

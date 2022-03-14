@@ -317,6 +317,12 @@ class RenewPassportController extends Controller
     {
         $renewPassport = RenewPassport::withTrashed()->find($id);
         try {
+            if ($renewPassport->profession_file != null)
+                File::delete(public_path($renewPassport->profession_file)); //Old pdf delete
+            if ($renewPassport->application_form != null)
+                File::delete(public_path($renewPassport->application_form)); //Old pdf delete
+            if ($renewPassport->passport_photocopy != null)
+                File::delete(public_path($renewPassport->passport_photocopy)); //Old image delete
             $renewPassport->forceDelete();
             return response()->json([
                 'type' => 'success',

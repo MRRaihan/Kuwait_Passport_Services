@@ -154,13 +154,15 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
             Route::get('new-born-baby', [RecycleBinController::class, 'newBornBaby'])->name('newBornBaby');
         });
         Route::group(['prefix' => 'other/', 'as' => 'other.'], function () {
-            Route::get('express', [RecycleBinController::class, 'express'])->name('express');
-            Route::get('immigration-govt', [RecycleBinController::class, 'immigrationGovt'])->name('immigrationGovt');
-            Route::get('legal-complaints', [RecycleBinController::class, 'legalComplaints'])->name('legalComplaints');
             Route::get('premier', [RecycleBinController::class, 'premier'])->name('premier');
+            Route::get('express', [RecycleBinController::class, 'express'])->name('express');
+            Route::get('legal-complaints', [RecycleBinController::class, 'legalComplaints'])->name('legalComplaints');
+            Route::get('immigration-govt', [RecycleBinController::class, 'immigrationGovt'])->name('immigrationGovt');
             Route::get('other', [RecycleBinController::class, 'other'])->name('other');
-            Route::post('restore/{id}/{service_type}', [RecycleBinController::class, 'restore'])->name('restore');
-            Route::post('permanentDelete/{id}/{service_type}', [RecycleBinController::class, 'permanentDelete'])->name('permanentDelete');
+
+            // permanent delete & restore
+            Route::post('restore/{data}', [RecycleBinController::class, 'otherServiceRestore'])->name('otherServiceRestore');
+            Route::post('permanent-delete/{data}', [RecycleBinController::class, 'otherServicePermanentDelete'])->name('otherServicePermanentDelete');
         });
     });
 

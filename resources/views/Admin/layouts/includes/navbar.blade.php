@@ -111,35 +111,6 @@
                     </ul>
                 </li> --}}
 
-
-                {{-- routes for recycle-bin manage  --}}
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/*') ? 'active subdrop': ''}}"><i class="fa fa-trash"></i> <span> Recycle bin </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled" >
-                        {{-- routes for Passports manage  --}}
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/*') ? 'active subdrop': ''}}"><i class="ti-agenda"></i> <span> Passport </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                            <ul class="list-unstyled" style="display: block;">
-                                <li><a href="{{route('admin.recycleBin.passport.renew')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/renew') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Renew </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.passport.manual')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/manual') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Manual </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.passport.lost')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/lost') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Lost </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.passport.newBornBaby')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/new-born-baby') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> New Born Baby </span></a></li>
-                            </ul>
-                        </li>
-                        {{-- routes for other manage  --}}
-                        <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/*') ? 'active subdrop': ''}}"><i class="ti-agenda"></i> <span> Other Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                            <ul class="list-unstyled" style="display: block;">
-                                <li><a href="{{route('admin.recycleBin.other.express')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/express') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Express </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.immigrationGovt')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/immigration-govt') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Immigration Govt. </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.legalComplaints')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/legal-complaints') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Legal complaints </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.premier')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/premier') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premier </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.other')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/other') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Other </span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-filter"></i> <span> Passport
                             Processing</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -167,11 +138,39 @@
                         <li><a href="{{ route('admin.expressService.index') }}">Express Services</a></li>
                         <li><a href="{{ route('admin.legalComplaintsService.index') }}">Legal and
                                 Complaints</a></li>
-                        <li><a href="{{ route('admin.immigrationGovementService.index') }}">Immigration</a></li>
+                        <li><a href="{{ route('admin.immigrationGovementService.index') }}">Immigration Govt.</a></li>
                         <li><a href="{{ route('admin.otherService.index') }}">Others</a></li>
                     </ul>
                 </li>
 
+
+                {{-- routes for recycle-bin manage  --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/*') ? 'active subdrop': ''}}"><i class="fa fa-trash"></i> <span> Recycle bin </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled" >
+                        {{-- routes for Passports manage  --}}
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/*') ? 'active subdrop': ''}}"><i class="ti-agenda"></i> <span> Passport </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled" style="display: block;">
+                                <li><a href="{{route('admin.recycleBin.passport.renew')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/renew') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Renew </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.passport.manual')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/manual') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Manual </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.passport.lost')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/lost') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Lost </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.passport.newBornBaby')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/passport/new-born-baby') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> New Born Baby </span></a></li>
+                            </ul>
+                        </li>
+                        {{-- routes for other manage  --}}
+                        <li class="has_sub">
+                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/*') ? 'active subdrop': ''}}"><i class="ion-android-note"></i> <span> Other Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                            <ul class="list-unstyled" style="display: block;">
+                                <li><a href="{{route('admin.recycleBin.other.premier')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/premier') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premier </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.express')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/express') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Express </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.legalComplaints')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/legal-complaints') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Legal complaints </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.immigrationGovt')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/immigration-govt') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Immigration Govt. </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.other')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/other') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Other </span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
 
                 {{-- reports dropdown --}}
 
