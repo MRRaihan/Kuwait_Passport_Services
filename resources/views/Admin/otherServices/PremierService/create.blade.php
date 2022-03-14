@@ -258,7 +258,9 @@
                                                     @enderror
                                                 </div>
 
-                                                <button type="submit" class="btn btn-primary"> Submit </button>
+                                                <div class="col-md-12 text-right">
+                                                    <button type="submit" class="btn btn-primary"> Submit </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </form>
