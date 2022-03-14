@@ -36,7 +36,7 @@ Express Service Table
                         <h4 class="pull-left page-title">Express Service</h4>
                         <ol class="breadcrumb pull-right">
                             <li><a href="{{ route('admin.dashboard') }}">Admin Panel</a></li>
-                            <li class="active">Passport</li>
+                            <li class="active">Services</li>
                         </ol>
                         <div class="clearfix"></div>
                     </div>
