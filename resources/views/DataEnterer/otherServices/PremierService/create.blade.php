@@ -53,7 +53,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background-color: #46bdc6 !important;">
-                            <span class="panel-title">Premier Service Create
+                            <span class="panel-title">Premier Service Create</span>
                                 <!-- Button trigger modal for adding new Category -->
                                 <div class="col-sm-12">
                                     <a class="btn btn-warning btn-sm"
@@ -257,16 +257,15 @@
                                                         <p class="text-danger">{{ $message }}</p>
                                                     @enderror
                                                 </div>
+                                            </div>
 
+                                            <div class="col-md-12 text-right">
                                                 <button type="submit" class="btn btn-primary"> Submit </button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-
                             </div>
-
-
                         </div>
                     </div>
                 </div>

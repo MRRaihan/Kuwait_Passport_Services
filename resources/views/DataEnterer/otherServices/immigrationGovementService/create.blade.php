@@ -67,9 +67,7 @@
 
 
                             <div class="row">
-                                <form action="{{ route('dataEnterer.immigrationGovementService.store') }}" method="post" id="basic-form"
-
-                                    enctype="multipart/form-data" novalidate="novalidate">
+                                <form action="{{ route('dataEnterer.immigrationGovementService.store') }}" method="post" id="basic-form" enctype="multipart/form-data" novalidate="novalidate">
                                     @csrf
                                     {{-- @include('Others.message') --}}
                                     <div class="row">
@@ -259,8 +257,11 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
+                                        </div>
 
+                                        <div class="col-md-12 text-right">
                                             <button type="submit" class="btn btn-primary"> Submit </button>
+                                        </div>
                                         </div>
                                     </div>
                                 </form>
