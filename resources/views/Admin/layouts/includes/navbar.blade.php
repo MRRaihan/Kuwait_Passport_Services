@@ -128,12 +128,12 @@
                         </li>
                         {{-- routes for other manage  --}}
                         <li class="has_sub">
-                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/*') ? 'active subdrop': ''}}"><i class="ti-agenda"></i> <span> Other Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                            <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/*') ? 'active subdrop': ''}}"><i class="ion-android-note"></i> <span> Other Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                             <ul class="list-unstyled" style="display: block;">
-                                <li><a href="{{route('admin.recycleBin.other.express')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/express') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Express </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.immigrationGovt')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/immigration-govt') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Immigration Govt. </span></a></li>
-                                <li><a href="{{route('admin.recycleBin.other.legalComplaints')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/legal-complaints') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Legal complaints </span></a></li>
                                 <li><a href="{{route('admin.recycleBin.other.premier')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/premier') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Premier </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.express')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/express') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Express </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.legalComplaints')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/legal-complaints') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Legal complaints </span></a></li>
+                                <li><a href="{{route('admin.recycleBin.other.immigrationGovt')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/immigration-govt') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Immigration Govt. </span></a></li>
                                 <li><a href="{{route('admin.recycleBin.other.other')}}" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/other/other') ? 'active': ''}}"><i class="fa fa-arrow-circle-right"></i><span> Other </span></a></li>
                             </ul>
                         </li>
