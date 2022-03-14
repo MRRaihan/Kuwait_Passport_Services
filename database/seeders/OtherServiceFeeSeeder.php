@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\OtherServiceFee;
 use Illuminate\Database\Seeder;
+use App\Models\OtherServiceFee;
 
-class ohterServiceFeeSeeder extends Seeder
+class OtherServiceFeeSeeder extends Seeder
 {
     /**
      * Run the database seeds.

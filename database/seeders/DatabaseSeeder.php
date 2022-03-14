@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PassportFeeSeeder::class);
         $this->call(BranchSeeder::class);
         $this->call(SalareySeeder::class);
-        $this->call(ohterServiceFeeSeeder::class);
+        $this->call(OtherServiceFeeSeeder::class);
         $this->call(DeliverySeeder::class);
     }
 }
