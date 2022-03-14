@@ -49,6 +49,7 @@ Edit Others Passport
                             <a class="btn btn-warning btn-sm" href="{{ route('admin.otherService.index') }}" style="float: right; margin-bottom: 10px; margin-top:-26px;" ><i class="ion-chevron-left"></i>&nbsp; Back</a>
                         </div>
                     </div>
+                         @include('Others.message')
                     <div class="panel-body">
                         <div class="box-body">
                             <form action="{{ route('admin.otherService.update',$otherService) }}" method="post" id="basic-form" enctype="multipart/form-data" novalidate="novalidate">
@@ -93,6 +94,14 @@ Edit Others Passport
                                             @enderror
                                         </div>
                                         <div class="form-group">
+                                            @if($otherService->profession_file)
+                                                <a href="{{ asset($otherService->profession_file) }}" target="_blank">View File</a>
+                                            @else
+                                                <a href="#">No File Found</a>
+                                            @endif
+                                        </div>
+
+                                        <div class="form-group">
                                             <label for="profession_file"> Profession File (Only PDF) </label>
                                             <input name="profession_file" class="form-control"
                                                 type="file" accept="application/pdf">
@@ -101,7 +110,7 @@ Edit Others Passport
                                             @enderror
                                         </div>
                                         <div class="form-group">
-                                            <img id="passport_photocopy" src="{{ asset(get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
+                                            <img id="passport_photocopy" src="{{ asset($otherService->passport_photocopy ?? get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
                                         </div>
 
                                         <div class="form-group">

@@ -61,25 +61,25 @@ class OtherServiceController extends Controller
             'passport_type_id' => 'required',
         ]);
 
-        $otherPassport = new Other();
-        $otherPassport->name = $request->name;
-        $otherPassport->branch_id = Auth::user()->branch_id;
-        $otherPassport->creator_id = Auth::user()->id;
-        $otherPassport->civil_id = $request->civil_id;
-        $otherPassport->profession_id = $request->profession_id;
-        $otherPassport->passport_number = $request->passport_number;
-        $otherPassport->kuwait_phone = $request->kuwait_phone;
-        $otherPassport->fee = $request->fee;
-        $otherPassport->bd_phone = $request->bd_phone;
-        $otherPassport->salary = $request->salary;
-        $otherPassport->delivery_date = $request->delivery_date;
-        $otherPassport->delivery_branch = $request->delivery_branch;
-        $otherPassport->entry_person = $request->entry_person;
-        $otherPassport->special_skill = $request->special_skill;
-        $otherPassport->residence = $request->residence;
-        $otherPassport->mailing_address = $request->mailing_address;
-        $otherPassport->permanent_address = $request->permanent_address;
-        $otherPassport->ems = 'OS' . time() . 'Kuwait';
+        $otherService = new Other();
+        $otherService->name = $request->name;
+        $otherService->branch_id = Auth::user()->branch_id;
+        $otherService->creator_id = Auth::user()->id;
+        $otherService->civil_id = $request->civil_id;
+        $otherService->profession_id = $request->profession_id;
+        $otherService->passport_number = $request->passport_number;
+        $otherService->kuwait_phone = $request->kuwait_phone;
+        $otherService->fee = $request->fee;
+        $otherService->bd_phone = $request->bd_phone;
+        $otherService->salary = $request->salary;
+        $otherService->delivery_date = $request->delivery_date;
+        $otherService->delivery_branch = $request->delivery_branch;
+        $otherService->entry_person = $request->entry_person;
+        $otherService->special_skill = $request->special_skill;
+        $otherService->residence = $request->residence;
+        $otherService->mailing_address = $request->mailing_address;
+        $otherService->permanent_address = $request->permanent_address;
+        $otherService->ems = 'OS' . time() . 'Kuwait';
 
         if ($request->hasFile('profession_file')) {
 
@@ -88,7 +88,7 @@ class OtherServiceController extends Controller
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->profession_file->move(public_path($folder_path), $pdf_new_name);
-            $otherPassport->profession_file = $folder_path . $pdf_new_name;
+            $otherService->profession_file = $folder_path . $pdf_new_name;
         }
 
         if ($request->hasFile('passport_photocopy')) {
@@ -98,10 +98,10 @@ class OtherServiceController extends Controller
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->passport_photocopy->move(public_path($folder_path), $pdf_new_name);
-            $otherPassport->passport_photocopy = $folder_path . $pdf_new_name;
+            $otherService->passport_photocopy = $folder_path . $pdf_new_name;
         }
 
-        $otherPassport->save();
+        $otherService->save();
 
         Session::flash('success', 'Other Passport Added successfully!');
         return redirect()->route('dataEnterer.otherService.index');
@@ -172,8 +172,8 @@ class OtherServiceController extends Controller
 
         ]);
 
-        $otherPassport = Other::findOrfail($id);
-        $otherPassport->fill($request->all());
+        $otherService = Other::findOrfail($id);
+        $otherService->fill($request->all());
 
 
         if ($request->hasFile('profession_file')) {
@@ -183,7 +183,7 @@ class OtherServiceController extends Controller
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->profession_file->move(public_path($folder_path), $pdf_new_name);
-            $otherPassport->profession_file = $folder_path . $pdf_new_name;
+            $otherService->profession_file = $folder_path . $pdf_new_name;
         }
 
         if ($request->hasFile('passport_photocopy')) {
@@ -193,10 +193,10 @@ class OtherServiceController extends Controller
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->passport_photocopy->move(public_path($folder_path), $pdf_new_name);
-            $otherPassport->passport_photocopy = $folder_path . $pdf_new_name;
+            $otherService->passport_photocopy = $folder_path . $pdf_new_name;
         }
 
-        $otherPassport->save();
+        $otherService->save();
 
         return redirect()->route('dataEnterer.otherService.index')->with('success', 'Passport Update successfull');
     }
@@ -204,12 +204,12 @@ class OtherServiceController extends Controller
 
     public function destroy($id)
     {
-        $otherPassport = Other::findOrFail($id);
+        $otherService = Other::findOrFail($id);
 
         try {
-            $otherPassport->deleted_at = Carbon::now();
-            $otherPassport->deleted_by = Auth::user()->id;
-            $otherPassport->save();
+            $otherService->deleted_at = Carbon::now();
+            $otherService->deleted_by = Auth::user()->id;
+            $otherService->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Successfully Deleted'

@@ -2,6 +2,7 @@
 
 use App\Models\LostPassport;
 use App\Models\ManualPassport;
+use App\Models\NewBornBabyPassport;
 use App\Models\OtherServiceFee;
 use App\Models\RenewPassport;
 use App\Models\StaticOption;
@@ -214,14 +215,14 @@ if (!function_exists('random_code')) {
         $renewPassports = RenewPassport::all()->count();
         return $renewPassports;
     }
-    function get_total_other_passports()
+    function get_total_new_born_baby_passports()
     {
-        $otherPassports = RenewPassport::all()->count();
-        return $otherPassports;
+        $newBornBabyPassports = NewBornBabyPassport::all()->count();
+        return $newBornBabyPassports;
     }
     function get_total_passports()
     {
-        $totalPassports = get_total_lost_passports() + get_total_manual_passports() + get_total_other_passports();
+        $totalPassports = get_total_lost_passports() + get_total_manual_passports() + get_total_new_born_baby_passports();
         return $totalPassports;
     }
 

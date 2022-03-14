@@ -65,15 +65,7 @@
                         <li><a href="{{ route('dataEnterer.otherService.index') }}">Others</a></li>
                     </ul>
                 </li>
-                {{-- Others --}}
-                {{-- <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i> <span> Other
-                            Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('dataEnterer.otherPassport.index') }}">All</a></li>
-                        <li><a href="{{ route('dataEnterer.otherPassport.create') }}">Add New</a></li>
-                    </ul>
-                </li> --}}
+
                 {{-- Reports --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-bar-chart"></i> <span> Reports

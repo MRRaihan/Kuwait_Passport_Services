@@ -265,12 +265,12 @@ class DashboardController extends Controller
     {
         $flag = 0;
         if ($data == 'monthly') {
-            $otherPassports = Other::where('created_at', '>', Carbon::now()->startOfMonth())->where('created_at', '<', Carbon::now()->endOfMonth())->get();
-            return view('Admin.otherServices.index', compact('otherPassports', 'flag'));
+            $otherServices = Other::where('created_at', '>', Carbon::now()->startOfMonth())->where('created_at', '<', Carbon::now()->endOfMonth())->get();
+            return view('Admin.otherServices.otherService.index', compact('otherServices', 'flag'));
         } else {
-            $otherPassports = Other::whereDate('created_at', Carbon::today())->get();
+            $otherServices = Other::whereDate('created_at', Carbon::today())->get();
 
-            return view('Admin.otherServices.index', compact('otherPassports', 'flag'));
+            return view('Admin.otherServices.otherService.index', compact('otherServices', 'flag'));
         }
     }
 

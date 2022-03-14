@@ -67,24 +67,24 @@ Others Services
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($otherServices as $key => $otherPassport)
+                                @foreach ($otherServices as $key => $otherService)
                                 <tr>
                                     <td>{{ ++$key }}</td>
-                                    <td>{{ $otherPassport->name }} {{ $otherPassport->last_name }}</td>
-                                    <td>{{ $otherPassport->civil_id }}</td>
-                                    <td>{{ $otherPassport->bd_phone }}</td>
-                                    <td>{{ $otherPassport->ems }}</td>
-                                    <td>{{ $otherPassport->created_at->diffForHumans() }}</td>
+                                    <td>{{ $otherService->name }} {{ $otherService->last_name }}</td>
+                                    <td>{{ $otherService->civil_id }}</td>
+                                    <td>{{ $otherService->bd_phone }}</td>
+                                    <td>{{ $otherService->ems }}</td>
+                                    <td>{{ $otherService->created_at->diffForHumans() }}</td>
                                     <td style="width: 150px">
-                                        <a href="{{ route('dataEnterer.otherService.receipt',$otherPassport->id) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
+                                        <a href="{{ route('dataEnterer.otherService.receipt',$otherService->id) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
 
-                                        <a href="{{ route('dataEnterer.otherService.sticker',$otherPassport->id) }}" target="_blank" class="btn btn-warning"><i class="fa fa-print"></i>Sticker</a>
+                                        <a href="{{ route('dataEnterer.otherService.sticker',$otherService->id) }}" target="_blank" class="btn btn-warning"><i class="fa fa-print"></i>Sticker</a>
 
-                                        <a href="{{ route('dataEnterer.otherService.show',$otherPassport->id) }}" target="_blank" class="btn btn-primary"><i class="fa fa-eye"></i></a>
+                                        <a href="{{ route('dataEnterer.otherService.show',$otherService->id) }}" target="_blank" class="btn btn-primary"><i class="fa fa-eye"></i></a>
 
-                                        <a href="{{ route('dataEnterer.otherService.edit',$otherPassport) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
+                                        <a href="{{ route('dataEnterer.otherService.edit',$otherService) }}" class="btn btn-info"><i class="fa fa-edit"></i></a>
 
-                                        <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('dataEnterer.otherService.destroy',$otherPassport) }}"><i class="fa fa-trash"></i> </button>
+                                        <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('dataEnterer.otherService.destroy',$otherService) }}"><i class="fa fa-trash"></i> </button>
                                     </td>
                                 </tr>
                                 @endforeach

@@ -163,7 +163,7 @@ Admin
                 </div>
             </div>
 
-            
+
 
 
 
@@ -174,7 +174,7 @@ Admin
                     </div>
                     <div class="panel-body">
                         <h3 class=""><b>{{ $total_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@ Admin
                     </div>
                     <div class="panel-body">
                         <h3 class=""><b>{{ $monthly_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                     </div>
                 </div>
             </div>
@@ -275,12 +275,12 @@ Admin
                     </div>
                     <div class="panel-body">
                         <h3 class=""><b>{{ $daily_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                     </div>
                 </div>
             </div>
 
-         
+
 
 
             <div class="row">

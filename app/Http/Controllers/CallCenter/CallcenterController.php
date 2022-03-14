@@ -374,10 +374,10 @@ class CallcenterController extends Controller
         }
 
         if (isset($request->option) && $request->option == 3) {
-            $otherPassport = NewBornBabyPassport::findOrFail($id);
-            $otherPassport->remarks = $request->remarks;
-            $otherPassport->remarks_by = Auth::user()->id;
-            $otherPassport->save();
+            $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
+            $newBornBabyPassport->remarks = $request->remarks;
+            $newBornBabyPassport->remarks_by = Auth::user()->id;
+            $newBornBabyPassport->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Remarks Added Successfully!'

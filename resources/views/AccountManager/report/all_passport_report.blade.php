@@ -12,7 +12,7 @@ Account Manager
 <div class="content">
     <div class="container">
 
-        
+
 
 
         <!-- Page-Title -->
@@ -94,7 +94,7 @@ Account Manager
                         <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;All Branch</option>
                         @if(isset($branches[0]))
                         @foreach ($branches as $key => $branch)
-                            
+
                             <option value="{{$branch->id}}"   {{ $branch->id == $branch_id ? 'selected' : '' }} >&nbsp;&nbsp;&nbsp;&nbsp;{{$branch->name}}</option>
                         @endforeach
                         @endif
@@ -102,7 +102,7 @@ Account Manager
                 </div>
                </div>
            </div>
-           
+
            <div class="col-sm-6 col-lg-5 col-md-offset-1">
             <div class="panel panel-primary text-center">
                 <div class="panel-heading bg-success">
@@ -163,7 +163,7 @@ Account Manager
             </div>
         </div>
 
-        
+
 
 
 
@@ -174,7 +174,7 @@ Account Manager
                 </div>
                 <div class="panel-body">
                     <h3 class=""><b>{{ $total_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                 </div>
             </div>
         </div>
@@ -224,7 +224,7 @@ Account Manager
                 </div>
                 <div class="panel-body">
                     <h3 class=""><b>{{ $monthly_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                 </div>
             </div>
         </div>
@@ -275,12 +275,12 @@ Account Manager
                 </div>
                 <div class="panel-body">
                     <h3 class=""><b>{{ $daily_new_baby_passport }}</b></h3>
-{{--                        <p class="text-muted"><b><a href="{{ route('admin.otherPassport.index') }}" target="__blank">View All</a></b></p>--}}
+{{--                        <p class="text-muted"><b><a href="{{ route('admin.newBornBabyPassport.index') }}" target="__blank">View All</a></b></p>--}}
                 </div>
             </div>
         </div>
 
-     
+
 
 
         <div class="row">
@@ -397,7 +397,7 @@ Account Manager
         </div>
 
 
-            
+
         </div>
     </div> <!-- container -->
 </div> <!-- content -->
@@ -410,7 +410,7 @@ Account Manager
     function searchOptions() {
           window.open("{{ url('account-manager/get-all-passport-report') }}/"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#branch_id').val()+"&"+$('#option_id').val(),"_blank");
     }
-  
+
 </script>
 
 

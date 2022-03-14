@@ -241,7 +241,7 @@ Branch Manager
                                             </div>
                                             <div class="panel-body">
                                                 <h3 class=""><b>{{ $totalOther }}</b></h3>
-                                                <!-- <p class="text-muted"><b><a href="{{ route('branchManager.otherPassport.index') }}"
+                                                <!-- <p class="text-muted"><b><a href="{{ route('branchManager.newBornBabyPassport.index') }}"
                                                                             target="__blank"><i class="fa fa-eye"></i> View All</a></b></p> -->
                                             </div>
                                         </div>
@@ -628,7 +628,7 @@ Branch Manager
                             </div>
                             <div class="panel-body">
                                 <h3 class=""><b>{{ $monthlyOther }}</b></h3>
-                                <!-- <p class="text-muted"><b><a href="{{ url('branch-manager/otherPassport/report/monthly') }}"
+                                <!-- <p class="text-muted"><b><a href="{{ url('branch-manager/newBornBabyPassport/report/monthly') }}"
                                                             target="__blank"><i class="fa fa-eye"></i> View All</a></b></p> -->
                             </div>
                         </div>
@@ -773,7 +773,7 @@ Branch Manager
                             </div>
                             <div class="panel-body">
                                 <h3 class=""><b>{{ $dailyOther }}</b></h3>
-                                <!-- <p class="text-muted"><b><a href="{{ url('branch-manager/otherPassport/report/daily') }}"
+                                <!-- <p class="text-muted"><b><a href="{{ url('branch-manager/newBornBabyPassport/report/daily') }}"
                                                             target="__blank"><i class="fa fa-eye"></i> View All</a></b></p> -->
                             </div>
                         </div>
