@@ -53,7 +53,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background-color: #01ba9a !important;">
-                            <span class="panel-title">Immigration Government Service Create
+                            <span class="panel-title">Immigration Government Service Create</span>
                                 <!-- Button trigger modal for adding new Category -->
                                 <div class="col-sm-12">
                                     <a class="btn btn-warning btn-sm"
@@ -63,13 +63,8 @@
                                 </div>
                         </div>
                         <div class="panel-body">
-
-
-
                             <div class="row">
-                                <form action="{{ route('branchManager.immigrationGovementService.store') }}" method="post" id="basic-form"
-
-                                    enctype="multipart/form-data" novalidate="novalidate">
+                                <form action="{{ route('branchManager.immigrationGovementService.store') }}" method="post" id="basic-form" enctype="multipart/form-data" novalidate="novalidate">
                                     @csrf
                                     {{-- @include('Others.message') --}}
                                     <div class="row">
@@ -259,14 +254,14 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
+                                        </div>
 
+                                        <div class="col-md-12 text-right">
                                             <button type="submit" class="btn btn-primary"> Submit </button>
                                         </div>
                                     </div>
                                 </form>
                             </div>
-
-
                         </div>
                     </div>
                 </div>

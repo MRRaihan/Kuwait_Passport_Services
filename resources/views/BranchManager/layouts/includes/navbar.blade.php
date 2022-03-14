@@ -86,15 +86,6 @@
                     </ul>
                 </li>
 
-                {{-- Others --}}
-                {{-- <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i> <span> Other
-                            Services </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('branchManager.otherPassport.index') }}">All</a></li>
-                        <li><a href="{{ route('branchManager.otherPassport.create') }}">Add New</a></li>
-                    </ul>
-                </li> --}}
                 {{-- Passport Options --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-agenda"></i> <span> Passport

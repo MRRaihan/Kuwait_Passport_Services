@@ -9,7 +9,6 @@ use App\Http\Controllers\BranchManager\ManualPassportController;
 use App\Http\Controllers\BranchManager\OtherServices\OtherServiceController;
 use App\Http\Controllers\BranchManager\RenewPassportController;
 use App\Http\Controllers\BranchManager\RenewManualPassportController;
-use App\Http\Controllers\BranchManager\OtherPassportController;
 use App\Http\Controllers\BranchManager\ReportController;
 use App\Http\Controllers\BranchManager\PassportOptionsController;
 use App\Http\Controllers\BranchManager\AllPassportReportController;
@@ -31,7 +30,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('/lostPassport/report/{data}', [DashboardController::class, 'reportLostPassport']);
     Route::get('/manualPassport/report/{data}', [DashboardController::class, 'reportManualPassport']);
     Route::get('/renuePassport/report/{data}', [DashboardController::class, 'reportRenuePassport']);
-    Route::get('/otherPassport/report/{data}', [DashboardController::class, 'reportOtherPassport']);
+    Route::get('/newBornBabyPassport/report/{data}', [DashboardController::class, 'reportNewBornBabyPassport']);
 
     Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
     Route::get('/edit-profile', [DashboardController::class, 'editProfile'])->name('editProfile');
@@ -122,13 +121,6 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     // renew Manual
     Route::resource('renewManual', RenewManualPassportController::class);
     Route::get('manualPassport/add-manual-by-renew-id/{renew_id}', [ManualPassportController::class, 'addManualByRenewId'])->name('manualPassport.addManualByRenewId');
-
-
-    //other passport
-    Route::resource('otherPassport', OtherPassportController::class);
-    Route::get('otherPassport/receipt/{id}', [OtherPassportController::class, 'printReceipt'])->name('otherPassport.receipt');
-    Route::get('otherPassport/sticker/{id}', [OtherPassportController::class, 'printSticker'])->name('otherPassport.sticker');
-
 
     //passport option shift to Admin
 

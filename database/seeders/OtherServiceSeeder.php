@@ -6,9 +6,8 @@ use App\Models\Other;
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use Faker\Generator as Faker;
-use Illuminate\Support\Facades\Auth;
 
-class OtherPassportSeeder extends Seeder
+class OtherServiceSeeder extends Seeder
 {
     /**
      * Run the database seeds.

@@ -92,15 +92,6 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renewPassport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
 
-
-
-
-
-    // // Other Passport
-    // Route::resource('otherPassport', OtherPassportController::class);
-    // Route::get('otherPassport/receipt/{id}', [OtherPassportController::class, 'printReceipt'])->name('otherPassport.receipt');
-    // Route::get('otherPassport/sticker/{id}', [OtherPassportController::class, 'printSticker'])->name('otherPassport.sticker');
-
     // All Report
     Route::get('report', [ReportController::class, 'index'])->name('report.index');
     Route::get('report/{data}', [ReportController::class, 'show']);

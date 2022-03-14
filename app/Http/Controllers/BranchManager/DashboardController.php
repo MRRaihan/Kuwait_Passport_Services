@@ -34,7 +34,7 @@ class DashboardController extends Controller
         // Total Lost/Manual/Other/Renue count
         $data['totalLostPassport'] = LostPassport::where('branch_id', Auth::user()->branch_id)->count();
         $data['totalManualPassport'] = ManualPassport::where('branch_id', Auth::user()->branch_id)->count();
-        $data['totalOther'] = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->count();
+        $data['totalNewBornBabyPassport'] = NewBornBabyPassport::where('branch_id', Auth::user()->branch_id)->count();
         $data['totalRenewPassword'] = RenewPassport::where('branch_id', Auth::user()->branch_id)->count();
 
         // Total Others Services
@@ -46,7 +46,7 @@ class DashboardController extends Controller
 
 
         //All Passport count
-      	$data['totalPassport'] = $data['totalLostPassport'] + $data['totalManualPassport'] + $data['totalOther'] + $data['totalRenewPassword'];
+      	$data['totalPassport'] = $data['totalLostPassport'] + $data['totalManualPassport'] + $data['totalNewBornBabyPassport'] + $data['totalRenewPassword'];
 
 
         // Daily Passport(Lost/Manual/Other/Renue) count
@@ -291,20 +291,20 @@ class DashboardController extends Controller
             return view('BranchManager.renewPassport.index', compact('renewPassports', 'flag'));
         }
     }
-    public function reportOtherPassport($data){
+    public function reportNewBornBabyPassport($data){
         $flag = 0;
         if ($data == 'monthly') {
-            $otherPassports = NewBornBabyPassport::where('created_at', '>', Carbon::now()->startOfMonth())
+            $newBornBabyPassports = NewBornBabyPassport::where('created_at', '>', Carbon::now()->startOfMonth())
                                     ->where('created_at', '<', Carbon::now()->endOfMonth())
                                     ->where('branch_id', Auth::user()->branch_id)
                                     ->get();
-            return view('BranchManager.otherPassport.index', compact('otherPassports', 'flag'));
+            return view('BranchManager.newBornBabyPassport.index', compact('newBornBabyPassports', 'flag'));
         }else{
-            $otherPassports = NewBornBabyPassport::whereDate('created_at', Carbon::today())
+            $newBornBabyPassports = NewBornBabyPassport::whereDate('created_at', Carbon::today())
                                         ->where('branch_id', Auth::user()->branch_id)
                                         ->get();
 
-            return view('BranchManager.otherPassport.index', compact('otherPassports', 'flag'));
+            return view('BranchManager.newBornBabyPassport.index', compact('newBornBabyPassports', 'flag'));
         }
     }
 
