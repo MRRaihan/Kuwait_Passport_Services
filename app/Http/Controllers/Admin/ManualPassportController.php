@@ -8,19 +8,16 @@ use App\Models\Branch;
 use App\Models\ManualPassport;
 use App\Models\PassportFee;
 use App\Models\Profession;
-// use App\Models\Salary;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\File;
-use PDF;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Session;
 
 class ManualPassportController extends Controller
 {
-
     public function index()
     {
         $flag = 1;

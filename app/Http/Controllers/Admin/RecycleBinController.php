@@ -13,6 +13,7 @@ use App\Models\Other;
 use App\Models\PremierService;
 use App\Models\RenewPassport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\File;
 
 class RecycleBinController extends Controller
 {
@@ -119,6 +120,11 @@ class RecycleBinController extends Controller
         }
 
         try {
+
+            if ($service->profession_file != null)
+                File::delete(public_path($service->profession_file)); //Old image delete
+            if ($service->passport_photocopy != null)
+                File::delete(public_path($service->passport_photocopy)); //Old pdf delete
             $service->forceDelete();
             return response()->json([
                 'type' => 'success',
