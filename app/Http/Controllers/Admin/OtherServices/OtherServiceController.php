@@ -85,7 +85,7 @@ class OtherServiceController extends Controller
 
         if ($request->hasFile('profession_file')) {
             $pdf             = $request->profession_file;
-            $folder_path       = 'uploads/passport/documents/';
+            $folder_path       = 'uploads/service/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->profession_file->move(public_path($folder_path), $pdf_new_name);
@@ -93,7 +93,7 @@ class OtherServiceController extends Controller
         }
         if ($request->hasFile('passport_photocopy')) {
             $image             = $request->file('passport_photocopy');
-            $folder_path       = 'uploads/passport/documents/';
+            $folder_path       = 'uploads/service/documents/';
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->save($folder_path . $image_new_name, 100);
@@ -173,12 +173,11 @@ class OtherServiceController extends Controller
         $otherService = Other::findOrfail($id);
         $otherService->fill($request->except('profession_file','passport_photocopy'));
 
-
         if ($request->hasFile('profession_file')) {
             if ($otherService->profession_file != null)
                 File::delete(public_path($otherService->profession_file)); //Old pdf delete
             $pdf             = $request->profession_file;
-            $folder_path       = 'uploads/passport/documents/';
+            $folder_path       = 'uploads/service/documents/';
             $pdf_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $pdf->getClientOriginalExtension();
             // save to server
             $request->profession_file->move(public_path($folder_path), $pdf_new_name);
@@ -188,7 +187,7 @@ class OtherServiceController extends Controller
             if ($otherService->passport_photocopy != null)
                 File::delete(public_path($otherService->passport_photocopy)); //Old image delete
             $image             = $request->file('passport_photocopy');
-            $folder_path       = 'uploads/passport/documents/';
+            $folder_path       = 'uploads/service/documents/';
             $image_new_name    = Str::random(20) . '-' . now()->timestamp . '.' . $image->getClientOriginalExtension();
             //resize and save to server
             Image::make($image->getRealPath())->save($folder_path . $image_new_name, 100);

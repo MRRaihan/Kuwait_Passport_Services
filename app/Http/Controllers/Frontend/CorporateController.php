@@ -166,7 +166,7 @@ class CorporateController extends Controller
     public function profileInformationUpdate(Request $request)
     {
         $user = User::find($request->user_id);
-        $user->fill($request->except('user_id'));
+        $user->fill($request->except('user_id','image'));
 
         if ($request->hasFile('image')) {
 
