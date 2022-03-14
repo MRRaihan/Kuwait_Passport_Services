@@ -60,7 +60,6 @@ class OtherServiceController extends Controller
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
-            'passport_type_id' => 'required',
         ]);
 
         $otherService = new Other();
@@ -169,8 +168,6 @@ class OtherServiceController extends Controller
             'kuwait_phone' => 'required',
             'delivery_branch' => 'required',
             'passport_number' => 'required',
-            'passport_type_id' => 'required',
-
         ]);
 
         $otherService = Other::findOrfail($id);

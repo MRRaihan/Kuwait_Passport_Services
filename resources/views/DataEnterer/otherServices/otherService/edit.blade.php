@@ -95,6 +95,14 @@ Edit Others Passport
                                         @enderror
                                     </div>
                                     <div class="form-group">
+                                        @if($otherService->profession_file)
+                                            <a href="{{ asset($otherService->profession_file) }}" target="_blank">View File</a>
+                                        @else
+                                            <a href="#">No File Found</a>
+                                        @endif
+                                    </div>
+
+                                    <div class="form-group">
                                         <label for="profession_file"> Profession File (Only PDF) </label>
                                         <input name="profession_file" class="form-control"
                                             type="file" accept="application/pdf">
@@ -103,7 +111,7 @@ Edit Others Passport
                                         @enderror
                                     </div>
                                     <div class="form-group">
-                                        <img id="passport_photocopy" src="{{ asset(get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
+                                        <img id="passport_photocopy" src="{{ asset($otherService->passport_photocopy ?? get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
                                     </div>
 
                                     <div class="form-group">
