@@ -309,6 +309,12 @@ class ManualPassportController extends Controller
     {
         $manualPassport = ManualPassport::withTrashed()->find($id);
         try {
+            if ($manualPassport->profession_file != null)
+                File::delete(public_path($manualPassport->profession_file)); //Old pdf delete
+            if ($manualPassport->application_form != null)
+                File::delete(public_path($manualPassport->application_form)); //Old pdf delete
+            if ($manualPassport->passport_photocopy != null)
+                File::delete(public_path($manualPassport->passport_photocopy)); //Old image delete
             $manualPassport->forceDelete();
             return response()->json([
                 'type' => 'success',

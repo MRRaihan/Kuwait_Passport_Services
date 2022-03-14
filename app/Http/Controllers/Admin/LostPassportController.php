@@ -299,6 +299,12 @@ class LostPassportController extends Controller
     {
         $lostPassport = LostPassport::withTrashed()->find($id);
         try {
+            if ($lostPassport->gd_report_kuwait != null)
+                File::delete(public_path($lostPassport->gd_report_kuwait)); //Old image delete
+            if ($lostPassport->application_form != null)
+                File::delete(public_path($lostPassport->application_form)); //Old pdf delete
+            if ($lostPassport->passport_photocopy != null)
+                File::delete(public_path($lostPassport->passport_photocopy)); //Old image delete
             $lostPassport->forceDelete();
             return response()->json([
                 'type' => 'success',
