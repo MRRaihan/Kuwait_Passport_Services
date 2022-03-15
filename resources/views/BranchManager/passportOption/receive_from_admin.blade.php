@@ -129,13 +129,13 @@
                                             {{ passportOptions()[$option] }}
                                         </td>
                                         <td>
-                                            {{ $passport->bio_enrollment_id }}
-                                            {{-- <form method="POST" class="enrollment-form">
+                                            {{-- {{ $passport->bio_enrollment_id }} --}}
+                                            <form method="POST" class="enrollment-form">
                                                 @csrf
                                                 <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
                                                 <input type="text"  class="bio_enrollment_id" name="bio_enrollment_id" value="{{ $passport->bio_enrollment_id }}">
                                                 <input type="hidden" class="option" name="option" value="{{ $option }}">
-                                            </form> --}}
+                                            </form>
                                         </td>
                                         <td>
                                             {{-- @if($passport->branch_status == 1)
@@ -224,24 +224,18 @@
     }
 
     $('.bio_enrollment_id').keypress(function(e) {
-
         if (e.keyCode == 13) {
-
             e.preventDefault();
 
             var id = $(this).parent().find('.p_id').val();
             var option = $(this).parent().find('.option').val();
             var bio_enrollemnt_id = $(this).val();
-
             console.log(bio_enrollemnt_id);
-
             var url = "{{ url('branch-manager/passport-options/receive-from-embassy/bio-enrollment-id') }}/"+id;
-
             var formData = new FormData();
             formData.append('id',id);
             formData.append('bio_enrollment_id', bio_enrollemnt_id);
             formData.append('option', option);
-
             $.ajax({
                 method: 'POST',
                 url: url,
@@ -282,7 +276,6 @@
                 },
             });
         }
-
     });
 </script>
 

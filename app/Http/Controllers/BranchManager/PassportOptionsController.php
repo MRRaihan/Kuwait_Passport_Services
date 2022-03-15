@@ -738,4 +738,59 @@ class PassportOptionsController extends Controller
             ]);
         }
     }
+
+    public function bioEnrollmentIdSave(Request $request,$id){
+
+        $request->validate([
+            'bio_enrollment_id' => 'required'
+        ]);
+
+
+
+        if (isset($request->option) && $request->option == 0) {
+            $renewPassport = RenewPassport::findOrFail($id);
+            $renewPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $renewPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 1) {
+            $manualPassport = ManualPassport::findOrFail($id);
+            $manualPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $manualPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 2) {
+            $lostPassport = LostPassport::findOrFail($id);
+            $lostPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $lostPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 3) {
+            $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
+            $newBornBabyPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $newBornBabyPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
+        return redirect()->back();
+
+    }
 }
