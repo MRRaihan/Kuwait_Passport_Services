@@ -21,7 +21,7 @@
     <!-- .....................Owl carousel................................... -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <title>Versatilo london</title>
+    <title>Versatilo London W.L.L (Kuwait)</title>
 
 </head>
 
@@ -939,7 +939,7 @@
     <footer id="footer">
         <div class="footer py-5">
             <div class="container">
-                <h2 class="text-light fw-bold footer-text">Versatilo London</h2>
+                <h2 class="text-light fw-bold footer-text">Versatilo London W.L.L (Kuwait)</h2>
 
                 <div class="row my-4">
                     <div class="col-md-3 col-sm-6 footer-text">

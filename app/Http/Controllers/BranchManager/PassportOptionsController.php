@@ -418,8 +418,7 @@ class PassportOptionsController extends Controller
         ],
         [
             'all_option.required' => 'Please Select Some Data!!',
-        ]
-        );
+        ]);
 
         if ($request->passport_option == 0) {
             RenewPassport::whereIn('id',$request->all_option)->update([
@@ -738,4 +737,98 @@ class PassportOptionsController extends Controller
             ]);
         }
     }
+
+    public function bioEnrollmentIdSave(Request $request,$id){
+
+        $request->validate([
+            'bio_enrollment_id' => 'required'
+        ]);
+
+
+
+        if (isset($request->option) && $request->option == 0) {
+            $renewPassport = RenewPassport::findOrFail($id);
+            $renewPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $renewPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 1) {
+            $manualPassport = ManualPassport::findOrFail($id);
+            $manualPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $manualPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 2) {
+            $lostPassport = LostPassport::findOrFail($id);
+            $lostPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $lostPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        if (isset($request->option) && $request->option == 3) {
+            $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
+            $newBornBabyPassport->bio_enrollment_id = $request->bio_enrollment_id;
+            $newBornBabyPassport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
+        return redirect()->back();
+
+    }
+
+    public function assignDeForBio(Request $request)
+    {
+        $request->validate([
+                'de_id' => 'required',
+                'all_option' => 'required',
+            ],
+            [
+                'de_id.required' => 'Please select a data enterer !!',
+                'all_option.required' => 'Please Select Some Data!!',
+        ]);
+
+        if (isset($request->passport_option) && $request->passport_option == 0) {
+            RenewPassport::whereIn('id', $request->all_option)->update([
+                'de_id_for_bio' => $request->de_id,
+            ]);
+        }
+
+        if (isset($request->passport_option) && $request->passport_option == 1) {
+            ManualPassport::whereIn('id', $request->all_option)->update([
+                'de_id_for_bio' => $request->de_id,
+            ]);
+        }
+        if (isset($request->passport_option) && $request->passport_option == 2) {
+            LostPassport::whereIn('id', $request->all_option)->update([
+                'de_id_for_bio' => $request->de_id,
+            ]);
+        }
+
+        if (isset($request->passport_option) && $request->passport_option == 3) {
+            NewBornBabyPassport::whereIn('id', $request->all_option)->update([
+                'de_id_for_bio' => $request->de_id,
+            ]);
+        }
+
+        Session::flash('success', 'Data enterer assigned successfully !');
+        return back();
+    }
+
 }

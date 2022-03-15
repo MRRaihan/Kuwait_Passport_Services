@@ -21,6 +21,7 @@ class CreateRenewPassportsTable extends Migration
             $table->unsignedBigInteger('delivery_branch')->nullable();
             $table->unsignedBigInteger('passport_type_id')->nullable();
             $table->unsignedBigInteger('profession_id')->nullable();
+            $table->unsignedBigInteger('de_id_for_bio')->nullable();
 
             $table->string('name')->nullable();
             $table->string('civil_id')->nullable();

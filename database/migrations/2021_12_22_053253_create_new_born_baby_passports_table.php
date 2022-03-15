@@ -18,6 +18,9 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->unsignedBigInteger('user_creator_id')->nullable();
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('profession_id')->nullable();
+            $table->unsignedBigInteger('passport_type_id')->nullable();
+            $table->unsignedBigInteger('de_id_for_bio')->nullable();
 
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
@@ -33,7 +36,6 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('special_skill')->nullable();
             $table->string('residence')->nullable();
             $table->timestamp('delivery_date')->nullable();
-            $table->unsignedBigInteger('profession_id')->nullable();
             $table->string('salary')->nullable();
             $table->timestamp('date')->nullable();
             $table->string('delivery_branch')->nullable();
@@ -50,7 +52,6 @@ class CreateNewBornBabyPassportsTable extends Migration
 
             $table->string('is_shifted_to_branch_manager')->nullable();
 
-            $table->unsignedBigInteger('passport_type_id')->nullable();
             $table->string('passport_type_title')->nullable();
             $table->string('passport_type_government_fee')->nullable();
             $table->string('passport_type_versatilo_fee')->nullable();

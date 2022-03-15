@@ -123,12 +123,13 @@ Passport Options
                                             {{ passportOptions()[$option] }}
                                         </td>
                                         <td>
-                                            <form method="POST" class="enrollment-form">
+                                            {{ $passport->bio_enrollment_id }}
+                                            {{-- <form method="POST" class="enrollment-form">
                                                 @csrf
                                                 <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
                                                 <input type="text"  class="bio_enrollment_id" name="bio_enrollment_id" value="{{ $passport->bio_enrollment_id }}">
                                                 <input type="hidden" class="option" name="option" value="{{ $option }}">
-                                            </form>
+                                            </form> --}}
                                         </td>
                                     </tr>
                                     @endforeach

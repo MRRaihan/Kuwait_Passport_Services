@@ -56,6 +56,11 @@ class LostPassport extends Model
         return $this->belongsTo(User::class, 'user_creator_id');
     }
 
+    public function deForBio()
+    {
+        return $this->belongsTo(User::class, 'de_id_for_bio');
+    }
+
     public function branch()
     {
         return $this->belongsTo(Branch::class, 'branch_id');

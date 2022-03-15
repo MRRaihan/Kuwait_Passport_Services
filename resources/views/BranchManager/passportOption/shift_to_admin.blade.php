@@ -137,13 +137,14 @@
                                             {{ $passport->model_name }}
                                         </td>
                                         <td>
-                                         @if ($passport->branch_status != 3)
+                                        @if ($passport->branch_status != 3)
                                             @if($passport->shift_to_admin == 1)
                                                 <span class="badge badge-pill badge-success">Shifted To Admin</span>
 
                                             @else
                                                 <span class="badge badge-pill badge-danger">Pending Shift</span>
                                             @endif
+
                                             @if($passport->embassy_status < 1 && $passport->shift_to_admin >=1)
                                                 <a onclick="undo('{{ $passport->id }}')" style="cursor: pointer;"><span class="badge badge-pill badge-warning"><i class="fa fa-undo"></i>&nbsp;Undo</span></a>
                                             @endif
@@ -154,9 +155,10 @@
                                                 @else
                                                 <span class="badge badge-pill badge-warning">Pending for Shifted Embassy</span>
                                             @endif
-                                            @else
+
+                                        @else
                                             <span class="badge badge-pill badge-success">Already Delivered to User</span>
-                                          @endif
+                                        @endif
 
 
                                         </td>

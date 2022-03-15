@@ -19,6 +19,9 @@ class CreateManualPassportsTable extends Migration
             $table->unsignedBigInteger('branch_id')->nullable();
             $table->unsignedBigInteger('delivery_branch')->nullable();
             $table->unsignedBigInteger('deleted_by')->nullable();
+            $table->unsignedBigInteger('passport_type_id')->nullable();
+            $table->unsignedBigInteger('profession_id')->nullable();
+            $table->unsignedBigInteger('de_id_for_bio')->nullable();
 
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
@@ -31,7 +34,6 @@ class CreateManualPassportsTable extends Migration
             $table->string('permanent_address')->nullable();
             $table->string('bd_phone')->nullable();
             $table->timestamp('delivery_date')->nullable();
-            $table->unsignedBigInteger('profession_id')->nullable();
             $table->string('profession_file')->nullable();
             $table->string('application_form')->nullable();
             $table->string('passport_photocopy')->nullable();
@@ -53,7 +55,6 @@ class CreateManualPassportsTable extends Migration
 
             $table->string('is_shifted_to_branch_manager')->nullable();
 
-            $table->unsignedBigInteger('passport_type_id')->nullable();
             $table->string('passport_type_title')->nullable();
             $table->string('passport_type_government_fee')->nullable();
             $table->string('passport_type_versatilo_fee')->nullable();

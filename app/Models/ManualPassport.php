@@ -50,6 +50,11 @@ class ManualPassport extends Model
         return $this->belongsTo(User::class, 'deleted_by');
     }
 
+    public function deForBio()
+    {
+        return $this->belongsTo(User::class, 'de_id_for_bio');
+    }
+
     public function creator()
     {
         return $this->belongsTo(User::class, 'user_creator_id');

@@ -116,7 +116,7 @@
       </section>
       <footer class="footerClass d-flex justify-content-center">
         <p class="text-center">
-          © Versatilo London Corporation {{ date('Y') }} - Kuwait
+          © Versatilo London W.L.L (Kuwait) {{ date('Y') }}
         </p>
       </footer>
     </div>

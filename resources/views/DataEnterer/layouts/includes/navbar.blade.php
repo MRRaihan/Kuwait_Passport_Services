@@ -52,6 +52,18 @@
                     </ul>
                 </li>
                 <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-filter"></i> <span> Passport Processing</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        {{-- <li><a href="{{ route('admin.passportOption.shiftToEmbassy') }}">Shift To Embassy</a>
+                        </li>
+                        <li><a href="{{ route('admin.passportOption.receiveFromEmbassy') }}">Receive From
+                                Embassy</a></li>
+
+                        <li><a href="{{ route('admin.passportOption.allDeliveryFromBranch') }}">All Deliveries From
+                                Branch</a></li> --}}
+                    </ul>
+                </li>
+                <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ti-files"></i> <span> Others
                             Servics
                         </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
