@@ -273,6 +273,10 @@ if (!function_exists('random_code')) {
             return false;
         }
     }
+    function get_all_data_enterers_under_a_branch_manager()
+    {
+        return User::where('user_type', 'data-enterer')->where('status', 1)->where('branch_id', Auth::user()->branch_id)->get();
+    }
 
     function this_url(){
         return request()->route()->uri;

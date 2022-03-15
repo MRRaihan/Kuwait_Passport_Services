@@ -793,4 +793,39 @@ class PassportOptionsController extends Controller
         return redirect()->back();
 
     }
+
+    public function assignDeForBio(Request $request, $id)
+    {
+        $request->validate([
+            'de_id' => 'required'
+        ]);
+
+        if (isset($request->option) && $request->option == 0) {
+            $passport = RenewPassport::findOrFail($id);
+        }
+        if (isset($request->option) && $request->option == 1) {
+            $passport = ManualPassport::findOrFail($id);
+        }
+        if (isset($request->option) && $request->option == 2) {
+            $passport = LostPassport::findOrFail($id);
+        }
+        if (isset($request->option) && $request->option == 3) {
+            $passport = NewBornBabyPassport::findOrFail($id);
+        }
+
+        try {
+            $passport->de_id_for_bio = $request->de_id;
+            $passport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Data enterer assigned successfully!'
+            ]);
+        } catch (\Exception $exception) {
+            return response()->json([
+                'type' => 'error',
+                'message' => 'Something Went Wrong!! '.$exception
+            ]);
+        }
+    }
+
 }

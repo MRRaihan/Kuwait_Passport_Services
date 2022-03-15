@@ -60,6 +60,11 @@ class NewBornBabyPassport extends Model
         return $this->belongsTo(Branch::class, 'branch_id');
     }
 
+    public function deForBio()
+    {
+        return $this->belongsTo(User::class, 'de_id_for_bio');
+    }
+
     public function deliveryBranch()
     {
         return $this->belongsTo(Branch::class, 'delivery_branch');

@@ -129,13 +129,30 @@
                                             {{ passportOptions()[$option] }}
                                         </td>
                                         <td>
-                                            {{-- {{ $passport->bio_enrollment_id }} --}}
-                                            <form method="POST" class="enrollment-form">
+                                            <form method="POST" class="enrollment-form mb-1">
                                                 @csrf
                                                 <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
                                                 <input type="text"  class="bio_enrollment_id" name="bio_enrollment_id" value="{{ $passport->bio_enrollment_id }}">
                                                 <input type="hidden" class="option" name="option" value="{{ $option }}">
                                             </form>
+                                            @if ($passport->bio_enrollment_id == null)
+                                                @if ($passport->de_id_for_bio)
+                                                    <span class="badge badge-warning">Assigned to {{ $passport->deForBio->name }}</span>
+                                                @else
+                                                    <form method="POST" class="enrollment-form mb-1">
+                                                        @csrf
+                                                        <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
+                                                        <select class="form-control mt-2 de_id" name="de_id" >
+                                                            <option value="" selected disabled>Select One</option>
+
+                                                            @foreach (get_all_data_enterers_under_a_branch_manager() as $dataEnterer)
+                                                                <option value="{{ $dataEnterer->id }}">{{ $dataEnterer->name }}</option>
+                                                            @endforeach
+                                                        </select>
+                                                        <input type="hidden" class="option" name="option" value="{{ $option }}">
+                                                    </form>
+                                                @endif
+                                           @endif
                                         </td>
                                         <td>
                                             {{-- @if($passport->branch_status == 1)
@@ -276,6 +293,58 @@
                 },
             });
         }
+    });
+    $('.de_id').on('change', function(e) {
+
+        e.preventDefault();
+
+        var id = $(this).parent().find('.p_id').val();
+        var option = $(this).parent().find('.option').val();
+        var de_id = $(this).parent().find('.de_id').val();
+        var url = "{{ url('branch-manager/passport-options/receive-from-embassy/assign-de-for-bio') }}/"+id;
+        var formData = new FormData();
+        formData.append('id',id);
+        formData.append('de_id', de_id);
+        formData.append('option', option);
+        $.ajax({
+            method: 'POST',
+            url: url,
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
+            data: formData,
+            processData: false,
+            contentType: false,
+            success: function(data) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: data.type,
+                    title: data.message,
+                    showConfirmButton: false,
+                    // timer: 1500
+                })
+                setTimeout(function() {
+                    location.reload();
+                }, 1000); //
+                console.log(data);
+            },
+            error: function(xhr) {
+                var errorMessage = '<div class="card bg-danger">\n' +
+                    '                        <div class="card-body text-center p-5">\n' +
+                    '                            <span class="text-white">';
+                $.each(xhr.responseJSON.errors, function(key, value) {
+                    errorMessage += ('' + value + '<br>');
+                });
+                errorMessage += '</span>\n' +
+                    '                        </div>\n' +
+                    '                    </div>';
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    footer: errorMessage
+                })
+            },
+        });
     });
 </script>
 
