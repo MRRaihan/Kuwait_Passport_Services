@@ -98,10 +98,25 @@
                                 </select>
                             </div>
                         </div>
-                        <form action="{{ route('branchManager.passportOption.deliveryToUser.store') }}" method="post">
+                        <form action="#" method="post" id="main-form">
                             @csrf
+                            <div style="margin-top: 20px; margin-bottom: 20px;" class="row text-center">
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-md btn-info delivery-to-user-btn">Delivery to User</button>
+                                </div>
+                                <div class="col-md-4">
+                                    <select class="form-control mt-2 de_id" name="de_id" >
+                                        <option value="" selected disabled>Select One</option>
+                                        @foreach (get_all_data_enterers_under_a_branch_manager() as $dataEnterer)
+                                            <option value="{{ $dataEnterer->id }}">{{ $dataEnterer->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-md btn-info assign-de-for-bio-btn">Assign Data Enterer for Bio</button>
+                                </div>
+                            </div>
                             <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
-                                <center><button type="submit" class="btn btn-md btn-info">Delivery to User</button></center>
                                 <thead>
                                     <tr>
                                         <th>
@@ -139,7 +154,7 @@
                                                 @if ($passport->de_id_for_bio)
                                                     <span class="badge badge-warning">Assigned to {{ $passport->deForBio->name }}</span>
                                                 @else
-                                                    <form method="POST" class="enrollment-form mb-1">
+                                                    {{-- <form method="POST" class="enrollment-form mb-1">
                                                         @csrf
                                                         <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
                                                         <select class="form-control mt-2 de_id" name="de_id" >
@@ -150,7 +165,7 @@
                                                             @endforeach
                                                         </select>
                                                         <input type="hidden" class="option" name="option" value="{{ $option }}">
-                                                    </form>
+                                                    </form> --}}
                                                 @endif
                                            @endif
                                         </td>
@@ -166,12 +181,9 @@
                                         </td>
                                     </tr>
                                     @endforeach
-
                                 </tbody>
                             </table>
                         </form>
-
-
                     </div>
                 </div>
             </div>
@@ -180,173 +192,132 @@
 </div> <!-- content -->
 
 
-<script>
-    function searchOptions() {
-         window.open("{{ url('branch-manager/passport-options/receive-from-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
-    }
+    <script>
+        function searchOptions() {
+            window.open("{{ url('branch-manager/passport-options/receive-from-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+        }
 
-    function openLink(link,type='_parent'){
-      window.open(link,type);
-    }
+        function openLink(link,type='_parent'){
+        window.open(link,type);
+        }
 
-    function checkedAll() {
+        function checkedAll() {
 
-        var elements = document.querySelectorAll('input[type="checkbox"]');
-            for (var i = elements.length; i--; ) {
-                if (elements[i].type == 'checkbox') {
-                    elements[i].checked = this.checked;
+            var elements = document.querySelectorAll('input[type="checkbox"]');
+                for (var i = elements.length; i--; ) {
+                    if (elements[i].type == 'checkbox') {
+                        elements[i].checked = this.checked;
+                    }
                 }
-            }
-    }
+        }
 
-    function undo(id) {
+        function undo(id) {
 
-        // alert(objButton.value)
-        Swal.fire({
-            title: 'Are you sure?',
-             text: "You won't be able to undo this!",
-             icon: 'warning',
-             showCancelButton: true,
-             confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33',
-             confirmButtonText: 'Yes, Undo !'
-        }).then((result) => {
-            if (result.isConfirmed) {
+            // alert(objButton.value)
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to undo this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, Undo !'
+            }).then((result) => {
+                if (result.isConfirmed) {
 
+                    $.ajax({
+                        method: 'POST',
+                        url: '{{ route('branchManager.passportOption.receiveFromAdmin.undo',$option) }}'+'&'+id,
+                        headers: {
+                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
+                        },
+                        success: function(data) {
+                            if (data.type == 'success') {
+                                Swal.fire(
+                                    'Undo !', 'This Passport Status has been Undo. ' + data.message, 'success'
+                                )
+                                setTimeout(function() {
+                                    location.reload();
+                                }, 800); //
+                            } else {
+                                Swal.fire(
+                                    'Wrong !',
+                                    'Something going wrong. ' + data.message,
+                                    'warning'
+                                )
+                            }
+                        },
+                    })
+                }
+            })
+        }
+
+        $('.bio_enrollment_id').keypress(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+
+                var id = $(this).parent().find('.p_id').val();
+                var option = $(this).parent().find('.option').val();
+                var bio_enrollemnt_id = $(this).val();
+                console.log(bio_enrollemnt_id);
+                var url = "{{ url('branch-manager/passport-options/receive-from-embassy/bio-enrollment-id') }}/"+id;
+                var formData = new FormData();
+                formData.append('id',id);
+                formData.append('bio_enrollment_id', bio_enrollemnt_id);
+                formData.append('option', option);
                 $.ajax({
                     method: 'POST',
-                    url: '{{ route('branchManager.passportOption.receiveFromAdmin.undo',$option) }}'+'&'+id,
+                    url: url,
                     headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}",
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
                     success: function(data) {
-                        if (data.type == 'success') {
-                            Swal.fire(
-                                'Undo !', 'This Passport Status has been Undo. ' + data.message, 'success'
-                            )
-                            setTimeout(function() {
-                                location.reload();
-                            }, 800); //
-                        } else {
-                            Swal.fire(
-                                'Wrong !',
-                                'Something going wrong. ' + data.message,
-                                'warning'
-                            )
-                        }
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: data.type,
+                            title: data.message,
+                            showConfirmButton: false,
+                            // timer: 1500
+                        })
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000); //
+                        console.log(data);
                     },
-                })
-            }
-        })
-    }
-
-    $('.bio_enrollment_id').keypress(function(e) {
-        if (e.keyCode == 13) {
-            e.preventDefault();
-
-            var id = $(this).parent().find('.p_id').val();
-            var option = $(this).parent().find('.option').val();
-            var bio_enrollemnt_id = $(this).val();
-            console.log(bio_enrollemnt_id);
-            var url = "{{ url('branch-manager/passport-options/receive-from-embassy/bio-enrollment-id') }}/"+id;
-            var formData = new FormData();
-            formData.append('id',id);
-            formData.append('bio_enrollment_id', bio_enrollemnt_id);
-            formData.append('option', option);
-            $.ajax({
-                method: 'POST',
-                url: url,
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                },
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function(data) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: data.type,
-                        title: data.message,
-                        showConfirmButton: false,
-                        // timer: 1500
-                    })
-                    setTimeout(function() {
-                        location.reload();
-                    }, 1000); //
-                    console.log(data);
-                },
-                error: function(xhr) {
-                    var errorMessage = '<div class="card bg-danger">\n' +
-                        '                        <div class="card-body text-center p-5">\n' +
-                        '                            <span class="text-white">';
-                    $.each(xhr.responseJSON.errors, function(key, value) {
-                        errorMessage += ('' + value + '<br>');
-                    });
-                    errorMessage += '</span>\n' +
-                        '                        </div>\n' +
-                        '                    </div>';
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Oops...',
-                        footer: errorMessage
-                    })
-                },
-            });
-        }
-    });
-    $('.de_id').on('change', function(e) {
-
-        e.preventDefault();
-
-        var id = $(this).parent().find('.p_id').val();
-        var option = $(this).parent().find('.option').val();
-        var de_id = $(this).parent().find('.de_id').val();
-        var url = "{{ url('branch-manager/passport-options/receive-from-embassy/assign-de-for-bio') }}/"+id;
-        var formData = new FormData();
-        formData.append('id',id);
-        formData.append('de_id', de_id);
-        formData.append('option', option);
-        $.ajax({
-            method: 'POST',
-            url: url,
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            },
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function(data) {
-                Swal.fire({
-                    position: 'top-end',
-                    icon: data.type,
-                    title: data.message,
-                    showConfirmButton: false,
-                    // timer: 1500
-                })
-                setTimeout(function() {
-                    location.reload();
-                }, 1000); //
-                console.log(data);
-            },
-            error: function(xhr) {
-                var errorMessage = '<div class="card bg-danger">\n' +
-                    '                        <div class="card-body text-center p-5">\n' +
-                    '                            <span class="text-white">';
-                $.each(xhr.responseJSON.errors, function(key, value) {
-                    errorMessage += ('' + value + '<br>');
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
                 });
-                errorMessage += '</span>\n' +
-                    '                        </div>\n' +
-                    '                    </div>';
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops...',
-                    footer: errorMessage
-                })
-            },
+            }
         });
-    });
-</script>
+        $('.delivery-to-user-btn').on('click', function(e) {
+            e.preventDefault();
+            $('#main-form').attr('action', "{{ route('branchManager.passportOption.deliveryToUser.store') }}");
+            $('#main-form').submit();
+        });
+        $('.assign-de-for-bio-btn').on('click', function(e) {
+            e.preventDefault();
+            $('#main-form').attr('action', "{{ route('branchManager.passportOption.assignDeForBio') }}");
+            $('#main-form').submit();
+        });
+    </script>
+    @include('Others.toaster_message')
 
 @endsection
 

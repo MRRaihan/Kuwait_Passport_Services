@@ -135,10 +135,10 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::get('passport-options/receive-from-admin', [PassportOptionsController::class, 'receiveFromAdmin'])->name('passportOption.receiveFromAdmin');
     Route::post('passport-options/receive-from-admin/store', [PassportOptionsController::class, 'receiveFromAdminStore'])->name('passportOption.receiveFromAdmin.store');
     Route::post('passport-options/delivery-to-user/store', [PassportOptionsController::class, 'deliveryToUser'])->name('passportOption.deliveryToUser.store');
+    Route::post('passport-options/assign-de-for-bio', [PassportOptionsController::class, 'assignDeForBio'])->name('passportOption.assignDeForBio');
     Route::get('passport-options/receive-from-embassy/{data}', [PassportOptionsController::class, 'searchReceive']);
     Route::post('passport-options/receive-from-admin/undo/{option}', [PassportOptionsController::class, 'receiveFromAdminUndo'])->name('passportOption.receiveFromAdmin.undo');
     Route::post('passport-options/receive-from-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class, 'bioEnrollmentIdSave'])->name('passportOption.receiveFromAdmin.bioEnrollmentId');
-    Route::post('passport-options/receive-from-embassy/assign-de-for-bio/{id}', [PassportOptionsController::class, 'assignDeForBio'])->name('passportOption.receiveFromEmbassy.assignDeForBio');
 
 
     //passport option Delivery
