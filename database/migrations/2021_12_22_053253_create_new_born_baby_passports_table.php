@@ -62,6 +62,7 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('otp_verify_at')->nullable();
             $table->boolean('status')->default(1);
             $table->string('bio_enrollment_id')->nullable();
+            $table->string('new_mrp_passport_no')->nullable();
             $table->date('dob')->nullable();
             $table->string('dob_id')->nullable();
             $table->string('dob_file')->nullable();

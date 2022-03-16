@@ -48,6 +48,7 @@ class CreateRenewPassportsTable extends Migration
             $table->string('passport_type_fees_total')->nullable();
             $table->string('remarks')->nullable();
             $table->string('bio_enrollment_id')->nullable();
+            $table->string('new_mrp_passport_no')->nullable();
             $table->string('model_name')->default('Renew Passport');
             $table->boolean('shift_to_admin')->default(0);
             $table->boolean('embassy_status')->default(0);

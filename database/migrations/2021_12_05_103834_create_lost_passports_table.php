@@ -63,6 +63,7 @@ class CreateLostPassportsTable extends Migration
             $table->string('otp_verify_at')->nullable();
             $table->boolean('status')->default(1);
             $table->string('bio_enrollment_id')->nullable();
+            $table->string('new_mrp_passport_no')->nullable();
             $table->string('remarks')->nullable();
             $table->boolean('remarks_by')->nullable();
 

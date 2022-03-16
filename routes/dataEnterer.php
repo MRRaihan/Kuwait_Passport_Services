@@ -31,6 +31,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::get('/manualPassport/report/{data}', [DashboardController::class, 'reportManualPassport']);
     Route::get('/renuePassport/report/{data}', [DashboardController::class, 'reportRenuePassport']);
     Route::get('/newBornBaby/report/{data}', [DashboardController::class, 'reportNewBornBaby']);
+
     Route::get('/premierPassport/report/{data}', [DashboardController::class, 'reportPremierService']);
     Route::get('/expressPassport/report/{data}', [DashboardController::class, 'reportExpressService']);
     Route::get('/legalComplaintsPassport/report/{data}', [DashboardController::class, 'reportLegalComplaintsService']);
@@ -124,8 +125,6 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     //premium service
     Route::resource('PremierService', PremierServiceController::class);
-
-
 
     //express service
     Route::resource('expressService', ExpressServiceController::class);
