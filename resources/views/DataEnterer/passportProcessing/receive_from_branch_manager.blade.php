@@ -1,7 +1,7 @@
 @extends('DataEnterer.layouts.master')
 
 @push('title')
- Data Enterer Passport Processing
+    Data Enterer Passport Processing
 @endpush
 @push('datatableCSS')
 <!-- DataTables -->
@@ -26,10 +26,10 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="page-header-title">
-                    <h4 class="pull-left page-title">Passport Options</h4>
+                    <h4 class="pull-left page-title">Passport Processing</h4>
                     <ol class="breadcrumb pull-right">
                         <li><a href="{{ route('dataEnterer.dashboard') }}">Data Enterer Panel</a></li>
-                        <li class="active">Passport Options</li>
+                        <li class="active">Passport Processing</li>
                     </ol>
                     <div class="clearfix">
 
@@ -81,7 +81,7 @@
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading" style="background-color: #46bdc6 !important;">
-                        <span class="panel-title">Passport Receive From Admin </span>
+                        <span class="panel-title">Passport Received From Branch Manager </span>
                         <!-- Button trigger modal for adding new Category -->
 
                     </div>
