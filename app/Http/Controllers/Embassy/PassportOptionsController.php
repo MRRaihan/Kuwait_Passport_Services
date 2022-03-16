@@ -88,7 +88,6 @@ class PassportOptionsController extends Controller
         }
     }
 
-
     public function bioEnrollmentIdSave(Request $request,$id){
 
         $request->validate([
