@@ -524,7 +524,7 @@ class PassportOptionsController extends Controller
             $renewPassport->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Bio Enrollment Id Added Successfully!'
+                'message' => 'Bio Enrollment ID Added Successfully!'
             ]);
         }
 
@@ -534,7 +534,7 @@ class PassportOptionsController extends Controller
             $manualPassport->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Bio Enrollment Id Added Successfully!'
+                'message' => 'Bio Enrollment ID Added Successfully!'
             ]);
         }
 
@@ -544,7 +544,7 @@ class PassportOptionsController extends Controller
             $lostPassport->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Bio Enrollment Id Added Successfully!'
+                'message' => 'Bio Enrollment ID Added Successfully!'
             ]);
         }
 
@@ -554,7 +554,7 @@ class PassportOptionsController extends Controller
             $newBornBabyPassport->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Bio Enrollment Id Added Successfully!'
+                'message' => 'Bio Enrollment ID Added Successfully!'
             ]);
         }
 

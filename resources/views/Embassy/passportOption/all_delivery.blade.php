@@ -110,7 +110,7 @@ Passport Options
                                         <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>Passport Type</th>
-                                        <th>Bio Enrollment Id</th>
+                                        <th>Bio Enrollment ID</th>
                                     </tr>
                                 </thead>
                                 <tbody>

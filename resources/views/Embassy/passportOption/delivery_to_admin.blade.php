@@ -116,7 +116,7 @@ Passport Options
                                         <th>Civil ID</th>
                                         <th>Phone</th>
                                         <th>Passport Type</th>
-                                        <th>Bio Enrollment Id</th>
+                                        <th>Bio Enrollment ID</th>
                                         <th>New MRP Passport No.</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>

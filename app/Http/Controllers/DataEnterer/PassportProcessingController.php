@@ -57,7 +57,7 @@ class PassportProcessingController extends Controller
             $passport->save();
             return response()->json([
                 'type' => 'success',
-                'message' => 'Bio Enrollment Id Added Successfully!'
+                'message' => 'Bio Enrollment ID Added Successfully!'
             ]);
         }
 
