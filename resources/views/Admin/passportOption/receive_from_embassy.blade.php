@@ -234,15 +234,15 @@ Passport Options
 
             var id = $(this).parent().find('.p_id').val();
             var option = $(this).parent().find('.option').val();
-            var bio_enrollemnt_id = $(this).val();
+            var bio_enrollment_id = $(this).val();
 
-            console.log(bio_enrollemnt_id);
+            console.log(bio_enrollment_id);
 
             var url = "{{ url('admin/passport-options/receive-from-embassy/bio-enrollment-id') }}/"+id;
 
             var formData = new FormData();
             formData.append('id',id);
-            formData.append('bio_enrollment_id', bio_enrollemnt_id);
+            formData.append('bio_enrollment_id', bio_enrollment_id);
             formData.append('option', option);
 
             $.ajax({

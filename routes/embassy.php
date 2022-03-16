@@ -20,7 +20,7 @@ Route::group(['prefix' => 'embassy/', 'as' => 'embassy.', 'middleware' => ['auth
     Route::get('passport-options/receive-to-embassy/{data}', [PassportOptionsController::class,'searchReceive']);
     Route::post('passport-options/receive-to-embassy/undo/{option}', [PassportOptionsController::class,'receiveToEmbassyUndo'])->name('passportOption.receiveToEmbassy.undo');
     Route::post('passport-options/receive-to-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class,'bioEnrollmentIdSave'])->name('passportOption.receiveToEmbassy.bioEnrollmentId');
-    // Route::post('passport-options/receive-to-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class,'bioEnrollmentIdSave'])->name('passportOption.receiveToEmbassy.bioEnrollmentId');
+    Route::post('passport-options/receive-to-embassy/new-mrp-passport-no/{id}', [PassportOptionsController::class,'newMrpPassportNoSave'])->name('passportOption.receiveToEmbassy.newMrpPassportNo');
 
     // Passport Delivery
     Route::get('/passport-option/delivery', [PassportOptionsController::class, 'delivery'])->name('passportOption.delivery');
