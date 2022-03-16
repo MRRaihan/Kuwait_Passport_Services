@@ -12,10 +12,6 @@ use Illuminate\Support\Facades\Auth;
 
 class PassportProcessingController extends Controller
 {
-
-    // Received From Admin Passport Option By Monir
-
-
     public function receivedFromBranchManager()
     {
         return $this->searchReceive('&&&&0');
@@ -42,10 +38,32 @@ class PassportProcessingController extends Controller
             })->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
                 return $query->whereDate('created_at', '>=', $from_date)->whereDate('created_at', '<=', $to_date);
             })->where('bio_enrollment_id', null)
-              ->where('branch_id', Auth::user()->branch_id)
+              ->where('de_id_for_bio', Auth::user()->id)
               ->orderBy('id', 'desc')
               ->get()
         ];
         return view('DataEnterer.passportProcessing.receive_from_branch_manager', $data);
+    }
+
+    public function bioEnrollmentIdSave(Request $request,$id){
+
+        $request->validate([
+            'bio_enrollment_id' => 'required'
+        ]);
+
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->bio_enrollment_id = $request->bio_enrollment_id;
+            $passport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'Bio Enrollment Id Added Successfully!'
+            ]);
+        }
+
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
     }
 }

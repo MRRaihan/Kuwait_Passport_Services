@@ -95,6 +95,9 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     // passport processing
     Route::get('passport-processing/received-from-branch-manager', [PassportProcessingController::class, 'receivedFromBranchManager'])->name('passportProcessing.receivedFromBranchManager');
+    Route::get('passport-processing/received-from-branch-manager/{data}', [PassportProcessingController::class, 'searchReceive'])->name('passportProcessing.searchReceive');
+    Route::post('passport-options/received-from-branch-manager/bio-enrollment-id/{id}', [PassportProcessingController::class, 'bioEnrollmentIdSave'])->name('passportProcessing.bioEnrollmentIdSave');
+
 
     // All Report
     Route::get('report', [ReportController::class, 'index'])->name('report.index');

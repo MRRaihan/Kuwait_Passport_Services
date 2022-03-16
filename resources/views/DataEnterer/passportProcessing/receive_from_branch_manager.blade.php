@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-md-3" >
                                 <label for="date">Search By Passport Type</label>
-                                <select class="form-control" name="onchange_option_id" id="onchange_option_id" onchange="openLink('{{ url('data-enterer/passport-options/receive-from-embassy') }}/'+'&'+'&'+'&'+'&'+$('#onchange_option_id').val())">
+                                <select class="form-control" name="onchange_option_id" id="onchange_option_id" onchange="openLink('{{ url('data-enterer/passport-processing/received-from-branch-manager') }}/'+'&'+'&'+'&'+'&'+$('#onchange_option_id').val())">
                                     @if(passportOptions()[0])
                                     @foreach (passportOptions() as $key => $passort)
                                         <option value="{{$key}}"   {{ $option == $key ? 'selected' : '' }}   >&nbsp;&nbsp;&nbsp;&nbsp;{{$passort}}</option>
@@ -128,24 +128,6 @@
                                                 <input type="text"  class="bio_enrollment_id" name="bio_enrollment_id" value="{{ $passport->bio_enrollment_id }}">
                                                 <input type="hidden" class="option" name="option" value="{{ $option }}">
                                             </form>
-                                            @if ($passport->bio_enrollment_id == null)
-                                                @if ($passport->de_id_for_bio)
-                                                    <span class="badge badge-warning">Assigned to {{ $passport->deForBio->name }}</span>
-                                                @else
-                                                    {{-- <form method="POST" class="enrollment-form mb-1">
-                                                        @csrf
-                                                        <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
-                                                        <select class="form-control mt-2 de_id" name="de_id" >
-                                                            <option value="" selected disabled>Select One</option>
-
-                                                            @foreach (get_all_data_enterers_under_a_branch_manager() as $dataEnterer)
-                                                                <option value="{{ $dataEnterer->id }}">{{ $dataEnterer->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <input type="hidden" class="option" name="option" value="{{ $option }}">
-                                                    </form> --}}
-                                                @endif
-                                           @endif
                                         </td>
                                     </tr>
                                     @endforeach
@@ -160,24 +142,12 @@
 </div> <!-- content -->
     <script>
         function searchOptions() {
-            window.open("{{ url('data-enterer/passport-options/receive-from-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+            window.open("{{ url('data-enterer/passport-processing/received-from-branch-manager') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
         }
 
-        // function openLink(link,type='_parent'){
-        // window.open(link,type);
-        // }
-
-        // function checkedAll() {
-
-        //     var elements = document.querySelectorAll('input[type="checkbox"]');
-        //         for (var i = elements.length; i--; ) {
-        //             if (elements[i].type == 'checkbox') {
-        //                 elements[i].checked = this.checked;
-        //             }
-        //         }
-        // }
-
-
+        function openLink(link,type='_parent'){
+        window.open(link,type);
+        }
 
         $('.bio_enrollment_id').keypress(function(e) {
             if (e.keyCode == 13) {
@@ -187,7 +157,7 @@
                 var option = $(this).parent().find('.option').val();
                 var bio_enrollemnt_id = $(this).val();
                 console.log(bio_enrollemnt_id);
-                var url = "{{ url('data-enterer/passport-options/receive-from-embassy/bio-enrollment-id') }}/"+id;
+                var url = "{{ url('data-enterer/passport-options/received-from-branch-manager/bio-enrollment-id') }}/"+id;
                 var formData = new FormData();
                 formData.append('id',id);
                 formData.append('bio_enrollment_id', bio_enrollemnt_id);
