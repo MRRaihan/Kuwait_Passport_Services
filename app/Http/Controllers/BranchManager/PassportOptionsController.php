@@ -27,150 +27,31 @@ class PassportOptionsController extends Controller
 
 
    public function search($data){
+        $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
+        $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
+        $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
+        $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
+        $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-
-
-    $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
-    $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
-    $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
-    $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
-    $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
-
-
-    $renew = RenewPassport::when($civil_id != '',function($query) use($civil_id){
-                                return $query->where('civil_id',$civil_id);
-                            })
-                            ->when($mobile != '',function($query) use($mobile){
-                                return $query->where('bd_phone',$mobile);
-                            })
-                            ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                                return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                            })
-                            ->where('branch_id',Auth::user()->branch_id)
-                            ->where('is_shifted_to_branch_manager',null)
-                            ->orderBy('id','desc')
-                            ->get();
-
-    $manual = ManualPassport::when($civil_id != '',function($query) use($civil_id){
-                                    return $query->where('civil_id',$civil_id);
-                                })
-                                ->when($mobile != '',function($query) use($mobile){
-                                    return $query->where('bd_phone',$mobile);
-                                })
-                                ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                                    return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                                })
-                                ->where('branch_id',Auth::user()->branch_id)
-                                ->where('is_shifted_to_branch_manager',null)
-                                ->orderBy('id','desc')
-                                ->get();
-
-     $lost = LostPassport::when($civil_id != '',function($query) use($civil_id){
-                return $query->where('civil_id',$civil_id);
-                })
-                ->when($mobile != '',function($query) use($mobile){
-                    return $query->where('bd_phone',$mobile);
-                })
-                ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                    return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                })
-                ->where('branch_id',Auth::user()->branch_id)
-                ->where('is_shifted_to_branch_manager',null)
-                ->orderBy('id','desc')
-                ->get();
-
-      $other = Other::when($civil_id != '',function($query) use($civil_id){
-                        return $query->where('civil_id','LIKE','%'.$civil_id.'%');
-                    })
-                    ->when($mobile != '',function($query) use($mobile){
-                        return $query->where('bd_phone','LIKE','%'.$mobile.'%');
-                    })
-                    ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                    return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                        })
-                    ->where('branch_id',Auth::user()->branch_id)
-                    ->orderBy('id','desc')
-                    ->get();
-
-      $new_born = NewBornBabyPassport::when($civil_id != '',function($query) use($civil_id){
-                        return $query->where('civil_id','LIKE','%'.$civil_id.'%');
-                    })
-                    ->when($mobile != '',function($query) use($mobile){
-                        return $query->where('bd_phone','LIKE','%'.$mobile.'%');
-                    })
-                    ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                    return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                        })
-                    ->where('branch_id',Auth::user()->branch_id)
-                    ->where('is_shifted_to_branch_manager',null)
-                    ->orderBy('id','desc')
-                    ->get();
-
-    // if ($option == -1) {
-    //     $data=[
-    //         'civil_id' => $civil_id,
-    //         'mobile' => $mobile,
-    //         'from_date' => $from_date,
-    //         'to_date' => $to_date,
-    //         'option' => $option,
-    //         'passports' => $renew->concat($manual)->concat($lost)->concat($other),
-
-    //     ];
-    //     return view('BranchManager.passportOption.shift_to_admin',$data);
-    // }
-
-    if ($option == 0) {
-           $data=[
-            'civil_id' => $civil_id,
-            'mobile' => $mobile,
-            'from_date' => $from_date,
-            'to_date' => $to_date,
-            'option' => $option,
-            'passports' => $renew,
-
-        ];
-        return view('BranchManager.passportOption.shift_to_admin',$data);
-    }
-    if ($option == 1) {
+        $passports = get_passport_model_name_by_option($option)::when($civil_id != '',function($query) use($civil_id){
+                        return $query->where('civil_id',$civil_id);
+                    })->when($mobile != '',function($query) use($mobile){
+                        return $query->where('bd_phone',$mobile);
+                    })->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
+                        return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
+                    })->where('branch_id',Auth::user()->branch_id)
+                        ->where('is_shifted_to_branch_manager',null)
+                        ->orderBy('id','desc')
+                        ->get();
         $data=[
             'civil_id' => $civil_id,
             'mobile' => $mobile,
             'from_date' => $from_date,
             'to_date' => $to_date,
             'option' => $option,
-            'passports' => $manual,
+            'passports' => $passports,
         ];
         return view('BranchManager.passportOption.shift_to_admin',$data);
-    }
-
-    if ($option == 2) {
-          $data=[
-            'civil_id' => $civil_id,
-            'mobile' => $mobile,
-            'from_date' => $from_date,
-            'to_date' => $to_date,
-            'option' => $option,
-            'passports' => $lost,
-        ];
-        return view('BranchManager.passportOption.shift_to_admin',$data);
-    }
-
-
-    if ($option == 3) {
-          $data=[
-            'civil_id' => $civil_id,
-            'mobile' => $mobile,
-            'from_date' => $from_date,
-            'to_date' => $to_date,
-            'option' => $option,
-            'passports' => $new_born,
-        ];
-        return view('BranchManager.passportOption.shift_to_admin',$data);
-    }
-
-    return redirect()->back();
-
-
    }
 
    public function shiftToAdminStore(Request $request){
@@ -182,62 +63,12 @@ class PassportOptionsController extends Controller
            ]
         );
 
-    //    if ($request->passport_option == -1) {
-
-    //         RenewPassport::whereIn('id',$request->all_option)->update([
-    //             'shift_to_admin' => 1,
-    //         ]);
-
-    //         ManualPassport::whereIn('id',$request->all_option)->update([
-    //             'shift_to_admin' => 1,
-    //         ]);
-
-    //         LostPassport::whereIn('id',$request->all_option)->update([
-    //             'shift_to_admin' => 1,
-    //         ]);
-
-
-    //         Other::whereIn('id',$request->all_option)->update([
-    //             'shift_to_admin' => 1,
-    //         ]);
-
-    //         Session::flash('success', 'Shift to Admin Successfully!!');
-    //         return redirect()->back();
-    //    }
-
-       if ($request->passport_option == 0) {
-            RenewPassport::whereIn('id',$request->all_option)->update([
+        get_passport_model_name_by_option($request->passport_option)::whereIn('id',$request->all_option)->update([
                 'shift_to_admin' => 1,
-            ]);
-            Session::flash('success', 'Renew Passport Shift to Admin Successfully!!');
-            return redirect()->back();
-       }
-
-       if ($request->passport_option == 1) {
-            ManualPassport::whereIn('id',$request->all_option)->update([
-                'shift_to_admin' => 1,
-            ]);
-           Session::flash('success','Manual Passport Shift to Admin Successfully!!');
-            return redirect()->back();
-       }
-       if ($request->passport_option == 2) {
-            LostPassport::whereIn('id',$request->all_option)->update([
-                'shift_to_admin' => 1,
-            ]);
-           Session::flash('success','Lost Passport Shift to Admin Successfully!!');
-            return redirect()->back();
-       }
-       if ($request->passport_option == 3) {
-            Other::whereIn('id',$request->all_option)->update([
-                'shift_to_admin' => 1,
-            ]);
-           Session::flash('success','Renewal Passport Shift to Admin Successfully!!');
-            return redirect()->back();
-       }
-
+        ]);
+        Session::flash('success','Passport Shift to Admin Successfully!!');
         return redirect()->back();
    }
-
 
    public function shiftToAdminUndo($data){
 

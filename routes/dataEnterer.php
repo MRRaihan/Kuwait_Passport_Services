@@ -9,6 +9,7 @@ use App\Http\Controllers\DataEnterer\RenewPassportController;
 use App\Http\Controllers\DataEnterer\RenewManualPassportController;
 use App\Http\Controllers\DataEnterer\ExtraServiceAddController;
 use App\Http\Controllers\DataEnterer\ReportController;
+use App\Http\Controllers\DataEnterer\PassportProcessingController;
 
 use App\Http\Controllers\DataEnterer\OtherServices\OtherServiceController;
 use App\Http\Controllers\DataEnterer\OtherServices\ExpressServiceController;
@@ -91,6 +92,12 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::post('renewPassport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renewPassport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
+
+    // passport processing
+    Route::get('passport-processing/received-from-branch-manager', [PassportProcessingController::class, 'receivedFromBranchManager'])->name('passportProcessing.receivedFromBranchManager');
+    Route::get('passport-processing/received-from-branch-manager/{data}', [PassportProcessingController::class, 'searchReceive'])->name('passportProcessing.searchReceive');
+    Route::post('passport-options/received-from-branch-manager/bio-enrollment-id/{id}', [PassportProcessingController::class, 'bioEnrollmentIdSave'])->name('passportProcessing.bioEnrollmentIdSave');
+
 
     // All Report
     Route::get('report', [ReportController::class, 'index'])->name('report.index');

@@ -281,4 +281,20 @@ if (!function_exists('random_code')) {
     function this_url(){
         return request()->route()->uri;
     }
+
+    function get_passport_model_name_by_option($option){
+        if ($option == 0) {
+            $passport_model_name = 'App\Models\RenewPassport';
+        }
+        if ($option == 1) {
+            $passport_model_name = 'App\Models\ManualPassport';
+        }
+        if ($option == 2) {
+            $passport_model_name = 'App\Models\LostPassport';
+        }
+        if ($option == 3) {
+            $passport_model_name = 'App\Models\NewBornBabyPassport';
+        }
+        return $passport_model_name;
+    }
 }

@@ -54,9 +54,9 @@
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-filter"></i> <span> Passport Processing</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
                     <ul class="list-unstyled">
-                        {{-- <li><a href="{{ route('admin.passportOption.shiftToEmbassy') }}">Shift To Embassy</a>
+                        <li><a href="{{ route('dataEnterer.passportProcessing.receivedFromBranchManager') }}">Received From Branch Manager</a>
                         </li>
-                        <li><a href="{{ route('admin.passportOption.receiveFromEmbassy') }}">Receive From
+                        {{-- <li><a href="{{ route('admin.passportOption.receiveFromEmbassy') }}">Receive From
                                 Embassy</a></li>
 
                         <li><a href="{{ route('admin.passportOption.allDeliveryFromBranch') }}">All Deliveries From
