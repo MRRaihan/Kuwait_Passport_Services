@@ -160,10 +160,8 @@ class PassportOptionsController extends Controller
 
     public function receiveFromEmbassyUndo($data)
     {
-
         $option = explode('&', $data)[0];
         $id = explode('&', $data)[1];
-
 
         if (isset($option) && isset($id)) {
             get_passport_model_name_by_option($option)::where('id', $id)->update([
@@ -211,40 +209,10 @@ class PassportOptionsController extends Controller
             'bio_enrollment_id' => 'required'
         ]);
 
-        if (isset($request->option) && $request->option == 0) {
-            $renewPassport = RenewPassport::findOrFail($id);
-            $renewPassport->bio_enrollment_id = $request->bio_enrollment_id;
-            $renewPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Bio Enrollment ID Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 1) {
-            $manualPassport = ManualPassport::findOrFail($id);
-            $manualPassport->bio_enrollment_id = $request->bio_enrollment_id;
-            $manualPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Bio Enrollment ID Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 2) {
-            $lostPassport = LostPassport::findOrFail($id);
-            $lostPassport->bio_enrollment_id = $request->bio_enrollment_id;
-            $lostPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Bio Enrollment ID Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 3) {
-            $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
-            $newBornBabyPassport->bio_enrollment_id = $request->bio_enrollment_id;
-            $newBornBabyPassport->save();
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->bio_enrollment_id = $request->bio_enrollment_id;
+            $passport->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Bio Enrollment ID Added Successfully!'
@@ -255,7 +223,6 @@ class PassportOptionsController extends Controller
             'type' => 'error',
             'message' => 'Something Went Wrong!!'
         ]);
-        return redirect()->back();
     }
 
     public function newMrpPassportNoSave(Request $request,$id){
@@ -299,81 +266,14 @@ class PassportOptionsController extends Controller
         $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
         $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-        if ($option == 0) {
+        if ($option) {
             $data = [
                 'civil_id' => $civil_id,
                 'mobile' => $mobile,
                 'from_date' => $from_date,
                 'to_date' => $to_date,
                 'option' => $option,
-                'options' => RenewPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
-                })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.delivery', $data);
-        }
-
-        if ($option == 1) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => ManualPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
-                })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.delivery', $data);
-        }
-
-        if ($option == 2) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => LostPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
-                })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.delivery', $data);
-        }
-
-
-        if ($option == 3) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => NewBornBabyPassport::when($civil_id != '', function ($query) use ($civil_id) {
+                'options' => get_passport_model_name_by_option($option)::when($civil_id != '', function ($query) use ($civil_id) {
                         return $query->where('civil_id', $civil_id);
                     })
                     ->when($mobile != '', function ($query) use ($mobile) {
@@ -387,7 +287,6 @@ class PassportOptionsController extends Controller
             ];
             return view('Admin.passportOption.delivery', $data);
         }
-
         return redirect()->back();
     }
 
@@ -417,7 +316,6 @@ class PassportOptionsController extends Controller
 
     public function deliveryUndo($data)
     {
-
         $option = explode('&', $data)[0];
         $id = explode('&', $data)[1];
 
