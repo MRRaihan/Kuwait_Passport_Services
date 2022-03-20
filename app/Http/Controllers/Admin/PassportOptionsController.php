@@ -246,10 +246,6 @@ class PassportOptionsController extends Controller
         ]);
     }
 
-
-
-
-
     // Delivery Passport Option By Monir
 
     public function delivery()

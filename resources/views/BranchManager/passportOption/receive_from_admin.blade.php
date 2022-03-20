@@ -127,6 +127,7 @@
                                         <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Bio Enrollment ID</th>
+                                        <th>New MRP Passport No.</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                 </thead>
@@ -153,30 +154,26 @@
                                             @if ($passport->bio_enrollment_id == null)
                                                 @if ($passport->de_id_for_bio)
                                                     <span class="badge badge-warning">Assigned to {{ $passport->deForBio->name }}</span>
-                                                @else
-                                                    {{-- <form method="POST" class="enrollment-form mb-1">
-                                                        @csrf
-                                                        <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
-                                                        <select class="form-control mt-2 de_id" name="de_id" >
-                                                            <option value="" selected disabled>Select One</option>
-
-                                                            @foreach (get_all_data_enterers_under_a_branch_manager() as $dataEnterer)
-                                                                <option value="{{ $dataEnterer->id }}">{{ $dataEnterer->name }}</option>
-                                                            @endforeach
-                                                        </select>
-                                                        <input type="hidden" class="option" name="option" value="{{ $option }}">
-                                                    </form> --}}
                                                 @endif
                                            @endif
                                         </td>
                                         <td>
-                                            {{-- @if($passport->branch_status == 1)
-                                                 <span class="badge badge-pill badge-danger">Pending Delivery</span>
-                                            @endif --}}
+                                            <form method="POST" class="new-mrp-passport-form mb-1">
+                                                @csrf
+                                                <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
+                                                <input type="text"  class="new_mrp_passport_no" name="new_mrp_passport_no" value="{{ $passport->new_mrp_passport_no }}">
+                                                <input type="hidden" class="option" name="option" value="{{ $option }}">
+                                            </form>
+                                            @if ($passport->new_mrp_passport_no == null)
+                                                @if ($passport->de_id_for_bio)
+                                                    <span class="badge badge-warning">Assigned to {{ $passport->deForBio->name }}</span>
+                                                @endif
+                                           @endif
+                                        </td>
+                                        <td>
                                             @if($passport->branch_status == 1)
                                                 <span class="badge badge-pill badge-danger">Pending Delivery</span>
                                                 <span class="badge badge-pill badge-success">Recieved From Admin</span>
-
                                             @endif
                                         </td>
                                     </tr>
@@ -190,8 +187,6 @@
         </div> <!-- End Row -->
     </div> <!-- container -->
 </div> <!-- content -->
-
-
     <script>
         function searchOptions() {
             window.open("{{ url('branch-manager/passport-options/receive-from-embassy') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
@@ -265,6 +260,63 @@
                 formData.append('id',id);
                 formData.append('bio_enrollment_id', bio_enrollment_id);
                 formData.append('option', option);
+                $.ajax({
+                    method: 'POST',
+                    url: url,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: data.type,
+                            title: data.message,
+                            showConfirmButton: false,
+                            // timer: 1500
+                        })
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000); //
+                        console.log(data);
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
+                });
+            }
+        });
+        $('.new_mrp_passport_no').keypress(function(e) {
+            if (e.keyCode == 13) {
+
+                e.preventDefault();
+
+                var id = $(this).parent().find('.p_id').val();
+                var option = $(this).parent().find('.option').val();
+                var new_mrp_passport_no = $(this).val();
+                console.log(new_mrp_passport_no);
+                var url = "{{ url('branch-manager/passport-options/receive-from-embassy/new-mrp-passport-no') }}/"+id;
+
+                var formData = new FormData();
+                formData.append('id',id);
+                formData.append('new_mrp_passport_no', new_mrp_passport_no);
+                formData.append('option', option);
+
                 $.ajax({
                     method: 'POST',
                     url: url,
