@@ -184,7 +184,8 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::get('passport-options/receive-from-embassy/{data}', [PassportOptionsController::class, 'searchReceive']);
     Route::post('passport-options/receive-from-embassy/undo/{option}', [PassportOptionsController::class, 'receiveFromEmbassyUndo'])->name('passportOption.receiveFromEmbassy.undo');
     Route::post('passport-options/receive-from-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class, 'bioEnrollmentIdSave'])->name('passportOption.receiveFromEmbassy.bioEnrollmentId');
-    Route::post('passport-options/receive-from-embassy/new-mrp-passport-no/{id}', [PassportOptionsController::class, 'bioEnrollmentIdSave'])->name('passportOption.receiveFromEmbassy.bioEnrollmentId');
+    Route::post('passport-options/receive-from-embassy/new-mrp-passport-no/{id}', [PassportOptionsController::class, 'newMrpPassportNoSave'])->name('passportOption.receiveFromEmbassy.newMrpPassportNo');
+
     // call center status
     Route::get('passport-options/call-center-status/', [PassportOptionsController::class, 'callCenterStatus'])->name('passportOption.callCenterStatus');
     Route::get('passport-options/call-center-status/{data}', [PassportOptionsController::class, 'searchCallCenterStatus'])->name('passportOption.searchCallCenterStatus');

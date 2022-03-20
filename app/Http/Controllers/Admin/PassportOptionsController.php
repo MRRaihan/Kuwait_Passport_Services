@@ -247,110 +247,33 @@ class PassportOptionsController extends Controller
 
     public function searchReceive($data)
     {
-
         $civil_id = explode('&', $data)[0] ? explode('&', $data)[0] : '';
         $mobile = explode('&', $data)[1] ? explode('&', $data)[1] : '';
         $from_date = explode('&', $data)[2] ? explode('&', $data)[2] : '';
         $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
         $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-        if ($option == 0) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => RenewPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
+        $data = [
+            'civil_id' => $civil_id,
+            'mobile' => $mobile,
+            'from_date' => $from_date,
+            'to_date' => $to_date,
+            'option' => $option,
+            'options' => get_passport_model_name_by_option($option)::when($civil_id != '', function ($query) use ($civil_id) {
+                return $query->where('civil_id', $civil_id);
+            })
+                ->when($mobile != '', function ($query) use ($mobile) {
+                    return $query->where('bd_phone', $mobile);
                 })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->where('embassy_status', 3)
-                    ->where('branch_status', '<=', 0)
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.receive_from_embassy', $data);
-        }
-
-        if ($option == 1) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => ManualPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
+                ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
+                    return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
                 })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->where('embassy_status', 3)
-                    ->where('branch_status', '<=', 0)
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.receive_from_embassy', $data);
-        }
-
-        if ($option == 2) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => LostPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                    return $query->where('civil_id', $civil_id);
-                })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->where('embassy_status', 3)
-                    ->where('branch_status', '<=', 0)
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.receive_from_embassy', $data);
-        }
-
-        if ($option == 3) {
-            $data = [
-                'civil_id' => $civil_id,
-                'mobile' => $mobile,
-                'from_date' => $from_date,
-                'to_date' => $to_date,
-                'option' => $option,
-                'options' => NewBornBabyPassport::when($civil_id != '', function ($query) use ($civil_id) {
-                        return $query->where('civil_id', $civil_id);
-                    })
-                    ->when($mobile != '', function ($query) use ($mobile) {
-                        return $query->where('bd_phone', $mobile);
-                    })
-                    ->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
-                        return $query->whereDate('updated_at', '>=', $from_date)->whereDate('updated_at', '<=', $to_date);
-                    })
-                    ->where('embassy_status', 3)
-                    ->where('branch_status', '<=', 0)
-                    ->orderBy('id', 'desc')
-                    ->get()
-            ];
-            return view('Admin.passportOption.receive_from_embassy', $data);
-        }
-
-        return redirect()->back();
+                ->where('embassy_status', 3)
+                ->where('branch_status', '<=', 0)
+                ->orderBy('id', 'desc')
+                ->get()
+        ];
+        return view('Admin.passportOption.receive_from_embassy', $data);
     }
 
 
@@ -516,8 +439,6 @@ class PassportOptionsController extends Controller
             'bio_enrollment_id' => 'required'
         ]);
 
-        // return $request->option;
-
         if (isset($request->option) && $request->option == 0) {
             $renewPassport = RenewPassport::findOrFail($id);
             $renewPassport->bio_enrollment_id = $request->bio_enrollment_id;
@@ -563,6 +484,27 @@ class PassportOptionsController extends Controller
             'message' => 'Something Went Wrong!!'
         ]);
         return redirect()->back();
+    }
+
+    public function newMrpPassportNoSave(Request $request,$id){
+
+        $request->validate([
+            'new_mrp_passport_no' => 'required'
+        ]);
+
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->new_mrp_passport_no = $request->new_mrp_passport_no;
+            $passport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'New MRP Passport No. Added Successfully!'
+            ]);
+        }
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
     }
 
 
