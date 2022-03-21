@@ -41,51 +41,46 @@ Manual Passport Table
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-primary">
-
                     <div class="panel-body row">
-
                         <div class="col-md-4">
                             <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.search_by_civil') }}">
                                 @csrf
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
+                                    <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
                                 </div>
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
-
-
                         <div class="col-md-4">
-                            <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.searchByMrpPassportNo') }}">
+                            <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.search_by_passport_number') }}">
                                 @csrf
                                 <div class="col-sm-9">
-                                  <input type="text" class="form-control" id="mrp_no" placeholder="Search by MRP Passport No." name="mrp_no">
+                                    <input type="text" class="form-control" id="passport_number" placeholder="Search by MRP Passport No." name="passport_number">
                                 </div>
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
-
-
-
                         <div class="col-md-4">
-                            <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.search_by_profession') }}">
+                            <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.search_by_new_mrp_passport_no') }}">
                                 @csrf
                                 <div class="col-sm-9">
-                                  <select class="form-control" name="profession_id">
-                                      <option selected disabled>Search By Profession</option>
-                                      @foreach ($professions as $data)
-                                        <option value="{{ $data->id }}">{{ $data->name }}</option>
-                                      @endforeach
-                                  </select>
+                                    <input type="text" class="form-control" id="new_mrp_passport_no" placeholder="Search by New MRP Passport No." name="new_mrp_passport_no">
                                 </div>
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
-
+                        <div class="col-md-4">
+                            <form class="form-group" method="POST" action="{{ route('branchManager.manualPassport.search_by_bio_enrollment_id') }}">
+                                @csrf
+                                <div class="col-sm-9">
+                                <input type="text" class="form-control" id="bio_enrollment_id" placeholder="Search by Bio Enrollment ID" name="bio_enrollment_id">
+                                </div>
+                                <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                            </form>
+                        </div>
                     </div> <!-- panel-body -->
                 </div> <!-- panel -->
             </div> <!-- col -->
-
         </div> <!-- End row -->
         @endif
 
@@ -111,7 +106,9 @@ Manual Passport Table
                                 <tr>
                                     <th>Sl.</th>
                                     <th>Name</th>
-                                    <th>MRP No.</th>
+                                    <th>MRP Passport Number</th>
+                                    <th>New MRP Passport Number</th>
+                                    <th>Bio Enrollment ID</th>
                                     <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
@@ -127,6 +124,8 @@ Manual Passport Table
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $manualPassport->name }} {{ $manualPassport->last_name }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
+                                    <td>{{ $manualPassport->new_mrp_passport_no }}</td>
+                                    <td>{{ $manualPassport->bio_enrollment_id }}</td>
                                     <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->bd_phone }}</td>
                                     <td>{{ $manualPassport->ems }}</td>

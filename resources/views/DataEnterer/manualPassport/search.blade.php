@@ -53,8 +53,10 @@ Manual Passport Table
                                 <tr>
                                     <th>SL.</th>
                                     <th>Name</th>
-                                    <th>Civil ID</th>
                                     <th>MRP Passport Number</th>
+                                    <th>New MRP Passport Number</th>
+                                    <th>Bio Enrollment ID</th>
+                                    <th>Civil ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
@@ -68,8 +70,10 @@ Manual Passport Table
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $manualPassport->name }} {{ $manualPassport->last_name }}</td>
-                                    <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->passport_number }}</td>
+                                    <td>{{ $manualPassport->new_mrp_passport_no }}</td>
+                                    <td>{{ $manualPassport->bio_enrollment_id }}</td>
+                                    <td>{{ $manualPassport->civil_id }}</td>
                                     <td>{{ $manualPassport->bd_phone }}</td>
                                     <td>{{ $manualPassport->ems }}</td>
                                     <td>{{ $manualPassport->created_at->diffForHumans() }}</td>

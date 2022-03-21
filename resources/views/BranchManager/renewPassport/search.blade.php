@@ -60,8 +60,10 @@
                                     <tr>
                                         <th>SL.</th>
                                         <th>Name</th>
-                                        <th>MRP No.</th>
                                         <th>Civil ID</th>
+                                        <th>MRP Passport Number</th>
+                                        <th>New MRP Passport Number</th>
+                                        <th>Bio Enrollment ID</th>
                                         <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>
@@ -75,8 +77,10 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $renewPassport->name }} {{ $renewPassport->last_name }}</td>
-                                            <td>{{ $renewPassport->passport_number }}</td>
                                             <td>{{ $renewPassport->civil_id }}</td>
+                                            <td>{{ $renewPassport->passport_number }}</td>
+                                            <td>{{ $renewPassport->new_mrp_passport_no }}</td>
+                                            <td>{{ $renewPassport->bio_enrollment_id }}</td>
                                             <td>{{ $renewPassport->bd_phone }}</td>
                                             <td>{{ $renewPassport->ems }}</td>
                                             <td>{{ $renewPassport->created_at->diffForHumans() }}</td>

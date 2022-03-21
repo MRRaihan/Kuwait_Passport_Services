@@ -444,19 +444,22 @@ class ManualPassportController extends Controller
 
     public function search_by_civil(Request $req)
     {
-        $manualPassport = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
-        return view('BranchManager.manualPassport.search', compact('manualPassport'));
+        $manualPassports = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('civil_id', 'like', '%' . $req->input('civil_id') . '%')->orderBy('id', 'DESC')->get();
+        return view('BranchManager.manualPassport.search', compact('manualPassports'));
     }
-
-    public function search_by_mrp(Request $req)
+    public function search_by_passport_number(Request $req)
     {
-        $manualPassport = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('passport_number', 'like', '%' . $req->input('mrp_no') . '%')->orderBy('id', 'DESC')->get();
-        return view('BranchManager.manualPassport.search', compact('manualPassport'));
+        $manualPassports = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('passport_number', 'like', '%' . $req->input('passport_number') . '%')->orderBy('id', 'DESC')->get();
+        return view('BranchManager.manualPassport.search', compact('manualPassports'));
     }
-
-    public function search_by_profession(Request $req)
+    public function search_by_new_mrp_passport_no(Request $req)
     {
-        $manualPassport = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('profession_id', $req->input('profession_id'))->orderBy('id', 'DESC')->get();
-        return view('BranchManager.manualPassport.search', compact('manualPassport'));
+        $manualPassports = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('new_mrp_passport_no', 'like', '%' . $req->input('new_mrp_passport_no') . '%')->orderBy('id', 'DESC')->get();
+        return view('BranchManager.manualPassport.search', compact('manualPassports'));
+    }
+    public function search_by_bio_enrollment_id(Request $req)
+    {
+        $manualPassports = ManualPassport::where('branch_id', Auth::user()->branch_id)->where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
+        return view('BranchManager.manualPassport.search', compact('manualPassports'));
     }
 }

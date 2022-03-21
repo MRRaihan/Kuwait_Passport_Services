@@ -624,6 +624,27 @@ class PassportOptionsController extends Controller
 
     }
 
+    public function newMrpPassportNoSave(Request $request,$id){
+
+        $request->validate([
+            'new_mrp_passport_no' => 'required'
+        ]);
+
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->new_mrp_passport_no = $request->new_mrp_passport_no;
+            $passport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'New MRP Passport No. Added Successfully!'
+            ]);
+        }
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
+    }
+
     public function assignDeForBio(Request $request)
     {
         $request->validate([

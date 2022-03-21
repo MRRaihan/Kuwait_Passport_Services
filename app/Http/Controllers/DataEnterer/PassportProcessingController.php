@@ -37,10 +37,14 @@ class PassportProcessingController extends Controller
                 return $query->where('bd_phone', $mobile);
             })->when($from_date != '' && $to_date != '', function ($query) use ($from_date, $to_date) {
                 return $query->whereDate('created_at', '>=', $from_date)->whereDate('created_at', '<=', $to_date);
-            })->where('bio_enrollment_id', null)
-              ->where('de_id_for_bio', Auth::user()->id)
-              ->orderBy('id', 'desc')
-              ->get()
+            })
+            ->where(function ($query) {
+                $query->where('bio_enrollment_id', null)
+                      ->orWhere('new_mrp_passport_no', null);
+            })
+            ->where('de_id_for_bio', Auth::user()->id)
+            ->orderBy('id', 'desc')
+            ->get()
         ];
         return view('DataEnterer.passportProcessing.receive_from_branch_manager', $data);
     }
@@ -61,6 +65,27 @@ class PassportProcessingController extends Controller
             ]);
         }
 
+        return response()->json([
+            'type' => 'error',
+            'message' => 'Something Went Wrong!!'
+        ]);
+    }
+
+    public function newMrpPassportNoSave(Request $request,$id){
+
+        $request->validate([
+            'new_mrp_passport_no' => 'required'
+        ]);
+
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->new_mrp_passport_no = $request->new_mrp_passport_no;
+            $passport->save();
+            return response()->json([
+                'type' => 'success',
+                'message' => 'New MRP Passport No. Added Successfully!'
+            ]);
+        }
         return response()->json([
             'type' => 'error',
             'message' => 'Something Went Wrong!!'

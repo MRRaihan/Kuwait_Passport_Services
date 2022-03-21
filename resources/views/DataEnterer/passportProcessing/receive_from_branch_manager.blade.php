@@ -109,6 +109,7 @@
                                         <th>Phone</th>
                                         <th>Passport Type</th>
                                         <th>Bio Enrollment ID</th>
+                                        <th>New MRP Passport No.</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -126,6 +127,14 @@
                                                 @csrf
                                                 <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
                                                 <input type="text"  class="bio_enrollment_id" name="bio_enrollment_id" value="{{ $passport->bio_enrollment_id }}">
+                                                <input type="hidden" class="option" name="option" value="{{ $option }}">
+                                            </form>
+                                        </td>
+                                        <td>
+                                            <form method="POST" class="new-mrp-passport-form mb-1">
+                                                @csrf
+                                                <input type="hidden"  class="p_id" name="id" value="{{ $passport->id }}">
+                                                <input type="text"  class="new_mrp_passport_no" name="new_mrp_passport_no" value="{{ $passport->new_mrp_passport_no }}">
                                                 <input type="hidden" class="option" name="option" value="{{ $option }}">
                                             </form>
                                         </td>
@@ -161,6 +170,60 @@
                 var formData = new FormData();
                 formData.append('id',id);
                 formData.append('bio_enrollment_id', bio_enrollment_id);
+                formData.append('option', option);
+                $.ajax({
+                    method: 'POST',
+                    url: url,
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data: formData,
+                    processData: false,
+                    contentType: false,
+                    success: function(data) {
+                        Swal.fire({
+                            position: 'top-end',
+                            icon: data.type,
+                            title: data.message,
+                            showConfirmButton: false,
+                            // timer: 1500
+                        })
+                        setTimeout(function() {
+                            location.reload();
+                        }, 1000); //
+                        console.log(data);
+                    },
+                    error: function(xhr) {
+                        var errorMessage = '<div class="card bg-danger">\n' +
+                            '                        <div class="card-body text-center p-5">\n' +
+                            '                            <span class="text-white">';
+                        $.each(xhr.responseJSON.errors, function(key, value) {
+                            errorMessage += ('' + value + '<br>');
+                        });
+                        errorMessage += '</span>\n' +
+                            '                        </div>\n' +
+                            '                    </div>';
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            footer: errorMessage
+                        })
+                    },
+                });
+            }
+        });
+        $('.new_mrp_passport_no').keypress(function(e) {
+            if (e.keyCode == 13) {
+                e.preventDefault();
+
+                var id = $(this).parent().find('.p_id').val();
+                var option = $(this).parent().find('.option').val();
+                var new_mrp_passport_no = $(this).val();
+                console.log(new_mrp_passport_no);
+                var url = "{{ url('data-enterer/passport-options/received-from-branch-manager/new-mrp-passport-no') }}/"+id;
+                var formData = new FormData();
+                formData.append('id',id);
+                formData.append('new_mrp_passport_no', new_mrp_passport_no);
                 formData.append('option', option);
                 $.ajax({
                     method: 'POST',

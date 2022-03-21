@@ -49,8 +49,10 @@ New Born Baby Passport
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
-                                    <th>MRP Passport Number</th>
                                     <th>Civil ID</th>
+                                    <th>MRP Passport Number</th>
+                                    <th>New MRP Passport Number</th>
+                                    <th>Bio Enrollment ID</th>
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
@@ -64,8 +66,10 @@ New Born Baby Passport
                                 <tr>
                                     <td>{{ ++$key }}</td>
                                     <td>{{ $newBornBabyPassport->name }} {{ $newBornBabyPassport->last_name }}</td>
-                                    <td>{{ $newBornBabyPassport->passport_number }}</td>
                                     <td>{{ $newBornBabyPassport->civil_id }}</td>
+                                    <td>{{ $newBornBabyPassport->passport_number }}</td>
+                                    <td>{{ $newBornBabyPassport->new_mrp_passport_no }}</td>
+                                    <td>{{ $newBornBabyPassport->bio_enrollment_id }}</td>
                                     <td>{{ $newBornBabyPassport->bd_phone }}</td>
                                     <td>{{ $newBornBabyPassport->ems }}</td>
                                     <td>{{ $newBornBabyPassport->created_at ? $newBornBabyPassport->created_at->diffForHumans() : ''}}</td>

@@ -37,6 +37,7 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     Route::get('/legalComplaintsPassport/report/{data}', [DashboardController::class, 'reportLegalComplaintsService']);
     Route::get('/immigrationGovementService/report/{data}', [DashboardController::class, 'reportImmigrationGovementService']);
     Route::get('/other/report/{data}', [DashboardController::class, 'reportOtherService']);
+
     //lost Passport
     Route::resource('lostPassport', LostPassportController::class);
     Route::get('lost-passport/create-second', [LostPassportController::class, 'createSecond'])->name('lostPassport.createSecond');
@@ -49,7 +50,8 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     Route::post('lostPassport/search_by_civil', [LostPassportController::class, 'search_by_civil'])->name('lostPassport.search_by_civil');
     Route::post('lostPassport/search_by_passport_number', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
-    Route::post('lostPassport/search_by_profession', [LostPassportController::class, 'search_by_profession'])->name('lostPassport.search_by_profession');
+    Route::post('lostPassport/search_by_new_mrp_passport_no', [LostPassportController::class, 'search_by_new_mrp_passport_no'])->name('lostPassport.search_by_new_mrp_passport_no');
+    Route::post('lostPassport/search_by_bio_enrollment_id', [LostPassportController::class, 'search_by_bio_enrollment_id'])->name('lostPassport.search_by_bio_enrollment_id');
 
 
     // New Born Baby Passport
@@ -63,7 +65,8 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     Route::post('newBornBabyPassport/search_by_civil', [NewBornBabyPassportController::class, 'search_by_civil'])->name('newBornBabyPassport.search_by_civil');
     Route::post('newBornBabyPassport/search_by_passport_number', [NewBornBabyPassportController::class, 'search_by_passport_number'])->name('newBornBabyPassport.search_by_passport_number');
-    Route::post('newBornBabyPassport/search_by_profession', [NewBornBabyPassportController::class, 'search_by_profession'])->name('newBornBabyPassport.search_by_profession');
+    Route::post('newBornBabyPassport/search_by_new_mrp_passport_no', [NewBornBabyPassportController::class, 'search_by_new_mrp_passport_no'])->name('newBornBabyPassport.search_by_new_mrp_passport_no');
+    Route::post('newBornBabyPassport/search_by_bio_enrollment_id', [NewBornBabyPassportController::class, 'search_by_bio_enrollment_id'])->name('newBornBabyPassport.search_by_bio_enrollment_id');
 
 
     //manual passport
@@ -76,8 +79,8 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     Route::post('manualPassport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
     Route::post('manualPassport/search_by_passport_number', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
-    Route::post('manualPassport/search_by_profession', [ManualPassportController::class, 'search_by_profession'])->name('manualPassport.search_by_profession');
-
+    Route::post('manualPassport/search_by_new_mrp_passport_no', [ManualPassportController::class, 'search_by_new_mrp_passport_no'])->name('manualPassport.search_by_new_mrp_passport_no');
+    Route::post('manualPassport/search_by_bio_enrollment_id', [ManualPassportController::class, 'search_by_bio_enrollment_id'])->name('manualPassport.search_by_bio_enrollment_id');
     // Renew to Manual
     Route::resource('renewManual', RenewManualPassportController::class);
     Route::get('manualPassport/add-manual-by-renew-id/{renew_id}', [ManualPassportController::class, 'addManualByRenewId'])->name('manualPassport.addManualByRenewId');
@@ -92,12 +95,14 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
 
     Route::post('renewPassport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
-    Route::post('renewPassport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
+    Route::post('renewPassport/search_by_new_mrp_passport_no', [RenewPassportController::class, 'search_by_new_mrp_passport_no'])->name('renewPassport.search_by_new_mrp_passport_no');
+    Route::post('renewPassport/search_by_bio_enrollment_id', [RenewPassportController::class, 'search_by_bio_enrollment_id'])->name('renewPassport.search_by_bio_enrollment_id');
 
     // passport processing
     Route::get('passport-processing/received-from-branch-manager', [PassportProcessingController::class, 'receivedFromBranchManager'])->name('passportProcessing.receivedFromBranchManager');
     Route::get('passport-processing/received-from-branch-manager/{data}', [PassportProcessingController::class, 'searchReceive'])->name('passportProcessing.searchReceive');
     Route::post('passport-options/received-from-branch-manager/bio-enrollment-id/{id}', [PassportProcessingController::class, 'bioEnrollmentIdSave'])->name('passportProcessing.bioEnrollmentIdSave');
+    Route::post('passport-options/received-from-branch-manager/new-mrp-passport-no/{id}', [PassportProcessingController::class, 'newMrpPassportNoSave'])->name('passportProcessing.newMrpPassportNoSave');
 
 
     // All Report
