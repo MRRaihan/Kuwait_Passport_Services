@@ -379,9 +379,15 @@ class NewBornBabyPassportController extends Controller
         return view('DataEnterer.newBornBabyPassport.search', compact('newBornBabyPassports'));
     }
 
-    public function search_by_profession(Request $req)
+    public function search_by_new_mrp_passport_no(Request $req)
     {
-        $newBornBabyPassports = NewBornBabyPassport::where('user_creator_id', Auth::user()->id)->where('profession_id', $req->input('profession_id'))->orderBy('id', 'DESC')->get();
+        $newBornBabyPassports = NewBornBabyPassport::where('user_creator_id', Auth::user()->id)->where('new_mrp_passport_no', 'like', '%' . $req->input('new_mrp_passport_no') . '%')->orderBy('id', 'DESC')->get();
+        return view('DataEnterer.newBornBabyPassport.search', compact('newBornBabyPassports'));
+    }
+
+    public function search_by_bio_enrollment_id(Request $req)
+    {
+        $newBornBabyPassports = NewBornBabyPassport::where('user_creator_id', Auth::user()->id)->where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
         return view('DataEnterer.newBornBabyPassport.search', compact('newBornBabyPassports'));
     }
 }

@@ -48,50 +48,44 @@ Lost Passport
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-primary">
-
                         <div class="panel-body row">
-
                             <div class="col-md-4">
                                 <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_civil') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
                             </div>
-
-
                             <div class="col-md-4">
                                 <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_passport_number') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="passport_number" placeholder="Search by MRP Passport No." name="passport_number">
+                                        <input type="text" class="form-control" id="passport_number" placeholder="Search by MRP Passport No." name="passport_number">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
                             </div>
-
-
                             <div class="col-md-4">
-                                <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_profession') }}">
+                                <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_new_mrp_passport_no') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <select class="form-control" name="profession_id">
-                                          <option selected disabled>Search By Profession</option>
-                                          @foreach ($professions as $data)
-                                            <option value="{{ $data->id }}">{{ $data->name }}</option>
-                                          @endforeach
-                                      </select>
+                                        <input type="text" class="form-control" id="new_mrp_passport_no" placeholder="Search by New MRP Passport No." name="new_mrp_passport_no">
+                                    </div>
+                            </div>
+                            <div class="col-md-4">
+                                <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_bio_enrollment_id') }}">
+                                    @csrf
+                                    <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="bio_enrollment_id" placeholder="Search by Bio Enrollment ID" name="bio_enrollment_id">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
                             </div>
-
                         </div> <!-- panel-body -->
                     </div> <!-- panel -->
                 </div> <!-- col -->
-
             </div> <!-- End row -->
             @endif
 
@@ -108,7 +102,7 @@ Lost Passport
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background-color: #46bdc6 !important;">
-                            <span class="panel-title">Lost Passports Table
+                            <span class="panel-title">Lost Passports Table</span>
                                 <!-- Button trigger modal for adding new Category -->
 
                         </div>
@@ -120,6 +114,8 @@ Lost Passport
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
+                                        <th>New MRP Passport Number</th>
+                                        <th>Bio Enrollment ID</th>
                                         <th>Civil ID</th>
                                         <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
@@ -135,6 +131,8 @@ Lost Passport
                                             <td>{{ $loop->iteration }}</td>
                                             <td>{{ $lostPassport->name }}</td>
                                             <td>{{ $lostPassport->passport_number }}</td>
+                                            <td>{{ $lostPassport->new_mrp_passport_no }}</td>
+                                            <td>{{ $lostPassport->bio_enrollment_id }}</td>
                                             <td>{{ $lostPassport->civil_id }}</td>
                                             <td>{{ $lostPassport->kuwait_phone }}</td>
                                             <td>{{ $lostPassport->passport_type_fees_total }}</td>
