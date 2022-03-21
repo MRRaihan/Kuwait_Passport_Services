@@ -73,6 +73,8 @@ Lost Passport
                                     <div class="col-sm-9">
                                         <input type="text" class="form-control" id="new_mrp_passport_no" placeholder="Search by New MRP Passport No." name="new_mrp_passport_no">
                                     </div>
+                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                                </form>
                             </div>
                             <div class="col-md-4">
                                 <form class="form-group" method="POST" action="{{ route('dataEnterer.lostPassport.search_by_bio_enrollment_id') }}">
