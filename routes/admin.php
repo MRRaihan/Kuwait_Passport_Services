@@ -96,8 +96,9 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::get('lostPassport/agreement/{id}', [LostPassportController::class, 'agreement'])->name('lostPassport.agreement');
 
     Route::post('lostPassport/search_by_civil', [LostPassportController::class, 'search_by_civil'])->name('lostPassport.search_by_civil');
-    Route::post('lostPassport/search_by_mrp', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
-    Route::post('lostPassport/search_by_profession', [LostPassportController::class, 'search_by_profession'])->name('lostPassport.search_by_profession');
+    Route::post('lostPassport/search_by_passport_number', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
+    Route::post('lostPassport/search_by_new_mrp_passport_no', [LostPassportController::class, 'search_by_new_mrp_passport_no'])->name('lostPassport.search_by_new_mrp_passport_no');
+    Route::post('lostPassport/search_by_bio_enrollment_id', [LostPassportController::class, 'search_by_bio_enrollment_id'])->name('lostPassport.search_by_bio_enrollment_id');;
 
     // New Born Baby Passport
     Route::resource('newBornBabyPassport', NewBornBabyPassportController::class);
@@ -110,8 +111,9 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::get('newBornBabyPassport/agreement/{id}', [NewBornBabyPassportController::class, 'agreement'])->name('newBornBabyPassport.agreement');
 
     Route::post('newBornBabyPassport/search_by_civil', [NewBornBabyPassportController::class, 'search_by_civil'])->name('newBornBabyPassport.search_by_civil');
-    Route::post('newBornBabyPassport/search_by_mrp', [NewBornBabyPassportController::class, 'search_by_passport_number'])->name('newBornBabyPassport.search_by_passport_number');
-    Route::post('newBornBabyPassport/search_by_profession', [NewBornBabyPassportController::class, 'search_by_profession'])->name('newBornBabyPassport.search_by_profession');
+    Route::post('newBornBabyPassport/search_by_passport_number', [NewBornBabyPassportController::class, 'search_by_passport_number'])->name('newBornBabyPassport.search_by_passport_number');
+    Route::post('newBornBabyPassport/search_by_new_mrp_passport_no', [NewBornBabyPassportController::class, 'search_by_new_mrp_passport_no'])->name('newBornBabyPassport.search_by_new_mrp_passport_no');
+    Route::post('newBornBabyPassport/search_by_bio_enrollment_id', [NewBornBabyPassportController::class, 'search_by_bio_enrollment_id'])->name('newBornBabyPassport.search_by_bio_enrollment_id');
 
     // manual passport
     Route::resource('manualPassport', ManualPassportController::class);
@@ -122,9 +124,11 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('manualPassport/restore/{id}', [ManualPassportController::class, 'restore'])->name('manualPassport.restore');
     Route::post('manualPassport/permanentDelete/{id}', [ManualPassportController::class, 'permanentDelete'])->name('manualPassport.permanentDelete');
 
-    Route::post('manual-passport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
-    Route::post('manual-passport/search_by_mrp', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
-    Route::post('manual-passport/search_by_profession', [ManualPassportController::class, 'search_by_profession'])->name('manualPassport.search_by_profession');
+    Route::post('manualPassport/search_by_civil', [ManualPassportController::class, 'search_by_civil'])->name('manualPassport.search_by_civil');
+    Route::post('manualPassport/search_by_passport_number', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
+    Route::post('manualPassport/search_by_new_mrp_passport_no', [ManualPassportController::class, 'search_by_new_mrp_passport_no'])->name('manualPassport.search_by_new_mrp_passport_no');
+    Route::post('manualPassport/search_by_bio_enrollment_id', [ManualPassportController::class, 'search_by_bio_enrollment_id'])->name('manualPassport.search_by_bio_enrollment_id');
+
 
 
     // renew Manual
@@ -141,9 +145,10 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::post('renewPassport/restore/{id}', [RenewPassportController::class, 'restore'])->name('renewPassport.restore');
     Route::post('renewPassport/permanentDelete/{id}', [RenewPassportController::class, 'permanentDelete'])->name('renewPassport.permanentDelete');
 
-    Route::post('renew-passport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
-    Route::post('renew-passport/search_by_mrp', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
-    Route::post('renew-passport/search_by_profession', [RenewPassportController::class, 'search_by_profession'])->name('renewPassport.search_by_profession');
+    Route::post('renewPassport/search_by_civil', [RenewPassportController::class, 'search_by_civil'])->name('renewPassport.search_by_civil');
+    Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
+    Route::post('renewPassport/search_by_new_mrp_passport_no', [RenewPassportController::class, 'search_by_new_mrp_passport_no'])->name('renewPassport.search_by_new_mrp_passport_no');
+    Route::post('renewPassport/search_by_bio_enrollment_id', [RenewPassportController::class, 'search_by_bio_enrollment_id'])->name('renewPassport.search_by_bio_enrollment_id');
 
     //Recycle Bin
     Route::group(['prefix' => 'recycle-bin/', 'as' => 'recycleBin.'], function () {

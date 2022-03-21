@@ -60,8 +60,10 @@
                                     <tr>
                                         <th>SL</th>
                                         <th>Name</th>
-                                        <th>MRP Passport Number</th>
                                         <th>Civil ID</th>
+                                        <th>MRP Passport Number</th>
+                                        <th>New MRP Passport Number</th>
+                                        <th>Bio Enrollment ID</th>
                                         <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>
@@ -75,8 +77,10 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $lostPassport->name }} {{ $lostPassport->last_name }}</td>
-                                            <td>{{ $lostPassport->passport_number }}</td>
                                             <td>{{ $lostPassport->civil_id }}</td>
+                                            <td>{{ $lostPassport->passport_number }}</td>
+                                            <td>{{ $lostPassport->new_mrp_passport_no }}</td>
+                                            <td>{{ $lostPassport->bio_enrollment_id }}</td>
                                             <td>{{ $lostPassport->bd_phone }}</td>
                                             <td>{{ $lostPassport->ems }}</td>
                                             <td>{{ $lostPassport->created_at ? $lostPassport->created_at->diffForHumans() : '' }}
