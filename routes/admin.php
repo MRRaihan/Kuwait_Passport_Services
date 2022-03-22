@@ -183,12 +183,10 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     //passport option receive from embassy
 
     Route::get('passport-options/receive-from-embassy', [PassportOptionsController::class, 'receiveFromEmbassy'])->name('passportOption.receiveFromEmbassy');
-    Route::post('passport-options/receive-from-embassy/store', [PassportOptionsController::class, 'receiveFromEmbassyStore'])->name('passportOption.receiveFromEmbassy.store');
 
     Route::post('passport-options/shift-to-branch/store', [PassportOptionsController::class, 'shfitToBranchStore'])->name('passportOption.shfitToBranchStore');
 
     Route::get('passport-options/receive-from-embassy/{data}', [PassportOptionsController::class, 'searchReceive']);
-    Route::post('passport-options/receive-from-embassy/undo/{option}', [PassportOptionsController::class, 'receiveFromEmbassyUndo'])->name('passportOption.receiveFromEmbassy.undo');
     Route::post('passport-options/receive-from-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class, 'bioEnrollmentIdSave'])->name('passportOption.receiveFromEmbassy.bioEnrollmentId');
     Route::post('passport-options/receive-from-embassy/new-mrp-passport-no/{id}', [PassportOptionsController::class, 'newMrpPassportNoSave'])->name('passportOption.receiveFromEmbassy.newMrpPassportNo');
 

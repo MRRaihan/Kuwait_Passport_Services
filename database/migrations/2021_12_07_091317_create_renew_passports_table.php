@@ -58,7 +58,7 @@ class CreateRenewPassportsTable extends Migration
             $table->boolean('status')->default(1);
             $table->boolean('remarks_by')->nullable();
             $table->boolean('delivery_method')->nullable();
-            $table->boolean('is_received')->default(0);
+
             $table->date('dob')->nullable();
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();

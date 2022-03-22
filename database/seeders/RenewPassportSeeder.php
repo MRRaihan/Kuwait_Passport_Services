@@ -34,7 +34,6 @@ class RenewPassportSeeder extends Seeder
             $renewPassport->delivery_branch = $faker->numberBetween(1, 5);
             // $renewPassport->is_delivered = $faker->numberBetween(0, 1);
             // $renewPassport->is_shifted = $faker->numberBetween(0, 1);
-            // $renewPassport->is_received = $faker->numberBetween(0, 1);
             $renewPassport->r_id = 5;
             $renewPassport->ems = 'EP' . time() . 'Kuwait';
             $renewPassport->entry_person = $faker->numberBetween(17, 21);

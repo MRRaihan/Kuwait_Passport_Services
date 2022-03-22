@@ -136,7 +136,6 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('passport-options/delivery-to-user/store', [PassportOptionsController::class, 'deliveryToUser'])->name('passportOption.deliveryToUser.store');
     Route::post('passport-options/assign-de-for-bio', [PassportOptionsController::class, 'assignDeForBio'])->name('passportOption.assignDeForBio');
     Route::get('passport-options/receive-from-embassy/{data}', [PassportOptionsController::class, 'searchReceive']);
-    Route::post('passport-options/receive-from-admin/undo/{option}', [PassportOptionsController::class, 'receiveFromAdminUndo'])->name('passportOption.receiveFromAdmin.undo');
 
     Route::post('passport-options/receive-from-embassy/bio-enrollment-id/{id}', [PassportOptionsController::class, 'bioEnrollmentIdSave'])->name('passportOption.receiveFromAdmin.bioEnrollmentId');
     Route::post('passport-options/receive-from-embassy/new-mrp-passport-no/{id}', [PassportOptionsController::class,'newMrpPassportNoSave'])->name('passportOption.receiveFromAdmin.newMrpPassportNo');

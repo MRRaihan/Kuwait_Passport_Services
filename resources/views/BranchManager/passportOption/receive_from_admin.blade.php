@@ -205,48 +205,6 @@
                     }
                 }
         }
-
-        function undo(id) {
-
-            // alert(objButton.value)
-            Swal.fire({
-                title: 'Are you sure?',
-                text: "You won't be able to undo this!",
-                icon: 'warning',
-                showCancelButton: true,
-                confirmButtonColor: '#3085d6',
-                cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, Undo !'
-            }).then((result) => {
-                if (result.isConfirmed) {
-
-                    $.ajax({
-                        method: 'POST',
-                        url: '{{ route('branchManager.passportOption.receiveFromAdmin.undo',$option) }}'+'&'+id,
-                        headers: {
-                            'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                        },
-                        success: function(data) {
-                            if (data.type == 'success') {
-                                Swal.fire(
-                                    'Undo !', 'This Passport Status has been Undo. ' + data.message, 'success'
-                                )
-                                setTimeout(function() {
-                                    location.reload();
-                                }, 800); //
-                            } else {
-                                Swal.fire(
-                                    'Wrong !',
-                                    'Something going wrong. ' + data.message,
-                                    'warning'
-                                )
-                            }
-                        },
-                    })
-                }
-            })
-        }
-
         $('.bio_enrollment_id').keypress(function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();

@@ -51,7 +51,7 @@ class CreateManualPassportsTable extends Migration
 
             $table->boolean('is_delivered')->default(0);
             $table->boolean('is_shifted')->default(0);
-            $table->boolean('is_received')->default(0);
+
 
             $table->string('is_shifted_to_branch_manager')->nullable();
 
