@@ -58,7 +58,6 @@ class RenewPassportExport implements
             'embassy_status',
             'branch_status',
             'is_delivered',
-            'is_shifted',
 
             'is_manual',
             'is_shifted_to_branch_manager',

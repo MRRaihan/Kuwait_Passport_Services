@@ -33,7 +33,6 @@ class ManualPassportSeeder extends Seeder
 
             $manualPassport->delivery_branch = $faker->numberBetween(1, 4);
             // $manualPassport->is_delivered = $faker->numberBetween(0, 1);
-            // $manualPassport->is_shifted = $faker->numberBetween(0, 1);
             $manualPassport->r_id = 5;
             $manualPassport->ems = 'MP' . time() . 'Kuwait';
             $manualPassport->entry_person = $faker->numberBetween(17, 21);

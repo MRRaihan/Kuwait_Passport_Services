@@ -54,7 +54,6 @@ class CreateRenewPassportsTable extends Migration
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
             $table->boolean('is_delivered')->default(0);
-            $table->boolean('is_shifted')->default(0);
             $table->boolean('status')->default(1);
             $table->boolean('remarks_by')->nullable();
             $table->boolean('delivery_method')->nullable();
@@ -63,6 +62,10 @@ class CreateRenewPassportsTable extends Migration
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();
             $table->timestamp('delivery_date')->nullable();
+
+            // doesn't used status start
+            $table->boolean('is_shifted')->default(0);
+            // doesn't used status end
             $table->timestamps();
             $table->softDeletes();
         });

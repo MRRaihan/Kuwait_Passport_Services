@@ -57,7 +57,7 @@ class RenewPassportImport implements
             'embassy_status' => $row['embassy_status'],
             'branch_status' => $row['branch_status'],
             'is_delivered' => $row['is_delivered'],
-            'is_shifted' => $row['is_shifted'],
+
 
             'is_manual' => $row['is_manual'],
             'is_shifted_to_branch_manager' => $row['is_shifted_to_branch_manager'],
@@ -84,7 +84,7 @@ class RenewPassportImport implements
             'embassy_status'  => ['required'],
             'branch_status' => ['required'],
             'is_delivered' => ['required'],
-            'is_shifted' => ['required'],
+
         ];
     }
 }

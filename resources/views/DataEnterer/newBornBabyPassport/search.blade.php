@@ -56,8 +56,6 @@ New Born Baby Passport
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
-
-                                    <th>Status</th>
                                     <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
@@ -73,13 +71,6 @@ New Born Baby Passport
                                     <td>{{ $newBornBabyPassport->bd_phone }}</td>
                                     <td>{{ $newBornBabyPassport->ems }}</td>
                                     <td>{{ $newBornBabyPassport->created_at ? $newBornBabyPassport->created_at->diffForHumans() : ''}}</td>
-                                    <td>
-                                        @if($newBornBabyPassport->is_shifted == 1)
-                                            <span class="badge badge-pill badge-success">Already Shifted</span>
-                                        @else
-                                            <span class="badge badge-pill badge-danger">Pending Shift</span>
-                                        @endif
-                                    </td>
                                     <td style="width: 150px">
                                         <a href="{{ route('dataEnterer.newBornBabyPassport.receipt',$newBornBabyPassport->id) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
                                         <a href="{{ route('dataEnterer.newBornBabyPassport.sticker',$newBornBabyPassport->id) }}" target="_blank" class="btn btn-warning"><i class="fa fa-print"></i>Sticker</a>

@@ -39,7 +39,6 @@ class NewBornBabyPassportSeeder extends Seeder
 
             $newBornBabyPassport->delivery_branch = $faker->numberBetween(1, 4);
             $newBornBabyPassport->is_delivered = $faker->numberBetween(0, 1);
-            $newBornBabyPassport->is_shifted = $faker->numberBetween(0, 1);
             $newBornBabyPassport->r_id = 5;
             $newBornBabyPassport->entry_person = $faker->numberBetween(17, 21);
             $newBornBabyPassport->remarks = $faker->numberBetween(100, 900);

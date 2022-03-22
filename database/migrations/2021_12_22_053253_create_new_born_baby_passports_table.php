@@ -44,14 +44,8 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
 
-
-
             $table->boolean('is_delivered')->default(0);
-            $table->boolean('is_shifted')->default(0);
-
-
             $table->string('is_shifted_to_branch_manager')->nullable();
-
             $table->string('passport_type_title')->nullable();
             $table->string('passport_type_government_fee')->nullable();
             $table->string('passport_type_versatilo_fee')->nullable();
@@ -71,6 +65,10 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('model_name')->default('New Born Baby Passport');
 
             $table->boolean('delivery_method')->nullable();
+
+            // doesn't used status start
+            $table->boolean('is_shifted')->default(0);
+            // doesn't used status end
 
             $table->timestamps();
             $table->softDeletes();

@@ -32,7 +32,7 @@ class NewBornBabyPassport extends Model
     //     'date',
     //     'delivery_branch',
     //     'is_delivered',
-    //     'is_shifted',
+
 
     //     'r_id',
     //     'entry_person',

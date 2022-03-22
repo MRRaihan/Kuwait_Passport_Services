@@ -58,7 +58,6 @@ class LostPassportExport implements
             'embassy_status',
             'branch_status',
             'is_delivered',
-            'is_shifted',
 
             'is_shifted_to_branch_manager',
             'passport_type_id',

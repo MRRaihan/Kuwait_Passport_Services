@@ -65,8 +65,6 @@
                                         <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>
-
-                                        <th>Status</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                 </thead>
@@ -82,13 +80,6 @@
                                             <td>{{ $renewPassport->bd_phone }}</td>
                                             <td>{{ $renewPassport->ems }}</td>
                                             <td>{{ $renewPassport->created_at->diffForHumans() }}</td>
-                                            <td>
-                                                @if ($renewPassport->is_shifted == 1)
-                                                    <span class="badge badge-pill badge-success">Already Shifted</span>
-                                                @else
-                                                    <span class="badge badge-pill badge-danger">Pending Shift</span>
-                                                @endif
-                                            </td>
                                             <td style="width: 150px">
 
                                                 <a href="{{ route('admin.renewPassport.receipt', $renewPassport->id) }}"

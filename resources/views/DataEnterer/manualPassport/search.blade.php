@@ -60,8 +60,6 @@ Manual Passport Table
                                     <th>Phone</th>
                                     <th>EMS</th>
                                     <th>Time</th>
-
-                                    <th>Status</th>
                                     <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
@@ -77,13 +75,6 @@ Manual Passport Table
                                     <td>{{ $manualPassport->bd_phone }}</td>
                                     <td>{{ $manualPassport->ems }}</td>
                                     <td>{{ $manualPassport->created_at->diffForHumans() }}</td>
-                                    <td>
-                                        @if($manualPassport->is_shifted == 1)
-                                            <span class="badge badge-pill badge-success">Already Shifted</span>
-                                        @else
-                                            <span class="badge badge-pill badge-danger">Pending Shift</span>
-                                        @endif
-                                    </td>
                                     <td style="width: 150px">
 
                                         <a href="{{ route('dataEnterer.manualPassport.receipt',$manualPassport->id) }}" target="_blank" class="btn btn-success"><i class="fa fa-print"></i>Receipt</a>
