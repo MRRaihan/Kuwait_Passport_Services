@@ -41,7 +41,6 @@ class LostPassportSeeder extends Seeder
             $lostPassport->delivery_branch = $faker->numberBetween(1, 4);
             // $lostPassport->is_delivered = $faker->numberBetween(0, 1);
             // $lostPassport->is_shifted = $faker->numberBetween(0, 1);
-            // $lostPassport->is_received = $faker->numberBetween(0, 1);
             $lostPassport->r_id = 5;
             $lostPassport->entry_person = $faker->numberBetween(17, 21);
             $lostPassport->remarks = $faker->numberBetween(100, 900);
