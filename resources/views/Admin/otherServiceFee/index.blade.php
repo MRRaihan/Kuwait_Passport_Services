@@ -627,7 +627,7 @@
                 '</div>' +
                 '</td>' +
                 '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemExpress($(this))"><i class="fa fa-times"></i></a>' +
                 '</td>' +
                 '</tr>'
             );
@@ -698,7 +698,7 @@
                 '</div>' +
                 '</td>' +
                 '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemComplaints($(this))"><i class="fa fa-times"></i></a>' +
                 '</td>' +
                 '</tr>'
             );
@@ -707,16 +707,16 @@
 
         function maintainSerialManualComplaints() {
             var count = 0;
-            $.each($('#express_service_tab tr'), function(index, val) {
+            $.each($('#complaints_service_tab tr'), function(index, val) {
                 count++;
                 $(this).find("td:first").html(count);
             });
-            $('#express_service_tab').find('tr:first').find('td:last').html('');
+            $('#complaints_service_tab').find('tr:first').find('td:last').html('');
         }
 
         function removeItemComplaints(element) {
             var count = 0;
-            $.each($('#express_service_tab tr'), function(index, val) {
+            $.each($('#complaints_service_tab tr'), function(index, val) {
                 count++;
             });
 
@@ -725,7 +725,6 @@
                 maintainSerialManualComplaints()
             }
         }
-
 
         //Govement Service
         function newGovementService() {
@@ -770,7 +769,7 @@
                 '</div>' +
                 '</td>' +
                 '<td>' +
-                '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
+                '<a class="btn btn-danger text-white" onclick="removeItemGovementService($(this))"><i class="fa fa-times"></i></a>' +
                 '</td>' +
                 '</tr>'
             );
@@ -786,7 +785,7 @@
             $('#govement_service_tab').find('tr:first').find('td:last').html('');
         }
 
-        function removeItemRenew(element) {
+        function removeItemGovementService(element) {
             var count = 0;
             $.each($('#govement_service_tab tr'), function(index, val) {
                 count++;
