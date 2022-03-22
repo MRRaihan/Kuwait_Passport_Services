@@ -69,7 +69,7 @@
                                                 <label for="passportFee"> Passport Type </label>
                                                 <select class="form-control" id="passportFee" name="passport_type_id">
                                                     <option disabled selected>-- Select Type --</option>
-                                                    @foreach ($menualPassportFees as $passportFee)
+                                                    @foreach ($manualPassportFees as $passportFee)
                                                         <option value="{{ $passportFee->id }}" @if ($renewPassport->passport_type_id == $passportFee->id) selected @endif>
                                                             {{ $passportFee->title }} (
                                                             govt:{{ $passportFee->government_fee }} | Ver fee:

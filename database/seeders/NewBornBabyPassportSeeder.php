@@ -33,7 +33,7 @@ class NewBornBabyPassportSeeder extends Seeder
             $newBornBabyPassport->kuwait_phone = '01777382007';
             $newBornBabyPassport->special_skill = null;
             $newBornBabyPassport->residence = $faker->country();
-            $newBornBabyPassport->delivery_date = Carbon::now()->addDay(-5);
+            $newBornBabyPassport->delivery_date = Carbon::now()->addDay(5);
             $newBornBabyPassport->profession_id = 1;
             $newBornBabyPassport->salary = $faker->numberBetween(1, 4);
 

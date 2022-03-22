@@ -31,7 +31,7 @@ class OtherServiceSeeder extends Seeder
             $lostPassport->bd_phone = '01777382007';
             $lostPassport->special_skill = null;
             $lostPassport->residence = $faker->country();
-            $lostPassport->delivery_date = Carbon::now()->addDay(-5);
+            $lostPassport->delivery_date = Carbon::now()->addDay(5);
             $lostPassport->profession_id = 1;
             $lostPassport->salary = $faker->numberBetween(1, 4);
 

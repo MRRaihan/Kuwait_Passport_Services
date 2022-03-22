@@ -71,7 +71,7 @@
                                                 <label for="passport_type_id"> Passport Type <span style="color: red;">*</span> </label>
                                                 <select class="form-control" id="passport_type_id" name="passport_type_id">
                                                     <option disabled selected>-- Select Type --</option>
-                                                    @foreach ($menualPassportFees as $passportFee)
+                                                    @foreach ($manualPassportFees as $passportFee)
                                                         <option value="{{ $passportFee->id }}" @if ($manualPassport->passport_type_id == $passportFee->id) selected @endif>
                                                             {{ $passportFee->title }}</option>
                                                     @endforeach

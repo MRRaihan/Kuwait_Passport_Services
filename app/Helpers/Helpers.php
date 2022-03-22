@@ -229,7 +229,7 @@ if (!function_exists('random_code')) {
     /**
      * manual passport delivery day count
      */
-    function get_menual_passport_dalivery()
+    function get_manual_passport_dalivery()
     {
 
         $startDate = Carbon::now();
@@ -263,7 +263,16 @@ if (!function_exists('random_code')) {
      */
     function get_threeMonth_tenDays()
     {
-        return Carbon::now()->addMonths(3)->addDays(10);
+        $endDate = Carbon::now()->addMonths(3)->addDays(5);
+
+        if ($endDate->dayOfWeek == Carbon::FRIDAY) {
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(7);
+        }elseif ($endDate->dayOfWeek == Carbon::SATURDAY) {
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(6);
+        }else{
+            $deliveryDate = $endDate;
+        }
+        return $deliveryDate;
     }
     function if_have_passport_created_by_me($dataEnterer)
     {

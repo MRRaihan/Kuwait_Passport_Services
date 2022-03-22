@@ -114,7 +114,7 @@ class FrontendController extends Controller
         if ($request->passport_type == 1) {
             $passport = new ManualPassport();
             $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id', 'post_office']));
-            $passport->delivery_date = get_threeMonth_tenDays();
+            $passport->delivery_date = get_manual_passport_dalivery();
             $passport->post_office = $request->post_office;
             $passport->ems = 'MP' . time() . 'Kuwait';
         }
@@ -131,6 +131,7 @@ class FrontendController extends Controller
         if ($request->passport_type == 3) {
             $passport = new NewBornBabyPassport();
             $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
+            $passport->delivery_date = get_threeMonth_tenDays();
             $passport->ems = 'EP' . time() . 'Kuwait';
         }
 

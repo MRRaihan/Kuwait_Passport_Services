@@ -27,7 +27,7 @@ class ManualPassportSeeder extends Seeder
             // $manualPassport->profession_file = $faker->text(10);
             $manualPassport->kuwait_phone = '01777382007';
             $manualPassport->bd_phone = '01777382007';
-            $manualPassport->delivery_date = Carbon::now()->addDay(-5);
+            $manualPassport->delivery_date = Carbon::now()->addDay(5);
             $manualPassport->profession_id = 2;
             $manualPassport->salary = $faker->numberBetween(1, 4);
 

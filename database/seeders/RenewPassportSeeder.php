@@ -27,7 +27,7 @@ class RenewPassportSeeder extends Seeder
             // $renewPassport->profession_file = $faker->text(10);
             $renewPassport->kuwait_phone = '01777382007';
             $renewPassport->bd_phone = '01777382117';
-            $renewPassport->delivery_date = Carbon::now()->addDay(-5);
+            $renewPassport->delivery_date = Carbon::now()->addDay(5);
             $renewPassport->profession_id = 1;
             $renewPassport->salary = $faker->numberBetween(1, 4);
 

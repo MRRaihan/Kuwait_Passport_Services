@@ -105,7 +105,7 @@ class CorporateServiceController extends Controller
         if ($request->passport_type == 1) {
             $passport = new ManualPassport();
             $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
-            $passport->delivery_date = get_threeMonth_tenDays();
+            $passport->delivery_date = get_manual_passport_dalivery();
             $passport->ems = 'MP' . time() . 'Kuwait';
         }
 
@@ -121,6 +121,7 @@ class CorporateServiceController extends Controller
         if ($request->passport_type == 3) {
             $passport = new NewBornBabyPassport();
             $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type','delivery_id']));
+            $passport->delivery_date = get_threeMonth_tenDays();
             $passport->ems = 'EP' . time() . 'Kuwait';
         }
 

@@ -91,7 +91,7 @@ class RenewManualPassportController extends Controller
         $manualPassport->kuwait_phone = $request->kuwait_phone;
         $manualPassport->mailing_address = $request->mailing_address;
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->delivery_date = get_menual_passport_dalivery();
+        $manualPassport->delivery_date = get_manual_passport_dalivery();
         $manualPassport->entry_person = Auth::user()->id;
         $manualPassport->user_creator_id = Auth::user()->id;
         $manualPassport->branch_id = Auth::user()->branch_id;
@@ -163,8 +163,8 @@ class RenewManualPassportController extends Controller
 
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $renewPassport = RenewPassport::findOrfail($id);
-        $menualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
-        return view('DataEnterer.renewManual.edit', compact('renewPassport', 'menualPassportFees', 'professions', 'salaries'));
+        $manualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
+        return view('DataEnterer.renewManual.edit', compact('renewPassport', 'manualPassportFees', 'professions', 'salaries'));
     }
 
     /**
