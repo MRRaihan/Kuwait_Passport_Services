@@ -106,7 +106,7 @@ class FrontendController extends Controller
         if ($request->passport_type == 0) {
             $passport = new RenewPassport();
             $passport->fill($request->except(['profession_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
-            $passport->delivery_date = get_threeMonth_tenDays();
+            $passport->delivery_date = get_three_month_five_days();
             $passport->ems = 'RP' . time() . 'Kuwait';
         }
 
@@ -123,7 +123,7 @@ class FrontendController extends Controller
         if ($request->passport_type == 2) {
             $passport = new LostPassport();
             $passport->fill($request->except(['gd_report_kuwait', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
-            $passport->delivery_date = get_threeMonth_tenDays();
+            $passport->delivery_date = get_three_month_five_days();
             $passport->ems = 'LP' . time() . 'Kuwait';
         }
 
@@ -131,7 +131,7 @@ class FrontendController extends Controller
         if ($request->passport_type == 3) {
             $passport = new NewBornBabyPassport();
             $passport->fill($request->except(['dob_file', 'application_form', 'passport_photocopy', 'passport_type', 'delivery_id']));
-            $passport->delivery_date = get_threeMonth_tenDays();
+            $passport->delivery_date = get_three_month_five_days();
             $passport->ems = 'EP' . time() . 'Kuwait';
         }
 

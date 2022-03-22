@@ -91,7 +91,7 @@ class RenewPassportController extends Controller
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
 
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->shift_to_admin = 1;
@@ -226,7 +226,7 @@ class RenewPassportController extends Controller
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
 
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->passport_type_title = $type_title;
@@ -397,7 +397,7 @@ class RenewPassportController extends Controller
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
 
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->shift_to_admin = 1;
