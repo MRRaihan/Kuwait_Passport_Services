@@ -95,9 +95,7 @@
                         @if (isset($passport_fees[0]))
                             @foreach ($passport_fees as $fee)
                               <option value="{{ $fee->id }}" @if ($passport->passport_type_id == $fee->id) selected @endif>
-                              {{ $fee->title }} (
-                              govt: {{ $fee->government_fee }}| Ver fee:
-                              {{ $fee->versatilo_fee }})</option>
+                              {{ $fee->title }}</option>
                             @endforeach
                         @endif
                     </select>
@@ -365,15 +363,6 @@
                         @endif
                     </div>
                   @endif
-
-                  <div class="my-4">
-                    <label for="govt_passport_id" class="form-label">Govt Passport ID</label>
-                    <input type="text" class="form-control select-forms" name="govt_passport_id" id="govt_passport_id" value="{{ old('govt_passport_id',$passport->govt_passport_id) }}"
-                      placeholder="Enter Your Special Skill" />
-                      @if($errors->has('govt_passport_id'))
-                        <span class="text-danger">{{ $errors->first('govt_passport_id') }}</span>
-                      @endif
-                  </div>
 
                   @if ($type == 1)
                     <div class="my-4">

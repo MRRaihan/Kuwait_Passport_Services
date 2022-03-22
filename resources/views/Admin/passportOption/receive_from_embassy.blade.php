@@ -155,7 +155,7 @@ Passport Options
                                             @endif
                                             @if($passport->embassy_status == 3)
                                                 <span class="badge badge-pill badge-success">Already Recieved From Embassy</span>
-                                               {{-- <a onclick="undo('{{ $passport->id }}')" style="cursor: pointer;" ><span class="badge badge-pill badge-warning"><i class="fa fa-undo"></i>&nbsp;Undo</span></a> --}}
+
                                             @else
                                                 <span class="badge badge-pill badge-danger" >Pending Recieved</span>
                                             @endif
@@ -192,47 +192,6 @@ Passport Options
                     elements[i].checked = this.checked;
                 }
             }
-    }
-
-    function undo(id) {
-
-        // alert(objButton.value)
-        Swal.fire({
-            title: 'Are you sure?',
-             text: "You won't be able to undo this!",
-             icon: 'warning',
-             showCancelButton: true,
-             confirmButtonColor: '#3085d6',
-             cancelButtonColor: '#d33',
-             confirmButtonText: 'Yes, Undo !'
-        }).then((result) => {
-            if (result.isConfirmed) {
-
-                $.ajax({
-                    method: 'POST',
-                    url: '{{ route('admin.passportOption.receiveFromEmbassy.undo',$option) }}'+'&'+id,
-                    headers: {
-                        'X-CSRF-TOKEN': "{{ csrf_token() }}",
-                    },
-                    success: function(data) {
-                        if (data.type == 'success') {
-                            Swal.fire(
-                                'Undo !', 'This Passport Status has been Undo. ' + data.message, 'success'
-                            )
-                            setTimeout(function() {
-                                location.reload();
-                            }, 800); //
-                        } else {
-                            Swal.fire(
-                                'Wrong !',
-                                'Something going wrong. ' + data.message,
-                                'warning'
-                            )
-                        }
-                    },
-                })
-            }
-        })
     }
 
     $('.bio_enrollment_id').keypress(function(e) {

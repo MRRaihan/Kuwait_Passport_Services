@@ -229,41 +229,35 @@ if (!function_exists('random_code')) {
     /**
      * manual passport delivery day count
      */
-    function get_menual_passport_dalivery()
+    function get_manual_passport_dalivery()
     {
+        $endDate = Carbon::now()->addDays(3);
 
-        $startDate = Carbon::now();
-        $endDate = Carbon::now()->addDays(5);
-        $d1 = strtotime($startDate);
-        $d2 = strtotime($endDate);
-        $totalDiffDays = abs($d1 - $d2) / 60 / 60 / 24;
-
-        $newArray = [];
-        for ($i = 0; $i <= $totalDiffDays; $i++) {
-
-            $d = $d1 + $i * (3600 * 24);
-            $arrDate = Carbon::createFromDate(date("Y-m-d", $d));
-
-            if ($arrDate->dayOfWeek == Carbon::FRIDAY) {
-                $newArray[$i] = date("Y-m-d", $d);
-            }
-            if ($arrDate->dayOfWeek == Carbon::SATURDAY) {
-                $newArray[$i] = date("Y-m-d", $d);
-            }
+        if ($endDate->dayOfWeek == Carbon::FRIDAY) {
+            $deliveryDate = Carbon::now()->addDays(5);
+        }elseif ($endDate->dayOfWeek == Carbon::SATURDAY) {
+            $deliveryDate = Carbon::now()->addDays(4);
+        }else{
+            $deliveryDate = $endDate;
         }
-
-        $addDate = 3 + count($newArray);
-        $deliveryDate = Carbon::now()->addDays($addDate);
-
         return $deliveryDate;
     }
 
     /**
      * three month and 10 days
      */
-    function get_threeMonth_tenDays()
+    function get_three_month_five_days()
     {
-        return Carbon::now()->addMonths(3)->addDays(10);
+        $endDate = Carbon::now()->addMonths(3)->addDays(6);
+
+        if ($endDate->dayOfWeek == Carbon::FRIDAY) {
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(8);
+        }elseif ($endDate->dayOfWeek == Carbon::SATURDAY) {
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(7);
+        }else{
+            $deliveryDate = $endDate;
+        }
+        return $deliveryDate;
     }
     function if_have_passport_created_by_me($dataEnterer)
     {

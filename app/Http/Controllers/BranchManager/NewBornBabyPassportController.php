@@ -83,7 +83,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
-        $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
+        $newBornBabyPassport->delivery_date = get_three_month_five_days();
         $newBornBabyPassport->dob = $request->dob;
         $newBornBabyPassport->dob_id = $request->dob_id;
         $newBornBabyPassport->branch_id = Auth::user()->branch_id;
@@ -219,7 +219,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
-        $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
+        $newBornBabyPassport->delivery_date = get_three_month_five_days();
         $newBornBabyPassport->dob = $request->dob;
         $newBornBabyPassport->dob_id = $request->dob_id;
 
@@ -325,7 +325,7 @@ class NewBornBabyPassportController extends Controller
         $newBornBabyPassport->passport_number = $request->passport_number;
         $newBornBabyPassport->kuwait_phone = $request->kuwait_phone;
         $newBornBabyPassport->bd_phone = $request->bd_phone;
-        $newBornBabyPassport->delivery_date = get_threeMonth_tenDays();
+        $newBornBabyPassport->delivery_date = get_three_month_five_days();
         $newBornBabyPassport->dob = $request->dob;
         $newBornBabyPassport->dob_id = $request->dob_id;
         $newBornBabyPassport->branch_id = Auth::user()->branch_id;

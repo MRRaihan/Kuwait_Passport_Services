@@ -25,7 +25,7 @@ class CreateRenewPassportsTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('civil_id')->nullable();
-            $table->string('govt_passport_id')->nullable();
+
             $table->string('passport_number')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('application_form')->nullable();
@@ -54,15 +54,18 @@ class CreateRenewPassportsTable extends Migration
             $table->boolean('embassy_status')->default(0);
             $table->boolean('branch_status')->default(0);
             $table->boolean('is_delivered')->default(0);
-            $table->boolean('is_shifted')->default(0);
             $table->boolean('status')->default(1);
             $table->boolean('remarks_by')->nullable();
             $table->boolean('delivery_method')->nullable();
-            $table->boolean('is_received')->default(0);
+
             $table->date('dob')->nullable();
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();
             $table->timestamp('delivery_date')->nullable();
+
+            // doesn't used status start
+            $table->boolean('is_shifted')->default(0);
+            // doesn't used status end
             $table->timestamps();
             $table->softDeletes();
         });

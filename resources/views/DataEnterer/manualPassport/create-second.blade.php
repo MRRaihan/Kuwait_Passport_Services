@@ -69,7 +69,7 @@
                                                 <label for="passport_type_id"> Passport Type <span style="color: red;">*</span> </label>
                                                 <select class="form-control" id="passport_type_id" name="passport_type_id">
                                                     <option disabled selected>-- Select Type --</option>
-                                                    @foreach ($menualPassportFees as $passportFee)
+                                                    @foreach ($manualPassportFees as $passportFee)
                                                         <option value="{{ $passportFee->id }}" @if (old('passport_type_id') == $passportFee->id) selected @endif>
                                                             {{ $passportFee->title }}</option>
                                                     @endforeach
@@ -245,15 +245,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport Id </label>
-                                                <input name="govt_passport_id" value='{{ old('govt_passport_id') }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport Id"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                             <div class="form-group">
                                                 <label for="post_office"> Post Office ID </label>
                                                 <input name="post_office" value='{{ old('post_office') }}'

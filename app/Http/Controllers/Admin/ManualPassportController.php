@@ -31,8 +31,8 @@ class ManualPassportController extends Controller
     {
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
-        $menualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
-        return view('Admin.manualPassport.create', compact('professions', 'branchs', 'menualPassportFees'));
+        $manualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
+        return view('Admin.manualPassport.create', compact('professions', 'branchs', 'manualPassportFees'));
     }
 
 
@@ -53,7 +53,7 @@ class ManualPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -84,8 +84,7 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
-        $manualPassport->delivery_date = get_menual_passport_dalivery();
+        $manualPassport->delivery_date = get_manual_passport_dalivery();
 
 
         $manualPassport->shift_to_admin = 1;
@@ -162,9 +161,9 @@ class ManualPassportController extends Controller
     {
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
-        $menualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
+        $manualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
         $manualPassport = ManualPassport::findOrFail($id);
-        return view('Admin.manualPassport.edit', compact('manualPassport', 'professions', 'branchs', 'menualPassportFees'));
+        return view('Admin.manualPassport.edit', compact('manualPassport', 'professions', 'branchs', 'manualPassportFees'));
     }
 
 
@@ -181,7 +180,7 @@ class ManualPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -211,8 +210,7 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
-        $manualPassport->delivery_date = get_menual_passport_dalivery();
+        $manualPassport->delivery_date = get_manual_passport_dalivery();
 
 
         $manualPassport->post_office = $request->post_office;
@@ -259,9 +257,8 @@ class ManualPassportController extends Controller
 
         $manualPassport->save();
 
-        return redirect()->route('admin.manualPassport.index')->with('success', 'Menual passport update successfull');
+        return redirect()->route('admin.manualPassport.index')->with('success', 'Manual passport update successfull');
     }
-
 
     public function destroy($id)
     {
@@ -329,8 +326,8 @@ class ManualPassportController extends Controller
     {
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
-        $menualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
-        return view('Admin.manualPassport.create-second', compact('professions', 'branchs', 'menualPassportFees'));
+        $manualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
+        return view('Admin.manualPassport.create-second', compact('professions', 'branchs', 'manualPassportFees'));
     }
 
 
@@ -351,7 +348,7 @@ class ManualPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -383,8 +380,7 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
-        $manualPassport->delivery_date = get_menual_passport_dalivery();
+        $manualPassport->delivery_date = get_manual_passport_dalivery();
 
 
 

@@ -70,12 +70,11 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         $lostPassport->shift_to_admin = 1;
-        $lostPassport->delivery_date = get_threeMonth_tenDays();
+        $lostPassport->delivery_date = get_three_month_five_days();
         $lostPassport->delivery_branch = $request->delivery_branch;
         $lostPassport->user_creator_id = Auth::user()->id;
         $lostPassport->entry_person = Auth::user()->id;
@@ -190,12 +189,12 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
+
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         $lostPassport->shift_to_admin = 1;
-        $lostPassport->delivery_date = get_threeMonth_tenDays();
+        $lostPassport->delivery_date = get_three_month_five_days();
         $lostPassport->delivery_branch = $request->delivery_branch;
         $lostPassport->user_creator_id = Auth::user()->id;
         $lostPassport->entry_person = Auth::user()->id;
@@ -357,12 +356,12 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
+
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
         $lostPassport->shift_to_admin = 1;
-        $lostPassport->delivery_date = get_threeMonth_tenDays();
+        $lostPassport->delivery_date = get_three_month_five_days();
         $lostPassport->delivery_branch = $request->delivery_branch;
         $lostPassport->user_creator_id = Auth::user()->id;
         $lostPassport->entry_person = Auth::user()->id;

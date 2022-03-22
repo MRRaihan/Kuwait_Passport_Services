@@ -16,7 +16,7 @@ class ManualPassport extends Model
     //     'name',
     //     'passport_number',
     //     'civil_id',
-    //     'govt_passport_id',
+
     //     'mailing_address',
     //     'expiry_date',
     //     'extended_to',
@@ -31,8 +31,8 @@ class ManualPassport extends Model
     //     'post_office',
     //     'delivery_branch',
     //     'is_delivered',
-    //     'is_shifted',
-    //     'is_received',
+
+
     //     'r_id',
     //     'entry_person',
     //     'remarks',

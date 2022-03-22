@@ -36,7 +36,7 @@ class RenewPassportImport implements
             'profession_id' => $row['profession_id'],
             'name' => $row['name'],
             'civil_id' => $row['civil_id'],
-            'govt_passport_id' => $row['govt_passport_id'],
+
             'passport_number' => $row['passport_number'],
             'passport_photocopy' => $row['passport_photocopy'],
             'application_form' => $row['application_form'],
@@ -57,8 +57,8 @@ class RenewPassportImport implements
             'embassy_status' => $row['embassy_status'],
             'branch_status' => $row['branch_status'],
             'is_delivered' => $row['is_delivered'],
-            'is_shifted' => $row['is_shifted'],
-            'is_received' => $row['is_received'],
+
+
             'is_manual' => $row['is_manual'],
             'is_shifted_to_branch_manager' => $row['is_shifted_to_branch_manager'],
             'r_id' => $row['r_id'],
@@ -78,14 +78,13 @@ class RenewPassportImport implements
     public function rules(): array
     {
         return [
-            '*.passport_number' => ['required', 'unique:renew_passports'],
+            '*.passport_number' => ['required'],
             '*.ems' => ['unique:renew_passports'],
             '*.shift_to_admin' => ['required'],
             'embassy_status'  => ['required'],
             'branch_status' => ['required'],
             'is_delivered' => ['required'],
-            'is_shifted' => ['required'],
-            'is_received' => ['required']
+
         ];
     }
 }

@@ -26,7 +26,7 @@ class CreateManualPassportsTable extends Migration
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
             $table->string('civil_id')->nullable();
-            $table->string('govt_passport_id')->nullable();
+
             $table->string('mailing_address')->nullable();
             $table->timestamp('expiry_date')->nullable();
             $table->timestamp('extended_to')->nullable();
@@ -50,8 +50,7 @@ class CreateManualPassportsTable extends Migration
 
 
             $table->boolean('is_delivered')->default(0);
-            $table->boolean('is_shifted')->default(0);
-            $table->boolean('is_received')->default(0);
+
 
             $table->string('is_shifted_to_branch_manager')->nullable();
 
@@ -72,6 +71,10 @@ class CreateManualPassportsTable extends Migration
             $table->string('model_name')->default('Manual Passport');
 
             $table->boolean('delivery_method')->nullable();
+
+            // doesn't used status start
+            $table->boolean('is_shifted')->default(0);
+            // doesn't used status end
 
             $table->timestamps();
             $table->softDeletes();

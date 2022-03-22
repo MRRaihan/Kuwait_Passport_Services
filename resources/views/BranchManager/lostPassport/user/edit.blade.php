@@ -47,7 +47,8 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background-color: #01ba9a !important;">
-                            <span class="panel-title">Manual Passport Review
+                            <span class="panel-title">Manual Passport Review</span>
+
                                 <!-- Button trigger modal for adding new Category -->
                                 <div class="col-sm-12">
                                     <a class="btn btn-warning btn-sm"
@@ -266,15 +267,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport ID </label>
-                                                <input name="govt_passport_id" value='{{ $lostPassport->govt_passport_id }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport ID"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                             <div class="form-group">
                                                 <label for="post_office"> Post Office ID </label>
                                                 <input name="post_office" value='{{ $lostPassport->post_office }}'

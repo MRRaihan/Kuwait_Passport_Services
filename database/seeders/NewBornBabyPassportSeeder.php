@@ -23,7 +23,6 @@ class NewBornBabyPassportSeeder extends Seeder
             $newBornBabyPassport->name = $faker->name();
             $newBornBabyPassport->passport_number = $faker->phoneNumber();
             $newBornBabyPassport->civil_id = $faker->phoneNumber();
-            $newBornBabyPassport->govt_passport_id = $faker->phoneNumber();
             $newBornBabyPassport->mailing_address = $faker->email();
             $newBornBabyPassport->permanent_address = $faker->country();
             $newBornBabyPassport->ems = $faker->text(10);
@@ -34,14 +33,12 @@ class NewBornBabyPassportSeeder extends Seeder
             $newBornBabyPassport->kuwait_phone = '01777382007';
             $newBornBabyPassport->special_skill = null;
             $newBornBabyPassport->residence = $faker->country();
-            $newBornBabyPassport->delivery_date = Carbon::now()->addDay(-5);
+            $newBornBabyPassport->delivery_date = Carbon::now()->addDay(5);
             $newBornBabyPassport->profession_id = 1;
             $newBornBabyPassport->salary = $faker->numberBetween(1, 4);
 
             $newBornBabyPassport->delivery_branch = $faker->numberBetween(1, 4);
             $newBornBabyPassport->is_delivered = $faker->numberBetween(0, 1);
-            $newBornBabyPassport->is_shifted = $faker->numberBetween(0, 1);
-            $newBornBabyPassport->is_received = $faker->numberBetween(0, 1);
             $newBornBabyPassport->r_id = 5;
             $newBornBabyPassport->entry_person = $faker->numberBetween(17, 21);
             $newBornBabyPassport->remarks = $faker->numberBetween(100, 900);

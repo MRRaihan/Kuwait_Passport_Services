@@ -35,7 +35,7 @@ class ManualPassportImport implements
             'name' => $row['name'],
             'passport_number' => $row['passport_number'],
             'civil_id' => $row['civil_id'],
-            'govt_passport_id' => $row['govt_passport_id'],
+
             'mailing_address' => $row['mailing_address'],
             'expiry_date' => $row['expiry_date'],
             'extended_to' => $row['extended_to'],
@@ -56,8 +56,8 @@ class ManualPassportImport implements
             'embassy_status' => $row['embassy_status'],
             'branch_status' => $row['branch_status'],
             'is_delivered' => $row['is_delivered'],
-            'is_shifted' => $row['is_shifted'],
-            'is_received' => $row['is_received'],
+
+
             'is_shifted_to_branch_manager' => $row['is_shifted_to_branch_manager'],
             'passport_type_id' => $row['passport_type_id'],
             'passport_type_title' => $row['passport_type_title'],
@@ -85,8 +85,8 @@ class ManualPassportImport implements
             'embassy_status'  => ['required'],
             'branch_status' => ['required'],
             'is_delivered' => ['required'],
-            'is_shifted' => ['required'],
-            'is_received' => ['required']
+
+
         ];
     }
 }

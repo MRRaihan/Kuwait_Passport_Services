@@ -67,8 +67,6 @@ Lost Passport
                                         <th>Phone</th>
                                         <th>EMS</th>
                                         <th>Time</th>
-
-                                        <th>Status</th>
                                         <th style="width: 150px">Action</th>
                                     </tr>
                                 </thead>
@@ -84,13 +82,6 @@ Lost Passport
                                             <td>{{ $lostPassport->bd_phone }}</td>
                                             <td>{{ $lostPassport->ems }}</td>
                                             <td>{{ $lostPassport->created_at ? $lostPassport->created_at->diffForHumans() : '' }}
-                                            </td>
-                                            <td>
-                                                @if ($lostPassport->is_shifted == 1)
-                                                    <span class="badge badge-pill badge-success">Already Shifted</span>
-                                                @else
-                                                    <span class="badge badge-pill badge-danger">Pending Shift</span>
-                                                @endif
                                             </td>
                                             <td style="width: 150px">
                                                 <a href="{{ route('branchManager.lostPassport.receipt', $lostPassport->id) }}"

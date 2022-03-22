@@ -89,9 +89,15 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="profession_file"> Profession File (Only PDF) </label>
+                                                <a id="profession_file" href="#" target="">No File Chosen</a>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="profession_file"> Profession File (Image/PDF) </label>
                                                 <input name="profession_file" class="form-control"
-                                                    type="file" accept = "application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('profession_file').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('profession_file').innerText = 'Selected one'
+                                                    document.getElementById('profession_file').target = '_blank'
+                                                    ">
                                                 @error('profession_file')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
@@ -247,15 +253,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport ID </label>
-                                                <input name="govt_passport_id" value='{{ old('govt_passport_id') }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport ID"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                              {{-- <div class="form-group">
                                                 <label for="delivery_date"> Delivery Date </label>
                                                 <input value='{{ old('delivery_date') }}' class="form-control datepicker"

@@ -57,7 +57,7 @@ class PremierServiceController extends Controller
         ]);
         // dd($request->all());
 
-        //menual and fix fee count start
+        //manual and fix fee count start
         $fixAgency = [];
         $fixVersatilo = [];
         $fixGovt = [];
@@ -82,7 +82,7 @@ class PremierServiceController extends Controller
         $consultants = array_sum(array_merge($request->consultants, $fixConsultants));
         $ohters = array_sum(array_merge($request->ohters, $fixOhters));
         $versatilo = array_sum(array_merge($request->versatilo, $fixVersatilo));
-        //menual and fix fee count end
+        //manual and fix fee count end
 
         $Services = new PremierService();
 

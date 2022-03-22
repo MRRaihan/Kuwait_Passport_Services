@@ -37,7 +37,7 @@ class RenewPassportExport implements
             'profession_id',
             'name',
             'civil_id',
-            'govt_passport_id',
+
             'passport_number',
             'passport_photocopy',
             'application_form',
@@ -58,8 +58,7 @@ class RenewPassportExport implements
             'embassy_status',
             'branch_status',
             'is_delivered',
-            'is_shifted',
-            'is_received',
+
             'is_manual',
             'is_shifted_to_branch_manager',
             'r_id',

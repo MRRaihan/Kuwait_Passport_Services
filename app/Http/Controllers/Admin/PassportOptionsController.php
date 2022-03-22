@@ -158,51 +158,6 @@ class PassportOptionsController extends Controller
         return redirect()->back();
     }
 
-    public function receiveFromEmbassyUndo($data)
-    {
-        $option = explode('&', $data)[0];
-        $id = explode('&', $data)[1];
-
-        if (isset($option) && isset($id)) {
-            get_passport_model_name_by_option($option)::where('id', $id)->update([
-                'is_received' => 0,
-            ]);
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Successfully Undo'
-            ]);
-        } else {
-            return response()->json([
-                'type' => 'error',
-                'message' => 'Something Went Wrong'
-            ]);
-        }
-    }
-
-    public function receiveFromEmbassyStore(Request $request)
-    {
-        $request->validate(
-            [
-                'all_option' => 'required',
-            ],
-            [
-                'all_option.required' => 'Please Select Some Data!!',
-            ]
-        );
-
-        if ($request->passport_option) {
-            get_passport_model_name_by_option($request->passport_option)::whereIn('id', $request->all_option)->update([
-                'is_received' => 1,
-            ]);
-            Session::flash('success', 'Passport Received to Embasssay Successfully!!');
-            return redirect()->back();
-        }
-        Session::flash('error', 'Something Went Wrong');
-        return redirect()->back();
-    }
-
-
-
     public function bioEnrollmentIdSave(Request $request, $id)
     {
         $request->validate([

@@ -94,10 +94,7 @@
                     <option value="">Select a Passport Fees</option>
                       @if (isset($passport_fees[0]))
                           @foreach ($passport_fees as $fee)
-                            <option value="{{ $fee->id }}" @if (old('passport_type_id') == $fee->id) selected @endif>
-                            {{ $fee->title }} (
-                            govt: {{ $fee->government_fee }}| Ver fee:
-                            {{ $fee->versatilo_fee }})</option>
+                            <option value="{{ $fee->id }}" @if (old('passport_type_id') == $fee->id) selected @endif>{{ $fee->title }}</option>
                           @endforeach
                       @endif
                   </select>
@@ -325,24 +322,15 @@
                @endif
 
 
-               @if ($type == 0 || $type == 1)
-                <div class="custom">
-                  <label for="extended_to" class="form-label">Passport Extending To</label>
-                  <input type="date" class="form-control select-forms" name="extended_to" value="{{ old('extended_to') }}" id="extended_to" />
-                    @if($errors->has('extended_to'))
-                      <span class="text-danger">{{ $errors->first('extended_to') }}</span>
-                    @endif
-                </div>
-               @endif
-
-                <div class="my-4">
-                  <label for="govt_passport_id" class="form-label">Govt Passport ID</label>
-                  <input type="text" class="form-control select-forms" name="govt_passport_id" id="govt_passport_id" value="{{ old('govt_passport_id') }}"
-                    placeholder="Enter Your Special Skill" />
-                    @if($errors->has('govt_passport_id'))
-                      <span class="text-danger">{{ $errors->first('govt_passport_id') }}</span>
-                    @endif
-                </div>
+                @if ($type == 0 || $type == 1)
+                        <div class="custom">
+                        <label for="extended_to" class="form-label">Passport Extending To</label>
+                        <input type="date" class="form-control select-forms" name="extended_to" value="{{ old('extended_to') }}" id="extended_to" />
+                            @if($errors->has('extended_to'))
+                            <span class="text-danger">{{ $errors->first('extended_to') }}</span>
+                            @endif
+                        </div>
+                @endif
 
                 @if ($type == 1)
                   <div class="my-4">

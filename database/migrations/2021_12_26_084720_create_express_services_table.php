@@ -17,7 +17,7 @@ class CreateExpressServicesTable extends Migration
             $table->id();
             $table->string('name')->nullable();
             $table->unsignedBigInteger('branch_id')->nullable();
-            $table->unsignedBigInteger('govt_passport_id')->nullable();
+
             $table->string('passport_number')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('mailing_address')->nullable();

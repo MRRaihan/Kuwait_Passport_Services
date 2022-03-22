@@ -15,6 +15,7 @@ $p_type = $newBornBabyPassport->ems;
     <b class="bar_text"> {{ $p_type }}658 , KWD: {{ number_format((float)$newBornBabyPassport->passport_type_fees_total, 3, '.', '') }} ,
         B: {{ $newBornBabyPassport->branch ? substr(strtoupper($newBornBabyPassport->branch->name),0,3) : ''}} <br>
         Name :  {{ $newBornBabyPassport->name }} <br>
+        Entry Person :  {{ $newBornBabyPassport->creator->name }} <br>
         Service Name: Baby Passport , Phone: {{ $newBornBabyPassport->kuwait_phone }}<br>
         Civil ID :  {{ $newBornBabyPassport->civil_id }} , MRP No : {{ $newBornBabyPassport->passport_number }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($newBornBabyPassport->created_at)) }} , Delivary date: {{ date('d-m-Y', strtotime($newBornBabyPassport->delivery_date)) }}

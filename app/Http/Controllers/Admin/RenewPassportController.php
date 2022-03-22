@@ -52,7 +52,7 @@ class RenewPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
@@ -90,8 +90,8 @@ class RenewPassportController extends Controller
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
-        $renewPassport->govt_passport_id = $request->govt_passport_id;
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->shift_to_admin = 1;
@@ -195,7 +195,7 @@ class RenewPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
 
@@ -225,8 +225,8 @@ class RenewPassportController extends Controller
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
-        $renewPassport->govt_passport_id = $request->govt_passport_id;
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->passport_type_title = $type_title;
@@ -358,7 +358,7 @@ class RenewPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             'passport_type_id' => 'required',
@@ -396,8 +396,8 @@ class RenewPassportController extends Controller
         $renewPassport->mailing_address = $request->mailing_address;
         $renewPassport->special_skill = $request->special_skill;
         $renewPassport->extended_to = $request->extended_to;
-        $renewPassport->govt_passport_id = $request->govt_passport_id;
-        $renewPassport->delivery_date = get_threeMonth_tenDays();
+
+        $renewPassport->delivery_date = get_three_month_five_days();
         $renewPassport->salary = $request->salary;
 
         $renewPassport->shift_to_admin = 1;

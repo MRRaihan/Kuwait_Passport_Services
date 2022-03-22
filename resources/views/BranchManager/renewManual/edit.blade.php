@@ -69,11 +69,8 @@
                                                 <label for="passportFee"> Passport Type </label>
                                                 <select class="form-control" id="passportFee" name="passport_type_id">
                                                     <option disabled selected>-- Select Type --</option>
-                                                    @foreach ($menualPassportFees as $passportFee)
-                                                        <option value="{{ $passportFee->id }}" @if ($renewPassport->passport_type_id == $passportFee->id) selected @endif>
-                                                            {{ $passportFee->title }} (
-                                                            govt:{{ $passportFee->government_fee }} | Ver fee:
-                                                            {{ $passportFee->versatilo_fee }})</option>
+                                                    @foreach ($manualPassportFees as $passportFee)
+                                                        <option value="{{ $passportFee->id }}" @if ($renewPassport->passport_type_id == $passportFee->id) selected @endif>{{ $passportFee->title }}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('passport_type_id')
@@ -244,15 +241,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport Id </label>
-                                                <input name="govt_passport_id" value='{{ $renewPassport->govt_passport_id }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport Id"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                             <div class="form-group">
                                                 <label for="post_office"> Post Office ID </label>
                                                 <input name="post_office" value='{{ $renewPassport->post_office }}'

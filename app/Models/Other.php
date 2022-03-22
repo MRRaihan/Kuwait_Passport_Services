@@ -17,7 +17,7 @@ class Other extends Model
     //     'passport_number',
     //     'profession_id',
     //     'civil_id',
-    //     'govt_passport_id',
+
     //     'passport_photocopy',
     //     'profession_file',
     //     'mailing_address',
@@ -33,8 +33,8 @@ class Other extends Model
     //     'delivery_date',
     //     'delivery_branch',
     //     'is_delivered',
-    //     'is_shifted',
-    //     'is_received',
+
+
     //     'r_id',
     //     'entry_person',
     //     'remarks',

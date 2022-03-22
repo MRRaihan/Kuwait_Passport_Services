@@ -62,7 +62,7 @@ class RenewManualPassportController extends Controller
             'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -92,8 +92,7 @@ class RenewManualPassportController extends Controller
         $manualPassport->kuwait_phone = $request->kuwait_phone;
         $manualPassport->mailing_address = $request->mailing_address;
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
-        $manualPassport->delivery_date = get_menual_passport_dalivery();
+        $manualPassport->delivery_date = get_manual_passport_dalivery();
 
         $manualPassport->shift_to_admin = 1;
         $manualPassport->entry_person = Auth::user()->id;
@@ -167,8 +166,8 @@ class RenewManualPassportController extends Controller
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
         $professions = Profession::where('status', 1)->orderBy('id', 'DESC')->get();
         $renewPassport = RenewPassport::findOrfail($id);
-        $menualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
-        return view('Admin.renewManual.edit', compact('renewPassport', 'menualPassportFees', 'professions', 'branchs', 'salaries'));
+        $manualPassportFees = PassportFee::orderBy('id', 'DESC')->where('type', 'manual-passport')->get();
+        return view('Admin.renewManual.edit', compact('renewPassport', 'manualPassportFees', 'professions', 'branchs', 'salaries'));
     }
 
     /**

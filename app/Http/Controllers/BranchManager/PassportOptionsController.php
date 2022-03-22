@@ -286,64 +286,6 @@ class PassportOptionsController extends Controller
         return redirect()->back();
    }
 
-   public function receiveFromAdminUndo($data){
-
-    $option = explode('&', $data)[0];
-    $id = explode('&', $data)[1];
-
-
-    if (isset($option) && isset($id)) {
-
-            if ($option == 0) {
-                RenewPassport::where('id',$id)->update([
-                    'is_received' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-        }
-
-        if ($option == 1) {
-                ManualPassport::where('id',$id)->update([
-                    'is_received' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-        }
-        if ($option == 2) {
-            LostPassport::where('id',$id)->update([
-                    'is_received' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-        }
-        if ($option == 3) {
-                NewBornBabyPassport::where('id',$id)->update([
-                    'is_received' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-        }
-
-        return response()->json([
-            'type' => 'error',
-            'message' => 'Something Went Wrong'
-            ]);
-        }else{
-            return response()->json([
-                'type' => 'error',
-                'message' => 'Something Went Wrong'
-            ]);
-        }
-    }
-
     // Delivery Passport Option By Monir
 
    public function delivery(){

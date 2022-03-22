@@ -35,7 +35,7 @@ class BabyPassportExport implements
             'name',
             'passport_number',
             'civil_id',
-            'govt_passport_id',
+
             'mailing_address',
             'permanent_address',
             'ems',
@@ -54,8 +54,7 @@ class BabyPassportExport implements
             'embassy_status',
             'branch_status',
             'is_delivered',
-            'is_shifted',
-            'is_received',
+
             'is_shifted_to_branch_manager',
             'passport_type_id',
             'passport_type_title',
