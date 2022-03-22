@@ -15,6 +15,7 @@ $p_type = $passport->ems;
     <b class="bar_text"> {{ $p_type }}658 , KWD: {{ number_format((float)$passport->passport_type_fees_total, 3, '.', '') }} ,
         B: {{ $passport->branch ? substr(strtoupper($passport->branch->name),0,3) : ''}} <br>
         Name :  {{ $passport->name }} <br>
+        Entry Person :  {{ $passport->creator->name }} <br>
         Service Name: Manual Passport , Phone: {{ $passport->kuwait_phone }}<br>
         Civil ID :  {{ $passport->civil_id }} , MRP No : {{ $passport->passport_number }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($passport->created_at)) }} , Delivary date: {{ date('d-m-Y', strtotime($passport->delivery_date)) }}
