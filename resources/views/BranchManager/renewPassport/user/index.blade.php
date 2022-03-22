@@ -42,19 +42,43 @@
                     </div>
                 </div>
             </div>
-
             <!-- Inline Form -->
             <div class="row">
                 <div class="col-md-12">
                     <div class="panel panel-primary">
-
                         <div class="panel-body row">
-
                             <div class="col-md-4">
                                 <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_civil') }}">
                                     @csrf
                                     <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
+                                        <input type="text" class="form-control" id="inputEmail3" placeholder="Search by Civil ID" name="civil_id">
+                                    </div>
+                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_passport_number') }}">
+                                    @csrf
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="passport_number" placeholder="Search by MRP Passport No." name="passport_number">
+                                    </div>
+                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_new_mrp_passport_no') }}">
+                                    @csrf
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="new_mrp_passport_no" placeholder="Search by New MRP Passport No." name="new_mrp_passport_no">
+                                    </div>
+                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                                </form>
+                            </div>
+                            <div class="col-md-4">
+                                <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_bio_enrollment_id') }}">
+                                    @csrf
+                                    <div class="col-sm-9">
+                                    <input type="text" class="form-control" id="bio_enrollment_id" placeholder="Search by Bio Enrollment ID" name="bio_enrollment_id">
                                     </div>
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
@@ -62,10 +86,7 @@
                         </div> <!-- panel-body -->
                     </div> <!-- panel -->
                 </div> <!-- col -->
-
             </div> <!-- End row -->
-
-
 
             {{-- <div class="row text-right">
                 <div class="col-sm-12">
@@ -93,6 +114,9 @@
                                         <th>SL.</th>
                                         <th>Name</th>
                                         <th>MRP Passport Number</th>
+                                        <th>New MRP Passport Number</th>
+                                        <th>Bio Enrollment ID</th>
+                                        <th>Civil ID</th>
                                         <th>Kuwait Phone</th>
                                         <th>Total Fee</th>
                                         <th>Profession</th>
@@ -108,6 +132,9 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $renewPassport->name }}</td>
                                             <td>{{ $renewPassport->passport_number }}</td>
+                                            <td>{{ $renewPassport->new_mrp_passport_no }}</td>
+                                            <td>{{ $renewPassport->bio_enrollment_id }}</td>
+                                            <td>{{ $renewPassport->civil_id }}</td>
                                             <td>{{ $renewPassport->kuwait_phone }}</td>
                                             <td>{{ $renewPassport->passport_type_fees_total }}</td>
                                             <td>{{ $renewPassport->profession ? $renewPassport->profession->name : '' }}</td>

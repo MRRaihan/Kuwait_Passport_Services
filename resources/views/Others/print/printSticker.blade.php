@@ -19,6 +19,7 @@ $p_type = $servicesData->ems;
         Service Name: {{ $serviceType }} <br>
         Total Fee :  {{ $servicesData->total_fee }} <br>
         Phone: {{ $servicesData->kuwait_phone }}<br>
+        Entry Person: {{ $servicesData->user->name ?? '' }}<br>
         Entry Date : {{ date('d-m-Y', strtotime($servicesData->created_at)) }}
 
 @endsection

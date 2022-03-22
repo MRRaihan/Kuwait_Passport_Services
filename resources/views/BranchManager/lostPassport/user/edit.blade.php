@@ -47,7 +47,8 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading" style="background-color: #01ba9a !important;">
-                            <span class="panel-title">Manual Passport Review
+                            <span class="panel-title">Manual Passport Review</span>
+
                                 <!-- Button trigger modal for adding new Category -->
                                 <div class="col-sm-12">
                                     <a class="btn btn-warning btn-sm"
