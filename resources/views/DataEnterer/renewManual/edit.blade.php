@@ -70,10 +70,7 @@
                                                 <select class="form-control" id="passportFee" name="passport_type_id">
                                                     <option disabled selected>-- Select Type --</option>
                                                     @foreach ($manualPassportFees as $passportFee)
-                                                        <option value="{{ $passportFee->id }}" @if ($renewPassport->passport_type_id == $passportFee->id) selected @endif>
-                                                            {{ $passportFee->title }} (
-                                                            govt:{{ $passportFee->government_fee }} | Ver fee:
-                                                            {{ $passportFee->versatilo_fee }})</option>
+                                                        <option value="{{ $passportFee->id }}" @if ($renewPassport->passport_type_id == $passportFee->id) selected @endif>{{ $passportFee->title }}</option>
                                                     @endforeach
                                                 </select>
                                                 @error('passport_type_id')

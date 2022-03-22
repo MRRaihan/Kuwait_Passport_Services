@@ -59,34 +59,6 @@
                                     <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                                 </form>
                             </div>
-
-
-                            {{-- <div class="col-md-4">
-                                <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_ems') }}">
-                                    @csrf
-                                    <div class="col-sm-9">
-                                      <input type="text" class="form-control" id="inputEmail3" placeholder="Search by EMS" name="ems">
-                                    </div>
-                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
-                                </form>
-                            </div> --}}
-
-
-                            <div class="col-md-4">
-                                <form class="form-group" method="POST" action="{{ route('branchManager.renewPassport.search_by_profession') }}">
-                                    @csrf
-                                    <div class="col-sm-9">
-                                      <select class="form-control" name="profession_id">
-                                          <option selected disabled>Search By Profession</option>
-                                          @foreach ($professions as $data)
-                                            <option value="{{ $data->id }}">{{ $data->name }}</option>
-                                          @endforeach
-                                      </select>
-                                    </div>
-                                    <button type="submit" class="col-sm-3 btn btn-success">Search</button>
-                                </form>
-                            </div>
-
                         </div> <!-- panel-body -->
                     </div> <!-- panel -->
                 </div> <!-- col -->

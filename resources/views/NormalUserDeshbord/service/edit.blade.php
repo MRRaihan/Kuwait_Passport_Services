@@ -95,9 +95,7 @@
                         @if (isset($passport_fees[0]))
                             @foreach ($passport_fees as $fee)
                               <option value="{{ $fee->id }}" @if ($passport->passport_type_id == $fee->id) selected @endif>
-                              {{ $fee->title }} (
-                              govt: {{ $fee->government_fee }}| Ver fee:
-                              {{ $fee->versatilo_fee }})</option>
+                              {{ $fee->title }}</option>
                             @endforeach
                         @endif
                     </select>

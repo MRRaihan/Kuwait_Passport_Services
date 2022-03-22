@@ -31,7 +31,6 @@ class RenewPassportController extends Controller
 
     public function userRenewPassportIndex()
     {
-
         $professions = Profession::where('status', 1)->orderBy('name', 'ASC')->get();
         $renewPassports = RenewPassport::where('branch_id', Auth::user()->branch_id)->where('status', 0)->orderBy('id', 'DESC')->get();
         return view('BranchManager.renewPassport.user.index', compact('renewPassports', 'professions'));

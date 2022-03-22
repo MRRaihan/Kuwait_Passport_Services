@@ -55,7 +55,7 @@ Manual Passport Table
 
 
                         <div class="col-md-4">
-                            <form class="form-group" method="POST" action="{{ route('branchManager.lostPassport.searchByMrpPassportNo') }}">
+                            <form class="form-group" method="POST" action="{{ route('branchManager.lostPassport.search_by_passport_number') }}">
                                 @csrf
                                 <div class="col-sm-9">
                                   <input type="text" class="form-control" id="mrp_no" placeholder="Search by MRP Passport No." name="mrp_no">
@@ -63,23 +63,6 @@ Manual Passport Table
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
-
-
-                        {{-- <div class="col-md-4">
-                            <form class="form-group" method="POST" action="{{ route('branchManager.lostPassport.search_by_profession') }}">
-                                @csrf
-                                <div class="col-sm-9">
-                                  <select class="form-control" name="profession_id">
-                                      <option selected disabled>Search By Profession</option>
-                                      @foreach ($professions as $data)
-                                        <option value="{{ $data->id }}">{{ $data->name }}</option>
-                                      @endforeach
-                                  </select>
-                                </div>
-                                <button type="submit" class="col-sm-3 btn btn-success">Search</button>
-                            </form>
-                        </div> --}}
-
                     </div> <!-- panel-body -->
                 </div> <!-- panel -->
             </div> <!-- col -->
