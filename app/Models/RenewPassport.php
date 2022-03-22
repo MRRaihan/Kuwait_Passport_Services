@@ -16,7 +16,7 @@ class RenewPassport extends Model
     //     'name',
     //     'passport_number',
     //     'civil_id',
-    //     'govt_passport_id',
+
     //     'mailing_address',
     //     'permanent_address',
     //     'ems',

@@ -23,7 +23,6 @@ class NewBornBabyPassportSeeder extends Seeder
             $newBornBabyPassport->name = $faker->name();
             $newBornBabyPassport->passport_number = $faker->phoneNumber();
             $newBornBabyPassport->civil_id = $faker->phoneNumber();
-            $newBornBabyPassport->govt_passport_id = $faker->phoneNumber();
             $newBornBabyPassport->mailing_address = $faker->email();
             $newBornBabyPassport->permanent_address = $faker->country();
             $newBornBabyPassport->ems = $faker->text(10);

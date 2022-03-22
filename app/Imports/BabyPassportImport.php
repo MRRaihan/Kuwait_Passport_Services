@@ -34,7 +34,7 @@ class BabyPassportImport implements
             'name' => $row['name'],
             'passport_number' => $row['passport_number'],
             'civil_id' => $row['civil_id'],
-            'govt_passport_id' => $row['govt_passport_id'],
+
             'mailing_address' => $row['mailing_address'],
             'permanent_address' => $row['permanent_address'],
             'ems' => $row['ems'],

@@ -245,15 +245,7 @@
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport ID </label>
-                                                <input name="govt_passport_id" value='{{ old('govt_passport_id') }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport ID"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                             <div class="form-group">
                                                 <label for="post_office"> Post Office ID </label>
                                                 <input name="post_office" value='{{ old('post_office') }}'

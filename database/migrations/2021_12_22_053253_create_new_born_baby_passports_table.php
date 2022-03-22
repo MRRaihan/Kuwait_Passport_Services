@@ -25,7 +25,7 @@ class CreateNewBornBabyPassportsTable extends Migration
             $table->string('name')->nullable();
             $table->string('passport_number')->nullable();
             $table->string('civil_id')->nullable();
-            $table->string('govt_passport_id')->nullable();
+
             $table->string('mailing_address')->nullable();
             $table->string('permanent_address')->nullable();
             $table->string('ems')->nullable();

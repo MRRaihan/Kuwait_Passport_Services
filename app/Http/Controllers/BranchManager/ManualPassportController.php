@@ -64,7 +64,7 @@ class ManualPassportController extends Controller
             //'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -95,7 +95,6 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
         $manualPassport->delivery_date = get_menual_passport_dalivery();
 
         $manualPassport->entry_person = Auth::user()->id;
@@ -218,7 +217,7 @@ class ManualPassportController extends Controller
             //'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -247,7 +246,6 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
         $manualPassport->delivery_date = get_menual_passport_dalivery();
 
         $manualPassport->post_office = $request->post_office;
@@ -354,7 +352,7 @@ class ManualPassportController extends Controller
             //'delivery_branch' => 'required',
             // 'mailing_address' => 'required',
             'kuwait_phone' => 'required',
-            // 'govt_passport_id' => 'required',
+
             // 'expiry_date' => 'required',
             // 'extended_to' => 'required',
             // 'post_office' => 'required',
@@ -385,7 +383,6 @@ class ManualPassportController extends Controller
         $manualPassport->mailing_address = $request->mailing_address;
 
         $manualPassport->extended_to = $request->extended_to;
-        $manualPassport->govt_passport_id = $request->govt_passport_id;
         $manualPassport->delivery_date = get_menual_passport_dalivery();
 
         $manualPassport->entry_person = Auth::user()->id;

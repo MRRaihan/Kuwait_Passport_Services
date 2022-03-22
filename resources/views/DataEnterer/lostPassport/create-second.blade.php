@@ -244,15 +244,7 @@ Lost Passport Create
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div> --}}
-                                            <div class="form-group">
-                                                <label for="govt_passport_id"> Govt Passport Id </label>
-                                                <input name="govt_passport_id" value='{{ old('govt_passport_id') }}'
-                                                    type="text" class="form-control" placeholder="Enter Govt Passport Id"
-                                                    id="govt_passport_id">
-                                                @error('govt_passport_id')
-                                                    <p class="text-danger">{{ $message }}</p>
-                                                @enderror
-                                            </div>
+
                                              {{-- <div class="form-group">
                                                 <label for="delivery_date"> Delivery Date </label>
                                                 <input value='{{ old('delivery_date') }}' class="form-control datepicker"

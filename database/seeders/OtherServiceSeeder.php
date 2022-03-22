@@ -22,7 +22,6 @@ class OtherServiceSeeder extends Seeder
             $lostPassport->name = $faker->name();
             $lostPassport->passport_number = $faker->phoneNumber();
             $lostPassport->civil_id = $faker->phoneNumber();
-            // $lostPassport->govt_passport_id = $faker->phoneNumber();
             $lostPassport->mailing_address = $faker->email();
             $lostPassport->permanent_address = $faker->country();
             $lostPassport->ems = 'EP' . time() . 'Kuwait';

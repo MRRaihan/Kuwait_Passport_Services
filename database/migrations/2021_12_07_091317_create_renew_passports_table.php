@@ -25,7 +25,7 @@ class CreateRenewPassportsTable extends Migration
 
             $table->string('name')->nullable();
             $table->string('civil_id')->nullable();
-            $table->string('govt_passport_id')->nullable();
+
             $table->string('passport_number')->nullable();
             $table->string('passport_photocopy')->nullable();
             $table->string('application_form')->nullable();

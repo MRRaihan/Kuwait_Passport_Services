@@ -366,15 +366,6 @@
                     </div>
                   @endif
 
-                  <div class="my-4">
-                    <label for="govt_passport_id" class="form-label">Govt Passport ID</label>
-                    <input type="text" class="form-control select-forms" name="govt_passport_id" id="govt_passport_id" value="{{ old('govt_passport_id',$passport->govt_passport_id) }}"
-                      placeholder="Enter Your Special Skill" />
-                      @if($errors->has('govt_passport_id'))
-                        <span class="text-danger">{{ $errors->first('govt_passport_id') }}</span>
-                      @endif
-                  </div>
-
                   @if ($type == 1)
                     <div class="my-4">
                       <label for="post_office" class="form-label">Post Office ID</label>

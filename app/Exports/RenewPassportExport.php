@@ -37,7 +37,7 @@ class RenewPassportExport implements
             'profession_id',
             'name',
             'civil_id',
-            'govt_passport_id',
+
             'passport_number',
             'passport_photocopy',
             'application_form',

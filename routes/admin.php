@@ -37,7 +37,8 @@ use App\Http\Controllers\Admin\landingPage\ServicesController;
 use Illuminate\Support\Facades\Route;
 
 // Admin route
-Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', 'admin','prevent-back-history']], function () {
+Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', 'admin']], function () {
+// Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', 'admin','prevent-back-history']], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 

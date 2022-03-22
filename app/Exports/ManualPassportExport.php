@@ -37,7 +37,7 @@ class ManualPassportExport implements
             'name',
             'passport_number',
             'civil_id',
-            'govt_passport_id',
+
             'mailing_address',
             'expiry_date',
             'extended_to',

@@ -69,7 +69,7 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
+
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
@@ -206,7 +206,7 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
+
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
@@ -327,7 +327,7 @@ class LostPassportController extends Controller
         $lostPassport->name = $request->name;
         $lostPassport->civil_id = $request->civil_id;
         $lostPassport->profession_id = $request->profession_id;
-        $lostPassport->govt_passport_id = $request->govt_passport_id;
+
         $lostPassport->passport_number = $request->passport_number;
         $lostPassport->kuwait_phone = $request->kuwait_phone;
         $lostPassport->bd_phone = $request->bd_phone;
