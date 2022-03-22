@@ -248,12 +248,12 @@ if (!function_exists('random_code')) {
      */
     function get_three_month_five_days()
     {
-        $endDate = Carbon::now()->addMonths(3)->addDays(5);
+        $endDate = Carbon::now()->addMonths(3)->addDays(6);
 
         if ($endDate->dayOfWeek == Carbon::FRIDAY) {
-            $deliveryDate = Carbon::now()->addMonths(3)->addDays(7);
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(8);
         }elseif ($endDate->dayOfWeek == Carbon::SATURDAY) {
-            $deliveryDate = Carbon::now()->addMonths(3)->addDays(6);
+            $deliveryDate = Carbon::now()->addMonths(3)->addDays(7);
         }else{
             $deliveryDate = $endDate;
         }
