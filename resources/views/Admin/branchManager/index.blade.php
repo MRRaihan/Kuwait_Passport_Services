@@ -58,25 +58,17 @@ Admin
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Image</th>
-
                                     <th>Status</th>
                                     <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $sl = 1; ?>
                                 @foreach ($branchManagers as $branchManager)
                                 <tr>
-                                    <td>{{$sl}}</td>
+                                    <td>{{$loop->iteration}}</td>
                                     <td>{{$branchManager->name }} {{$branchManager->last_name }}</td>
                                     <td>{{$branchManager->phone }}</td>
                                     <td>{{$branchManager->email }}</td>
-                                    <td>
-                                        <img src="{{ asset($branchManager->image) }}" alt="" height="50" width="50" onerror="this.onerror=null;this.src='{{ asset(get_static_option('no_image')) }}';">
-                                    </td>
-
-
                                     <td>
                                         @if($branchManager->status == 1)
                                             <span class="badge badge-pill badge-success">Active</span>
@@ -98,7 +90,6 @@ Admin
                                         <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('admin.branchManager.destroy',$branchManager) }}"><i class="fa fa-trash"></i> </button>
                                     </td>
                                 </tr>
-                                <?php $sl++; ?>
                                 @endforeach
                             </tbody>
                         </table>

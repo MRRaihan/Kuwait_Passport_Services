@@ -17,6 +17,7 @@ use App\Models\Services;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -26,6 +27,18 @@ use Illuminate\Support\Facades\Session;
 
 class FrontendController extends Controller
 {
+
+    public function reboot()
+    {
+        Artisan::call('cache:clear');
+        Artisan::call('route:clear');
+        Artisan::call('view:clear');
+        file_put_contents(storage_path('logs/laravel.log'), '');
+        Artisan::call('key:generate');
+        Artisan::call('config:cache');
+        return '<center><h1>System Rebooted!</h1></center>';
+    }
+
     public function landingPage()
     {
         $pricingPlans = PricingPlan::where('status', 1)->get();

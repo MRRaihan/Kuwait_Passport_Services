@@ -58,24 +58,17 @@ Admin
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Image</th>
-
                                     <th>Status</th>
                                     <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($callCenters as $key => $callCenter)
+                                @foreach ($callCenters as $callCenter)
                                 <tr>
-                                    <td>{{ ++$key }}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $callCenter->name }} {{ $callCenter->last_name }}</td>
                                     <td>{{ $callCenter->phone }}</td>
                                     <td>{{ $callCenter->email }}</td>
-                                    <td>
-                                        <img src="{{ asset($callCenter->image) }}" alt="" height="50" width="50" onerror="this.onerror=null;this.src='{{ asset(get_static_option('no_image')) }}';">
-                                    </td>
-
-
                                     <td>
                                         @if($callCenter->status == 1)
                                             <span class="badge badge-pill badge-success">Active</span>

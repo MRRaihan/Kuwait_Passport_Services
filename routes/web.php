@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\CorporateServiceController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PrintController;
+use Illuminate\Support\Carbon;
 
 /*
 |--------------------------------------------------------------------------
@@ -47,17 +48,17 @@ Route::get('/admin-login', function () {
     return view('custom-welcome');
 })->name('forntend.login');
 
-Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
+// For system reboot
+Route::get('/reboot', [FrontendController::class, 'reboot']);
 
+Route::post('change-password', [HomeController::class, 'changePassword'])->name('changePassword');
 
 //print controller
 Route::get('service-print-receipt/{id}/{type}', [PrintController::class, 'printReceipt'])->name('printReceipt');
 Route::get('service-print-sticker/{id}/{type}', [PrintController::class, 'printSticker'])->name('printSticker');
 
 
-/**
- * user route start
- */
+// user route start
 Route::get('/service-list/{data}', [FrontendController::class, 'index'])->name('service.list');
 Route::get('/service/{data}', [FrontendController::class, 'service'])->name('service');
 
@@ -101,9 +102,8 @@ Route::group(['prefix' => 'user/', 'as' => 'normalUser.', 'middleware' => ['auth
 //user route end
 
 
-/**
- * Corporate user start
- */
+// Corporate user start
+
 Route::get('/corporate-login', [CorporateController::class, 'corporateLogin'])->name('corporate.login');
 Route::get('/corporate-registration', [CorporateController::class, 'corporateRegistration'])->name('corporate.registration');
 Route::post('/corporate-user-store', [CorporateController::class, 'corporateUserStore'])->name('corporateUserStore');
