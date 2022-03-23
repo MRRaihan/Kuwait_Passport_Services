@@ -428,4 +428,9 @@ class LostPassportController extends Controller
         $lostPassports = LostPassport::where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
         return view('Admin.lostPassport.search', compact('lostPassports'));
     }
+    public function search_by_profession_id(Request $req)
+    {
+        $lostPassports = LostPassport::where('profession_id', $req->profession_id)->orderBy('id', 'DESC')->get();
+        return view('Admin.lostPassport.search', compact('lostPassports'));
+    }
 }

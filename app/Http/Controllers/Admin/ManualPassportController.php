@@ -459,4 +459,9 @@ class ManualPassportController extends Controller
         $manualPassports = ManualPassport::where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
         return view('Admin.manualPassport.search', compact('manualPassports'));
     }
+    public function search_by_profession_id(Request $req)
+    {
+        $manualPassports = ManualPassport::where('profession_id', $req->profession_id)->orderBy('id', 'DESC')->get();
+        return view('Admin.manualPassport.search', compact('manualPassports'));
+    }
 }
