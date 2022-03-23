@@ -61,6 +61,19 @@ Manual Passport Table
                             </form>
                         </div>
                         <div class="col-md-4">
+                            <form class="form-group" method="POST" action="{{ route('dataEnterer.manualPassport.search_by_profession_id') }}">
+                                @csrf
+                                <div class="col-sm-9">
+                                    <select class="form-control" name="profession_id" id="profession_id">
+                                        @foreach ($professions as $profession)
+                                            <option value="{{ $profession->id }}">{{ $profession->name }}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                <button type="submit" class="col-sm-3 btn btn-success">Search</button>
+                            </form>
+                        </div>
+                        <div class="col-md-4">
                             <form class="form-group" method="POST" action="{{ route('dataEnterer.manualPassport.search_by_new_mrp_passport_no') }}">
                                 @csrf
                                 <div class="col-sm-9">
