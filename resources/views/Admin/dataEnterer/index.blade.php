@@ -46,7 +46,7 @@ Admin
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <span class="panel-title">Data Enterer List
+                        <span class="panel-title">Data Enterer List</span>
                         <!-- Button trigger modal for adding new Category -->
 
                     </div>
@@ -58,6 +58,7 @@ Admin
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
+                                    <th>Branch Manager</th>
                                     <th>Approval Status</th>
                                     <th>Action Status</th>
                                     <th style="width: 150px">Action</th>
@@ -70,6 +71,7 @@ Admin
                                     <td>{{ $enterer->name }} {{ $enterer->last_name }}</td>
                                     <td>{{ $enterer->phone }}</td>
                                     <td>{{ $enterer->email }}</td>
+                                    <td>{{ $enterer->parent->name ?? '' }}</td>
                                     <td>
                                         @if($enterer->status == 1)
                                             <span class="badge badge-pill badge-success">Approved</span>
