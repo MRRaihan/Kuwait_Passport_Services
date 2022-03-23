@@ -46,7 +46,7 @@ Admin
             <div class="col-md-12">
                 <div class="panel panel-primary">
                     <div class="panel-heading">
-                        <span class="panel-title">Data Enterer List
+                        <span class="panel-title">Data Enterer List</span>
                         <!-- Button trigger modal for adding new Category -->
 
                     </div>
@@ -58,25 +58,20 @@ Admin
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Image</th>
+                                    <th>Branch Manager</th>
                                     <th>Approval Status</th>
                                     <th>Action Status</th>
                                     <th style="width: 150px">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
-                            <?php $sl = 1; ?>
                                 @foreach ($dataEnterers as $enterer)
                                 <tr>
-                                    <td>{{$sl}}</td>
+                                    <td>{{ $loop->iteration }}</td>
                                     <td>{{ $enterer->name }} {{ $enterer->last_name }}</td>
                                     <td>{{ $enterer->phone }}</td>
                                     <td>{{ $enterer->email }}</td>
-                                    <td>
-                                        <img src="{{ asset($enterer->image) }}" alt="" height="50" width="50" onerror="this.onerror=null;this.src='{{ asset(get_static_option('no_image')) }}';">
-                                    </td>
-
-
+                                    <td>{{ $enterer->parent->name ?? '' }}</td>
                                     <td>
                                         @if($enterer->status == 1)
                                             <span class="badge badge-pill badge-success">Approved</span>
@@ -117,7 +112,6 @@ Admin
                                         <button class="btn btn-danger" onclick="delete_function(this)" value="{{ route('admin.dataEnterer.destroy',$enterer) }}"><i class="fa fa-trash"></i> </button>
                                     </td>
                                 </tr>
-                                <?php $sl++; ?>
                                 @endforeach
                             </tbody>
                         </table>

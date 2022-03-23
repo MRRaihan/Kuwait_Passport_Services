@@ -94,38 +94,38 @@
 
                                             <div class="form-group">
                                                 @if($lostPassport->profession_file)
-                                                    <a href="{{ asset($lostPassport->profession_file) }}" target="_blank">View File</a>
-                                                @else
-                                                    <a href="#">No File Found</a>
+                                                    <a href="{{ asset($lostPassport->profession_file) }}" target="_blank">View old file</a><br>
                                                 @endif
+                                                <a id="profession_file" href="#" target="">{{ $lostPassport->profession_file ? '' : 'No File Found' }}</a>
                                             </div>
-
                                             <div class="form-group">
-                                                <label for="profession_file"> Profession File (Only PDF) </label>
+                                                <label for="profession_file"> Profession File (Image/PDF) </label>
                                                 <input name="profession_file" class="form-control"
-                                                    type="file" accept = "application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('profession_file').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('profession_file').innerText = 'Click to view selected file'
+                                                    document.getElementById('profession_file').target = '_blank'
+                                                    ">
                                                 @error('profession_file')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
                                             <div class="form-group">
                                                 @if($lostPassport->application_form)
-                                                    <a href="{{ asset($lostPassport->application_form) }}" target="_blank">View File</a>
-                                                @else
-                                                    <a href="#">No File Found</a>
+                                                    <a href="{{ asset($lostPassport->application_form) }}" target="_blank">View old file</a><br>
                                                 @endif
+                                                <a id="application_form" href="#" target="">{{ $lostPassport->application_form ? '' : 'No File Found' }}</a>
                                             </div>
                                             <div class="form-group">
-                                                <label for="application_form"> Application Form (Only PDF) </label>
+                                                <label for="application_form"> Application Form (Image/PDF) </label>
                                                 <input name="application_form" class="form-control"
-                                                    type="file" accept="application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('application_form').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('application_form').innerText = 'Click to view selected file'
+                                                    document.getElementById('application_form').target = '_blank'
+                                                    ">
                                                 @error('application_form')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
-
-
-
                                             <div class="form-group">
                                                 <img id="passport_photocopy" src="{{ asset($lostPassport->passport_photocopy ?? get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
                                             </div>

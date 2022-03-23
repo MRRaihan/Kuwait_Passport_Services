@@ -31,10 +31,7 @@
                             class="fa fa-users"></i><span>Branch</span></a>
                 </li>
 
-                <li>
-                    <a href="{{ route('admin.delivery.index') }}" class="waves-effect"><i
-                            class="fa fa-users"></i><span>Delivery</span></a>
-                </li>
+
 
                 <li>
                     <a href="{{ route('admin.branchManager.index') }}" class="waves-effect"><i
@@ -99,18 +96,6 @@
                     </ul>
                 </li>
 
-                {{-- Recycle bin
-                <li class="has_sub">
-                    <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-trash"></i> <span> Recycle bin
-                        </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    <ul class="list-unstyled">
-                        <li><a href="{{ route('admin.recycleBin.renewList') }}">List Of Renew Passports</a></li>
-                        <li><a href="{{ route('admin.recycleBin.manualList') }}">List Of Manual Passports</a>
-                        <li><a href="{{ route('admin.recycleBin.lostList') }}">List Of Lost Passports</a></li>
-                        <li><a href="{{ route('admin.recycleBin.newBornBabyList') }}">List Of New Born Baby Passports</a></li>
-                    </ul>
-                </li> --}}
-
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-filter"></i> <span> Passport
                             Processing</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -141,6 +126,9 @@
                         <li><a href="{{ route('admin.immigrationGovementService.index') }}">Immigration Govt.</a></li>
                         <li><a href="{{ route('admin.otherService.index') }}">Others</a></li>
                     </ul>
+                </li>
+                <li class="">
+                    <a href="{{ route('admin.importExport') }}" class="waves-effect"><i class="ion-android-storage"></i> <span> Export And Import</a>
                 </li>
 
 
@@ -197,6 +185,10 @@
                         <li><a href="{{ route('admin.deliveryreport.index') }}">Delivery To User Report</a></li>
                     </ul>
                 </li>
+                <li>
+                    <a href="{{ route('admin.delivery.index') }}" class="waves-effect"><i
+                            class="fa fa-users"></i><span>Passport Delivery Cost Setting</span></a>
+                </li>
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="ion-gear-a"></i> <span>Landing Settings
                         </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
@@ -207,9 +199,7 @@
                         {{-- <li><a href="{{ route('admin.salary.index') }}">Salary</a></li> --}}
                     </ul>
                 </li>
-                <li class="">
-                    <a href="{{ route('admin.importExport') }}" class="waves-effect"><i class="ion-android-storage"></i> <span> Export And Import</a>
-                </li>
+
                 </ul>
         </div>
         <div class="clearfix"></div>

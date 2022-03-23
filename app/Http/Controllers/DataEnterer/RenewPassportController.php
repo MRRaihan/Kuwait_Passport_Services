@@ -430,4 +430,10 @@ class RenewPassportController extends Controller
         $renewPassports = RenewPassport::where('user_creator_id', Auth::user()->id)->where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
         return view('DataEnterer.renewPassport.search', compact('renewPassports'));
     }
+
+    public function search_by_profession_id(Request $req)
+    {
+        $renewPassports = RenewPassport::where('user_creator_id', Auth::user()->id)->where('profession_id', $req->profession_id)->orderBy('id', 'DESC')->get();
+        return view('DataEnterer.renewPassport.search', compact('renewPassports'));
+    }
 }

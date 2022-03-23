@@ -58,7 +58,6 @@ Branch Manager
                                     <th>Name</th>
                                     <th>Phone</th>
                                     <th>Email</th>
-                                    <th>Image</th>
                                     <th>Approval Status</th>
                                     <th>Actions Status</th>
                                     <th style="width: 150px">Action</th>
@@ -70,9 +69,6 @@ Branch Manager
                                     <td>{{ $data->name }} {{ $data->last_name }}</td>
                                     <td>{{ $data->phone }}</td>
                                     <td>{{ $data->email }}</td>
-                                    <td>
-                                        <img src="{{ asset($data->image) }}" alt="" height="50" width="50" onerror="this.onerror=null;this.src='{{ asset(get_static_option('no_image')) }}';">
-                                    </td>
                                     <td>
                                         @if($data->status == 1)
                                             <span class="badge badge-pill badge-success">Approved</span>

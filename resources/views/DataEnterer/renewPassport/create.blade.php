@@ -91,17 +91,29 @@
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="profession_file"> Profession File (Only PDF) </label>
+                                                <a id="profession_file" href="#" target="">No File Chosen</a>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="profession_file"> Profession File (Image/PDF) </label>
                                                 <input name="profession_file" class="form-control"
-                                                    type="file" accept = "application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('profession_file').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('profession_file').innerText = 'Click to view selected file'
+                                                    document.getElementById('profession_file').target = '_blank'
+                                                    ">
                                                 @error('profession_file')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
                                             </div>
                                             <div class="form-group">
-                                                <label for="application_form"> Application Form (Only PDF) </label>
+                                                <a id="application_form" href="#" target="">No File Chosen</a>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="application_form"> Application Form (Image/PDF) </label>
                                                 <input name="application_form" class="form-control"
-                                                    type="file" accept="application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('application_form').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('application_form').innerText = 'Click to view selected file'
+                                                    document.getElementById('application_form').target = '_blank'
+                                                    ">
                                                 @error('application_form')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror

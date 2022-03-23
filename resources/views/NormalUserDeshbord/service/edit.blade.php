@@ -257,19 +257,20 @@
 
                   @if ($type == 0 || $type == 1)
                     <div class="form-group">
-                      @if($passport->profession_file)
-                          <a href="{{ asset($passport->profession_file) }}" target="_blank">View File</a>
-                      @else
-                          <a href="#">No File Found</a>
-                      @endif
+                        @if($passport->profession_file)
+                            <a href="{{ asset($passport->profession_file) }}" target="_blank">View old file</a><br>
+                        @endif
+                        <a id="profession_file_preview" href="#" target="">{{ $passport->profession_file ? '' : 'No File Found' }}</a>
                     </div>
-
-                    <div class="my-4">
-                      <label for="profession_file" class="form-label">Profession File (Only PDF)</sup></label>
-                      <input type="file" class="form-control select-forms" accept = "application/pdf" name="profession_file"  id="profession_file"
-                        placeholder="+971" />
+                    <div class="form-group my-4">
+                        <label for="profession_file" class="form-label"> Profession File (Image/PDF) </label>
+                        <input id="profession_file" name="profession_file" class="form-control select-forms"
+                            type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('profession_file_preview').href = window.URL.createObjectURL(this.files[0])
+                            document.getElementById('profession_file_preview').innerText = 'Click to view selected file'
+                            document.getElementById('profession_file_preview').target = '_blank'
+                            ">
                         @if($errors->has('profession_file'))
-                          <span class="text-danger">{{ $errors->first('profession_file') }}</span>
+                            <span class="text-danger">{{ $errors->first('profession_file') }}</span>
                         @endif
                     </div>
                   @endif
@@ -312,22 +313,23 @@
                     </div>
                   @endif
 
-                  <div class="form-group">
-                    @if($passport->application_form)
-                        <a href="{{ asset($passport->application_form) }}" target="_blank">View File</a>
-                    @else
-                        <a href="#">No File Found</a>
-                    @endif
-                  </div>
-
-                  <div class="my-4">
-                    <label for="application_form" class="form-label">Application Form (Only PDF)</label>
-                    <input type="file" class="form-control select-forms" accept = "application/pdf" name="application_form" id="application_form"
-                      placeholder="+971" />
-                      @if($errors->has('application_form'))
-                      <span class="text-danger">{{ $errors->first('application_form') }}</span>
-                      @endif
-                  </div>
+                    <div class="form-group">
+                        @if($passport->application_form)
+                            <a href="{{ asset($passport->application_form) }}" target="_blank">View old file</a><br>
+                        @endif
+                        <a id="application_form_preview" href="#" target="">{{ $passport->application_form ? '' : 'No File Found' }}</a>
+                    </div>
+                    <div class="form-group my-4">
+                        <label for="application_form" class="form-label"> Application Form (Image/PDF) </label>
+                        <input id="application_form" name="application_form" class="form-control select-forms"
+                            type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('application_form_preview').href = window.URL.createObjectURL(this.files[0])
+                            document.getElementById('application_form_preview').innerText = 'Click to view selected file'
+                            document.getElementById('application_form_preview').target = '_blank'
+                            ">
+                        @if($errors->has('application_form'))
+                            <span class="text-danger">{{ $errors->first('application_form') }}</span>
+                        @endif
+                    </div>
 
                   <div class="form-group">
                     <img id="passport_photocopy" src="{{ asset($passport->passport_photocopy ?? get_static_option('no_image'))  }}" alt="your image" width="100" height="100" />
