@@ -95,7 +95,7 @@
                                                 <label for="profession_file"> Profession File (Image/PDF) </label>
                                                 <input name="profession_file" class="form-control"
                                                     type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('profession_file').href = window.URL.createObjectURL(this.files[0])
-                                                    document.getElementById('profession_file').innerText = 'Selected one'
+                                                    document.getElementById('profession_file').innerText = 'Click to view selected file'
                                                     document.getElementById('profession_file').target = '_blank'
                                                     ">
                                                 @error('profession_file')
