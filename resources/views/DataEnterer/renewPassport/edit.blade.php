@@ -106,15 +106,17 @@
                                             </div>
                                             <div class="form-group">
                                                 @if($renewPassport->application_form)
-                                                    <a href="{{ asset($renewPassport->application_form) }}" target="_blank">View File</a>
-                                                @else
-                                                    <a href="#">No File Found</a>
+                                                    <a href="{{ asset($renewPassport->application_form) }}" target="_blank">View old file</a><br>
                                                 @endif
+                                                <a id="application_form" href="#" target="">{{ $renewPassport->application_form ? '' : 'No File Found' }}</a>
                                             </div>
                                             <div class="form-group">
-                                                <label for="application_form"> Application Form (Only PDF) </label>
+                                                <label for="application_form"> Application Form (Image/PDF) </label>
                                                 <input name="application_form" class="form-control"
-                                                    type="file" accept="application/pdf">
+                                                    type="file" accept = "application/pdf,image/jpeg,image/png,image/jpg" onchange="document.getElementById('application_form').href = window.URL.createObjectURL(this.files[0])
+                                                    document.getElementById('application_form').innerText = 'Click to view selected file'
+                                                    document.getElementById('application_form').target = '_blank'
+                                                    ">
                                                 @error('application_form')
                                                     <p class="text-danger">{{ $message }}</p>
                                                 @enderror
