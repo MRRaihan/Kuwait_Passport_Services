@@ -238,53 +238,15 @@ class CallcenterController extends Controller
     }
 
     public function remarksSave(Request $request,$id){
-
-
-
         $request->validate([
             'remarks' => 'required'
         ]);
 
-
-
-        if (isset($request->option) && $request->option == 0) {
-            $lostPassport = RenewPassport::findOrFail($id);
-            $lostPassport->remarks = $request->remarks;
-            $lostPassport->remarks_by = Auth::user()->id;
-            $lostPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Remarks Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 1) {
-            $manualPassport = ManualPassport::findOrFail($id);
-            $manualPassport->remarks = $request->remarks;
-            $manualPassport->remarks_by = Auth::user()->id;
-            $manualPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Remarks Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 2) {
-            $renewPassport = LostPassport::findOrFail($id);
-            $renewPassport->remarks = $request->remarks;
-            $renewPassport->remarks_by = Auth::user()->id;
-            $renewPassport->save();
-            return response()->json([
-                'type' => 'success',
-                'message' => 'Remarks Added Successfully!'
-            ]);
-        }
-
-        if (isset($request->option) && $request->option == 3) {
-            $newBornBabyPassport = NewBornBabyPassport::findOrFail($id);
-            $newBornBabyPassport->remarks = $request->remarks;
-            $newBornBabyPassport->remarks_by = Auth::user()->id;
-            $newBornBabyPassport->save();
+        if (isset($request->option)) {
+            $passport = get_passport_model_name_by_option($request->option)::findOrFail($id);
+            $passport->remarks = $request->remarks;
+            $passport->remarks_by = Auth::user()->id;
+            $passport->save();
             return response()->json([
                 'type' => 'success',
                 'message' => 'Remarks Added Successfully!'
@@ -295,6 +257,5 @@ class CallcenterController extends Controller
             'message' => 'Something Went Wrong!!'
         ]);
         return redirect()->back();
-
     }
 }
