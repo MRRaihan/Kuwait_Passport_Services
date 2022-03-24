@@ -77,6 +77,13 @@
                         <li><a href="{{ route('dataEnterer.otherService.index') }}">Others</a></li>
                     </ul>
                 </li>
+                {{-- Passport Options --}}
+                <li class="has_sub">
+                    <a href="javascript:void(0);" class="waves-effect"><i class="ti-agenda"></i> <span> Passport Options</span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+                    <ul class="list-unstyled">
+                        <li><a href="{{route('dataEnterer.passportOption.delivery')}}">Delivery</a></li>
+                    </ul>
+                </li>
 
                 {{-- Reports --}}
                 <li class="has_sub">
