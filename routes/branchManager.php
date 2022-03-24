@@ -55,6 +55,8 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('lostPassport/search_by_passport_number', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
     Route::post('lostPassport/search_by_new_mrp_passport_no', [LostPassportController::class, 'search_by_new_mrp_passport_no'])->name('lostPassport.search_by_new_mrp_passport_no');
     Route::post('lostPassport/search_by_bio_enrollment_id', [LostPassportController::class, 'search_by_bio_enrollment_id'])->name('lostPassport.search_by_bio_enrollment_id');
+    Route::post('lostPassport/search_by_profession_id', [LostPassportController::class, 'search_by_profession_id'])->name('lostPassport.search_by_profession_id');
+
 
     // Lost Passport By User
     Route::get('user-lost-passport', [LostPassportController::class, 'userLostPassportIndex'])->name('userLostPassport.index');
@@ -94,6 +96,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('manualPassport/search_by_passport_number', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
     Route::post('manualPassport/search_by_new_mrp_passport_no', [ManualPassportController::class, 'search_by_new_mrp_passport_no'])->name('manualPassport.search_by_new_mrp_passport_no');
     Route::post('manualPassport/search_by_bio_enrollment_id', [ManualPassportController::class, 'search_by_bio_enrollment_id'])->name('manualPassport.search_by_bio_enrollment_id');
+    Route::post('manualPassport/search_by_profession_id', [ManualPassportController::class, 'search_by_profession_id'])->name('manualPassport.search_by_profession_id');
 
     // Manual Passport By User
     Route::get('user-manual-passport', [ManualPassportController::class, 'userManualPassportIndex'])->name('userManualPassport.index');
@@ -111,6 +114,8 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renewPassport/search_by_new_mrp_passport_no', [RenewPassportController::class, 'search_by_new_mrp_passport_no'])->name('renewPassport.search_by_new_mrp_passport_no');
     Route::post('renewPassport/search_by_bio_enrollment_id', [RenewPassportController::class, 'search_by_bio_enrollment_id'])->name('renewPassport.search_by_bio_enrollment_id');
+    Route::post('renewPassport/search_by_profession_id', [RenewPassportController::class, 'search_by_profession_id'])->name('renewPassport.search_by_profession_id');
+
 
     // Renew Passport By User
     Route::get('user-renew-passport', [RenewPassportController::class, 'userRenewPassportIndex'])->name('userRenewPassport.index');

@@ -243,9 +243,7 @@ if (!function_exists('random_code')) {
         return $deliveryDate;
     }
 
-    /**
-     * three month and 10 days
-     */
+    // three month and five days gap
     function get_three_month_five_days()
     {
         $endDate = Carbon::now()->addMonths(3)->addDays(6);

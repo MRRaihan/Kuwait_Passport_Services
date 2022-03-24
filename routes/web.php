@@ -20,7 +20,6 @@ use Illuminate\Support\Carbon;
 |
 */
 
-/////
 Route::get('/', [FrontendController::class, 'landingPage'])->name('forntend.index');
 
 Route::get('/accountManager/login', function () {
@@ -80,8 +79,6 @@ Route::get('/view-information', [UserController::class, 'userPersonalInformation
 Route::post('/information-store', [UserController::class, 'informationStore'])->name('informationStore');
 
 Route::get('check-passport-status/{data}', [UserController::class, 'passportStatus'])->name('passport.status');
-
-
 
 //normal user deshbord
 

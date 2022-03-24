@@ -427,4 +427,9 @@ class LostPassportController extends Controller
         $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('bio_enrollment_id', 'like', '%' . $req->input('bio_enrollment_id') . '%')->orderBy('id', 'DESC')->get();
         return view('BranchManager.lostPassport.search', compact('lostPassports'));
     }
+    public function search_by_profession_id(Request $req)
+    {
+        $lostPassports = LostPassport::where('branch_id', Auth::user()->branch_id)->where('profession_id', $req->profession_id)->orderBy('id', 'DESC')->get();
+        return view('BranchManager.lostPassport.search', compact('lostPassports'));
+    }
 }
