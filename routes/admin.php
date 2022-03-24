@@ -21,6 +21,7 @@ use App\Http\Controllers\Admin\AllPassportReportController;
 use App\Http\Controllers\Admin\RenewManualPassportController;
 use App\Http\Controllers\Admin\SalaryController;
 use App\Http\Controllers\Admin\DeliveryController;
+use App\Http\Controllers\Admin\PassportDeliveryController;
 use App\Http\Controllers\Admin\ExtraServiceAddController;
 use App\Http\Controllers\Admin\OtherServiceFeeController;
 use App\Http\Controllers\Admin\ImportExportController;
@@ -208,6 +209,12 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::get('passport-options/delivery/{data}', [PassportOptionsController::class, 'searchDelivery']);
     Route::post('passport-options/delivery/undo/{option}', [PassportOptionsController::class, 'deliveryUndo'])->name('passportOption.delivery.undo');
     Route::post('passport-options/delivery/remarks/{id}', [PassportOptionsController::class, 'remarksSave'])->name('passportOption.delivery.remarks');
+
+
+    // passport delivery
+    Route::get('passport/delivery', [PassportDeliveryController::class,'delivery'])->name('passportDelivery.delivery');
+    Route::get('passport/delivery/{data}', [PassportDeliveryController::class,'searchDelivery']);
+
 
 
 

@@ -16,8 +16,8 @@ Route::group(['prefix' => 'call-center/', 'as' => 'callCenter.', 'middleware' =>
 
     // Passport Option Delivery
     Route::get('passport-options/delivery', [CallcenterController::class,'delivery'])->name('passportOption.delivery');
-    Route::post('passport-options/delivery/store', [CallcenterController::class,'deliveryStore'])->name('passportOption.delivery.store');
     Route::get('passport-options/delivery/{data}', [CallcenterController::class,'searchDelivery']);
+    Route::post('passport-options/delivery/store', [CallcenterController::class,'deliveryStore'])->name('passportOption.delivery.store');
     Route::post('passport-options/delivery/undo/{option}', [CallcenterController::class,'deliveryUndo'])->name('passportOption.delivery.undo');
 
     Route::post('passport-options/delivery/remarks/{id}', [CallcenterController::class,'remarksSave'])->name('passportOption.delivery.remarks');

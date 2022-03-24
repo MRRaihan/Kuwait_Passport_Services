@@ -147,7 +147,7 @@ class PassportOptionsController extends Controller
             ]
         );
 
-        if ($request->passport_option) {
+        if (isset($request->passport_option)) {
             get_passport_model_name_by_option($request->passport_option)::whereIn('id', $request->all_option)->whereIn('branch_id', $request->branch_id)->update([
                 'branch_status' => 1,
             ]);
@@ -217,7 +217,7 @@ class PassportOptionsController extends Controller
         $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
         $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-        if ($option) {
+        if (isset($option)) {
             $data = [
                 'civil_id' => $civil_id,
                 'mobile' => $mobile,
@@ -252,7 +252,7 @@ class PassportOptionsController extends Controller
             ]
         );
 
-        if ($request->passport_option) {
+        if (isset($request->passport_option)) {
             get_passport_model_name_by_option($request->passport_option)::whereIn('id', $request->all_option)->update([
                 'is_delivered' => 1,
             ]);
@@ -301,7 +301,7 @@ class PassportOptionsController extends Controller
         $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
         $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-        if ($option) {
+        if (isset($option)) {
             $data = [
                 'civil_id' => $civil_id,
                 'mobile' => $mobile,
@@ -340,7 +340,7 @@ class PassportOptionsController extends Controller
         $to_date = explode('&', $data)[3] ? explode('&', $data)[3] : '';
         $option = explode('&', $data)[4] ? explode('&', $data)[4] : 0;
 
-        if ($option) {
+        if (isset($option)) {
             $data = [
                 'civil_id' => $civil_id,
                 'mobile' => $mobile,

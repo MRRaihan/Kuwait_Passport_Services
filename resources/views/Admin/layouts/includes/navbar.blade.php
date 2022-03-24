@@ -131,7 +131,11 @@
                     <a href="{{ route('admin.importExport') }}" class="waves-effect"><i class="ion-android-storage"></i> <span> Export And Import</a>
                 </li>
 
-
+                {{-- Call center status --}}
+                <li>
+                    <a href="{{route('admin.passportDelivery.delivery')}}" class="waves-effect"><i
+                            class="ti-agenda"></i><span> Call center status </span></a>
+                </li>
                 {{-- routes for recycle-bin manage  --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect {{\Illuminate\Support\Facades\Request::is('admin/recycle-bin/*') ? 'active subdrop': ''}}"><i class="fa fa-trash"></i> <span> Recycle bin </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>

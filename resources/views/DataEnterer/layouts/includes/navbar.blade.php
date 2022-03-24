@@ -77,6 +77,12 @@
                         <li><a href="{{ route('dataEnterer.otherService.index') }}">Others</a></li>
                     </ul>
                 </li>
+                {{-- Call center status --}}
+                <li>
+                    <a href="{{route('dataEnterer.passportOption.delivery')}}" class="waves-effect">
+                        <i class="ti-agenda"></i><span> Call center status </span>
+                    </a>
+                </li>
 
                 {{-- Reports --}}
                 <li class="has_sub">

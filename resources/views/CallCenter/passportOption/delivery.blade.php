@@ -158,7 +158,7 @@ Passport Options
                                         </td>
                                         <td>{{ $passport->remarksBy ? $passport->remarksBy->name : '' }}</td>
                                         <td>
-                                            @if($passport->brnach_status == 3)
+                                            @if($passport->branch_status == 3)
                                                 <span class="badge badge-pill badge-success">Already Delivered</span>
                                             @else
                                                 <span class="badge badge-pill badge-danger" >Pending Delivered</span>

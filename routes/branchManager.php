@@ -6,7 +6,7 @@ use App\Http\Controllers\BranchManager\DataEntererController;
 use App\Http\Controllers\BranchManager\LostPassportController;
 use App\Http\Controllers\BranchManager\NewBornBabyPassportController;
 use App\Http\Controllers\BranchManager\ManualPassportController;
-use App\Http\Controllers\BranchManager\OtherServices\OtherServiceController;
+use App\Http\Controllers\BranchManager\DeliveryController;
 use App\Http\Controllers\BranchManager\RenewPassportController;
 use App\Http\Controllers\BranchManager\RenewManualPassportController;
 use App\Http\Controllers\BranchManager\ReportController;
@@ -18,6 +18,7 @@ use App\Http\Controllers\BranchManager\OtherServices\ImmigrationGovementServiceC
 use App\Http\Controllers\BranchManager\OtherServices\PremierServiceController;
 use App\Http\Controllers\BranchManager\OtherServices\LegalComplaintsServiceController;
 use App\Http\Controllers\BranchManager\OtherServices\AllOtherServicesReportController;
+use App\Http\Controllers\BranchManager\OtherServices\OtherServiceController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -55,6 +56,8 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('lostPassport/search_by_passport_number', [LostPassportController::class, 'search_by_passport_number'])->name('lostPassport.search_by_passport_number');
     Route::post('lostPassport/search_by_new_mrp_passport_no', [LostPassportController::class, 'search_by_new_mrp_passport_no'])->name('lostPassport.search_by_new_mrp_passport_no');
     Route::post('lostPassport/search_by_bio_enrollment_id', [LostPassportController::class, 'search_by_bio_enrollment_id'])->name('lostPassport.search_by_bio_enrollment_id');
+    Route::post('lostPassport/search_by_profession_id', [LostPassportController::class, 'search_by_profession_id'])->name('lostPassport.search_by_profession_id');
+
 
     // Lost Passport By User
     Route::get('user-lost-passport', [LostPassportController::class, 'userLostPassportIndex'])->name('userLostPassport.index');
@@ -94,6 +97,7 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('manualPassport/search_by_passport_number', [ManualPassportController::class, 'search_by_passport_number'])->name('manualPassport.search_by_passport_number');
     Route::post('manualPassport/search_by_new_mrp_passport_no', [ManualPassportController::class, 'search_by_new_mrp_passport_no'])->name('manualPassport.search_by_new_mrp_passport_no');
     Route::post('manualPassport/search_by_bio_enrollment_id', [ManualPassportController::class, 'search_by_bio_enrollment_id'])->name('manualPassport.search_by_bio_enrollment_id');
+    Route::post('manualPassport/search_by_profession_id', [ManualPassportController::class, 'search_by_profession_id'])->name('manualPassport.search_by_profession_id');
 
     // Manual Passport By User
     Route::get('user-manual-passport', [ManualPassportController::class, 'userManualPassportIndex'])->name('userManualPassport.index');
@@ -111,6 +115,8 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
     Route::post('renewPassport/search_by_passport_number', [RenewPassportController::class, 'search_by_passport_number'])->name('renewPassport.search_by_passport_number');
     Route::post('renewPassport/search_by_new_mrp_passport_no', [RenewPassportController::class, 'search_by_new_mrp_passport_no'])->name('renewPassport.search_by_new_mrp_passport_no');
     Route::post('renewPassport/search_by_bio_enrollment_id', [RenewPassportController::class, 'search_by_bio_enrollment_id'])->name('renewPassport.search_by_bio_enrollment_id');
+    Route::post('renewPassport/search_by_profession_id', [RenewPassportController::class, 'search_by_profession_id'])->name('renewPassport.search_by_profession_id');
+
 
     // Renew Passport By User
     Route::get('user-renew-passport', [RenewPassportController::class, 'userRenewPassportIndex'])->name('userRenewPassport.index');
@@ -160,6 +166,9 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
 
     Route::get('get-all-passport-report/{data}', [AllPassportReportController::class, 'getReport'])->name('allPassportReport.excelExport');
 
+    // passport delivery
+    Route::get('passport/delivery', [DeliveryController::class,'delivery'])->name('passportDelivery.delivery');
+    Route::get('passport/delivery/{data}', [DeliveryController::class,'searchDelivery']);
 
 
     // All Other Services Report

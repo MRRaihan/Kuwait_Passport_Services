@@ -68,6 +68,14 @@ New Born Baby Passport
                                 <button type="submit" class="col-sm-3 btn btn-success">Search</button>
                             </form>
                         </div>
+                    </div> <!-- panel-body -->
+                </div> <!-- panel -->
+            </div> <!-- col -->
+        </div> <!-- End row -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-primary">
+                    <div class="panel-body row">
                         <div class="col-md-4">
                             <form class="form-group" method="POST" action="{{ route('branchManager.newBornBabyPassport.search_by_bio_enrollment_id') }}">
                                 @csrf

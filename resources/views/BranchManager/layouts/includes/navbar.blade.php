@@ -39,9 +39,8 @@
                         <li><a href="{{ route('branchManager.renewPassport.create') }}">Renew Passports</a></li>
                         <li><a href="{{ route('branchManager.manualPassport.create') }}">Manual Passports</a></li>
                         <li><a href="{{ route('branchManager.lostPassport.create') }}">Lost Passports</a></li>
-                        <li><a href="{{ route('branchManager.newBornBabyPassport.create') }}">New born baby
-                                Passports</a></li>
-
+                        <li><a href="{{ route('branchManager.newBornBabyPassport.create') }}">New born baby Passports</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -53,8 +52,9 @@
                         <li><a href="{{ route('branchManager.renewPassport.index') }}">Renew Passports</a></li>
                         <li><a href="{{ route('branchManager.manualPassport.index') }}">Manual Passports</a></li>
                         <li><a href="{{ route('branchManager.lostPassport.index') }}">Lost Passports</a></li>
-                        <li><a href="{{ route('branchManager.newBornBabyPassport.index') }}">New Born Baby
-                                Passports</a></li>
+                        <li>
+                            <a href="{{ route('branchManager.newBornBabyPassport.index') }}">New Born Baby Passports</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -66,8 +66,9 @@
                         <li><a href="{{ route('branchManager.userRenewPassport.index') }}">Renew Passports</a></li>
                         <li><a href="{{ route('branchManager.userManualPassport.index') }}">Manual Passports</a></li>
                         <li><a href="{{ route('branchManager.userLostPassport.index') }}">Lost Passports</a></li>
-                        <li><a href="{{ route('branchManager.userNewBornBabyPassport.index') }}">New Born Baby
-                                Passports</a></li>
+                        <li>
+                            <a href="{{ route('branchManager.userNewBornBabyPassport.index') }}">New Born Baby Passports</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -99,18 +100,18 @@
 
                     </ul>
                 </li>
+                {{-- Call center status --}}
+                <li>
+                    <a href="{{route('branchManager.passportDelivery.delivery')}}" class="waves-effect">
+                        <i class="ti-agenda"></i><span> Call center status </span>
+                    </a>
+                </li>
+
                 {{-- Reports --}}
                 <li class="has_sub">
                     <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-bar-chart"></i> <span> Reports
-                        </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
-                    {{-- <ul class="list-unstyled">
-                        <li><a href="#">All Reports</a></li>
-                        <li><a href="#">Shift To Embassy Reports</a></li>
-                        <li><a href="#">Receive To Embassy Reports</a></li>
-                        <li><a href="#">Delivery Reports</a></li>
-                    </ul> --}}
-
-
+                        </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span>
+                    </a>
                     <ul class="list-unstyled">
                         <li><a href="{{ route('branchManager.report.index') }}">All Reports</a></li>
 
