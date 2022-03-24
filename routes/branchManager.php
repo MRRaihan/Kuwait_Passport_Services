@@ -6,7 +6,7 @@ use App\Http\Controllers\BranchManager\DataEntererController;
 use App\Http\Controllers\BranchManager\LostPassportController;
 use App\Http\Controllers\BranchManager\NewBornBabyPassportController;
 use App\Http\Controllers\BranchManager\ManualPassportController;
-use App\Http\Controllers\BranchManager\OtherServices\OtherServiceController;
+use App\Http\Controllers\BranchManager\DeliveryController;
 use App\Http\Controllers\BranchManager\RenewPassportController;
 use App\Http\Controllers\BranchManager\RenewManualPassportController;
 use App\Http\Controllers\BranchManager\ReportController;
@@ -18,6 +18,7 @@ use App\Http\Controllers\BranchManager\OtherServices\ImmigrationGovementServiceC
 use App\Http\Controllers\BranchManager\OtherServices\PremierServiceController;
 use App\Http\Controllers\BranchManager\OtherServices\LegalComplaintsServiceController;
 use App\Http\Controllers\BranchManager\OtherServices\AllOtherServicesReportController;
+use App\Http\Controllers\BranchManager\OtherServices\OtherServiceController;
 
 
 use Illuminate\Support\Facades\Route;
@@ -165,6 +166,9 @@ Route::group(['prefix' => 'branch-manager/', 'as' => 'branchManager.', 'middlewa
 
     Route::get('get-all-passport-report/{data}', [AllPassportReportController::class, 'getReport'])->name('allPassportReport.excelExport');
 
+    // passport delivery
+    Route::get('passport/delivery', [DeliveryController::class,'delivery'])->name('passportDelivery.delivery');
+    Route::get('passport/delivery/{data}', [DeliveryController::class,'searchDelivery']);
 
 
     // All Other Services Report

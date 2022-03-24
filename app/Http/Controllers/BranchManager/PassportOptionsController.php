@@ -152,18 +152,18 @@ class PassportOptionsController extends Controller
             'to_date' => $to_date,
             'option' => $option,
             'options' => RenewPassport::when($civil_id != '',function($query) use($civil_id){
-                                return $query->where('civil_id',$civil_id);
-                            })
-                            ->when($mobile != '',function($query) use($mobile){
-                                return $query->where('bd_phone',$mobile);
-                            })
-                            ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
-                                return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
-                            })
-                            ->where('branch_status',1)
-                            ->where('branch_id',Auth::user()->branch_id)
-                            ->orderBy('id','desc')
-                            ->get()
+                return $query->where('civil_id',$civil_id);
+            })
+            ->when($mobile != '',function($query) use($mobile){
+                return $query->where('bd_phone',$mobile);
+            })
+            ->when($from_date != '' && $to_date != '',function($query) use($from_date,$to_date){
+                return $query->whereDate('created_at','>=',$from_date)->whereDate('created_at','<=',$to_date);
+            })
+            ->where('branch_status',1)
+            ->where('branch_id',Auth::user()->branch_id)
+            ->orderBy('id','desc')
+            ->get()
         ];
         return view('BranchManager.passportOption.receive_from_admin',$data);
      }

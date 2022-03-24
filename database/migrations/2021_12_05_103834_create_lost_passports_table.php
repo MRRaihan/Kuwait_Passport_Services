@@ -43,9 +43,9 @@ class CreateLostPassportsTable extends Migration
             $table->string('gd_report_kuwait')->nullable();
             $table->string('application_form')->nullable();
 
-            $table->boolean('shift_to_admin')->default(0);
-            $table->boolean('embassy_status')->default(0);
-            $table->boolean('branch_status')->default(0);
+            $table->boolean('shift_to_admin')->default(0)->comment('1 = branch manager to admin ');
+            $table->boolean('embassy_status')->default(0)->comment('1 = receive from admin , 3 = send to admin ');
+            $table->boolean('branch_status')->default(0)->comment('0 = nothing , 1 = received from admin , 3 = delivery to user ');
 
             $table->boolean('is_delivered')->default(0);
 

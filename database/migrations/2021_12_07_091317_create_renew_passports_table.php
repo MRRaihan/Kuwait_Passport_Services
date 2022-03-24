@@ -50,9 +50,9 @@ class CreateRenewPassportsTable extends Migration
             $table->string('bio_enrollment_id')->nullable();
             $table->string('new_mrp_passport_no')->nullable();
             $table->string('model_name')->default('Renew Passport');
-            $table->boolean('shift_to_admin')->default(0);
-            $table->boolean('embassy_status')->default(0);
-            $table->boolean('branch_status')->default(0);
+            $table->boolean('shift_to_admin')->default(0)->comment('1 = branch manager to admin ');
+            $table->boolean('embassy_status')->default(0)->comment('1 = receive from admin , 3 = send to admin ');
+            $table->boolean('branch_status')->default(0)->comment('0 = nothing , 1 = received from admin , 3 = delivery to user ');
             $table->boolean('is_delivered')->default(0);
             $table->boolean('status')->default(1);
             $table->boolean('remarks_by')->nullable();
