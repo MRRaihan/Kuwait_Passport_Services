@@ -49,7 +49,6 @@ class CallcenterController extends Controller
             ];
             return view('CallCenter.passportOption.delivery',$data);
         }
-
         return redirect()->back();
     }
 
@@ -62,37 +61,12 @@ class CallcenterController extends Controller
             ]
         );
 
-        if ($request->passport_option == 0) {
-            LostPassport::whereIn('id',$request->all_option)->update([
+        if (isset($request->passport_option)) {
+            get_passport_model_name_by_option($request->passport_option)::whereIn('id',$request->all_option)->update([
                 'is_delivered' => 1,
             ]);
             $request->session()->flash('type', 'success');
-            $request->session()->flash('message', 'Lost Passport Received to Embasssay Successfully!!');
-            return redirect()->back();
-        }
-
-        if ($request->passport_option == 1) {
-            ManualPassport::whereIn('id',$request->all_option)->update([
-                'is_delivered' => 1,
-            ]);
-            $request->session()->flash('type', 'success');
-            $request->session()->flash('message', 'Manual Passport Received to Embasssay Successfully!!');
-            return redirect()->back();
-        }
-        if ($request->passport_option == 2) {
-            RenewPassport::whereIn('id',$request->all_option)->update([
-                'is_delivered' => 1,
-            ]);
-            $request->session()->flash('type', 'success');
-            $request->session()->flash('message', 'Renewal Passport Received to Embasssay Successfully!!');
-            return redirect()->back();
-        }
-        if ($request->passport_option == 3) {
-            Other::whereIn('id',$request->all_option)->update([
-                'is_delivered' => 1,
-            ]);
-            $request->session()->flash('type', 'success');
-            $request->session()->flash('message', 'Renewal Passport Received to Embasssay Successfully!!');
+            $request->session()->flash('message', 'Passport Received to Embasssay Successfully!!');
             return redirect()->back();
         }
         $request->session()->flash('type', 'error');
@@ -105,50 +79,13 @@ class CallcenterController extends Controller
         $option = explode('&', $data)[0];
         $id = explode('&', $data)[1];
 
-
         if (isset($option) && isset($id)) {
-
-            if ($option == 0) {
-                LostPassport::where('id',$id)->update([
-                    'is_delivered' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-            }
-
-            if ($option == 1) {
-                ManualPassport::where('id',$id)->update([
-                    'is_delivered' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-            }
-            if ($option == 2) {
-                RenewPassport::where('id',$id)->update([
-                    'is_delivered' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-            }
-            if ($option == 3) {
-                Other::where('id',$id)->update([
-                    'is_delivered' => 0,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Undo'
-                ]);
-            }
-
+            get_passport_model_name_by_option($option)::where('id',$id)->update([
+                'is_delivered' => 0,
+            ]);
             return response()->json([
-                'type' => 'error',
-                'message' => 'Something Went Wrong'
+                'type' => 'success',
+                'message' => 'Successfully Undo'
             ]);
         }else{
             return response()->json([
@@ -163,7 +100,7 @@ class CallcenterController extends Controller
          $id = explode('&', $data)[1] ? explode('&', $data)[1] : '';
          $mySelect = explode('&', $data)[2];
 
-         if (isset($option) && isset($id)) {
+        if (isset($option) && isset($id)) {
 
             if ($mySelect == -1) {
                 return response()->json([
@@ -172,62 +109,13 @@ class CallcenterController extends Controller
                 ]);
             }
 
-            if ($option == 0) {
-                RenewPassport::where('id',$id)->update([
-                    'remarks' => $mySelect,
-                    'remarks_by' => Auth::user()->id,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Remarks'
-                ]);
-            }
-
-            if ($option == 1) {
-                ManualPassport::where('id',$id)->update([
-                    'remarks' => $mySelect,
-                    'remarks_by' => Auth::user()->id,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Remarks'
-                ]);
-            }
-            if ($option == 2) {
-                LostPassport::where('id',$id)->update([
-                    'remarks' => $mySelect,
-                    'remarks_by' => Auth::user()->id,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Remarks'
-                ]);
-            }
-            if ($option == 3) {
-                Other::where('id',$id)->update([
-                    'remarks' => $mySelect,
-                    'remarks_by' => Auth::user()->id,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Remarks'
-                ]);
-            }
-
-            if ($option == 4) {
-                NewBornBabyPassport::where('id',$id)->update([
-                    'remarks' => $mySelect,
-                    'remarks_by' => Auth::user()->id,
-                ]);
-                return response()->json([
-                    'type' => 'success',
-                    'message' => 'Successfully Remarks'
-                ]);
-            }
-
+            get_passport_model_name_by_option($option)::where('id',$id)->update([
+                'remarks' => $mySelect,
+                'remarks_by' => Auth::user()->id,
+            ]);
             return response()->json([
-                'type' => 'error',
-                'message' => 'Something Went Wrong'
+                'type' => 'success',
+                'message' => 'Successfully Remarks'
             ]);
         }else{
             return response()->json([
