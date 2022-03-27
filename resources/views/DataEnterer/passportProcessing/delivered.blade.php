@@ -155,7 +155,7 @@
         }
 
         function openLink(link,type='_parent'){
-        window.open(link,type);
+            window.open(link,type);
         }
 
         $('.bio_enrollment_id').keypress(function(e) {
