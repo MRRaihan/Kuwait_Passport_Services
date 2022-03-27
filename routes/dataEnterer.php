@@ -106,8 +106,11 @@ Route::group(['prefix' => 'data-enterer/', 'as' => 'dataEnterer.', 'middleware' 
     // passport processing
     Route::get('passport-processing/received-from-branch-manager', [PassportProcessingController::class, 'receivedFromBranchManager'])->name('passportProcessing.receivedFromBranchManager');
     Route::get('passport-processing/received-from-branch-manager/{data}', [PassportProcessingController::class, 'searchReceive'])->name('passportProcessing.searchReceive');
-    Route::post('passport-options/received-from-branch-manager/bio-enrollment-id/{id}', [PassportProcessingController::class, 'bioEnrollmentIdSave'])->name('passportProcessing.bioEnrollmentIdSave');
-    Route::post('passport-options/received-from-branch-manager/new-mrp-passport-no/{id}', [PassportProcessingController::class, 'newMrpPassportNoSave'])->name('passportProcessing.newMrpPassportNoSave');
+    Route::get('passport-processing/delivered', [PassportProcessingController::class, 'delivered'])->name('passportProcessing.delivered');
+    Route::get('passport-processing/delivered/{data}', [PassportProcessingController::class, 'searchReceiveDelivered'])->name('passportProcessing.searchReceiveDelivered');
+
+    Route::post('passport-processing/received-from-branch-manager/bio-enrollment-id/{id}', [PassportProcessingController::class, 'bioEnrollmentIdSave'])->name('passportProcessing.bioEnrollmentIdSave');
+    Route::post('passport-processing/received-from-branch-manager/new-mrp-passport-no/{id}', [PassportProcessingController::class, 'newMrpPassportNoSave'])->name('passportProcessing.newMrpPassportNoSave');
 
     // passport option
     Route::get('passport-options/delivery', [DeliveryController::class,'delivery'])->name('passportOption.delivery');
