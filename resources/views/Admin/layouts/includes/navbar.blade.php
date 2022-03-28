@@ -201,6 +201,7 @@
                         <li><a href="{{ route('admin.pricingPlan.index') }}">Pricing plan</a></li>
                         <li><a href="{{ route('admin.pageServices.index') }}">Services</a></li>
                         <li><a href="{{ route('admin.landingSetting.linkEdit') }}">Links</a></li>
+                        <li><a href="{{ route('admin.landingSetting.serviceDetailsEdit') }}">Services Details</a></li>
                     </ul>
                 </li>
 

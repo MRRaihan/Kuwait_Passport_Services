@@ -90,5 +90,28 @@ class FrontendSettingController extends Controller
 
         return back()->with('success', 'Update successfully');
     }
+    public function serviceDetailsEdit()
+    {
+        return view('Admin.frontendSettings.service_details');
+    }
+
+    public function serviceDetailsUpdate(Request $request)
+    {
+        $request->validate([
+            'renew_passport_service_details' => 'required',
+            'manual_passport_service_details' => 'required',
+            'lost_passport_service_details' => 'required',
+            'new_born_passport_service_details' => 'required',
+            'e_passport_service_details' => 'required',
+        ]);
+
+        update_static_option('renew_passport_service_details', $request->renew_passport_service_details);
+        update_static_option('manual_passport_service_details', $request->manual_passport_service_details);
+        update_static_option('lost_passport_service_details', $request->lost_passport_service_details);
+        update_static_option('new_born_passport_service_details', $request->new_born_passport_service_details);
+        update_static_option('e_passport_service_details', $request->e_passport_service_details);
+
+        return back()->with('success', 'Update successfully');
+    }
 
 }

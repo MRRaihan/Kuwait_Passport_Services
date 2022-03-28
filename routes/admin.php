@@ -346,6 +346,8 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
     Route::group(['prefix' => 'landing-setting/', 'as' => 'landingSetting.'], function () {
         Route::get('link-edit', [FrontendSettingController::class, 'linkEdit'])->name('linkEdit');
         Route::post('link-update', [FrontendSettingController::class, 'linkUpdate'])->name('linkUpdate');
+        Route::get('service-details-edit', [FrontendSettingController::class, 'serviceDetailsEdit'])->name('serviceDetailsEdit');
+        Route::post('service-details-update', [FrontendSettingController::class, 'serviceDetailsUpdate'])->name('serviceDetailsUpdate');
     });
     //banner footer
     Route::get('banner-edit', [FrontendSettingController::class, 'BannerFooter'])->name('bannerEdit');
