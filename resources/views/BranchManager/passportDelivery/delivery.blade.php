@@ -84,6 +84,18 @@ Passport Options
                         <span class="panel-title">Passport Delivery
                     </div>
                     <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3" >
+                                <label for="date">Search By Passport Type</label>
+                                <select class="form-control" name="onchange_option_id" id="onchange_option_id" onchange="openLink('{{ url('branch-manager/passport/delivery') }}/'+'&'+'&'+'&'+'&'+$('#onchange_option_id').val())">
+                                    @if(passportOptions()[0])
+                                    @foreach (passportOptions() as $key => $passort)
+                                        <option value="{{$key}}"   {{ $option == $key ? 'selected' : '' }}   >&nbsp;&nbsp;&nbsp;&nbsp;{{$passort}}</option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                        </div>
                         <table id="datatable" class="table table-striped table-bordered dt-responsive nowrap" cellspacing="0" width="100%">
                             <thead>
                                 <tr>
@@ -143,6 +155,10 @@ Passport Options
     function searchOptions() {
          window.open("{{ url('branch-manager/passport/delivery') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
     }
+    function openLink(link,type='_parent'){
+        window.open(link,type);
+    }
+
 </script>
 
 @endsection

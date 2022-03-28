@@ -89,7 +89,7 @@
                         <div class="row">
                             <div class="col-md-3" >
                                 <label for="date">Search By Passport Type</label>
-                                <select class="form-control" name="onchange_option_id" id="onchange_option_id" onchange="openLink('{{ url('data-enterer/passport-processing/received-from-branch-manager') }}/'+'&'+'&'+'&'+'&'+$('#onchange_option_id').val())">
+                                <select class="form-control" name="onchange_option_id" id="onchange_option_id" onchange="openLink('{{ url('data-enterer/passport-processing/delivered') }}/'+'&'+'&'+'&'+'&'+$('#onchange_option_id').val())">
                                     @if(passportOptions()[0])
                                     @foreach (passportOptions() as $key => $passort)
                                         <option value="{{$key}}"   {{ $option == $key ? 'selected' : '' }}   >&nbsp;&nbsp;&nbsp;&nbsp;{{$passort}}</option>
@@ -151,11 +151,11 @@
 </div> <!-- content -->
     <script>
         function searchOptions() {
-            window.open("{{ url('data-enterer/passport-processing/received-from-branch-manager') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
+            window.open("{{ url('data-enterer/passport-processing/delivered') }}/"+$('#civil_id').val()+"&"+$('#mobile').val()+"&"+$('#from_date').val()+"&"+$('#to_date').val()+"&"+$('#option_id').val(),"_parent");
         }
 
         function openLink(link,type='_parent'){
-        window.open(link,type);
+            window.open(link,type);
         }
 
         $('.bio_enrollment_id').keypress(function(e) {
