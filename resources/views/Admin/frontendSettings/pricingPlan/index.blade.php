@@ -57,9 +57,7 @@
                 <div class="col-md-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <span class="panel-title">Branch Table
-                                <!-- Button trigger modal for adding new Category -->
-
+                            <span class="panel-title">Pricing List</span>
                         </div>
                         <div class="panel-body">
                             <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap"
