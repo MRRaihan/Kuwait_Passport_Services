@@ -343,6 +343,10 @@ Route::group(['prefix' => 'admin/', 'as' => 'admin.', 'middleware' => ['auth', '
      * frontend setiing
      */
 
+    Route::group(['prefix' => 'landing-setting/', 'as' => 'landingSetting.'], function () {
+        Route::get('link-edit', [FrontendSettingController::class, 'linkEdit'])->name('linkEdit');
+        Route::post('link-update', [FrontendSettingController::class, 'linkUpdate'])->name('linkUpdate');
+    });
     //banner footer
     Route::get('banner-edit', [FrontendSettingController::class, 'BannerFooter'])->name('bannerEdit');
     Route::post('banner-edit', [FrontendSettingController::class, 'BannerFooterUpdate'])->name('bannerUpdate');

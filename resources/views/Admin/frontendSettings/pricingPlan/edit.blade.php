@@ -125,7 +125,7 @@
 
                     <div class="col-md-12">
 
-                        <button type="submit" class="btn btn-success mx-4" style="float: right; margin-bottom: 10px; margin-top:-26px;">CREATE</button>
+                        <button type="submit" class="btn btn-success mx-4" style="float: right; margin-bottom: 10px; margin-top:-26px;">UPDATE</button>
                     </div>
 
                 </div>

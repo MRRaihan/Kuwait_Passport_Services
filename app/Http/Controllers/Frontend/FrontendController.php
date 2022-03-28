@@ -43,7 +43,7 @@ class FrontendController extends Controller
     {
         $pricingPlans = PricingPlan::where('status', 1)->get();
         $services=Services::all();
-        return view('Frontend.index', compact(['pricingPlans','services']));
+        return view('Frontend.landingPage.index', compact(['pricingPlans','services']));
     }
     public function index($type)
     {

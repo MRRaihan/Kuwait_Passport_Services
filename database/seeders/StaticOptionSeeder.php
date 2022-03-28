@@ -14,6 +14,13 @@ class StaticOptionSeeder extends Seeder
     public function run()
     {
         set_static_option('logo', 'uploads/images/logo.png');
+        set_static_option('uae_office_link', 'https://versatilo.org/');
+        set_static_option('kuwait_office_link', 'https://kuwaithc.versatilo.london/');
+        set_static_option('bahrain_office_link', 'https://versatilo.london/');
+        set_static_option('facebook_link', '#');
+        set_static_option('instagram_link', '#');
+        set_static_option('linkedin_link', '#');
+        set_static_option('twitter_link', '#');
         set_static_option('no_image', 'uploads/images/setting/no-image.png');
         set_static_option('user', 'uploads/images/setting/user.png');
         set_static_option('banner_text', 'For title, select "Header 2" from style upper tab');

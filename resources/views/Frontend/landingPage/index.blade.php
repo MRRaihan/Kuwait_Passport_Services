@@ -21,7 +21,7 @@
     <!-- .....................Owl carousel................................... -->
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
-    <title>Versatilo London W.L.L (Kuwait)</title>
+    <title>{{ env('APP_NAME') }}</title>
 
 </head>
 
@@ -388,7 +388,7 @@
                                     <div class="text-center">
                                         <img src="{{ asset('frontend_assets/img/Icons/done.png') }}"
                                             class="service-img my-2" alt="" />
-                                        <h5 class="my-3 status-info">Lost Passport</h5>
+                                        <h5 class="my-3 status-info">{{ $pricingPlan->title }}</h5>
                                     </div>
                                     <div class="d-flex justify-content-center">
                                         <ol class="card-bottom">
@@ -932,175 +932,11 @@
             </div>
         </div>
     </section>
-
     <!-- ================Trusted user section end here========== -->
-
     <!--================ footer start here====================== -->
-    <footer id="footer">
-        <div class="footer py-5">
-            <div class="container">
-                <h2 class="text-light fw-bold footer-text">Versatilo London W.L.L (Kuwait)</h2>
-
-                <div class="row my-4">
-                    <div class="col-md-3 col-sm-6 footer-text">
-                        <div class="p-2">
-                            <h5 class="text-light">Solutions</h5>
-                            <ul class="footer-list">
-                                <li><a href="#">Lost passport</a></li>
-                                <li><a href="#">Renew passport</a></li>
-                                <li><a href="#">Manual extension</a></li>
-                                <li><a href="#">E-Passport</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 footer-text">
-                        <div class="p-2">
-                            <h5 class="text-light">Company</h5>
-                            <ul class="footer-list">
-                                <li><a href="#">About us</a></li>
-                                <li><a href="#">Career</a></li>
-                                <li><a href="#">News room</a></li>
-                                <li><a href="#">Contact us</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6 footer-text">
-                        <div class="p-2">
-                            <h5 class="text-light">Office</h5>
-                            <ul class="footer-list">
-                                <li><a href="#">UAE</a></li>
-                                <li><a href="#">Bahrain</a></li>
-                                <li><a href="#">Kuwait</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <div class="card footer-card my-2 shadow">
-                            <div
-                                class="
-                    card-body
-                    d-flex
-                    justify-content-center
-                    align-items-center
-                  ">
-                                <ul class="footer-list">
-                                    <li>
-                                        <i class="fas fa-phone mx-1 icon-circle"></i> {{ get_static_option('footer_phone') }}
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-envelope mx-1"></i> {{ get_static_option('footer_email') }}
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-location-arrow mx-1"></i> {!! get_static_option('footer_address') !!}
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="buttons text-center text-light my-3">
-                            <a href="#"> <i class="fab fa-facebook-square fa-2x mx-3"></i></a>
-                            <a href="#"> <i class="fab fa-instagram fa-2x mx-3"></i></a>
-                            <a href="#"> <i class="fab fa-linkedin fa-2x mx-3"></i></a>
-                            <a href="#"> <i class="fab fa-twitter-square fa-2x mx-3"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-light text-center my-1">
-                    Copyright &copy;
-                    <span id="copyright">
-                        <script>
-                            document
-                                .getElementById("copyright")
-                                .appendChild(
-                                    document.createTextNode(new Date().getFullYear())
-                                );
-                        </script>
-                    </span>
-                    <a target="_blank" href="{{ route('forntend.index') }}">{{ env('APP_NAME', 'Kuwait Passport Service') }}</a> | All Rights Reserved.Developed by <a target="_blank" href="https://www.tfpbd.com/">TFP Solutions Bangladesh Ltd.</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!--================ footer start here====================== -->
-
-    <!------------------------------- javascript files ------------------------------------------>
-    <script type="text/javascript" src="{{ asset('frontend_assets/js/bootstrap.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('frontend_assets/js/popper.min.js') }}"></script>
-
-    <!-- latest jquery file -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-
-
-
-    <script type="text/javascript">
-        (function($) {
-            "use strict";
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 20,
-                nav: false,
-                dots: true,
-                responsive: {
-                    0: {
-                        items: 1,
-                    },
-                    600: {
-                        items: 3,
-                    },
-                    1000: {
-                        items: 3,
-                    },
-                },
-            });
-        })(jQuery);
-    </script>
-    <script type="text/javascript" src="{{ asset('frontend_assets/js/main.js') }}"></script>
-
-    <script>
-        // function Show(title, link, style = '') {
-        //     var civil_id = $('#civil_id').val();
-        //     var kuwait_phone = $('#kuwait_phone').val();
-        //     var passport_type = $('#passport_type').val();
-        //     // alert();
-        //     $('#modal').modal('show');
-        //     $('#modal-title').html(title);
-        //     $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
-        //     $('#modal-dialog').attr('style', style);
-        //     $.ajax({
-        //             url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
-        //             type: 'GET',
-        //             data: {},
-        //         })
-        //         .done(function(response) {
-        //             $('#modal-body').html(response);
-        //         });
-        // }
-
-        $('#checkPassportStatus').click(function (e) {
-          e.preventDefault();
-            var civil_id = $('#civil_id').val();
-            var kuwait_phone = $('#kuwait_phone').val();
-            var passport_type = $('#passport_type').val();
-            // alert();
-
-            var link = '{{ url('check-passport-status') }}';
-            console.log(civil_id,kuwait_phone);
-            $('#modal').modal('show');
-            $('#modal-title').html('Passport Status');
-            $('#modal-body').html('<h1 class="text-center"><strong>Please Wait...</strong></h1>');
-            // $('#modal-dialog').attr('style', style);
-            $.ajax({
-                    url: link+'/'+civil_id+'&'+kuwait_phone+'&'+passport_type,
-                    type: 'GET',
-                    data: {},
-                })
-                .done(function(response) {
-                    $('#modal-body').html(response);
-                });
-        });
-    </script>
+    @include('Frontend.landingPage.includes.footer')
+    <!--================ footer end here====================== -->
+    @include('Frontend.landingPage.includes.foot')
 </body>
 
 </html>

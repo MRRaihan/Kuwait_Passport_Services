@@ -15,8 +15,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 class FrontendSettingController extends Controller
 {
     /**
-     * banner footer
-     */
+    * banner footer
+    */
+
     public function BannerFooter()
     {
 
@@ -61,4 +62,33 @@ class FrontendSettingController extends Controller
 
         return redirect()->back()->with('success', 'Information Update successfully');
     }
+
+    public function linkEdit()
+    {
+        return view('Admin.frontendSettings.link');
+    }
+
+    public function linkUpdate(Request $request)
+    {
+        $request->validate([
+            'uae_office_link' => 'required',
+            'kuwait_office_link' => 'required',
+            'bahrain_office_link' => 'required',
+            'facebook_link' => 'required',
+            'instagram_link' => 'required',
+            'linkedin_link' => 'required',
+            'twitter_link' => 'required',
+        ]);
+
+        update_static_option('uae_office_link', $request->uae_office_link);
+        update_static_option('kuwait_office_link', $request->kuwait_office_link);
+        update_static_option('bahrain_office_link', $request->bahrain_office_link);
+        update_static_option('facebook_link', $request->facebook_link);
+        update_static_option('instagram_link', $request->instagram_link);
+        update_static_option('linkedin_link', $request->linkedin_link);
+        update_static_option('twitter_link', $request->twitter_link);
+
+        return back()->with('success', 'Update successfully');
+    }
+
 }

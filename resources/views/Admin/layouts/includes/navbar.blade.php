@@ -200,7 +200,7 @@
                         <li><a href="{{ route('admin.bannerEdit') }}">Banner Footer Setting</a></li>
                         <li><a href="{{ route('admin.pricingPlan.index') }}">Pricing plan</a></li>
                         <li><a href="{{ route('admin.pageServices.index') }}">Services</a></li>
-                        {{-- <li><a href="{{ route('admin.salary.index') }}">Salary</a></li> --}}
+                        <li><a href="{{ route('admin.landingSetting.linkEdit') }}">Links</a></li>
                     </ul>
                 </li>
 
