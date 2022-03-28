@@ -15,8 +15,9 @@ use Intervention\Image\ImageManagerStatic as Image;
 class FrontendSettingController extends Controller
 {
     /**
-     * banner footer
-     */
+    * banner footer
+    */
+
     public function BannerFooter()
     {
 
@@ -61,4 +62,56 @@ class FrontendSettingController extends Controller
 
         return redirect()->back()->with('success', 'Information Update successfully');
     }
+
+    public function linkEdit()
+    {
+        return view('Admin.frontendSettings.link');
+    }
+
+    public function linkUpdate(Request $request)
+    {
+        $request->validate([
+            'uae_office_link' => 'required',
+            'kuwait_office_link' => 'required',
+            'bahrain_office_link' => 'required',
+            'facebook_link' => 'required',
+            'instagram_link' => 'required',
+            'linkedin_link' => 'required',
+            'twitter_link' => 'required',
+        ]);
+
+        update_static_option('uae_office_link', $request->uae_office_link);
+        update_static_option('kuwait_office_link', $request->kuwait_office_link);
+        update_static_option('bahrain_office_link', $request->bahrain_office_link);
+        update_static_option('facebook_link', $request->facebook_link);
+        update_static_option('instagram_link', $request->instagram_link);
+        update_static_option('linkedin_link', $request->linkedin_link);
+        update_static_option('twitter_link', $request->twitter_link);
+
+        return back()->with('success', 'Update successfully');
+    }
+    public function serviceDetailsEdit()
+    {
+        return view('Admin.frontendSettings.service_details');
+    }
+
+    public function serviceDetailsUpdate(Request $request)
+    {
+        $request->validate([
+            'renew_passport_service_details' => 'required',
+            'manual_passport_service_details' => 'required',
+            'lost_passport_service_details' => 'required',
+            'new_born_passport_service_details' => 'required',
+            'e_passport_service_details' => 'required',
+        ]);
+
+        update_static_option('renew_passport_service_details', $request->renew_passport_service_details);
+        update_static_option('manual_passport_service_details', $request->manual_passport_service_details);
+        update_static_option('lost_passport_service_details', $request->lost_passport_service_details);
+        update_static_option('new_born_passport_service_details', $request->new_born_passport_service_details);
+        update_static_option('e_passport_service_details', $request->e_passport_service_details);
+
+        return back()->with('success', 'Update successfully');
+    }
+
 }
