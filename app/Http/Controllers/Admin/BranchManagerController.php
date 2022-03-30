@@ -126,7 +126,7 @@ class BranchManagerController extends Controller
     {
         $branchManager =  User::findOrFail($id);
         $branchs = Branch::where('status', 1)->orderBy('id', 'DESC')->get();
-        return view('Admin.branchManager.edit', compact('user', 'branchs'));
+        return view('Admin.branchManager.edit', compact('branchManager', 'branchs'));
     }
 
 
