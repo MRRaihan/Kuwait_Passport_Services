@@ -66,12 +66,12 @@ class CreateNewBornBabyPassportsTable extends Migration
 
             $table->boolean('delivery_method')->nullable();
 
-            // doesn't used status start
-            $table->boolean('is_shifted')->default(0);
-            // doesn't used status end
 
             $table->timestamps();
             $table->softDeletes();
+            // doesn't used status start
+            $table->boolean('is_shifted')->default(0);
+            // doesn't used status end
         });
     }
 

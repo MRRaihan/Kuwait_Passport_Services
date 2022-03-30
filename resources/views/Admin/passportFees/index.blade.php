@@ -51,11 +51,139 @@
                     </div>
                 </div>
             </div>
-
-
-
             <div class="row mt-5">
-
+                <div class="col-lg-6">
+                    <form id="renewPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
+                        @include('Others.message')
+                        @csrf
+                        <div class="panel panel-success">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-white">Renew Passports</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#SL</th>
+                                            <th>Title</th>
+                                            <th>Embassy/Govt. Fee</th>
+                                            <th>Versatilo Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="renew_passports">
+                                        @if (isset($renewPassportFees[0]))
+                                            @foreach ($renewPassportFees as $key => $value)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <input type="text" name="title[]" value="{{ $value->title }}"
+                                                            class="form-control">
+                                                        <input type="hidden" name="id[]" value="{{ $value->id }}"
+                                                            class="form-control">
+                                                        <input type="hidden" name="p_type[]" value="renew-passport"
+                                                            class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
+                                                            value="{{ $value->government_fee }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
+                                                            value="{{ $value->versatilo_fee }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        @if (!isset($key))
+                                                            <a class="btn btn-danger text-white"
+                                                                onclick="removeItemRenew($(this))"><i
+                                                                    class="fa fa-times"></i></a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5" class="text-center">
+                                                <a class="btn btn-success text-white" onclick="newItemRenew()"><i
+                                                        class="fa fa-plus"></i>&nbsp; Add More</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="panel-footer bg-defult" style="padding: 10px">
+                                <button class="btn btn-success" type="submit" id="btnLostPassport">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6">
+                    <form id="manualPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
+                        @include('Others.message')
+                        @csrf
+                        <div class="panel panel-warning">
+                            <div class="panel-heading">
+                                <h3 class="panel-title text-white">Manual Passports</h3>
+                            </div>
+                            <div class="panel-body">
+                                <table class="table table-bordered table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>#SL</th>
+                                            <th>Title</th>
+                                            <th>Embassy/Govt. Fee</th>
+                                            <th>Versatilo Fee</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="manual_passports">
+                                        @if (isset($manualPassportFees[0]))
+                                            @foreach ($manualPassportFees as $key => $value)
+                                                <tr>
+                                                    <td>{{ $loop->iteration }}</td>
+                                                    <td>
+                                                        <input type="text" name="title[]" value="{{ $value->title }}"
+                                                            class="form-control">
+                                                        <input type="hidden" name="id[]" value="{{ $value->id }}"
+                                                            class="form-control">
+                                                        <input type="hidden" name="p_type[]" value="manual-passport"
+                                                            class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
+                                                            value="{{ $value->government_fee }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
+                                                            value="{{ $value->versatilo_fee }}" class="form-control">
+                                                    </td>
+                                                    <td>
+                                                        @if (!isset($key))
+                                                            <a class="btn btn-danger text-white"
+                                                                onclick="removeItemManual($(this))"><i
+                                                                    class="fa fa-times"></i></a>
+                                                        @endif
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                        @endif
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5" class="text-center">
+                                                <a class="btn btn-warning text-white" onclick="newItemManual()"><i
+                                                        class="fa fa-plus"></i>&nbsp; Add More</a>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+                            <div class="panel-footer bg-defult" style="padding: 10px">
+                                <button class="btn btn-warning" type="submit" id="btnLostPassport">SAVE</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
                 <div class="col-lg-6">
                     <form id="lostPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
                         @include('Others.message')
@@ -63,16 +191,14 @@
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-white">Lost Passports</h3>
-
                             </div>
                             <div class="panel-body">
-
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>#SL</th>
                                             <th>Title</th>
-                                            <th>Govt. Fee</th>
+                                            <th>Embassy/Govt. Fee</th>
                                             <th>Versatilo Fee</th>
                                         </tr>
                                     </thead>
@@ -90,11 +216,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -120,175 +246,26 @@
                                 </table>
                             </div>
                             <div class="panel-footer bg-defult" style="padding: 10px">
-
                                 <button class="btn btn-info" type="submit" id="btnLostPassport">SAVE</button>
-
-                            </div>
-                        </div>
-                    </form>
-
-                </div>
-
-                <div class="col-lg-6">
-                    <form id="lostPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
-                        @include('Others.message')
-                        @csrf
-                        <div class="panel panel-warning">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-white">Manual Passports</h3>
-
-                            </div>
-                            <div class="panel-body">
-
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#SL</th>
-                                            <th>Title</th>
-                                            <th>Govt. Fee</th>
-                                            <th>Versatilo Fee</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="manual_passports">
-                                        @if (isset($manualPassportFees[0]))
-                                            @foreach ($manualPassportFees as $key => $value)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <input type="text" name="title[]" value="{{ $value->title }}"
-                                                            class="form-control">
-                                                        <input type="hidden" name="id[]" value="{{ $value->id }}"
-                                                            class="form-control">
-                                                        <input type="hidden" name="p_type[]" value="manual-passport"
-                                                            class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
-                                                            value="{{ $value->government_fee }}" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
-                                                            value="{{ $value->versatilo_fee }}" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        @if (!isset($key))
-                                                            <a class="btn btn-danger text-white"
-                                                                onclick="removeItemManual($(this))"><i
-                                                                    class="fa fa-times"></i></a>
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        @endif
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5" class="text-center">
-                                                <a class="btn btn-warning text-white" onclick="newItemManual()"><i
-                                                        class="fa fa-plus"></i>&nbsp; Add More</a>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="panel-footer bg-defult" style="padding: 10px">
-
-                                <button class="btn btn-warning" type="submit" id="btnLostPassport">SAVE</button>
-
                             </div>
                         </div>
                     </form>
                 </div>
-
                 <div class="col-lg-6">
-                    <form id="lostPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
-                        @include('Others.message')
-                        @csrf
-                        <div class="panel panel-success">
-                            <div class="panel-heading">
-                                <h3 class="panel-title text-white">Renew Passports</h3>
-
-                            </div>
-                            <div class="panel-body">
-
-                                <table class="table table-bordered table-striped">
-                                    <thead>
-                                        <tr>
-                                            <th>#SL</th>
-                                            <th>Title</th>
-                                            <th>Govt. Fee</th>
-                                            <th>Versatilo Fee</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody id="renew_passports">
-                                        @if (isset($renewPassportFees[0]))
-                                            @foreach ($renewPassportFees as $key => $value)
-                                                <tr>
-                                                    <td>{{ $loop->iteration }}</td>
-                                                    <td>
-                                                        <input type="text" name="title[]" value="{{ $value->title }}"
-                                                            class="form-control">
-                                                        <input type="hidden" name="id[]" value="{{ $value->id }}"
-                                                            class="form-control">
-                                                        <input type="hidden" name="p_type[]" value="renew-passport"
-                                                            class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
-                                                            value="{{ $value->government_fee }}" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
-                                                            value="{{ $value->versatilo_fee }}" class="form-control">
-                                                    </td>
-                                                    <td>
-                                                        @if (!isset($key))
-                                                            <a class="btn btn-danger text-white"
-                                                                onclick="removeItemRenew($(this))"><i
-                                                                    class="fa fa-times"></i></a>
-                                                        @endif
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-                                        @endif
-                                    </tbody>
-                                    <tfoot>
-                                        <tr>
-                                            <td colspan="5" class="text-center">
-                                                <a class="btn btn-success text-white" onclick="newItemRenew()"><i
-                                                        class="fa fa-plus"></i>&nbsp; Add More</a>
-                                            </td>
-                                        </tr>
-                                    </tfoot>
-                                </table>
-                            </div>
-                            <div class="panel-footer bg-defult" style="padding: 10px">
-
-                                <button class="btn btn-success" type="submit" id="btnLostPassport">SAVE</button>
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-
-                <div class="col-lg-6">
-                    <form id="lostPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
+                    <form id="newBornBabyPasportForm" action="{{ route('admin.passportFee.store') }}" method="POST">
                         @include('Others.message')
                         @csrf
                         <div class="panel panel-info">
                             <div class="panel-heading">
                                 <h3 class="panel-title text-white">New Born Baby Passports</h3>
-
                             </div>
                             <div class="panel-body">
-
                                 <table class="table table-bordered table-striped">
                                     <thead>
                                         <tr>
                                             <th>#SL</th>
                                             <th>Title</th>
-                                            <th>Govt. Fee</th>
+                                            <th>Embassy/Govt. Fee</th>
                                             <th>Versatilo Fee</th>
                                         </tr>
                                     </thead>
@@ -306,11 +283,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -335,14 +312,11 @@
                                 </table>
                             </div>
                             <div class="panel-footer bg-defult" style="padding: 10px">
-
                                 <button class="btn btn-success" type="submit" id="btnLostPassport">SAVE</button>
-
                             </div>
                         </div>
                     </form>
                 </div>
-
             </div> <!-- End Row -->
         </div> <!-- container -->
     </div> <!-- content -->
@@ -359,10 +333,10 @@
                 '<input type="hidden" name="p_type[]" value="lost-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
@@ -405,10 +379,10 @@
                 '<input type="hidden" name="p_type[]" value="manual-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemManual($(this))"><i class="fa fa-times"></i></a>' +
@@ -450,10 +424,10 @@
                 '<input type="hidden" name="p_type[]" value="renew-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemRenew($(this))"><i class="fa fa-times"></i></a>' +
@@ -496,10 +470,10 @@
                 '<input type="hidden" name="p_type[]" value="new-born-baby-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemNewBorn($(this))"><i class="fa fa-times"></i></a>' +
