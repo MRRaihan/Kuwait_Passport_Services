@@ -90,11 +90,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -163,11 +163,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -234,11 +234,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -306,11 +306,11 @@
                                                             class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="govt_fee[]"
+                                                        <input type="number" step="any" min="0" name="govt_fee[]"
                                                             value="{{ $value->government_fee }}" class="form-control">
                                                     </td>
                                                     <td>
-                                                        <input type="number" min="0" name="versatilo_fee[]"
+                                                        <input type="number" step="any" min="0" name="versatilo_fee[]"
                                                             value="{{ $value->versatilo_fee }}" class="form-control">
                                                     </td>
                                                     <td>
@@ -359,10 +359,10 @@
                 '<input type="hidden" name="p_type[]" value="lost-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItem($(this))"><i class="fa fa-times"></i></a>' +
@@ -405,10 +405,10 @@
                 '<input type="hidden" name="p_type[]" value="manual-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemManual($(this))"><i class="fa fa-times"></i></a>' +
@@ -450,10 +450,10 @@
                 '<input type="hidden" name="p_type[]" value="renew-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemRenew($(this))"><i class="fa fa-times"></i></a>' +
@@ -496,10 +496,10 @@
                 '<input type="hidden" name="p_type[]" value="new-born-baby-passport" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="govt_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="govt_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
-                '<input type="number" min="0"  name="versatilo_fee[]" class="form-control">' +
+                '<input type="number" step="any" min="0"  name="versatilo_fee[]" class="form-control">' +
                 '</td>' +
                 '<td>' +
                 '<a class="btn btn-danger text-white" onclick="removeItemNewBorn($(this))"><i class="fa fa-times"></i></a>' +
